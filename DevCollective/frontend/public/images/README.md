@@ -1,3 +1,10 @@
+Lightweight **Windows** diagnostics: live CPU/RAM/disk/temperature sampling, hardware and application log checks, update catalogs (Defender, Windows Update, winget), and **read-only** disk hints (install paths, Program Files registry cross-check, common cleanup folders). **Version:** see `pc_checker/__init__.py` (`__version__`).
+
+## Personal use — not for distribution
+
+**Author-facing / hardwired policy:** This repository is **personal software** by its author (**edit `APP_OWNER` in `pc_checker/__init__.py` if you adapt a private fork**). It is **not** intended for public distribution, resale, sublicense, or republication. The same notice is embedded in the app (window title, footer, CLI, API `GET /api/v1/meta`, OpenAPI description, and web UI via meta).
+
+This tool is **not** a substitute for full malware scans, SMART/hardware burn-in tests, or vendor support. It does **not** move, delete, or repair files automatically.
 # Image Assets Directory
 
 This directory is organized for the Developer Collective Platform. Add your images here:

@@ -84,7 +84,7 @@ export default function Profile() {
       title: 'React Product Catalog',
       stack: ['React', 'TypeScript', 'Jest', 'Vite', 'CSS3'],
       desc: 'React-based storefront SPA with product catalog, product details pages, shopping cart checkout flow, responsive UI, and localStorage persistence. Built with Vite for fast performance.',
-      url: null,
+      url: 'https://react-store-catalog.onrender.com',
       image: '/images/profile/React Store.jpg',
     },
     {
@@ -130,8 +130,8 @@ export default function Profile() {
           {/* Sidebar */}
           <div>
             <div className="card sticky top-24">
-              <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary-500 shadow-lg">
-                <img src="/images/profile/barney.jpeg" alt="Barney Gilliom" className="w-full h-full object-cover" />
+              <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary-500 shadow-lg flex items-center justify-center">
+                <img src="/images/profile/Gilliom.jpg" alt="Barney Gilliom" className="w-full h-full object-cover object-top" />
               </div>
               <h2 className="text-center text-xl mb-1">Barney R. Gilliom</h2>
               <p className="text-center text-dark-500 text-sm mb-6">Riverview, FL · U.S. Citizen · Open to Remote & Relocation</p>
@@ -159,7 +159,15 @@ export default function Profile() {
                 </a>
               </div>
 
-              <a href="/contact" className="btn btn-primary w-full mt-6 text-sm">
+              <a
+                href="/images/portfolio/Barney_Gilliom_Resume_v3.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary w-full mt-6 text-sm text-center block"
+              >
+                View Resume
+              </a>
+              <a href="/contact" className="btn btn-primary w-full mt-3 text-sm text-center block">
                 Hire Me
               </a>
             </div>

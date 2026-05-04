@@ -69,14 +69,25 @@ export default function About() {
         <div className="card p-0 overflow-hidden shadow-xl">
           <video
             controls
-            preload="metadata"
+            preload="auto"
+            playsInline
+            muted={false}
             className="w-full rounded-xl"
             style={{ maxHeight: '520px' }}
+            onError={(e) => {
+              const target = e.currentTarget as HTMLVideoElement
+              target.style.display = 'none'
+              const msg = target.nextElementSibling as HTMLElement
+              if (msg) msg.style.display = 'block'
+            }}
           >
             <source src="/images/profile/Ray.mp4" type="video/mp4" />
             <track kind="captions" />
             Your browser does not support the video tag.
           </video>
+          <p className="hidden text-center text-dark-600 p-6">
+            Video unavailable. <a href="/images/profile/Ray.mp4" className="text-primary-600 underline" download>Download the video</a> to watch locally.
+          </p>
         </div>
       </section>
 

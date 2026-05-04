@@ -4,7 +4,13 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 **Built by:** Barney Gilliom  
 **Company:** Frontline Digital  
-**Tagline:** Driven by Code. Built for Success.
+**Tagline:** Driven by Code. Built for Success.  
+**Repository:** [https://github.com/dallas8000-ops/FrontLineDigital](https://github.com/dallas8000-ops/FrontLineDigital)
+
+## 🌐 Live Demo
+
+- [https://react-store-catalog.onrender.com](https://react-store-catalog.onrender.com)
+- [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
 
 ## 🚀 Features
 
@@ -186,6 +192,11 @@ PostgreSQL schema includes tables for:
 - Transactions
 
 ## 🚀 Deployment
+
+### Live on Render
+
+- **Frontend:** [https://react-store-catalog.onrender.com](https://react-store-catalog.onrender.com)
+- **Mirror:** [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
 
 ### Frontend (Render/Vercel)
 ```bash

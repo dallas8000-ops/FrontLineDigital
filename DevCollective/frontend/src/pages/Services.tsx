@@ -126,7 +126,7 @@ export default function Services() {
               {
                 title: 'React Product Catalog',
                 desc: 'React-based storefront SPA with product catalog, product details pages, shopping cart checkout flow, responsive UI, and localStorage persistence. Built with Vite for fast performance.',
-                url: null,
+                url: 'https://react-store-catalog.onrender.com',
                 image: '/images/profile/React Store.jpg',
                 tech: ['React', 'TypeScript', 'Jest', 'Vite', 'CSS3'],
               },
