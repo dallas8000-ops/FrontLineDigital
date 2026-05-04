@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Star, GitFork, ExternalLink, Users, BookOpen, Code2, RefreshCw } from 'lucide-react'
+import { usePageTitle } from '../utils/usePageTitle'
 
 const GITHUB_USERNAME = 'dallas8000-ops'
 const GITHUB_API = 'https://api.github.com'
@@ -43,11 +44,11 @@ const LANG_COLORS: Record<string, string> = {
 }
 
 export default function Dashboard() {
+  usePageTitle('GitHub Activity')
   const [user, setUser] = useState<GitHubUser | null>(null)
   const [repos, setRepos] = useState<GitHubRepo[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [filter, setFilter] = useState<string>('all')
 
   const fetchData = async () => {
     setLoading(true)
@@ -61,8 +62,38 @@ export default function Dashboard() {
       const userData: GitHubUser = await userRes.json()
       const reposData: GitHubRepo[] = await reposRes.json()
       setUser(userData)
-      const excluded = /fsdi|sdgku|cohort/i
-      setRepos(reposData.filter((r) => !r.fork && !excluded.test(r.name)))
+      // Portfolio projects — hardcoded descriptions since GitHub repos may have none set
+      const portfolioMeta: Record<string, { title: string; description: string }> = {
+        'Kistie-Store': {
+          title: 'Kristie Store',
+          description: 'Live fashion ecommerce (women\'s apparel & accessories) shipping from Kampala worldwide. Production Django storefront + DRF API on Render / PostgreSQL with CI on every push.',
+        },
+        'React-Store-Catalog': {
+          title: 'React Store Catalog',
+          description: 'React-based storefront SPA with product catalog, product details pages, shopping cart checkout flow, responsive UI, and localStorage persistence. Built with Vite.',
+        },
+        'BLOG-2': {
+          title: 'Django REST Blog API',
+          description: 'Production blog and portfolio site on Render. Full CRUD post management, OAuth social login, public profiles, comments, contact form, and REST API with JWT auth.',
+        },
+        'PC-Checker': {
+          title: 'PC Checker',
+          description: 'Windows desktop diagnostics utility with a CustomTkinter GUI, shared-state FastAPI surface, SQLite-backed metric history, live charts, and modular WMI/PowerShell checks for deep local system diagnostics.',
+        },
+        'FrontLineDigital': {
+          title: 'Frontline Digital',
+          description: 'This portfolio site — full-stack React/TypeScript frontend with Express backend. Contact form with Nodemailer, live GitHub API integration, rate limiting, and Render deployment.',
+        },
+      }
+      const portfolioNames = Object.keys(portfolioMeta)
+      const matched = reposData
+        .filter((r) => portfolioNames.includes(r.name))
+        .map((r) => ({
+          ...r,
+          name: portfolioMeta[r.name].title,
+          description: portfolioMeta[r.name].description,
+        }))
+      setRepos(matched)
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Failed to load GitHub data')
     } finally {
@@ -72,8 +103,7 @@ export default function Dashboard() {
 
   useEffect(() => { fetchData() }, [])
 
-  const languages = ['all', ...Array.from(new Set(repos.map((r) => r.language).filter(Boolean)))]
-  const filtered = filter === 'all' ? repos : repos.filter((r) => r.language === filter)
+  // language filter reserved for future use
   const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0)
 
   return (
@@ -95,9 +125,36 @@ export default function Dashboard() {
       </section>
 
       {loading && (
-        <div className="flex justify-center items-center py-32">
-          <RefreshCw size={32} className="animate-spin text-primary-600" />
-          <span className="ml-3 text-dark-600 text-lg">Loading GitHub data…</span>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 animate-pulse">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Profile card skeleton */}
+            <div className="card w-full md:w-72 flex-shrink-0 flex flex-col items-center gap-4">
+              <div className="w-24 h-24 rounded-full bg-dark-200" />
+              <div className="h-4 w-32 bg-dark-200 rounded" />
+              <div className="h-3 w-20 bg-dark-100 rounded" />
+              <div className="h-8 w-full bg-dark-100 rounded-lg mt-2" />
+            </div>
+            {/* Stats + repo skeletons */}
+            <div className="flex-1 space-y-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {new Array(4).fill(null).map((_, i) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <div key={i} className="card h-20 bg-dark-100 rounded-xl" />
+                ))}
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {new Array(3).fill(null).map((_, i) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <div key={i} className="card space-y-3">
+                    <div className="h-4 w-3/4 bg-dark-200 rounded" />
+                    <div className="h-3 w-full bg-dark-100 rounded" />
+                    <div className="h-3 w-5/6 bg-dark-100 rounded" />
+                    <div className="h-3 w-1/2 bg-dark-100 rounded" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
@@ -135,23 +192,19 @@ export default function Dashboard() {
                     { label: 'Followers', value: user.followers, icon: <Users size={20} /> },
                     { label: 'Following', value: user.following, icon: <Users size={20} /> },
                     { label: 'Total Stars', value: totalStars, icon: <Star size={20} /> },
-                  ].map((stat, i) => (
-                    <div key={i} className="card text-center">
+                  ].map((stat) => (
+                    <div key={stat.label} className="card text-center">
                       <div className="text-primary-600 flex justify-center mb-2">{stat.icon}</div>
                       <p className="text-3xl font-bold text-dark-900">{stat.value}</p>
                       <p className="text-dark-500 text-xs mt-1">{stat.label}</p>
                     </div>
                   ))}
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {languages.map((lang) => (
-                    <button key={lang} onClick={() => setFilter(lang)}
-                      className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                        filter === lang ? 'bg-primary-600 text-white' : 'bg-dark-100 text-dark-600 hover:bg-dark-200'}`}>
-                      {lang === 'all' ? 'All Languages' : lang}
-                    </button>
-                  ))}
-                </div>
+                {repos.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="text-sm text-dark-500 font-medium">Portfolio Projects</span>
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -159,10 +212,10 @@ export default function Dashboard() {
           {/* Repos Grid */}
           <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
             <h2 className="text-2xl font-bold text-dark-900 mb-6">
-              Repositories <span className="text-dark-400 font-normal text-lg">({filtered.length})</span>
+              Repositories <span className="text-dark-400 font-normal text-lg">({repos.length})</span>
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((repo) => (
+              {repos.map((repo) => (
                 <div key={repo.id} className="card flex flex-col justify-between hover:shadow-xl transition-shadow">
                   <div>
                     <div className="flex items-start justify-between mb-2">
@@ -172,8 +225,8 @@ export default function Dashboard() {
                         <ExternalLink size={16} />
                       </a>
                     </div>
-                    <p className="text-dark-500 text-sm mb-4 line-clamp-2">
-                      {repo.description || 'No description provided.'}
+                    <p className="text-dark-500 text-sm mb-4 line-clamp-3">
+                      {repo.description}
                     </p>
                     {repo.topics.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-4">
@@ -197,22 +250,12 @@ export default function Dashboard() {
                 </div>
               ))}
             </div>
-            {filtered.length === 0 && (
-              <p className="text-center text-dark-400 py-16">No repositories found for this filter.</p>
+            {repos.length === 0 && !loading && (
+              <p className="text-center text-dark-400 py-16">No portfolio repositories found.</p>
             )}
           </section>
         </>
       )}
-    </div>
-  )
-}
-
-                <button className="flex-1 btn btn-outline">Edit</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   )
 }

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Search, Star, MapPin, TrendingUp } from 'lucide-react'
+import { Search, Star, MapPin } from 'lucide-react'
+import { usePageTitle } from '../utils/usePageTitle'
 
 export default function Marketplace() {
+  usePageTitle('Developer Marketplace')
   const [searchTerm, setSearchTerm] = useState('')
   const [filterCategory, setFilterCategory] = useState('all')
 
@@ -11,7 +13,7 @@ export default function Marketplace() {
       name: 'Barney R. Gilliom',
       title: 'QA Automation Engineer · Full-Stack · DevOps',
       location: 'Riverview, FL — Open to Remote & Relocation',
-      rating: 5.0,
+      rating: 5,
       reviews: 3,
       skills: ['Python', 'Django', 'React', 'TypeScript', 'PostgreSQL', 'GitHub Actions', 'Jest', 'unittest'],
       hourlyRate: 'Open to Offers',
@@ -89,13 +91,15 @@ export default function Marketplace() {
               {/* Rating */}
               <div className="flex items-center gap-2 mb-4 pb-4 border-b border-dark-200">
                 <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
+                  {/* eslint-disable react/no-array-index-key */}
+                  {new Array(5).fill(null).map((_, i) => (
                     <Star
                       key={i}
                       size={16}
                       className={i < Math.floor(dev.rating) ? 'fill-accent-500 text-accent-500' : 'text-dark-300'}
                     />
                   ))}
+                  {/* eslint-enable react/no-array-index-key */}
                 </div>
                 <span className="font-bold">{dev.rating}</span>
                 <span className="text-dark-600 text-sm">({dev.reviews} reviews)</span>
@@ -128,13 +132,13 @@ export default function Marketplace() {
       {/* CTA */}
       <section className="section bg-gradient-to-r from-accent-500 to-orange-600 text-white rounded-2xl">
         <div className="text-center">
-          <h2 className="mb-4">Are You a Developer?</h2>
+          <h2 className="mb-4">Available for Your Next Project</h2>
           <p className="text-xl mb-8 text-white/90">
-            Join our marketplace and start getting hired by clients worldwide.
+            Independent full-stack developer available for national and international engagements — remote or on-site. Open to relocation.
           </p>
-          <button className="btn bg-dark-900 hover:bg-dark-800 text-white">
-            Apply Now
-          </button>
+          <a href="/profile" className="btn bg-dark-900 hover:bg-dark-800 text-white">
+            View My Work
+          </a>
         </div>
       </section>
     </div>

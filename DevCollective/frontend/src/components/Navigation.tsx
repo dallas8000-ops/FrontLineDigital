@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation()
 
   const navItems = [
     { label: 'Home', path: '/' },
@@ -12,6 +13,7 @@ export default function Navigation() {
     { label: 'GitHub', path: '/dashboard' },
     { label: 'Marketplace', path: '/marketplace' },
     { label: 'Profile', path: '/profile' },
+    { label: 'Contact', path: '/contact' },
   ]
 
   return (
@@ -34,7 +36,11 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-dark-700 hover:text-primary-600 font-medium transition-colors"
+                className={`font-medium transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-primary-600 border-b-2 border-primary-500 pb-0.5'
+                    : 'text-dark-700 hover:text-primary-600'
+                }`}
               >
                 {item.label}
               </Link>
@@ -43,8 +49,8 @@ export default function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="btn btn-outline">Sign In</button>
-            <button className="btn btn-primary">Get Started</button>
+            <Link to="/profile" className="btn btn-outline">View CV</Link>
+            <Link to="/contact" className="btn btn-primary">Hire Me</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -70,8 +76,8 @@ export default function Navigation() {
               </Link>
             ))}
             <div className="px-4 py-4 flex gap-2">
-              <button className="btn btn-outline flex-1">Sign In</button>
-              <button className="btn btn-primary flex-1">Get Started</button>
+              <Link to="/profile" className="btn btn-outline flex-1" onClick={() => setIsOpen(false)}>View CV</Link>
+              <Link to="/contact" className="btn btn-primary flex-1" onClick={() => setIsOpen(false)}>Hire Me</Link>
             </div>
           </div>
         )}

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Shield, FlaskConical, Rocket, Code } from 'lucide-react'
+import { usePageTitle } from '../utils/usePageTitle'
 
 export default function Home() {
+  usePageTitle('Home')
   return (
     <div>
       {/* Hero Section */}
@@ -14,6 +16,10 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fadeInUp">
+              <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/40 text-green-300 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block"></span>{' '}
+                Available for Work
+              </div>
               <p className="text-accent-400 font-semibold uppercase tracking-widest text-sm mb-3">Frontline Digital</p>
               <h1 className="mb-6 text-white text-5xl md:text-6xl font-bold leading-tight">
                 QA Automation.<br />
@@ -58,8 +64,8 @@ export default function Home() {
             { icon: <FlaskConical size={32} />, title: 'QA Automation', desc: 'Python unittest, Jest, API validation, regression testing, bug reporting' },
             { icon: <Shield size={32} />, title: 'App Security', desc: 'CSRF, session hardening, RBAC, input validation, auth audits' },
             { icon: <Rocket size={32} />, title: 'DevOps & CI/CD', desc: 'GitHub Actions pipelines, Render deployment, Gunicorn, WhiteNoise' },
-          ].map((feature, idx) => (
-            <div key={idx} className="card hover:shadow-xl transition-shadow">
+          ].map((feature) => (
+            <div key={feature.title} className="card hover:shadow-xl transition-shadow">
               <div className="text-primary-600 mb-4">{feature.icon}</div>
               <h3 className="text-xl mb-2">{feature.title}</h3>
               <p className="text-dark-600 text-sm leading-relaxed">{feature.desc}</p>
@@ -73,7 +79,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
             <img
-              src="/images/profile/barney.jpeg"
+              src="/images/profile/Barney Gilliom.jpeg"
               alt="Barney Gilliom"
               className="w-full max-w-sm rounded-2xl shadow-2xl"
             />
@@ -105,129 +111,9 @@ export default function Home() {
           <p className="text-xl text-primary-100 mb-8 max-w-xl mx-auto">
             Production-grade development, QA, and DevOps — delivered with a zero-defect standard.
           </p>
-          <a href="mailto:dallas8000@gmail.com" className="btn bg-accent-500 hover:bg-accent-600 text-white text-lg">
+          <a href="/contact" className="btn bg-accent-500 hover:bg-accent-600 text-white text-lg">
             Get In Touch
           </a>
-        </div>
-      </section>
-    </div>
-  )
-}
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-600 via-primary-700 to-dark-900 text-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative z-10 section">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fadeInUp">
-              <h1 className="mb-6 text-white">
-                Welcome to <br />
-                <span className="text-accent-400">Frontline Digital</span>
-              </h1>
-              <p className="text-xl text-primary-100 mb-8 leading-relaxed">
-                Your unified platform for professional dev services, team operations, and connecting with top talent.
-              </p>
-              <div className="flex gap-4 flex-wrap">
-                <button className="btn bg-accent-500 hover:bg-accent-600 text-white">
-                  Explore Services
-                </button>
-                <button className="btn border-2 border-white text-white hover:bg-white/10">
-                  Join Marketplace
-                </button>
-              </div>
-            </div>
-
-            {/* Hero Image */}
-            <div className="animate-slideInLeft flex justify-center">
-              <div className="relative w-80 h-80">
-                <img 
-                  src="/images/logos/frontline-digital-logo.png" 
-                  alt="Frontline Digital" 
-                  className="w-full h-full object-contain drop-shadow-2xl"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="section bg-dark-50">
-        <h2 className="text-center mb-16">Why Choose Dev Collective?</h2>
-        
-        <div className="grid-auto">
-          {[
-            {
-              icon: <Zap size={32} />,
-              title: 'Fast & Reliable',
-              desc: 'Lightning-quick service delivery with enterprise-grade reliability'
-            },
-            {
-              icon: <Users size={32} />,
-              title: 'Expert Team',
-              desc: 'Connect with vetted developers and build your perfect team'
-            },
-            {
-              icon: <TrendingUp size={32} />,
-              title: 'Growth Focus',
-              desc: 'Scale your business with tools designed for success'
-            },
-            {
-              icon: <Code size={32} />,
-              title: 'Modern Tech',
-              desc: 'Built with cutting-edge technologies and best practices'
-            },
-          ].map((feature, idx) => (
-            <div key={idx} className="card card-hover">
-              <div className="text-primary-600 mb-4">{feature.icon}</div>
-              <h3 className="text-xl mb-2">{feature.title}</h3>
-              <p className="text-dark-600">{feature.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl">
-        <div className="text-center">
-          <h2 className="mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Join hundreds of developers and agencies using Dev Collective to streamline their operations.
-          </p>
-          <button className="btn bg-accent-500 hover:bg-accent-600 text-white text-lg">
-            Create Your Account
-          </button>
-        </div>
-      </section>
-
-      {/* About Founder Section */}
-      <section className="section">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="mb-4">Meet the Founder</h2>
-            <p className="text-dark-700 text-lg mb-4">
-              <strong>Barney Gilliom</strong> is a QA Automation Engineer and Full Stack Developer with a unique background spanning federal law enforcement, military electronics, and modern software development.
-            </p>
-            <p className="text-dark-700 mb-6">
-              With 30+ years of professional experience and a precision-first mindset honed through mission-critical work, Barney brings enterprise-grade excellence to every project.
-            </p>
-            <div className="flex gap-4">
-              <a href="/about" className="btn btn-primary">Learn More</a>
-              <a href="/profile" className="btn btn-outline">View Profile</a>
-            </div>
-          </div>
-          
-          <div className="flex justify-center">
-            <img 
-              src="/images/profile/barney.jpeg" 
-              alt="Barney Gilliom" 
-              className="w-full max-w-md rounded-2xl shadow-elevation-3"
-            />
-          </div>
         </div>
       </section>
     </div>
