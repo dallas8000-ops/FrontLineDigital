@@ -1,7 +1,10 @@
 import React from 'react'
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Award } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Mail, Phone, MapPin, Linkedin, ExternalLink, Award, Code2 } from 'lucide-react'
+import { usePageTitle } from '../utils/usePageTitle'
 
 export default function Profile() {
+  usePageTitle('Profile & CV — Barney R. Gilliom')
   const skills = [
     { category: 'Languages', items: ['Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'Bash'] },
     { category: 'Testing & QA', items: ['Python unittest', 'Jest', 'API Testing', 'Manual Testing', 'Test Case Design', 'Bug Reporting', 'Regression Testing'] },
@@ -66,20 +69,40 @@ export default function Profile() {
     {
       title: 'Kristie Store',
       stack: ['Python', 'Django', 'React', 'TypeScript', 'PostgreSQL', 'GitHub Actions'],
-      desc: 'Full-stack production e-commerce platform. Django REST API, session auth, CSRF protection, SMTP email confirmations, GitHub Actions CI/CD, 80+ seeded products.',
+      desc: 'Live fashion ecommerce (women\'s apparel & accessories) shipping from Kampala worldwide. Production Django storefront + staff tooling + DRF API on Render / PostgreSQL with CI on every push.',
       url: 'https://kristie-store.onrender.com',
+      image: '/images/profile/Kistie-Store.png',
     },
     {
       title: 'Django REST Blog API',
       stack: ['Python', 'Django REST', 'PostgreSQL', 'JWT', 'React'],
-      desc: 'Production REST API with full CRUD, JWT + session auth, RBAC, responsive React frontend. Live personal portfolio platform.',
+      desc: 'Production blog and portfolio site deployed on Render. Full CRUD post management, social login (OAuth), public profiles, comments, contact form, and REST API with JWT auth.',
       url: 'https://blog-2-hggg.onrender.com',
+      image: '/images/profile/Django Rest Blog API.png',
     },
     {
       title: 'React Product Catalog',
       stack: ['React', 'TypeScript', 'Jest', 'Vite', 'CSS3'],
-      desc: 'Modular React/TypeScript component library with Jest unit tests, dynamic modals, multi-criteria filter logic, and keyboard navigation.',
-      url: 'https://gilliomfrontlinedigital.onrender.com',
+      desc: 'React-based storefront SPA with product catalog, product details pages, shopping cart checkout flow, responsive UI, and localStorage persistence. Built with Vite for fast performance.',
+      url: null,
+      image: '/images/profile/React Store.jpg',
+    },
+    {
+      title: 'PC Checker',
+      stack: ['Python', 'CustomTkinter', 'FastAPI', 'SQLite', 'Matplotlib', 'WMI', 'PowerShell'],
+      desc: 'Windows desktop diagnostics utility with a multi-tab CustomTkinter client, background live vs diagnostic refresh timers, UAC-aware elevation, SQLite metric history, local charts, and modular WMI/PowerShell-based checks exposed through a shared-state local API and web dashboard.',
+      url: null,
+      repoUrl: 'https://github.com/dallas8000-ops/PC-Checker',
+      detailPath: '/projects/pc-checker',
+      disableHostedApp: true,
+      image: '/images/profile/PC Checker.png',
+    },
+    {
+      title: 'Frontline Digital',
+      stack: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'Nodemailer', 'Tailwind CSS'],
+      desc: 'This portfolio site — full-stack React/TypeScript frontend with Express backend. Features contact form with Nodemailer email delivery, live GitHub API integration, rate limiting, and production deployment on Render.',
+      url: 'https://frontlinedigital.onrender.com',
+      image: '/images/logos/frontline-digital-logo.png',
     },
   ]
 
@@ -128,7 +151,7 @@ export default function Profile() {
               <div className="border-t border-dark-200 pt-5 mt-5 space-y-2">
                 <a href="https://github.com/dallas8000-ops" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 text-primary-600 hover:text-primary-700 font-semibold text-sm">
-                  <Github size={16} /> github.com/dallas8000-ops
+                  <Code2 size={16} /> github.com/dallas8000-ops
                 </a>
                 <a href="https://linkedin.com/in/barney-gilliom-959981337" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 text-primary-600 hover:text-primary-700 font-semibold text-sm">
@@ -136,7 +159,7 @@ export default function Profile() {
                 </a>
               </div>
 
-              <a href="mailto:dallas8000@gmail.com" className="btn btn-primary w-full mt-6 text-sm">
+              <a href="/contact" className="btn btn-primary w-full mt-6 text-sm">
                 Hire Me
               </a>
             </div>
@@ -157,8 +180,8 @@ export default function Profile() {
             <div className="card">
               <h3 className="text-xl font-bold mb-6 text-primary-700">Technical Skills</h3>
               <div className="space-y-5">
-                {skills.map((group, idx) => (
-                  <div key={idx}>
+                {skills.map((group) => (
+                  <div key={group.category}>
                     <h4 className="font-semibold text-dark-800 text-sm mb-2 uppercase tracking-wide">{group.category}</h4>
                     <div className="flex gap-2 flex-wrap">
                       {group.items.map((skill) => (
@@ -176,14 +199,45 @@ export default function Profile() {
             <div className="card">
               <h3 className="text-xl font-bold mb-6 text-primary-700">Production Projects</h3>
               <div className="space-y-6">
-                {projects.map((proj, idx) => (
-                  <div key={idx} className="border-l-4 border-accent-500 pl-5 pb-5 border-b border-b-dark-100 last:border-b-0">
-                    <div className="flex items-start justify-between mb-2">
+                {projects.map((proj) => (
+                  <div key={proj.title} className="border-l-4 border-accent-500 pl-5 pb-5 border-b border-b-dark-100 last:border-b-0">
+                    {proj.image && (
+                      proj.detailPath ? (
+                        <Link to={proj.detailPath}>
+                          <img src={proj.image} alt={proj.title} className="w-full rounded-lg mb-4 object-cover max-h-48 hover:opacity-90 transition-opacity" />
+                        </Link>
+                      ) : (
+                        <a href={proj.url ?? undefined} target="_blank" rel="noopener noreferrer">
+                          <img src={proj.image} alt={proj.title} className="w-full rounded-lg mb-4 object-cover max-h-48 hover:opacity-90 transition-opacity" />
+                        </a>
+                      )
+                    )}
+                    <div className="flex items-start justify-between gap-4 mb-2">
                       <h4 className="font-bold text-lg text-dark-900">{proj.title}</h4>
-                      <a href={proj.url} target="_blank" rel="noopener noreferrer"
-                        className="text-primary-600 hover:text-primary-700 flex items-center gap-1 text-sm font-semibold ml-4">
-                        <ExternalLink size={14} /> Live
-                      </a>
+                    </div>
+                    <div className="flex flex-wrap gap-3 mb-3">
+                      {proj.detailPath && (
+                        <Link to={proj.detailPath} className="text-primary-600 hover:text-primary-700 flex items-center gap-1 text-sm font-semibold">
+                          <ExternalLink size={14} /> Project Details
+                        </Link>
+                      )}
+                      {proj.repoUrl && (
+                        <a href={proj.repoUrl} target="_blank" rel="noopener noreferrer"
+                          className="text-primary-600 hover:text-primary-700 flex items-center gap-1 text-sm font-semibold">
+                          <ExternalLink size={14} /> GitHub Repo
+                        </a>
+                      )}
+                      {proj.url && (
+                        <a href={proj.url} target="_blank" rel="noopener noreferrer"
+                          className="text-primary-600 hover:text-primary-700 flex items-center gap-1 text-sm font-semibold">
+                          <ExternalLink size={14} /> Live App
+                        </a>
+                      )}
+                      {proj.disableHostedApp && (
+                        <span className="text-dark-400 flex items-center gap-1 text-sm font-semibold">
+                          <ExternalLink size={14} /> Hosted app not available
+                        </span>
+                      )}
                     </div>
                     <p className="text-dark-600 text-sm mb-3">{proj.desc}</p>
                     <div className="flex gap-2 flex-wrap">
@@ -200,14 +254,14 @@ export default function Profile() {
             <div className="card">
               <h3 className="text-xl font-bold mb-6 text-primary-700">Professional Experience</h3>
               <div className="space-y-8">
-                {experience.map((exp, idx) => (
-                  <div key={idx} className="border-l-4 border-primary-600 pl-5">
+                {experience.map((exp) => (
+                  <div key={exp.company} className="border-l-4 border-primary-600 pl-5">
                     <h4 className="font-bold text-dark-900">{exp.title}</h4>
                     <p className="text-primary-600 font-semibold text-sm">{exp.company}</p>
                     <p className="text-dark-500 text-xs mb-3">{exp.location} · {exp.period}</p>
                     <ul className="space-y-1">
-                      {exp.bullets.map((b, i) => (
-                        <li key={i} className="text-dark-700 text-sm flex gap-2">
+                      {exp.bullets.map((b) => (
+                        <li key={b} className="text-dark-700 text-sm flex gap-2">
                           <span className="text-primary-500 mt-1 flex-shrink-0">•</span>{b}
                         </li>
                       ))}
@@ -223,8 +277,8 @@ export default function Profile() {
                 <Award size={20} /> Certifications
               </h3>
               <div className="grid sm:grid-cols-2 gap-3">
-                {certs.map((cert, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-primary-50 rounded-lg px-4 py-3">
+                {certs.map((cert) => (
+                  <div key={cert} className="flex items-center gap-3 bg-primary-50 rounded-lg px-4 py-3">
                     <span className="w-2 h-2 bg-accent-500 rounded-full flex-shrink-0"></span>
                     <span className="text-dark-800 text-sm font-medium">{cert}</span>
                   </div>
@@ -232,162 +286,6 @@ export default function Profile() {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
-      {/* Header */}
-      <section className="bg-gradient-to-b from-primary-600 to-primary-700 text-white py-16">
-        <div className="section">
-          <h1>Profile</h1>
-          <p className="text-primary-100">Your professional presence</p>
-        </div>
-      </section>
-
-      {/* Profile Section */}
-      <section className="section">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Sidebar */}
-          <div>
-            <div className="card sticky top-24">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary-500 shadow-lg">
-                <img 
-                  src="/images/profile/barney.jpeg" 
-                  alt="Barney Gilliom" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h2 className="text-center mb-1">Barney Gilliom</h2>
-              <p className="text-center text-dark-600 mb-6">QA Engineer | Python Developer | DevOps</p>
-              
-              <div className="space-y-3 border-t border-dark-200 pt-6">
-                <a href="tel:6824604038" className="flex items-center gap-3 text-dark-700 hover:text-primary-600">
-                  <Phone size={18} />
-                  (682) 460-4038
-                </a>
-                <a href="mailto:dallas8000@gmail.com" className="flex items-center gap-3 text-dark-700 hover:text-primary-600">
-                  <Mail size={18} />
-                  dallas8000@gmail.com
-                </a>
-                <div className="flex items-center gap-3 text-dark-700">
-                  <MapPin size={18} />
-                  Riverview, FL
-                </div>
-              </div>
-
-              <div className="border-t border-dark-200 pt-6 mt-6 space-y-2">
-                <a href="#" className="flex items-center gap-3 text-primary-600 hover:text-primary-700 font-semibold">
-                  <Github size={18} />
-                  GitHub
-                </a>
-                <a href="#" className="flex items-center gap-3 text-primary-600 hover:text-primary-700 font-semibold">
-                  <Linkedin size={18} />
-                  LinkedIn
-                </a>
-              </div>
-
-              <button className="btn btn-primary w-full mt-6">Edit Profile</button>
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="md:col-span-2">
-            {/* Skills */}
-            <div className="card mb-8">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <FileText size={24} className="text-primary-600" />
-                Technical Skills
-              </h3>
-              
-              <div className="space-y-4">
-                {[
-                  { category: 'Languages', skills: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'Bash'] },
-                  { category: 'Testing & QA', skills: ['unittest', 'Jest', 'API Testing', 'Test Automation'] },
-                  { category: 'Backend & APIs', skills: ['Django', 'Flask', 'Node.js', 'Express', 'Django REST'] },
-                  { category: 'Frontend', skills: ['React', 'TypeScript', 'HTML5', 'CSS3', 'Responsive Design'] },
-                  { category: 'Databases', skills: ['PostgreSQL', 'SQLite', 'Django ORM', 'SQL Design'] },
-                  { category: 'DevOps & CI/CD', skills: ['GitHub Actions', 'Git', 'Linux/Ubuntu', 'Docker', 'Deployment'] },
-                ].map((skillGroup, idx) => (
-                  <div key={idx}>
-                    <h4 className="font-bold text-dark-900 mb-3">{skillGroup.category}</h4>
-                    <div className="flex gap-2 flex-wrap">
-                      {skillGroup.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="bg-primary-100 text-primary-700 px-4 py-2 rounded-lg text-sm font-medium"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Experience */}
-            <div className="card mb-8">
-              <h3 className="text-2xl font-bold mb-6">Professional Experience</h3>
-              
-              <div className="space-y-6">
-                {[
-                  {
-                    title: 'QA Engineer / Full Stack Developer',
-                    company: 'San Diego Global Knowledge University',
-                    period: '2025 - 2026',
-                    desc: 'Test, build, and deploy full-stack web applications with Python unittest and Jest test cases.',
-                  },
-                  {
-                    title: 'Quality Assurance Analyst',
-                    company: 'Triple Canopy (Federal Contractor)',
-                    period: '2018',
-                    desc: 'Performed precision QA analysis on high-security systems achieving 99.9% accuracy.',
-                  },
-                ].map((exp, idx) => (
-                  <div key={idx} className="border-l-4 border-primary-600 pl-4">
-                    <h4 className="font-bold text-lg">{exp.title}</h4>
-                    <p className="text-primary-600 font-semibold">{exp.company}</p>
-                    <p className="text-dark-600 text-sm">{exp.period}</p>
-                    <p className="text-dark-700 mt-2">{exp.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Projects */}
-            <div className="card">
-              <h3 className="text-2xl font-bold mb-6">Featured Projects</h3>
-              
-              <div className="space-y-6">
-                {[
-                  {
-                    title: 'Kristie Store',
-                    desc: 'Production e-commerce platform with full CRUD APIs, session authentication, and GitHub Actions CI/CD.',
-                    url: 'kristie-store.onrender.com',
-                  },
-                  {
-                    title: 'Django REST API Blog Platform',
-                    desc: 'RESTful blog API with role-based access control, session authentication, and input validation.',
-                    url: 'github.com/dallas8000-ops',
-                  },
-                ].map((proj, idx) => (
-                  <div key={idx} className="border-b border-dark-200 pb-4 last:border-b-0">
-                    <h4 className="font-bold text-lg mb-2">{proj.title}</h4>
-                    <p className="text-dark-700 mb-3">{proj.desc}</p>
-                    <a
-                      href={`https://${proj.url}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-700 font-semibold"
-                    >
-                      Visit →
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
