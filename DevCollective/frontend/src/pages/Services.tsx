@@ -143,7 +143,7 @@ export default function Services() {
               {
                 title: 'Frontline Digital',
                 desc: 'This portfolio site — full-stack React/TypeScript frontend with Express backend. Features contact form with Nodemailer email delivery, live GitHub API integration, rate limiting, and production deployment on Render.',
-                url: 'https://frontlinedigital.onrender.com',
+                url: 'https://frontlinedigital-1.onrender.com',
                 image: '/images/logos/frontline-digital-logo.png',
                 tech: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'Nodemailer', 'Tailwind CSS'],
               },
