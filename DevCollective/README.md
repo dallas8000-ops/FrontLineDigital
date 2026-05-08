@@ -164,6 +164,45 @@ npm run build
 npm start
 ```
 
+## ✅ Testing Procedures and Verification Results
+
+The application functionality is verified with both unit/integration tests (Jest + Testing Library) and end-to-end browser tests (Playwright).
+
+### Test Procedures
+
+Run all test commands from `DevCollective/frontend`:
+
+```bash
+# 1) Unit and component behavior tests
+npm run test -- --runInBand
+
+# 2) End-to-end user-flow tests
+npm run test:e2e
+
+# 3) Optional coverage report
+npm run test:coverage
+```
+
+### What Is Verified
+
+- **Unit/Component coverage (Jest):**
+  - `usePageTitle` hook title formatting and update behavior
+  - `ErrorBoundary` normal render, fallback UI render, and custom fallback handling
+  - Existing frontend suite coverage across application behavior checks
+- **E2E coverage (Playwright):**
+  - Home page renders and navigates correctly to Services
+  - PC Checker detail page content/link states and disabled hosted-app action
+  - Contact form client-side validation behavior
+  - Unknown routes return the custom 404 page
+
+### Latest Verification Results
+
+Most recent local verification run:
+
+- **Jest:** `3/3` test suites passed, `10/10` tests passed
+- **Playwright:** `4/4` end-to-end scenarios passed
+- **E2E status artifact:** `frontend/test-results/.last-run.json` reports `"status": "passed"` with no failed tests
+
 ## 📸 Image Directory
 
 Place your images in:
