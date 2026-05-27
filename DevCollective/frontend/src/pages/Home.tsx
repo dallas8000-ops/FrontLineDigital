@@ -1,9 +1,12 @@
+
 import React from 'react'
 import { Shield, FlaskConical, Rocket, Code } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
+import { getSiteContent } from '../utils/siteContent'
 
 export default function Home() {
-  usePageTitle('Home')
+  usePageTitle('Home');
+  const content = getSiteContent();
   return (
     <div>
       {/* Hero Section */}
@@ -22,12 +25,10 @@ export default function Home() {
               </div>
               <p className="text-accent-400 font-semibold uppercase tracking-widest text-sm mb-3">Frontline Digital</p>
               <h1 className="mb-6 text-white text-5xl md:text-6xl font-bold leading-tight">
-                QA Automation.<br />
-                <span className="text-accent-400">Full-Stack.</span><br />
-                Production-Ready.
+                {content.profileTitle}
               </h1>
               <p className="text-xl text-primary-100 mb-8 leading-relaxed max-w-lg">
-                Python · Django · React · TypeScript · PostgreSQL · GitHub Actions — deployed, tested, and production-hardened by Barney R. Gilliom.
+                {content.about}
               </p>
               <div className="flex gap-4 flex-wrap">
                 <a href="/services" className="btn bg-accent-500 hover:bg-accent-600 text-white">
@@ -43,7 +44,7 @@ export default function Home() {
               <div className="relative w-72 h-72">
                 <img
                   src="/images/logos/frontline-digital-logo.png"
-                  alt="Frontline Digital"
+                  alt={content.profileName}
                   className="w-full h-full object-contain drop-shadow-2xl"
                 />
               </div>
@@ -58,6 +59,39 @@ export default function Home() {
         <p className="text-center text-dark-600 mb-16 max-w-xl mx-auto">
           Every service backed by real production deployments — not academic exercises.
         </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {content.services && content.services.length > 0
+            ? content.services.map((service, idx) => (
+                <div key={service.title + idx} className="card hover:shadow-xl transition-shadow">
+                  <div className="text-primary-600 mb-4">
+                    {/* Optionally: Add icons by index or type if desired */}
+                  </div>
+                  <h3 className="text-xl mb-2">{service.title}</h3>
+                  <p className="text-dark-600 text-sm leading-relaxed">{service.description}</p>
+                </div>
+              ))
+            : null}
+        </div>
+      </section>
+
+      {/* Skills List */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+        <h2 className="text-center mb-4">Skills</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {content.skills && content.skills.length > 0
+            ? content.skills.map((group, idx) => (
+                <div key={group.category + idx} className="card">
+                  <h3 className="font-bold mb-2">{group.category}</h3>
+                  <ul className="list-disc pl-5 text-dark-700">
+                    {group.items.map((item, i) => (
+                      <li key={item + i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            : null}
+        </div>
+      </section>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { icon: <Code size={32} />, title: 'Full-Stack Dev', desc: 'Django REST + React/TypeScript + PostgreSQL + cloud deployment' },

@@ -8,7 +8,7 @@ export { default as Users } from 'lucide-react'
 export { default as TrendingUp } from 'lucide-react'
 export { default as Code } from 'lucide-react'
 export { default as Github } from 'lucide-react'
-export { default as Linkedin } from 'lucide-react'
+// export { default as Linkedin } from 'lucide-react' // Removed, not used
 export { default as Mail } from 'lucide-react'
 export { default as Twitter } from 'lucide-react'
 export { default as BarChart3 } from 'lucide-react'

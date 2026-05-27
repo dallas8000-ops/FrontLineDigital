@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -48,9 +48,7 @@ export default function Footer() {
               <a href="https://github.com/dallas8000-ops" target="_blank" rel="noopener noreferrer" className="text-dark-300 hover:text-accent-500 transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/barney-gilliom-959981337" target="_blank" rel="noopener noreferrer" className="text-dark-300 hover:text-accent-500 transition-colors" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
+              {/* LinkedIn icon/link removed */}
               <Link to="/contact" className="text-dark-300 hover:text-accent-500 transition-colors" aria-label="Contact">
                 <Mail size={20} />
               </Link>

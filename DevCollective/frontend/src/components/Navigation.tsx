@@ -14,6 +14,7 @@ export default function Navigation() {
     { label: 'Marketplace', path: '/marketplace' },
     { label: 'Profile', path: '/profile' },
     { label: 'Contact', path: '/contact' },
+    { label: 'Admin', path: '/admin' },
   ]
 
   return (
