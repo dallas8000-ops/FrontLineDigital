@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 :root {
   --color-primary-blue: #2563eb;
   --color-primary-blue-dark: #1e40af;
@@ -36,7 +38,6 @@ body[data-color-scheme="gray"] {
   --tw-gradient-to: var(--color-primary-gray-dark);
   --tw-bg-opacity: 1;
 }
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;

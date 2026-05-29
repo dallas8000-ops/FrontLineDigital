@@ -1,9 +1,9 @@
 
 import React from 'react'
-import { Award, Briefcase, Shield, Code } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
 import { getSiteContent } from '../utils/siteContent'
 
+export default function About() {
   usePageTitle('About');
   const content = getSiteContent();
   return (

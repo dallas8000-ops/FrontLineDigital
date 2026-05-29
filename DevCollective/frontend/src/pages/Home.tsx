@@ -1,6 +1,5 @@
 
 import React from 'react'
-import { Shield, FlaskConical, Rocket, Code } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
 import { getSiteContent } from '../utils/siteContent'
 
@@ -90,21 +89,6 @@ export default function Home() {
                 </div>
               ))
             : null}
-        </div>
-      </section>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: <Code size={32} />, title: 'Full-Stack Dev', desc: 'Django REST + React/TypeScript + PostgreSQL + cloud deployment' },
-            { icon: <FlaskConical size={32} />, title: 'QA Automation', desc: 'Python unittest, Jest, API validation, regression testing, bug reporting' },
-            { icon: <Shield size={32} />, title: 'App Security', desc: 'CSRF, session hardening, RBAC, input validation, auth audits' },
-            { icon: <Rocket size={32} />, title: 'DevOps & CI/CD', desc: 'GitHub Actions pipelines, Render deployment, Gunicorn, WhiteNoise' },
-          ].map((feature) => (
-            <div key={feature.title} className="card hover:shadow-xl transition-shadow">
-              <div className="text-primary-600 mb-4">{feature.icon}</div>
-              <h3 className="text-xl mb-2">{feature.title}</h3>
-              <p className="text-dark-600 text-sm leading-relaxed">{feature.desc}</p>
-            </div>
-          ))}
         </div>
       </section>
 
