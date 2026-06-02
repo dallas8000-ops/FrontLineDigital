@@ -1,88 +1,124 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { contactInfo } from '../data/landingContent'
+import { business } from '../data/freelanceContent'
+
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Services', path: '/services' },
+  { label: 'Projects', path: '/dashboard' },
+  { label: 'Resume', path: '/profile' },
+  { label: 'Contact', path: '/contact' },
+]
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
 
-  const navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
-    { label: 'GitHub', path: '/dashboard' },
-    { label: 'Marketplace', path: '/marketplace' },
-    { label: 'Profile', path: '/profile' },
-    { label: 'Contact', path: '/contact' },
-    { label: 'Admin', path: '/admin' },
-  ]
-
   return (
-    <nav className="bg-white shadow-elevation-1 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img 
-              src="/images/logos/frontline-digital-logo.png" 
-              alt="Frontline Digital" 
-              className="h-10 w-auto"
+    <header className="sticky top-0 z-50 bg-brand-navy">
+      <div className="brand-line-top" />
+      <div className="section-inner py-4 md:py-5">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <Link to="/" className="flex items-start gap-4 group">
+            <img
+              src="/images/logos/frontline-digital-logo.png"
+              alt={business.name}
+              className="h-12 md:h-14 w-auto object-contain"
             />
-            <span className="text-xl font-bold text-primary-600 hidden sm:inline">Dev Collective</span>
+            <div className="pt-1">
+              <p className="text-white/90 text-[10px] md:text-xs font-semibold uppercase tracking-[0.15em] leading-snug max-w-[240px]">
+                {business.tagline}
+              </p>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`font-medium transition-colors ${
-                  location.pathname === item.path
-                    ? 'text-primary-600 border-b-2 border-primary-500 pb-0.5'
-                    : 'text-dark-700 hover:text-primary-600'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <address className="not-italic text-right text-xs md:text-sm text-brand-muted leading-relaxed hidden sm:block">
+            <a href={contactInfo.phoneHref} className="block text-white/90 hover:text-brand-gold transition-colors">
+              {contactInfo.phone}
+            </a>
+            <a href={contactInfo.emailHref} className="block hover:text-brand-gold transition-colors">
+              {contactInfo.email}
+            </a>
+            <span className="block">{contactInfo.location}</span>
+          </address>
+        </div>
+      </div>
+      <div className="brand-line-thin" />
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link to="/profile" className="btn btn-outline">View CV</Link>
-            <Link to="/contact" className="btn btn-primary">Hire Me</Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-dark-100"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+      <nav className="section-inner py-2 flex items-center justify-between">
+        <div className="hidden md:flex items-center gap-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+                location.pathname === item.path ? 'text-brand-gold' : 'text-brand-muted hover:text-white'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden pb-4 border-t border-dark-200">
+        <div className="hidden md:flex items-center gap-3">
+          <Link to="/#pricing" className="btn btn-ghost text-xs py-2 px-4">
+            Pricing
+          </Link>
+          <Link to="/contact" className="btn btn-primary text-xs py-2 px-5">
+            Hire Me
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden p-2 text-brand-muted hover:text-white"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
+
+      {isOpen && (
+        <div className="md:hidden border-t border-brand-line bg-brand-card">
+          <div className="section-inner py-4 space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="block px-4 py-2 text-dark-700 hover:bg-primary-50 hover:text-primary-600"
+                className={`block py-2.5 text-sm font-medium uppercase tracking-wide ${
+                  location.pathname === item.path ? 'text-brand-gold' : 'text-brand-muted'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="px-4 py-4 flex gap-2">
-              <Link to="/profile" className="btn btn-outline flex-1" onClick={() => setIsOpen(false)}>View CV</Link>
-              <Link to="/contact" className="btn btn-primary flex-1" onClick={() => setIsOpen(false)}>Hire Me</Link>
-            </div>
+            <Link
+              to="/#pricing"
+              className="block py-2.5 text-sm font-medium uppercase tracking-wide text-brand-muted"
+              onClick={() => setIsOpen(false)}
+            >
+              Pricing
+            </Link>
+            <address className="not-italic text-sm text-brand-muted pt-4 border-t border-brand-line">
+              <a href={contactInfo.phoneHref} className="block text-white/90 py-1">
+                {contactInfo.phone}
+              </a>
+              <a href={contactInfo.emailHref} className="block py-1">
+                {contactInfo.email}
+              </a>
+              <span className="block py-1">{contactInfo.location}</span>
+            </address>
+            <Link to="/contact" className="btn btn-primary w-full mt-4" onClick={() => setIsOpen(false)}>
+              Hire Me
+            </Link>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </header>
   )
 }

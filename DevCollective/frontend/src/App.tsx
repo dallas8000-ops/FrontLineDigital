@@ -8,7 +8,6 @@ import ErrorBoundary from './components/ErrorBoundary'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Dashboard from './pages/Dashboard'
-import Marketplace from './pages/Marketplace'
 import Profile from './pages/Profile'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -33,12 +32,12 @@ function ProtectedAdmin() {
 
 function App() {
   useEffect(() => {
-    applyColorScheme();
-  });
+    applyColorScheme()
+  }, [])
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-dark-50">
+      <div className="min-h-screen flex flex-col bg-brand-navy">
         <Navigation />
         <main className="flex-grow">
           <ErrorBoundary>
@@ -47,7 +46,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/marketplace" element={<Marketplace />} />
+              <Route path="/marketplace" element={<Navigate to="/about" replace />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects/pc-checker" element={<PCChecker />} />

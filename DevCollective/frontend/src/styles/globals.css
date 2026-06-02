@@ -1,52 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
-:root {
-  --color-primary-blue: #2563eb;
-  --color-primary-blue-dark: #1e40af;
-  --color-primary-green: #059669;
-  --color-primary-green-dark: #047857;
-  --color-primary-purple: #8b5cf6;
-  --color-primary-purple-dark: #6d28d9;
-  --color-primary-orange: #f59e42;
-  --color-primary-orange-dark: #b45309;
-  --color-primary-gray: #64748b;
-  --color-primary-gray-dark: #334155;
-}
-
-body[data-color-scheme="blue"] {
-  --tw-gradient-from: var(--color-primary-blue);
-  --tw-gradient-to: var(--color-primary-blue-dark);
-  --tw-bg-opacity: 1;
-}
-body[data-color-scheme="green"] {
-  --tw-gradient-from: var(--color-primary-green);
-  --tw-gradient-to: var(--color-primary-green-dark);
-  --tw-bg-opacity: 1;
-}
-body[data-color-scheme="purple"] {
-  --tw-gradient-from: var(--color-primary-purple);
-  --tw-gradient-to: var(--color-primary-purple-dark);
-  --tw-bg-opacity: 1;
-}
-body[data-color-scheme="orange"] {
-  --tw-gradient-from: var(--color-primary-orange);
-  --tw-gradient-to: var(--color-primary-orange-dark);
-  --tw-bg-opacity: 1;
-}
-body[data-color-scheme="gray"] {
-  --tw-gradient-from: var(--color-primary-gray);
-  --tw-gradient-to: var(--color-primary-gray-dark);
-  --tw-bg-opacity: 1;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-main: #07131f;
-  --bg-panel: #0f2234;
-  --line: #1f3f56;
+  --brand-navy: #12141d;
+  --brand-card: #1c222d;
+  --brand-gold: #ffb400;
+  --brand-muted: #9ca3af;
 }
 
 * {
@@ -58,12 +20,11 @@ html {
 }
 
 body {
-  @apply bg-gray-50 text-dark-900 font-sans;
+  @apply bg-brand-navy text-white font-sans antialiased;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  @apply font-serif font-bold tracking-tight;
+  @apply font-sans font-bold tracking-tight;
 }
 
 h1 {
@@ -78,68 +39,111 @@ h3 {
   @apply text-2xl md:text-3xl;
 }
 
+/* Site background grid */
+.bg-site-grid {
+  background-color: var(--brand-navy);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.brand-line-top {
+  @apply h-1 w-full bg-brand-gold;
+}
+
+.brand-line-thin {
+  @apply h-px w-full bg-brand-gold/80;
+}
+
 /* Buttons */
 .btn {
-  @apply px-6 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2;
+  @apply px-6 py-2.5 rounded font-semibold transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2 text-sm uppercase tracking-wide;
 }
 
 .btn-primary {
-  @apply bg-primary-600 text-white hover:bg-primary-700 active:scale-95;
-}
-
-.btn-secondary {
-  @apply bg-dark-700 text-dark-50 hover:bg-dark-600 active:scale-95;
-}
-
-.btn-accent {
-  @apply bg-accent-500 text-white hover:bg-accent-600 active:scale-95;
+  @apply bg-brand-gold text-brand-navy hover:bg-brand-gold-dim active:scale-[0.98];
 }
 
 .btn-outline {
-  @apply border border-primary-500 text-primary-700 hover:bg-primary-50;
+  @apply border border-brand-gold/60 text-brand-gold hover:bg-brand-gold/10;
 }
 
-/* Cards */
+.btn-ghost {
+  @apply text-brand-muted hover:text-white;
+}
+
+/* Dark theme cards */
 .card {
-  @apply bg-white border border-dark-100 rounded-xl shadow-md p-6 transition-shadow duration-300;
+  @apply bg-brand-card border border-brand-line rounded-lg p-6 transition-colors duration-300;
 }
 
-.card-hover {
-  @apply hover:scale-105 hover:shadow-2xl;
+.card-dark {
+  @apply relative bg-brand-card border border-brand-line text-slate-200 overflow-hidden;
 }
 
-/* Gradients */
-.gradient-primary {
-  @apply bg-gradient-to-r from-primary-600 to-primary-700;
+.card-dark:hover {
+  @apply bg-brand-card-hover border-brand-gold/20;
 }
 
-.gradient-accent {
-  @apply bg-gradient-to-r from-accent-500 to-orange-600;
+.card-dark h2,
+.card-dark h3,
+.card-dark h4 {
+  @apply text-white;
 }
 
-.gradient-overlay {
-  @apply bg-gradient-to-b from-dark-900/80 to-dark-900/40;
+.card-dark p,
+.card-dark li,
+.card-dark td {
+  @apply text-slate-200;
 }
 
-/* Responsive Grid */
-.grid-auto {
-  @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+.card-dark th {
+  @apply text-brand-gold;
 }
 
-/* Section Container */
+/* Pricing card with notched corner */
+.pricing-card {
+  @apply card-dark p-6 md:p-8 flex flex-col min-h-[420px];
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.pricing-card-popular {
+  @apply border-t-4 border-t-brand-gold shadow-gold-glow;
+}
+
+.process-card {
+  @apply card-dark p-6 flex flex-col min-h-[180px];
+}
+
+.card-watermark {
+  @apply absolute top-2 right-3 text-[5rem] md:text-[6rem] font-black leading-none text-white/[0.04] select-none pointer-events-none;
+}
+
+/* Section container */
 .section {
-  @apply py-16 md:py-24 lg:py-32 px-4 md:px-8 max-w-7xl mx-auto;
+  @apply py-12 md:py-16 px-4 md:px-8 max-w-7xl mx-auto;
 }
 
-.glass {
-  @apply bg-white/80 border border-primary-100 backdrop-blur-xl;
+.section-inner {
+  @apply max-w-7xl mx-auto px-4 md:px-8;
+}
+
+/* Feature list arrows */
+.feature-list li {
+  @apply flex items-start gap-2 text-sm text-white/90 leading-relaxed;
+}
+
+.feature-list li::before {
+  content: '→';
+  @apply text-brand-gold font-bold shrink-0;
 }
 
 /* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -147,34 +151,28 @@ h3 {
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse-subtle {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
 .animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.5s ease-out;
 }
 
-.animate-slideInLeft {
-  animation: slideInLeft 0.6s ease-out;
+/* Inner pages — light content on dark shell */
+.page-hero {
+  @apply bg-brand-card border-b border-brand-line py-16 md:py-20;
 }
 
-.animate-pulse-subtle {
-  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.page-content {
+  @apply section text-brand-muted;
+}
+
+.page-content h2,
+.page-content h3 {
+  @apply text-white;
+}
+
+.page-content .card {
+  @apply text-brand-muted;
+}
+
+.page-content .card h3 {
+  @apply text-white;
 }
