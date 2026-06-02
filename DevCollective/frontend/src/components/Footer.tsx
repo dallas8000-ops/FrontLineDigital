@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <Link to="/">
               <img
-                src="/images/logos/frontline-digital-logo.png"
+                src="/images/logos/frontline-digital-logo.svg"
                 alt={business.name}
                 className="h-10 w-auto object-contain mb-4"
               />
