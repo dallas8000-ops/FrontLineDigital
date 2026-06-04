@@ -42,13 +42,15 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: 'PC Checker',
-    proves: 'Windows desktop tools, diagnostics, and local APIs',
-    stack: 'Python, FastAPI, CustomTkinter, SQLite, PowerShell/WMI, Matplotlib, PyInstaller',
-    desc: 'Windows health & diagnostics desktop app — 7-tab GUI, SharedState architecture, and local FastAPI + web dashboard.',
+    title: 'PC Checker Extreme',
+    proves: 'Systems diagnostics, monitoring dashboards, and AI-assisted ops tooling',
+    stack: 'Python, Django, WMI, winget, OpenAI, Render',
+    desc: 'Cloud-hosted diagnostic command center — health matrix, live telemetry, scan history, and AI-powered system analysis.',
+    url: 'https://pc-checker-extreme.onrender.com',
     detailPath: '/projects/pc-checker',
     highlights: [
-      'Modular WMI/PowerShell collectors, SQLite metric history, JSON/HTML/PDF exports, and PyInstaller build.',
+      'Live CPU/RAM/disk telemetry, scan archive, and subsystem waveform charts in a command-center UI.',
+      'Deep WMI hardware ID, winget update sweep, Windows Update status, and optional OpenAI neural review.',
     ],
   },
   {

@@ -1,45 +1,52 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, MonitorSmartphone, ShieldCheck, Database, Workflow } from 'lucide-react'
+import { ArrowLeft, Activity, Brain, Cloud, Cpu } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
+
+const LIVE_URL = 'https://pc-checker-extreme.onrender.com'
 
 const pillars = [
   {
-    title: 'Real desktop client',
-    icon: <MonitorSmartphone size={22} />,
-    body: 'CustomTkinter multi-tab GUI with separate live vs diagnostic refresh timers, UAC-aware relaunch for administrator context, optional system tray support, SQLite-backed metric samples, persisted settings, and live CPU/RAM history charts rendered with Matplotlib.',
+    title: 'Command-center UI',
+    icon: <Activity size={22} />,
+    body: 'Health matrix index, live telemetry for CPU/RAM/disk load, scan history trends, and subsystem waveform charts — all in a dark diagnostic dashboard built for at-a-glance system status.',
   },
   {
-    title: 'Deep OS integration',
-    icon: <ShieldCheck size={22} />,
-    body: 'Collectors lean on PowerShell, WMI/CIM, Event Log patterns, Defender and Windows Update catalogs, winget metadata, registry-backed disk hints, hardware identity classes, and reliability-style counters where available. Checks are modular and structured instead of shelling out ad hoc commands.',
+    title: 'Deep Windows diagnostics',
+    icon: <Cpu size={22} />,
+    body: 'Full system scans orchestrate WMI hardware ID by manufacturer, winget update detection, and Windows Update status. Modular diagnostic modules cover CPU/GPU, storage, network, and BIOS subsystems.',
   },
   {
-    title: 'One brain, many faces',
-    icon: <Workflow size={22} />,
-    body: 'A thread-safe SharedState snapshot powers the desktop GUI, the FastAPI local API, the --web dashboard, insights, exports, and optional webhook payloads so every surface reads from the same system model instead of duplicating logic.',
+    title: 'AI-assisted review',
+    icon: <Brain size={22} />,
+    body: 'Optional OpenAI neural analysis turns raw scan output into prioritized actions and subsystem insights — configurable via API key for operators who want automated triage on top of structured telemetry.',
   },
   {
-    title: 'Operational history',
-    icon: <Database size={22} />,
-    body: 'Background services can persist metric samples to SQLite, feed charts, schedule exports, and support ongoing diagnostic visibility without turning the app into a fragile one-shot script.',
+    title: 'Cloud + local boundary',
+    icon: <Cloud size={22} />,
+    body: 'The Render-hosted UI serves scan history and the diagnostic command center on Linux. Full WMI/winget hardware scans run on the Windows machine where OS APIs exist — a deliberate split between cloud visibility and local execution.',
   },
 ]
 
 const architectureRows = [
-  ['pc_checker/state.py', 'Thread-safe SharedState for live samples, history, findings, updates, disk hints, and export snapshots.'],
-  ['pc_checker/gui/', 'CustomTkinter desktop application, tabs, scheduling, and chart rendering.'],
-  ['pc_checker/api/server.py', 'FastAPI JSON surface with OpenAPI docs and the local static dashboard.'],
-  ['pc_checker/checks/', 'Modular Windows diagnostics checks split by responsibility.'],
-  ['pc_checker/diagnostics_collect.py', 'Full diagnostic orchestration pipeline feeding shared state.'],
-  ['pc_checker/background_services.py', 'Tray support, alerts, webhook/export jobs, and metrics database writers.'],
-  ['pc_checker/web/public/', 'Vanilla web dashboard backed by the same local snapshot shape.'],
+  ['Django backend', 'Scan orchestration, history archive, health matrix aggregation, and optional OpenAI review endpoints.'],
+  ['Diagnostic modules', 'WMI collectors, winget sweep, Windows Update status, and manufacturer-specific hardware ID.'],
+  ['Command-center UI', 'Live telemetry, resource load panels, scan archive, and subsystem waveform visualization.'],
+  ['Render deployment', 'Cloud-hosted dashboard and scan history; full WMI scans require a local Windows agent.'],
 ]
 
-const exports = ['JSON snapshots', 'HTML reports', 'PDF exports', 'Webhook payloads', 'Shared dashboard snapshots']
+const features = [
+  'Health matrix index',
+  'Live CPU/RAM/disk telemetry',
+  'Scan history archive',
+  'WMI hardware ID by manufacturer',
+  'winget outdated-app detection',
+  'Windows Update status',
+  'Optional OpenAI neural review',
+]
 
 export default function PCChecker() {
-  usePageTitle('PC Checker')
+  usePageTitle('PC Checker Extreme')
 
   return (
     <div className="bg-site-grid min-h-full">
@@ -54,17 +61,16 @@ export default function PCChecker() {
           <div className="grid lg:grid-cols-[1.35fr_0.95fr] gap-10 items-start">
             <div>
               <p className="uppercase tracking-[0.25em] text-brand-gold text-xs font-semibold mb-4">
-                Windows diagnostics utility
+                Diagnostic command center
               </p>
-              <h1 className="mb-5 max-w-3xl text-white">PC Checker</h1>
+              <h1 className="mb-5 max-w-3xl text-white">PC Checker Extreme</h1>
               <p className="text-lg text-slate-200 max-w-3xl leading-relaxed mb-8">
-                PC Checker is a Windows-first diagnostic desktop app, not a cloud CRUD demo. It combines a
-                shipped-style CustomTkinter client, a local FastAPI surface, structured system checks, and persistent
-                metric history so the same machine can be inspected through a desktop workflow, a browser dashboard, or
-                exported reports.
+                PC Checker Extreme is a cloud-hosted diagnostic command center — not a simple CRUD demo. It
+                combines live system telemetry, structured WMI/winget scans, scan history, and optional AI review
+                so operators can monitor health, run full diagnostics, and archive results from a single dashboard.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                {['Python', 'CustomTkinter', 'FastAPI', 'SQLite', 'Matplotlib', 'PowerShell', 'WMI'].map((tag) => (
+                {['Python', 'Django', 'WMI', 'winget', 'OpenAI', 'Render'].map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1 rounded text-sm font-medium bg-brand-navy border border-brand-line text-brand-gold"
@@ -74,22 +80,23 @@ export default function PCChecker() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="btn btn-primary inline-flex items-center gap-2">
+                <a
+                  href={LIVE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary inline-flex items-center gap-2"
+                >
+                  Visit Live Demo
+                </a>
+                <Link to="/contact" className="btn btn-outline inline-flex items-center gap-2">
                   Request a Demo
                 </Link>
-                <button
-                  type="button"
-                  disabled
-                  className="btn border border-brand-line text-slate-400 bg-brand-navy/50 cursor-not-allowed"
-                >
-                  Hosted App Not Available
-                </button>
               </div>
             </div>
             <div className="card-dark p-3 border-brand-line">
               <img
                 src="/images/profile/PC Checker.png"
-                alt="PC Checker desktop application"
+                alt="PC Checker Extreme diagnostic command center"
                 className="w-full rounded-lg object-cover max-h-[22rem]"
               />
             </div>
@@ -138,42 +145,28 @@ export default function PCChecker() {
 
             <div className="space-y-6">
               <div className="card-dark p-6 border-brand-gold/30">
-                <h2 className="text-xl font-bold text-brand-gold mb-3">Tradeoffs</h2>
+                <h2 className="text-xl font-bold text-brand-gold mb-3">Cloud vs local</h2>
                 <p className="text-slate-200 leading-relaxed mb-4">
-                  The measurements and remediation triggers belong on the Windows machine. Signature checks, Windows
-                  Update scans, event log parsing, hardware identity, and full diagnostics are intentionally executed
-                  locally where WMI, CIM, and registry-backed data actually exist.
+                  The Render-hosted UI and scan history work from any browser. Full WMI/winget hardware scans
+                  require running the diagnostic agent on a Windows PC where WMI, CIM, and registry-backed data
+                  are available.
                 </p>
                 <p className="text-slate-200 leading-relaxed">
-                  Any optional cloud mirror is a read-only viewer of pushed JSON snapshots, not a second implementation
-                  of Windows diagnostics on Linux. That boundary is deliberate engineering judgment, not a missing
-                  feature.
+                  That boundary is deliberate engineering — cloud visibility for operators, local execution for
+                  measurements that only exist on the machine being diagnosed.
                 </p>
               </div>
 
               <div className="card-dark p-6">
-                <h2 className="text-xl font-bold text-white mb-4">Exports and integrations</h2>
+                <h2 className="text-xl font-bold text-white mb-4">Diagnostic modules</h2>
                 <ul className="space-y-3">
-                  {exports.map((item) => (
+                  {features.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-slate-200">
                       <span className="mt-2 h-2.5 w-2.5 rounded-full bg-brand-gold flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="card-dark p-6">
-                <h2 className="text-xl font-bold text-white mb-4">Private-use note</h2>
-                <p className="text-slate-200 leading-relaxed mb-4">
-                  PC Checker is personal software by its author and is not positioned as resale or redistribution
-                  software. The app and API expose ownership and boundary messaging clearly, and the tool stays
-                  read-only with hints and reports rather than automatically moving, deleting, or repairing files.
-                </p>
-                <p className="text-slate-200 leading-relaxed">
-                  It is not a replacement for full malware scans, SMART or burn-in testing, or vendor support
-                  workflows.
-                </p>
               </div>
             </div>
           </div>

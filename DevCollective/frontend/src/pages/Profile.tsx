@@ -24,7 +24,7 @@ export default function Profile() {
             <div className="card-dark p-6 sticky top-24">
               <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden border-4 border-brand-gold/50">
                 <img
-                  src="/images/profile/Gilliom.jpg"
+                  src="/images/profile/Resume.png"
                   alt={content.profileName}
                   className="w-full h-full object-cover object-top"
                 />

@@ -11,6 +11,7 @@ import {
 const DBOPS_LIVE_URL = 'https://dbops-web.onrender.com'
 const RIGHAND_LIVE_URL = 'https://righand.onrender.com'
 const REACT_STORE_CATALOG_URL = 'https://react-store-catalog.onrender.com'
+const PC_CHECKER_EXTREME_URL = 'https://pc-checker-extreme.onrender.com'
 
 /** This marketing site — excluded from portfolio (redundant self-reference). */
 function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
@@ -39,6 +40,14 @@ function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): Portfoli
         ? REACT_STORE_CATALOG_URL
         : rest.url
     return { ...rest, url }
+  }
+  if (/pc checker/i.test(rest.title)) {
+    return {
+      ...rest,
+      title: 'PC Checker Extreme',
+      url: rest.url || PC_CHECKER_EXTREME_URL,
+      detailPath: '/projects/pc-checker',
+    }
   }
   if ((rest.url ?? '').includes('github.com')) {
     const { url: _url, ...noUrl } = rest

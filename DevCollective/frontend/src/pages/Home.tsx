@@ -51,7 +51,7 @@ export default function Home() {
           </div>
           <div className="card-dark p-4 border-brand-gold/20">
             <img
-              src="/images/profile/Gilliom.jpg"
+              src="/images/profile/home.jpeg"
               alt={defaultProfile.profileName}
               className="w-full rounded-lg object-cover max-h-80"
             />

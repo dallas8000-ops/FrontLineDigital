@@ -10,13 +10,16 @@ test('home page loads portfolio-first hero and links to services', async ({ page
   await expect(page.getByRole('heading', { name: /Defined by what is already in production/i })).toBeVisible()
 })
 
-test('pc checker detail page exposes details, repo link, and disabled hosted action', async ({ page }) => {
+test('pc checker extreme detail page exposes live demo and contact actions', async ({ page }) => {
   await page.goto('/projects/pc-checker')
 
-  await expect(page.getByRole('heading', { name: 'PC Checker' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'PC Checker Extreme' })).toBeVisible()
+  await expect(page.getByRole('link', { name: /Visit Live Demo/i })).toHaveAttribute(
+    'href',
+    'https://pc-checker-extreme.onrender.com'
+  )
   await expect(page.getByRole('link', { name: /Request a Demo/i })).toHaveAttribute('href', '/contact')
-  await expect(page.getByRole('button', { name: 'Hosted App Not Available' })).toBeDisabled()
-  await expect(page.getByText(/Any optional cloud mirror is a read-only viewer/i)).toBeVisible()
+  await expect(page.getByText(/cloud-hosted diagnostic command center/i)).toBeVisible()
 })
 
 test('contact form shows client-side validation errors', async ({ page }) => {
