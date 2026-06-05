@@ -58,7 +58,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     proves: 'Mobile-first SaaS, subscriptions, and offline-capable apps',
     stack: 'React, Flask, PostgreSQL, Capacitor, IndexedDB',
     desc: 'Expense and profit tracking for truck drivers — offline-first, subscriptions, GPS/OBD trip mileage, tax-ready exports.',
-    url: 'https://righand.onrender.com',
+    url: 'https://righand-frontend.onrender.com',
     highlights: [
       'Free/Pro/Fleet tiers, Capacitor Android app, and production deployment on Render.',
     ],

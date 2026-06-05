@@ -9,7 +9,7 @@ import {
 } from '../data/resumeContent'
 
 const DBOPS_LIVE_URL = 'https://dbops-web.onrender.com'
-const RIGHAND_LIVE_URL = 'https://righand.onrender.com'
+const RIGHAND_LIVE_URL = 'https://righand-frontend.onrender.com'
 const REACT_STORE_CATALOG_URL = 'https://store.gilliomfrontlinedigital.com'
 const PC_CHECKER_EXTREME_URL = 'https://pc-checker-extreme.onrender.com'
 
@@ -31,7 +31,13 @@ function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): Portfoli
     return { ...rest, url }
   }
   if (/righand/i.test(rest.title)) {
-    const url = (rest.url ?? '').includes('github.com') ? RIGHAND_LIVE_URL : rest.url || RIGHAND_LIVE_URL
+    const url =
+      (rest.url ?? '').includes('github.com') ||
+      (rest.url ?? '').includes('righand.onrender.com') ||
+      (rest.url ?? '').includes('righand-ai.onrender.com') ||
+      !rest.url
+        ? RIGHAND_LIVE_URL
+        : rest.url
     return { ...rest, url }
   }
   if (/react store catalog/i.test(rest.title)) {
