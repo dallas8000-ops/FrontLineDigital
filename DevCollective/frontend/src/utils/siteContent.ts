@@ -10,7 +10,7 @@ import {
 
 const DBOPS_LIVE_URL = 'https://dbops-web.onrender.com'
 const RIGHAND_LIVE_URL = 'https://righand.onrender.com'
-const REACT_STORE_CATALOG_URL = 'https://react-store-catalog.onrender.com'
+const REACT_STORE_CATALOG_URL = 'https://store.gilliomfrontlinedigital.com'
 const PC_CHECKER_EXTREME_URL = 'https://pc-checker-extreme.onrender.com'
 
 /** This marketing site — excluded from portfolio (redundant self-reference). */
@@ -36,7 +36,9 @@ function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): Portfoli
   }
   if (/react store catalog/i.test(rest.title)) {
     const url =
-      (rest.url ?? '').includes('github.com') || !rest.url
+      (rest.url ?? '').includes('github.com') ||
+      (rest.url ?? '').includes('react-store-catalog.onrender.com') ||
+      !rest.url
         ? REACT_STORE_CATALOG_URL
         : rest.url
     return { ...rest, url }

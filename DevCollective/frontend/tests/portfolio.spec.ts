@@ -10,6 +10,17 @@ test('home page loads portfolio-first hero and links to services', async ({ page
   await expect(page.getByRole('heading', { name: /Defined by what is already in production/i })).toBeVisible()
 })
 
+test('react store catalog live demo points at the working storefront URL', async ({ page }) => {
+  await page.goto('/')
+
+  const demo = page
+    .getByRole('article')
+    .filter({ has: page.getByRole('heading', { name: 'React Store Catalog' }) })
+    .getByRole('link', { name: /Live demo/i })
+
+  await expect(demo).toHaveAttribute('href', 'https://store.gilliomfrontlinedigital.com')
+})
+
 test('pc checker extreme detail page exposes live demo and contact actions', async ({ page }) => {
   await page.goto('/projects/pc-checker')
 

@@ -9,7 +9,7 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 ## 🌐 Live Demo
 
-- [https://react-store-catalog.onrender.com](https://react-store-catalog.onrender.com)
+- [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com)
 - [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
 
 ## 🚀 Features
@@ -234,7 +234,7 @@ PostgreSQL schema includes tables for:
 
 ### Live on Render
 
-- **Frontend:** [https://react-store-catalog.onrender.com](https://react-store-catalog.onrender.com)
+- **Frontend:** [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com)
 - **Mirror:** [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
 
 ### Frontend (Render/Vercel)

@@ -36,7 +36,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     proves: 'Modern React SPAs with admin portals and automated QA',
     stack: 'React 19, TypeScript, Vite 7, Vitest, Framer Motion, Express, PostgreSQL, JWT',
     desc: 'Full-stack product catalog with admin portal, coupon management, and Vitest + Testing Library suite.',
-    url: 'https://react-store-catalog.onrender.com',
+    url: 'https://store.gilliomfrontlinedigital.com',
     highlights: [
       'Framer Motion UI, JWT admin backend, ARIA-verified interactions, and GitHub Actions CI on every push.',
     ],
@@ -71,6 +71,17 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: 'https://dbops-web.onrender.com',
     highlights: [
       'DBA user lifecycle, execution audit trail, scheduled report delivery, and Docker Compose + Render blueprint.',
+    ],
+  },
+  {
+    title: 'Specwright',
+    proves: 'AST-based API documentation, test scaffolding, and developer tooling',
+    stack: 'FastAPI, Python 3.11, React 18, TypeScript, Vite, SQLite, OpenAI, Stripe, Render',
+    desc: 'The documentation layer for FastAPI teams — automatically. Reads your codebase via AST analysis and keeps OpenAPI specs, pytest scaffolds, and ER diagrams in sync with your routes and models. Includes Specwright Score (0–100), team dashboard, watch mode, PR-aware diffing, and Grounded AI.',
+    url: 'https://specwright-web.onrender.com',
+    highlights: [
+      'Specwright Score dashboard — per-route health, doc/test coverage, spec freshness, and drift alerts across all repos.',
+      'Grounded AI suite (Pro): description fill, migration notes, breaking-change triage, and scoped chat — all AST-locked, no hallucinated routes.',
     ],
   },
 ]

@@ -7,7 +7,7 @@ export const business = {
   location: 'Tampa, FL · Remote & On-Site · Open to Relocation',
   heroHeadline: 'My portfolio is what I deliver.',
   heroSubhead:
-    'Six live applications — e-commerce, APIs, desktop diagnostics, mobile SaaS, and database operations — each built solo from architecture through production. Browse the work below; that is the scope I bring to your project.',
+    'Seven live applications — e-commerce, APIs, desktop diagnostics, mobile SaaS, database operations, and developer tooling — each built solo from architecture through production. Browse the work below; that is the scope I bring to your project.',
   portfolioSectionTitle: 'What I build — proven in production',
   portfolioSectionLead:
     'Every card is a deployed product, not a mockup. If you need something in this space — or a custom combination — I have already shipped the reference implementation.',
@@ -29,7 +29,7 @@ export const business = {
     },
   ],
   credentials: [
-    { stat: '6', label: 'Live apps in the portfolio' },
+    { stat: '7', label: 'Live apps in the portfolio' },
     { stat: '2025–26', label: 'SDGKU full-stack diploma' },
     { stat: '$40/hr', label: 'Published developer rate' },
     { stat: '100%', label: 'Solo ownership — design to deploy' },
