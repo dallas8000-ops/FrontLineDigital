@@ -64,11 +64,12 @@ npm run test:coverage
   - PC Checker detail page content and action states
   - Contact form client-side validation messages
   - Unknown route handling (custom 404)
+  - Portfolio live demo links (React Store Catalog, RigHand AI)
 
 ### Latest Verification Results
 
 - Jest: `3/3` suites passed, `10/10` tests passed
-- Playwright: `4/4` scenarios passed
+- Playwright: `6/6` scenarios passed
 - E2E artifact: `test-results/.last-run.json` reports `"status": "passed"` with no failed tests
 
 ## Project Structure

@@ -9,8 +9,21 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 ## 🌐 Live Demo
 
-- [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com)
-- [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
+**Marketing site (this repo):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)
+
+**Portfolio apps linked from the site:**
+
+| Project | Live URL |
+| --- | --- |
+| Kristie Store | [https://kristie-store.onrender.com](https://kristie-store.onrender.com) |
+| Django REST Blog API | [https://blog-2-hggg.onrender.com](https://blog-2-hggg.onrender.com) |
+| React Store Catalog | [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com) |
+| PC Checker Extreme | [https://pc-checker-extreme.onrender.com](https://pc-checker-extreme.onrender.com) |
+| RigHand AI | [https://righand-frontend.onrender.com](https://righand-frontend.onrender.com) |
+| DBOps Control Center | [https://dbops-web.onrender.com](https://dbops-web.onrender.com) |
+| Specwright | [https://specwright-web.onrender.com](https://specwright-web.onrender.com) |
+
+React Store mirror: [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
 
 ## 🚀 Features
 
@@ -200,7 +213,7 @@ npm run test:coverage
 Most recent local verification run:
 
 - **Jest:** `3/3` test suites passed, `10/10` tests passed
-- **Playwright:** `4/4` end-to-end scenarios passed
+- **Playwright:** `6/6` end-to-end scenarios passed
 - **E2E status artifact:** `frontend/test-results/.last-run.json` reports `"status": "passed"` with no failed tests
 
 ## 📸 Image Directory
@@ -234,8 +247,9 @@ PostgreSQL schema includes tables for:
 
 ### Live on Render
 
-- **Frontend:** [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com)
-- **Mirror:** [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
+- **Marketing site (this frontend):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)
+- **React Store Catalog:** [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com) (mirror: [react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com))
+- **RigHand AI frontend:** [https://righand-frontend.onrender.com](https://righand-frontend.onrender.com) (API: [righand.onrender.com](https://righand.onrender.com))
 
 ### Frontend (Render/Vercel)
 ```bash
