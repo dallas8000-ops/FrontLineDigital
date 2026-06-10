@@ -31,7 +31,7 @@ function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
     projectUrl.includes('gilliomfrontlinedigital.onrender.com') ||
     projectUrl.includes(marketingSiteUrls.primary) ||
     projectUrl.includes(marketingSiteUrls.railway) ||
-    projectUrl.includes(marketingSiteUrls.railwayMirror)
+    projectUrl.includes(marketingSiteUrls.railwayLegacy)
   )
 }
 

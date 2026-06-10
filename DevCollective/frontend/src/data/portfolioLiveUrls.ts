@@ -12,6 +12,7 @@ export const portfolioLiveUrls = {
 /** Public marketing site — custom domain with Railway fallback. */
 export const marketingSiteUrls = {
   primary: 'https://gilliomfrontlinedigital.com',
-  railway: 'https://frontlinedigital-production.up.railway.app',
-  railwayMirror: 'https://frontlinedigital-1-production.up.railway.app',
+  /** Working Railway deploy (use until primary custom domain is reattached). */
+  railway: 'https://frontlinedigital-1-production.up.railway.app',
+  railwayLegacy: 'https://frontlinedigital-production.up.railway.app',
 } as const

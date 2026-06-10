@@ -10,7 +10,7 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 ## 🌐 Live Demo
 
 **Marketing site (this repo):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)  
-**Railway fallback:** [https://frontlinedigital-production.up.railway.app](https://frontlinedigital-production.up.railway.app)
+**Working Railway URL (use if custom domain shows 502):** [https://frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app)
 
 **Portfolio apps linked from the site (Railway production):**
 
@@ -248,7 +248,11 @@ PostgreSQL schema includes tables for:
 
 ### Live on Railway
 
-- **Marketing site:** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com) (fallback: [frontlinedigital-production.up.railway.app](https://frontlinedigital-production.up.railway.app))
+- **Marketing site:** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com) (working deploy: [frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app))
+- **Service root directory:** `DevCollective/frontend` (required — repo root will 502)
+- **Start command:** `npm run start` (serves Vite `dist/` on `$PORT`)
+
+If `gilliomfrontlinedigital.com` returns **502**, the custom domain is attached to a crashed `FrontLineDigital` service. In Railway → **FrontLineDigital-1** → **Settings** → **Networking**, add `gilliomfrontlinedigital.com` and remove it from the broken `FrontLineDigital` service, then redeploy.
 - **React Store Catalog:** [react-store-catalog-production.up.railway.app](https://react-store-catalog-production.up.railway.app) (mirror: [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app))
 - **RigHand AI frontend:** [righand-frontend-production.up.railway.app](https://righand-frontend-production.up.railway.app) (API: [righand-production.up.railway.app](https://righand-production.up.railway.app))
 
