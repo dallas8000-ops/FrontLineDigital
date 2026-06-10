@@ -16,15 +16,17 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 | Project | Live URL |
 | --- | --- |
-| Kristie Store | [https://kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) |
-| Django REST Blog API | [https://blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
-| React Store Catalog | [https://react-store-catalog-production.up.railway.app](https://react-store-catalog-production.up.railway.app) |
-| PC Checker Extreme | [https://pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
-| RigHand AI | [https://righand-frontend-production.up.railway.app](https://righand-frontend-production.up.railway.app) |
-| DBOps Control Center | [https://dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
+| Kristie Store | [https://kristie-store.onrender.com](https://kristie-store.onrender.com) |
+| Django REST Blog API | [https://blog-2-hggg.onrender.com](https://blog-2-hggg.onrender.com) |
+| React Store Catalog | [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com) |
+| PC Checker Extreme | [https://pc-checker-extreme.onrender.com](https://pc-checker-extreme.onrender.com) |
+| RigHand AI | [https://righand-frontend.onrender.com](https://righand-frontend.onrender.com) |
+| DBOps Control Center | [https://dbops-web.onrender.com](https://dbops-web.onrender.com) |
 | Specwright | [https://specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
 
 **Mirrors / APIs:** React Store [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) · RigHand API [righand-production.up.railway.app](https://righand-production.up.railway.app) · DBOps API [dbops-api-production.up.railway.app](https://dbops-api-production.up.railway.app) · Specwright API [specwright-api-production.up.railway.app](https://specwright-api-production.up.railway.app)
+
+> Railway `*-production` hosts for most apps currently return **502**. Live demo buttons use verified Render/custom-domain URLs until those Railway services are healthy.
 
 ## 🚀 Features
 

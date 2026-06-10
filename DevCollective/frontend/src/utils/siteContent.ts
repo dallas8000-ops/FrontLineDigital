@@ -1,5 +1,5 @@
 import { defaultPortfolioProjects, type PortfolioProject } from '../data/portfolioProjects'
-import { marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
+import { brokenRailwayHosts, marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import {
   defaultProfile,
   defaultSkills,
@@ -9,16 +9,27 @@ import {
   defaultCertifications,
 } from '../data/resumeContent'
 
-function isStaleDeployUrl(url: string | undefined): boolean {
+const deadRenderHosts = ['react-store-catalog.onrender.com', 'gilliomfrontlinedigital.onrender.com']
+
+function isStaleDeployUrl(url: string | undefined, canonical: string): boolean {
   if (!url) return true
   if (url.includes('github.com')) return true
-  if (url.includes('onrender.com')) return true
-  if (url.includes('store.gilliomfrontlinedigital.com')) return true
+  if (brokenRailwayHosts.some((host) => url.includes(host))) return true
+  if (deadRenderHosts.some((host) => url.includes(host))) return true
+  try {
+    const storedHost = new URL(url).host
+    const canonicalHost = new URL(canonical).host
+    if (storedHost !== canonicalHost && storedHost.endsWith('-production.up.railway.app')) {
+      return true
+    }
+  } catch {
+    return true
+  }
   return false
 }
 
 function pickLiveUrl(url: string | undefined, canonical: string, extraStale: RegExp[] = []): string {
-  if (isStaleDeployUrl(url)) return canonical
+  if (isStaleDeployUrl(url, canonical)) return canonical
   if (extraStale.some((pattern) => pattern.test(url ?? ''))) return canonical
   return url ?? canonical
 }
@@ -58,7 +69,10 @@ function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): Portfoli
   if (/react store catalog/i.test(rest.title)) {
     return {
       ...rest,
-      url: pickLiveUrl(rest.url, portfolioLiveUrls.reactStoreCatalog, [/react-store-catalog-1/i]),
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.reactStoreCatalog, [
+        /react-store-catalog-production/i,
+        /react-store-catalog\.onrender/i,
+      ]),
     }
   }
   if (/pc checker/i.test(rest.title)) {
@@ -87,12 +101,13 @@ function mergeCanonicalProjectFields(project: PortfolioProject): PortfolioProjec
     (p) => p.title.toLowerCase() === project.title.toLowerCase()
   )
   if (!canonical) return project
-  return {
+  const merged = {
     ...canonical,
     ...project,
     proves: project.proves ?? canonical.proves,
     highlights: project.highlights?.length ? project.highlights : canonical.highlights,
   }
+  return stripGithubFields(merged)
 }
 
 function migrateProjects(projects: Array<PortfolioProject & { repoUrl?: string }>) {

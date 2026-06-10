@@ -15,7 +15,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'Kristie Store',
     proves: 'E-commerce, checkout, and multi-currency storefronts',
-    stack: 'Python 3.11, Django 5.2, DRF, React 18, TypeScript, PostgreSQL, GitHub Actions, Railway',
+    stack: 'Python 3.11, Django 5.2, DRF, React 18, TypeScript, PostgreSQL, GitHub Actions, Render',
     desc: 'Capstone e-commerce platform (women\'s apparel, Kampala-based) — live production serving customers in East Africa and worldwide.',
     url: portfolioLiveUrls.kristieStore,
     highlights: [
@@ -26,7 +26,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'Django REST Blog API',
     proves: 'REST APIs, JWT auth, OAuth, and real-time features',
-    stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, JWT, Channels, WebSockets, Gunicorn, Railway',
+    stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, JWT, Channels, WebSockets, Gunicorn, Render',
     desc: 'Production blog and portfolio platform with real-time notifications and full auth stack.',
     url: portfolioLiveUrls.blogApi,
     highlights: [
@@ -46,7 +46,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'PC Checker Extreme',
     proves: 'Systems diagnostics, monitoring dashboards, and AI-assisted ops tooling',
-    stack: 'Python, Django, WMI, winget, OpenAI, Railway',
+    stack: 'Python, Django, WMI, winget, OpenAI, Render',
     desc: 'Cloud-hosted diagnostic command center — health matrix, live telemetry, scan history, and AI-powered system analysis.',
     url: portfolioLiveUrls.pcCheckerExtreme,
     detailPath: '/projects/pc-checker',
@@ -62,17 +62,17 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     desc: 'Expense and profit tracking for truck drivers — offline-first, subscriptions, GPS/OBD trip mileage, tax-ready exports.',
     url: portfolioLiveUrls.righandFrontend,
     highlights: [
-      'Free/Pro/Fleet tiers, Capacitor Android app, and production deployment on Railway.',
+      'Free/Pro/Fleet tiers, Capacitor Android app, and production deployment on Render.',
     ],
   },
   {
     title: 'DBOps Control Center',
     proves: 'Enterprise DB tooling, RBAC, audit trails, and billing',
-    stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Docker Compose, Railway',
+    stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Docker Compose, Render',
     desc: 'Production database operations platform — JWT + RBAC, whitelisted read-only SQL reports, incidents with audit history, scheduled delivery, OIDC SSO, and Stripe billing.',
     url: portfolioLiveUrls.dbopsWeb,
     highlights: [
-      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Docker Compose + Railway blueprint.',
+      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Docker Compose + Render blueprint.',
     ],
   },
   {
