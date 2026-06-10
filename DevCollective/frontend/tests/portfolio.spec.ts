@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { portfolioLiveUrls } from '../src/data/portfolioLiveUrls'
 
 test('home page loads portfolio-first hero and links to services', async ({ page }) => {
   await page.goto('/')
@@ -10,27 +11,28 @@ test('home page loads portfolio-first hero and links to services', async ({ page
   await expect(page.getByRole('heading', { name: /Defined by what is already in production/i })).toBeVisible()
 })
 
-test('righand ai live demo points at the working frontend URL', async ({ page }) => {
-  await page.goto('/')
+const portfolioDemoLinks = [
+  ['Kristie Store', portfolioLiveUrls.kristieStore],
+  ['Django REST Blog API', portfolioLiveUrls.blogApi],
+  ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],
+  ['PC Checker Extreme', portfolioLiveUrls.pcCheckerExtreme],
+  ['RigHand AI', portfolioLiveUrls.righandFrontend],
+  ['DBOps Control Center', portfolioLiveUrls.dbopsWeb],
+  ['Specwright', portfolioLiveUrls.specwrightWeb],
+] as const
 
-  const demo = page
-    .getByRole('article')
-    .filter({ has: page.getByRole('heading', { name: 'RigHand AI' }) })
-    .getByRole('link', { name: /Live demo/i })
+for (const [title, href] of portfolioDemoLinks) {
+  test(`${title} live demo points at Railway production URL`, async ({ page }) => {
+    await page.goto('/')
 
-  await expect(demo).toHaveAttribute('href', 'https://righand-frontend.onrender.com')
-})
+    const demo = page
+      .getByRole('article')
+      .filter({ has: page.getByRole('heading', { name: title }) })
+      .getByRole('link', { name: /Live demo/i })
 
-test('react store catalog live demo points at the working storefront URL', async ({ page }) => {
-  await page.goto('/')
-
-  const demo = page
-    .getByRole('article')
-    .filter({ has: page.getByRole('heading', { name: 'React Store Catalog' }) })
-    .getByRole('link', { name: /Live demo/i })
-
-  await expect(demo).toHaveAttribute('href', 'https://store.gilliomfrontlinedigital.com')
-})
+    await expect(demo).toHaveAttribute('href', href)
+  })
+}
 
 test('pc checker extreme detail page exposes live demo and contact actions', async ({ page }) => {
   await page.goto('/projects/pc-checker')
@@ -38,7 +40,7 @@ test('pc checker extreme detail page exposes live demo and contact actions', asy
   await expect(page.getByRole('heading', { name: 'PC Checker Extreme' })).toBeVisible()
   await expect(page.getByRole('link', { name: /Visit Live Demo/i })).toHaveAttribute(
     'href',
-    'https://pc-checker-extreme.onrender.com'
+    portfolioLiveUrls.pcCheckerExtreme
   )
   await expect(page.getByRole('link', { name: /Request a Demo/i })).toHaveAttribute('href', '/contact')
   await expect(page.getByText(/cloud-hosted diagnostic command center/i)).toBeVisible()

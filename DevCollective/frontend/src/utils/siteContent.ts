@@ -1,4 +1,5 @@
 import { defaultPortfolioProjects, type PortfolioProject } from '../data/portfolioProjects'
+import { marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import {
   defaultProfile,
   defaultSkills,
@@ -8,53 +9,70 @@ import {
   defaultCertifications,
 } from '../data/resumeContent'
 
-const DBOPS_LIVE_URL = 'https://dbops-web.onrender.com'
-const RIGHAND_LIVE_URL = 'https://righand-frontend.onrender.com'
-const REACT_STORE_CATALOG_URL = 'https://store.gilliomfrontlinedigital.com'
-const PC_CHECKER_EXTREME_URL = 'https://pc-checker-extreme.onrender.com'
+function isStaleDeployUrl(url: string | undefined): boolean {
+  if (!url) return true
+  if (url.includes('github.com')) return true
+  if (url.includes('onrender.com')) return true
+  if (url.includes('store.gilliomfrontlinedigital.com')) return true
+  return false
+}
+
+function pickLiveUrl(url: string | undefined, canonical: string, extraStale: RegExp[] = []): string {
+  if (isStaleDeployUrl(url)) return canonical
+  if (extraStale.some((pattern) => pattern.test(url ?? ''))) return canonical
+  return url ?? canonical
+}
 
 /** This marketing site — excluded from portfolio (redundant self-reference). */
 function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
+  const projectUrl = p.url ?? ''
   return (
     /gilliom\s*frontline|frontline\s*digital/i.test(p.title) ||
-    (p.url ?? '').includes('gilliomfrontlinedigital.onrender.com')
+    projectUrl.includes('gilliomfrontlinedigital.onrender.com') ||
+    projectUrl.includes(marketingSiteUrls.primary) ||
+    projectUrl.includes(marketingSiteUrls.railway) ||
+    projectUrl.includes(marketingSiteUrls.railwayMirror)
   )
 }
 
 function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): PortfolioProject {
   const { repoUrl: _repoUrl, ...rest } = p
+  if (/kristie/i.test(rest.title)) {
+    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.kristieStore) }
+  }
+  if (/blog/i.test(rest.title)) {
+    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.blogApi) }
+  }
   if (/dbops/i.test(rest.title)) {
-    const url =
-      (rest.url ?? '').includes('dbops-api.onrender.com') || (rest.url ?? '').includes('github.com')
-        ? DBOPS_LIVE_URL
-        : rest.url || DBOPS_LIVE_URL
-    return { ...rest, url }
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.dbopsWeb, [/dbops-api/i]),
+    }
   }
   if (/righand/i.test(rest.title)) {
-    const url =
-      (rest.url ?? '').includes('github.com') ||
-      (rest.url ?? '').includes('righand.onrender.com') ||
-      (rest.url ?? '').includes('righand-ai.onrender.com') ||
-      !rest.url
-        ? RIGHAND_LIVE_URL
-        : rest.url
-    return { ...rest, url }
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.righandFrontend, [/righand(?!-frontend)/i]),
+    }
   }
   if (/react store catalog/i.test(rest.title)) {
-    const url =
-      (rest.url ?? '').includes('github.com') ||
-      (rest.url ?? '').includes('react-store-catalog.onrender.com') ||
-      !rest.url
-        ? REACT_STORE_CATALOG_URL
-        : rest.url
-    return { ...rest, url }
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.reactStoreCatalog, [/react-store-catalog-1/i]),
+    }
   }
   if (/pc checker/i.test(rest.title)) {
     return {
       ...rest,
       title: 'PC Checker Extreme',
-      url: rest.url || PC_CHECKER_EXTREME_URL,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.pcCheckerExtreme),
       detailPath: '/projects/pc-checker',
+    }
+  }
+  if (/specwright/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.specwrightWeb, [/specwright-api/i]),
     }
   }
   if ((rest.url ?? '').includes('github.com')) {

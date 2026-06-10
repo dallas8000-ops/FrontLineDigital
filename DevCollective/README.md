@@ -9,21 +9,22 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 ## 🌐 Live Demo
 
-**Marketing site (this repo):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)
+**Marketing site (this repo):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)  
+**Railway fallback:** [https://frontlinedigital-production.up.railway.app](https://frontlinedigital-production.up.railway.app)
 
-**Portfolio apps linked from the site:**
+**Portfolio apps linked from the site (Railway production):**
 
 | Project | Live URL |
 | --- | --- |
-| Kristie Store | [https://kristie-store.onrender.com](https://kristie-store.onrender.com) |
-| Django REST Blog API | [https://blog-2-hggg.onrender.com](https://blog-2-hggg.onrender.com) |
-| React Store Catalog | [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com) |
-| PC Checker Extreme | [https://pc-checker-extreme.onrender.com](https://pc-checker-extreme.onrender.com) |
-| RigHand AI | [https://righand-frontend.onrender.com](https://righand-frontend.onrender.com) |
-| DBOps Control Center | [https://dbops-web.onrender.com](https://dbops-web.onrender.com) |
-| Specwright | [https://specwright-web.onrender.com](https://specwright-web.onrender.com) |
+| Kristie Store | [https://kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) |
+| Django REST Blog API | [https://blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
+| React Store Catalog | [https://react-store-catalog-production.up.railway.app](https://react-store-catalog-production.up.railway.app) |
+| PC Checker Extreme | [https://pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
+| RigHand AI | [https://righand-frontend-production.up.railway.app](https://righand-frontend-production.up.railway.app) |
+| DBOps Control Center | [https://dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
+| Specwright | [https://specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
 
-React Store mirror: [https://react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com)
+**Mirrors / APIs:** React Store [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) · RigHand API [righand-production.up.railway.app](https://righand-production.up.railway.app) · DBOps API [dbops-api-production.up.railway.app](https://dbops-api-production.up.railway.app) · Specwright API [specwright-api-production.up.railway.app](https://specwright-api-production.up.railway.app)
 
 ## 🚀 Features
 
@@ -213,7 +214,7 @@ npm run test:coverage
 Most recent local verification run:
 
 - **Jest:** `3/3` test suites passed, `10/10` tests passed
-- **Playwright:** `6/6` end-to-end scenarios passed
+- **Playwright:** `12/12` end-to-end scenarios passed
 - **E2E status artifact:** `frontend/test-results/.last-run.json` reports `"status": "passed"` with no failed tests
 
 ## 📸 Image Directory
@@ -245,11 +246,11 @@ PostgreSQL schema includes tables for:
 
 ## 🚀 Deployment
 
-### Live on Render
+### Live on Railway
 
-- **Marketing site (this frontend):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)
-- **React Store Catalog:** [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com) (mirror: [react-store-catalog-1.onrender.com](https://react-store-catalog-1.onrender.com))
-- **RigHand AI frontend:** [https://righand-frontend.onrender.com](https://righand-frontend.onrender.com) (API: [righand.onrender.com](https://righand.onrender.com))
+- **Marketing site:** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com) (fallback: [frontlinedigital-production.up.railway.app](https://frontlinedigital-production.up.railway.app))
+- **React Store Catalog:** [react-store-catalog-production.up.railway.app](https://react-store-catalog-production.up.railway.app) (mirror: [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app))
+- **RigHand AI frontend:** [righand-frontend-production.up.railway.app](https://righand-frontend-production.up.railway.app) (API: [righand-production.up.railway.app](https://righand-production.up.railway.app))
 
 ### Frontend (Render/Vercel)
 ```bash

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Activity, Brain, Cloud, Cpu } from 'lucide-react'
+import { portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import { usePageTitle } from '../utils/usePageTitle'
 
-const LIVE_URL = 'https://pc-checker-extreme.onrender.com'
+const LIVE_URL = portfolioLiveUrls.pcCheckerExtreme
 
 const pillars = [
   {
