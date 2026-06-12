@@ -6,7 +6,7 @@ export const portfolioLiveUrls = {
   reactStoreCatalogMirror: 'https://react-store-catalog-1-production.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   righandFrontend: 'https://righand-production.up.railway.app',
-  dbopsWeb: 'https://dbops-web-production.up.railway.app',
+  dbopsWeb: 'https://dbops-api-production-5047.up.railway.app',
   specwrightWeb: 'https://specwright-api-production.up.railway.app',
   apiTransfer: 'https://api-transfer-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
