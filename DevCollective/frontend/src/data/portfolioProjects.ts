@@ -58,21 +58,23 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'RigHand AI',
     proves: 'Mobile-first SaaS, subscriptions, and offline-capable apps',
-    stack: 'React, Flask, PostgreSQL, Capacitor, IndexedDB',
+    stack: 'React, Django, PostgreSQL, Capacitor, Stripe, Railway',
     desc: 'Expense and profit tracking for truck drivers — offline-first, subscriptions, GPS/OBD trip mileage, tax-ready exports.',
     url: portfolioLiveUrls.righandFrontend,
     highlights: [
-      'Free/Pro/Fleet tiers, Capacitor Android app, and production deployment on Render.',
+      'Free/Pro/Fleet tiers with Stripe billing, Capacitor Android app, and Railway deployment.',
+      'Offline-first IndexedDB sync, GPS mileage tracking, and tax-ready CSV/PDF exports.',
     ],
   },
   {
     title: 'DBOps Control Center',
     proves: 'Enterprise DB tooling, RBAC, audit trails, and billing',
-    stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Docker Compose, Render',
+    stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Stripe, Railway',
     desc: 'Production database operations platform — JWT + RBAC, whitelisted read-only SQL reports, incidents with audit history, scheduled delivery, OIDC SSO, and Stripe billing.',
     url: portfolioLiveUrls.dbopsWeb,
     highlights: [
-      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Docker Compose + Render blueprint.',
+      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Stripe subscription billing.',
+      'Multi-tenant RBAC, OIDC SSO, and Railway deployment with PostgreSQL.',
     ],
   },
   {
@@ -84,6 +86,39 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     highlights: [
       'Specwright Score dashboard — per-route health, doc/test coverage, spec freshness, and drift alerts across all repos.',
       'Grounded AI suite (Pro): description fill, migration notes, breaking-change triage, and scoped chat — all AST-locked, no hallucinated routes.',
+    ],
+  },
+  {
+    title: 'API Transfer',
+    proves: 'API migration tooling, codebase diagnostics, and multi-platform deployment',
+    stack: 'Python, Django, DRF, React, TypeScript, PostgreSQL, Stripe, Railway',
+    desc: 'Automated API migration and transfer platform — scans codebases for config drift, provisions cloud environments, and migrates API configs between platforms with zero manual steps.',
+    url: portfolioLiveUrls.apiTransfer,
+    highlights: [
+      'Codebase scanner auto-detects framework, secrets, and Stripe webhook paths.',
+      'One-click migration from Render to Railway with env var sync and webhook re-registration.',
+    ],
+  },
+  {
+    title: 'EnPowerCommand',
+    proves: 'Utility billing SaaS, subscription management, and client dashboards',
+    stack: 'Node.js, Express, React, TypeScript, PostgreSQL, Stripe, Railway',
+    desc: 'Energy and utility billing command center — subscription tiers, usage tracking, client-facing dashboards, and automated billing with Stripe Checkout and the Customer Portal.',
+    url: portfolioLiveUrls.enPowerCommand,
+    highlights: [
+      'Live subscription management with Stripe Checkout, billing portal, and webhook-driven tier sync.',
+      'Multi-client dashboard with usage analytics and automated invoice generation.',
+    ],
+  },
+  {
+    title: 'Stripe Installer',
+    proves: 'Developer tooling, encrypted secrets management, and AI-assisted automation',
+    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway',
+    desc: 'Production-grade Stripe setup tool for agencies — encrypted vault stores keys, live pipeline streams events via WebSocket, AI copilot diagnoses and fixes misconfigs, and codegen produces SDK-ready integration files.',
+    url: portfolioLiveUrls.stripeInstaller,
+    highlights: [
+      'AES-256-GCM encrypted vault — secrets never exposed to AI, logs, or the frontend.',
+      'Readiness score (0–100), webhook path auto-detection, and one-click deploy prep for Railway and Render.',
     ],
   },
 ]

@@ -1,21 +1,32 @@
-/** Canonical live-demo URLs — verified responding hosts (Railway primaries often 502). */
+/** Canonical live-demo URLs — verified responding Railway hosts. */
 export const portfolioLiveUrls = {
   kristieStore: 'https://kristie-store.onrender.com',
   blogApi: 'https://blog-2-hggg.onrender.com',
   reactStoreCatalog: 'https://store.gilliomfrontlinedigital.com',
   reactStoreCatalogMirror: 'https://react-store-catalog-1-production.up.railway.app',
-  pcCheckerExtreme: 'https://pc-checker-extreme.onrender.com',
-  righandFrontend: 'https://righand-frontend.onrender.com',
-  dbopsWeb: 'https://dbops-web.onrender.com',
-  specwrightWeb: 'https://specwright-web-production.up.railway.app',
+  pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
+  righandFrontend: 'https://righand-production.up.railway.app',
+  dbopsWeb: 'https://dbops-control-center-production.up.railway.app',
+  specwrightWeb: 'https://specwright-api-production.up.railway.app',
+  apiTransfer: 'https://api-transfer-production.up.railway.app',
+  enPowerCommand: 'https://enpowercommand-production.up.railway.app',
+  stripeInstaller: 'https://stripe-installer-production.up.railway.app',
 } as const
 
-/** Railway *-production hosts that currently return 502 — migrated away on load. */
+/** Render hosts that are dead / migrated to Railway. */
+export const deadRenderHosts = [
+  'pc-checker-extreme.onrender.com',
+  'righand-frontend.onrender.com',
+  'dbops-web.onrender.com',
+  'react-store-catalog.onrender.com',
+  'gilliomfrontlinedigital.onrender.com',
+] as const
+
+/** Railway *-production hosts that currently return 502 — kept for legacy redirects. */
 export const brokenRailwayHosts = [
   'kistie-store-production.up.railway.app',
   'blog-2-production-72bc.up.railway.app',
   'react-store-catalog-production.up.railway.app',
-  'pc-checker-extreme-production.up.railway.app',
   'righand-frontend-production.up.railway.app',
   'dbops-web-production.up.railway.app',
 ] as const
