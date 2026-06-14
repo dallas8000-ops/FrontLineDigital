@@ -12,7 +12,7 @@ test('home page loads portfolio-first hero and links to services', async ({ page
 })
 
 const portfolioDemoLinks = [
-  ['Kristie Store', portfolioLiveUrls.kristieStore],
+  ['Kistie Store', portfolioLiveUrls.kistieStore],
   ['Django REST Blog API', portfolioLiveUrls.blogApi],
   ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],
   ['PC Checker Extreme', portfolioLiveUrls.pcCheckerExtreme],

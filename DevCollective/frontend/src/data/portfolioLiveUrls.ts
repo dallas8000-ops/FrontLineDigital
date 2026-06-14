@@ -1,7 +1,7 @@
 /** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
-  /** Railway service is deployed as kistie-store (typo) — kristie-store hostname has no service. */
-  kristieStore: 'https://kistie-store-production.up.railway.app',
+  /** Kistie Store — Railway service kistie-store-production */
+  kistieStore: 'https://kistie-store-production.up.railway.app',
   blogApi: 'https://blog-2-production-72bc.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',

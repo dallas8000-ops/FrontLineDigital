@@ -13,8 +13,8 @@ export type PortfolioProject = {
 
 export const defaultPortfolioProjects: PortfolioProject[] = [
   {
-    title: 'Kristie Store',
-    url: portfolioLiveUrls.kristieStore,
+    title: 'Kistie Store',
+    url: portfolioLiveUrls.kistieStore,
     proves: 'E-commerce, checkout, and multi-currency storefronts',
     stack: 'Python 3.11, Django 5.2, DRF, React 18, TypeScript, PostgreSQL, GitHub Actions, Railway',
     desc: 'Capstone e-commerce platform (women\'s apparel, Kampala-based) — production architecture for East Africa and worldwide checkout.',

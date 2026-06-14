@@ -16,7 +16,7 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 | Project | Live URL |
 | --- | --- |
-| Kristie Store | [kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) (Railway service name typo) |
+| Kistie Store | [kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) |
 | Django REST Blog API (Blog-2) | [blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
 | React Store Catalog | [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) |
 | PC Checker Extreme | [pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
