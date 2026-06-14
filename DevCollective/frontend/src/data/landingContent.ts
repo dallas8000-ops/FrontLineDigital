@@ -143,6 +143,6 @@ export const processSteps = [
     id: '04',
     title: 'Launch Live',
     description:
-      'Production deployment (e.g. Render), smoke checks on live URLs, and handoff with post-launch support where included.',
+      'Production deployment on Railway, smoke checks on live URLs, and handoff with post-launch support where included.',
   },
 ]

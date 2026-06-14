@@ -1,6 +1,6 @@
 // API Base Configuration
 // Dev: VITE_API_URL is empty → falls back to '/api' → Vite proxy forwards to localhost:5000
-// Prod: VITE_API_URL=https://your-backend.onrender.com/api (set in .env.production)
+// Prod: VITE_API_URL=https://frontlinedigital-1-production.up.railway.app/api (see .env.production)
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
 
 function authHeaders(): Record<string, string> {

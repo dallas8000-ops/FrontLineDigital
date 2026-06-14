@@ -9,24 +9,25 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 
 ## 🌐 Live Demo
 
-**Marketing site (this repo):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)  
-**Working Railway URL (use if custom domain shows 502):** [https://frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app)
+**Marketing site:** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)  
+**Railway URL (fallback):** [https://frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app)
 
-**Portfolio apps linked from the site (Railway production):**
+**Portfolio apps with working live demos (Railway):**
 
 | Project | Live URL |
 | --- | --- |
-| Kristie Store | [https://kristie-store.onrender.com](https://kristie-store.onrender.com) |
-| Django REST Blog API | [https://blog-2-hggg.onrender.com](https://blog-2-hggg.onrender.com) |
-| React Store Catalog | [https://store.gilliomfrontlinedigital.com](https://store.gilliomfrontlinedigital.com) |
-| PC Checker Extreme | [https://pc-checker-extreme.onrender.com](https://pc-checker-extreme.onrender.com) |
-| RigHand AI | [https://righand-frontend.onrender.com](https://righand-frontend.onrender.com) |
-| DBOps Control Center | [https://dbops-web.onrender.com](https://dbops-web.onrender.com) |
-| Specwright | [https://specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
+| React Store Catalog | [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) |
+| RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
+| DBOps Control Center | [dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
+| Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
+| API Transfer | [api-transfer-production.up.railway.app](https://api-transfer-production.up.railway.app) |
+| EnPowerCommand | [enpowercommand-production.up.railway.app](https://enpowercommand-production.up.railway.app) |
 
-**Mirrors / APIs:** React Store [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) · RigHand API [righand-production.up.railway.app](https://righand-production.up.railway.app) · DBOps API [dbops-api-production.up.railway.app](https://dbops-api-production.up.railway.app) · Specwright API [specwright-api-production.up.railway.app](https://specwright-api-production.up.railway.app)
+**Contact / admin API:** [frontlinedigital-1-production.up.railway.app/api](https://frontlinedigital-1-production.up.railway.app/api/health)
 
-> Railway `*-production` hosts for most apps currently return **502**. Live demo buttons use verified Render/custom-domain URLs until those Railway services are healthy.
+Kristie Store, Blog API, PC Checker Extreme, and Stripe Installer are listed on the portfolio without live-demo buttons until those Railway services are healthy.
+
+> All hosting is on **Railway**. Legacy Render URLs are blocked in the portfolio config.
 
 ## 🚀 Features
 
@@ -258,13 +259,13 @@ If `gilliomfrontlinedigital.com` returns **502**, the custom domain is attached 
 - **React Store Catalog:** [react-store-catalog-production.up.railway.app](https://react-store-catalog-production.up.railway.app) (mirror: [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app))
 - **RigHand AI frontend:** [righand-frontend-production.up.railway.app](https://righand-frontend-production.up.railway.app) (API: [righand-production.up.railway.app](https://righand-production.up.railway.app))
 
-### Frontend (Render/Vercel)
+### Frontend (Railway)
 ```bash
 npm run build
-# Deploy dist/ folder
+# Railway serves dist/ via npm run start (see frontend/railway.toml)
 ```
 
-### Backend (Render/Heroku)
+### Backend (Railway)
 ```bash
 npm run build
 npm start

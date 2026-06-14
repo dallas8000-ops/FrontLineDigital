@@ -71,7 +71,7 @@ export const defaultSkills = [
       'GitHub Actions',
       'Docker',
       'Docker Compose',
-      'Render',
+      'Railway',
       'Gunicorn',
       'Uvicorn',
       'CSRF protection',
@@ -97,7 +97,7 @@ export const defaultServices = [
   {
     title: 'Full-Stack Software Development',
     description:
-      'End-to-end builds with Django, FastAPI, Flask, React, and TypeScript — architecture, APIs, databases, automated tests, and production deployment on Render.',
+      'End-to-end builds with Django, FastAPI, Flask, React, and TypeScript — architecture, APIs, databases, automated tests, and production deployment on Railway.',
   },
   {
     title: 'QA Automation & Verification',
@@ -120,7 +120,7 @@ export const defaultExperience = [
     highlights: [
       'Sole developer across six production applications: e-commerce, REST APIs, diagnostics, database ops, and portfolio platforms.',
       'Formal ToR, user stories, acceptance criteria, wireframes, and usability test reports for each capstone and portfolio project.',
-      'GitHub Actions on every repo: lint, test, build, and zero-downtime Render deployment on push to main.',
+      'GitHub Actions on every repo: lint, test, build, and zero-downtime Railway deployment on push to main.',
     ],
   },
   {

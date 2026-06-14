@@ -15,7 +15,7 @@ export const business = {
     {
       title: 'Full-stack delivery',
       description:
-        'React, TypeScript, Django, FastAPI, Flask, PostgreSQL, and cloud deployment on Render — one engineer from requirements through production.',
+        'React, TypeScript, Django, FastAPI, Flask, PostgreSQL, and cloud deployment on Railway — one engineer from requirements through production.',
     },
     {
       title: 'QA built in',

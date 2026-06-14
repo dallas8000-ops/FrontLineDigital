@@ -1,5 +1,5 @@
-import { defaultPortfolioProjects, type PortfolioProject } from '../data/portfolioProjects'
-import { brokenRailwayHosts, deadRenderHosts, marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
+import { defaultPortfolioProjects, withHealthyDemoUrl, type PortfolioProject } from '../data/portfolioProjects'
+import { brokenRailwayHosts, legacyDeadHosts, marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import {
   defaultProfile,
   defaultSkills,
@@ -13,7 +13,7 @@ function isStaleDeployUrl(url: string | undefined, canonical: string): boolean {
   if (!url) return true
   if (url.includes('github.com')) return true
   if (brokenRailwayHosts.some((host) => url.includes(host))) return true
-  if (deadRenderHosts.some((host) => url.includes(host))) return true
+  if (legacyDeadHosts.some((host) => url.includes(host))) return true
   try {
     const storedHost = new URL(url).host
     const canonicalHost = new URL(canonical).host
@@ -37,20 +37,16 @@ function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
   const projectUrl = p.url ?? ''
   return (
     /gilliom\s*frontline|frontline\s*digital/i.test(p.title) ||
-    projectUrl.includes('gilliomfrontlinedigital.onrender.com') ||
     projectUrl.includes(marketingSiteUrls.primary) ||
-    projectUrl.includes(marketingSiteUrls.railway) ||
-    projectUrl.includes(marketingSiteUrls.railwayLegacy)
+    projectUrl.includes(marketingSiteUrls.railway)
   )
 }
 
 function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): PortfolioProject {
   const { repoUrl: _repoUrl, ...rest } = p
-  if (/kristie/i.test(rest.title)) {
-    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.kristieStore) }
-  }
-  if (/blog/i.test(rest.title)) {
-    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.blogApi) }
+  if (/kristie/i.test(rest.title) || /blog/i.test(rest.title)) {
+    const { url: _u, ...noUrl } = rest
+    return noUrl
   }
   if (/dbops/i.test(rest.title)) {
     return {
@@ -69,15 +65,15 @@ function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): Portfoli
       ...rest,
       url: pickLiveUrl(rest.url, portfolioLiveUrls.reactStoreCatalog, [
         /react-store-catalog-production/i,
-        /react-store-catalog\.onrender/i,
+        /onrender/i,
       ]),
     }
   }
   if (/pc checker/i.test(rest.title)) {
+    const { url: _u, ...noUrl } = rest
     return {
-      ...rest,
+      ...noUrl,
       title: 'PC Checker Extreme',
-      url: pickLiveUrl(rest.url, portfolioLiveUrls.pcCheckerExtreme),
       detailPath: '/projects/pc-checker',
     }
   }
@@ -126,7 +122,7 @@ function migrateProjects(projects: Array<PortfolioProject & { repoUrl?: string }
       titles.add(canonical.title.toLowerCase())
     }
   }
-  return filtered.filter((p) => !isSelfMarketingProject(p))
+  return filtered.filter((p) => !isSelfMarketingProject(p)).map(withHealthyDemoUrl)
 }
 
 export const defaultSiteContent = {
@@ -137,7 +133,7 @@ export const defaultSiteContent = {
   experience: defaultExperience,
   education: defaultEducation,
   certifications: defaultCertifications,
-  projects: [...defaultPortfolioProjects],
+  projects: defaultPortfolioProjects.map(withHealthyDemoUrl),
 }
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
@@ -150,7 +146,7 @@ export const getSiteContent = () => {
         if (Array.isArray(parsed.projects)) {
           parsed.projects = migrateProjects(parsed.projects)
         } else {
-          parsed.projects = [...defaultPortfolioProjects]
+          parsed.projects = defaultPortfolioProjects.map(withHealthyDemoUrl)
         }
         if (!parsed.experience) parsed.experience = defaultExperience
         if (!parsed.education) parsed.education = defaultEducation
@@ -173,5 +169,5 @@ export const getSiteContent = () => {
       }
     }
   }
-  return { ...defaultSiteContent, projects: [...defaultPortfolioProjects] }
+  return { ...defaultSiteContent, projects: defaultPortfolioProjects.map(withHealthyDemoUrl) }
 }

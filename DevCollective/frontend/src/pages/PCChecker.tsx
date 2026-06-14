@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Activity, Brain, Cloud, Cpu } from 'lucide-react'
-import { portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import { usePageTitle } from '../utils/usePageTitle'
-
-const LIVE_URL = portfolioLiveUrls.pcCheckerExtreme
 
 const pillars = [
   {
@@ -25,7 +22,7 @@ const pillars = [
   {
     title: 'Cloud + local boundary',
     icon: <Cloud size={22} />,
-    body: 'The Render-hosted UI serves scan history and the diagnostic command center on Linux. Full WMI/winget hardware scans run on the Windows machine where OS APIs exist — a deliberate split between cloud visibility and local execution.',
+    body: 'The Railway-hosted UI serves scan history and the diagnostic command center. Full WMI/winget hardware scans run on the Windows machine where OS APIs exist — a deliberate split between cloud visibility and local execution.',
   },
 ]
 
@@ -33,7 +30,7 @@ const architectureRows = [
   ['Django backend', 'Scan orchestration, history archive, health matrix aggregation, and optional OpenAI review endpoints.'],
   ['Diagnostic modules', 'WMI collectors, winget sweep, Windows Update status, and manufacturer-specific hardware ID.'],
   ['Command-center UI', 'Live telemetry, resource load panels, scan archive, and subsystem waveform visualization.'],
-  ['Render deployment', 'Cloud-hosted dashboard and scan history; full WMI scans require a local Windows agent.'],
+  ['Railway deployment', 'Cloud-hosted dashboard and scan history; full WMI scans require a local Windows agent.'],
 ]
 
 const features = [
@@ -71,7 +68,7 @@ export default function PCChecker() {
                 so operators can monitor health, run full diagnostics, and archive results from a single dashboard.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                {['Python', 'Django', 'WMI', 'winget', 'OpenAI', 'Render'].map((tag) => (
+                {['Python', 'Django', 'WMI', 'winget', 'OpenAI', 'Railway'].map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1 rounded text-sm font-medium bg-brand-navy border border-brand-line text-brand-gold"
@@ -81,16 +78,11 @@ export default function PCChecker() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href={LIVE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary inline-flex items-center gap-2"
-                >
-                  Visit Live Demo
-                </a>
-                <Link to="/contact" className="btn btn-outline inline-flex items-center gap-2">
+                <Link to="/contact" className="btn btn-primary inline-flex items-center gap-2">
                   Request a Demo
+                </Link>
+                <Link to="/#portfolio" className="btn btn-outline inline-flex items-center gap-2">
+                  Back to portfolio
                 </Link>
               </div>
             </div>
@@ -148,7 +140,7 @@ export default function PCChecker() {
               <div className="card-dark p-6 border-brand-gold/30">
                 <h2 className="text-xl font-bold text-brand-gold mb-3">Cloud vs local</h2>
                 <p className="text-slate-200 leading-relaxed mb-4">
-                  The Render-hosted UI and scan history work from any browser. Full WMI/winget hardware scans
+                  The Railway-hosted UI and scan history work from any browser. Full WMI/winget hardware scans
                   require running the diagnostic agent on a Windows PC where WMI, CIM, and registry-backed data
                   are available.
                 </p>
