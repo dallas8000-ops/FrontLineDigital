@@ -34,7 +34,6 @@ export const brokenRailwayHosts = [
   'react-store-catalog-production.up.railway.app',
   'righand-frontend-production.up.railway.app',
   'pc-checker-extreme-production.up.railway.app',
-  'stripe-installer-production.up.railway.app',
   'dbops-api-production-5047.up.railway.app',
   'specwright-api-production.up.railway.app',
 ] as const
