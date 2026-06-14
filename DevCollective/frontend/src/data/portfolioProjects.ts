@@ -14,6 +14,7 @@ export type PortfolioProject = {
 export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'Kristie Store',
+    url: portfolioLiveUrls.kristieStore,
     proves: 'E-commerce, checkout, and multi-currency storefronts',
     stack: 'Python 3.11, Django 5.2, DRF, React 18, TypeScript, PostgreSQL, GitHub Actions, Railway',
     desc: 'Capstone e-commerce platform (women\'s apparel, Kampala-based) — production architecture for East Africa and worldwide checkout.',
@@ -24,6 +25,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   },
   {
     title: 'Django REST Blog API',
+    url: portfolioLiveUrls.blogApi,
     proves: 'REST APIs, JWT auth, OAuth, and real-time features',
     stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, JWT, Channels, WebSockets, Gunicorn, Railway',
     desc: 'Production blog and portfolio platform with real-time notifications and full auth stack.',
@@ -43,6 +45,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   },
   {
     title: 'PC Checker Extreme',
+    url: portfolioLiveUrls.pcCheckerExtreme,
     proves: 'Systems diagnostics, monitoring dashboards, and AI-assisted ops tooling',
     stack: 'Python, Django, WMI, winget, OpenAI, Railway',
     desc: 'Cloud-hosted diagnostic command center — health matrix, live telemetry, scan history, and AI-powered system analysis.',
@@ -120,11 +123,11 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   },
 ]
 
-/** Drop stale localStorage URLs and broken hosts before rendering cards. */
+/** Drop legacy Render/dead URLs; keep all Railway live-demo links. */
 export function withHealthyDemoUrl(project: PortfolioProject): PortfolioProject {
-  if (!project.url || !isLiveDemoUrlHealthy(project.url)) {
-    const { url: _removed, ...rest } = project
-    return rest
+  if (!project.url || isLiveDemoUrlHealthy(project.url)) {
+    return project
   }
-  return project
+  const { url: _removed, ...rest } = project
+  return rest
 }

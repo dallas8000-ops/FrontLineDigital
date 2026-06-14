@@ -1,5 +1,8 @@
-/** Canonical live-demo URLs — Railway only (verified 2026-06). */
+/** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
+  kristieStore: 'https://kristie-store-production.up.railway.app',
+  blogApi: 'https://blog-2-production-72bc.up.railway.app',
+  pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',
   righandFrontend: 'https://righand-production.up.railway.app',
   dbopsWeb: 'https://dbops-web-production.up.railway.app',
@@ -11,7 +14,7 @@ export const portfolioLiveUrls = {
   apiBase: 'https://frontlinedigital-1-production.up.railway.app/api',
 } as const
 
-/** Legacy hosts — never link these from the portfolio. */
+/** Legacy Render / dead custom domains — never link from the portfolio. */
 export const legacyDeadHosts = [
   'onrender.com',
   'render.com',
@@ -26,14 +29,15 @@ export const legacyDeadHosts = [
   'store.gilliomfrontlinedigital.com',
 ] as const
 
-/** Railway hosts that currently return 502 / timeout — hide live-demo buttons. */
-export const brokenRailwayHosts = [
+/** Superseded Railway hostnames — remap stored URLs to the current service in pickLiveUrl. */
+export const deprecatedRailwayHosts = [
   'kistie-store-production.up.railway.app',
-  'kristie-store-production.up.railway.app',
-  'blog-2-production-72bc.up.railway.app',
   'react-store-catalog-production.up.railway.app',
   'righand-frontend-production.up.railway.app',
-  'pc-checker-extreme-production.up.railway.app',
+] as const
+
+/** API-only Railway services — not portfolio live-demo targets (use the web service URL). */
+export const apiOnlyRailwayHosts = [
   'dbops-api-production-5047.up.railway.app',
   'specwright-api-production.up.railway.app',
 ] as const
@@ -47,6 +51,6 @@ export const marketingSiteUrls = {
 export function isLiveDemoUrlHealthy(url: string | undefined): boolean {
   if (!url) return false
   if (legacyDeadHosts.some((host) => url.includes(host))) return false
-  if (brokenRailwayHosts.some((host) => url.includes(host))) return false
+  if (apiOnlyRailwayHosts.some((host) => url.includes(host))) return false
   return true
 }

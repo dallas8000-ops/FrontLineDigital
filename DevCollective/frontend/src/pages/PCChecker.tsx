@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Activity, Brain, Cloud, Cpu } from 'lucide-react'
+import { ArrowLeft, Activity, Brain, Cloud, Cpu, ExternalLink } from 'lucide-react'
+import { portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import { usePageTitle } from '../utils/usePageTitle'
+
+const LIVE_URL = portfolioLiveUrls.pcCheckerExtreme
 
 const pillars = [
   {
@@ -78,8 +81,16 @@ export default function PCChecker() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="btn btn-primary inline-flex items-center gap-2">
-                  Request a Demo
+                <a
+                  href={LIVE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary inline-flex items-center gap-2"
+                >
+                  <ExternalLink size={16} /> Live demo
+                </a>
+                <Link to="/contact" className="btn btn-outline inline-flex items-center gap-2">
+                  Request a demo
                 </Link>
                 <Link to="/#portfolio" className="btn btn-outline inline-flex items-center gap-2">
                   Back to portfolio

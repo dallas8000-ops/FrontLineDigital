@@ -38,11 +38,11 @@ test('pc checker extreme detail page exposes live demo and contact actions', asy
   await page.goto('/projects/pc-checker')
 
   await expect(page.getByRole('heading', { name: 'PC Checker Extreme' })).toBeVisible()
-  await expect(page.getByRole('link', { name: /Visit Live Demo/i })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /Live demo/i })).toHaveAttribute(
     'href',
     portfolioLiveUrls.pcCheckerExtreme
   )
-  await expect(page.getByRole('link', { name: /Request a Demo/i })).toHaveAttribute('href', '/contact')
+  await expect(page.getByRole('link', { name: /Request a demo/i })).toHaveAttribute('href', '/contact')
   await expect(page.getByText(/cloud-hosted diagnostic command center/i)).toBeVisible()
 })
 

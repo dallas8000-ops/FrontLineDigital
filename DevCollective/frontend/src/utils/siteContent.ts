@@ -1,5 +1,5 @@
 import { defaultPortfolioProjects, withHealthyDemoUrl, type PortfolioProject } from '../data/portfolioProjects'
-import { brokenRailwayHosts, legacyDeadHosts, marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
+import { apiOnlyRailwayHosts, deprecatedRailwayHosts, legacyDeadHosts, marketingSiteUrls, portfolioLiveUrls } from '../data/portfolioLiveUrls'
 import {
   defaultProfile,
   defaultSkills,
@@ -12,7 +12,8 @@ import {
 function isStaleDeployUrl(url: string | undefined, canonical: string): boolean {
   if (!url) return true
   if (url.includes('github.com')) return true
-  if (brokenRailwayHosts.some((host) => url.includes(host))) return true
+  if (deprecatedRailwayHosts.some((host) => url.includes(host))) return true
+  if (apiOnlyRailwayHosts.some((host) => url.includes(host))) return true
   if (legacyDeadHosts.some((host) => url.includes(host))) return true
   try {
     const storedHost = new URL(url).host
@@ -44,9 +45,17 @@ function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
 
 function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): PortfolioProject {
   const { repoUrl: _repoUrl, ...rest } = p
-  if (/kristie/i.test(rest.title) || /blog/i.test(rest.title)) {
-    const { url: _u, ...noUrl } = rest
-    return noUrl
+  if (/kristie/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.kristieStore),
+    }
+  }
+  if (/blog/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.blogApi),
+    }
   }
   if (/dbops/i.test(rest.title)) {
     return {
@@ -70,11 +79,11 @@ function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): Portfoli
     }
   }
   if (/pc checker/i.test(rest.title)) {
-    const { url: _u, ...noUrl } = rest
     return {
-      ...noUrl,
+      ...rest,
       title: 'PC Checker Extreme',
       detailPath: '/projects/pc-checker',
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.pcCheckerExtreme),
     }
   }
   if (/specwright/i.test(rest.title)) {
@@ -137,7 +146,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 3
+const SITE_CONTENT_SCHEMA_VERSION = 5
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
 export const getSiteContent = () => {

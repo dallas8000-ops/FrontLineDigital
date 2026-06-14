@@ -12,20 +12,24 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 **Marketing site:** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)  
 **Railway URL (fallback):** [https://frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app)
 
-**Portfolio apps with working live demos (Railway):**
+**Portfolio apps — live demos on Railway:**
 
 | Project | Live URL |
 | --- | --- |
+| Kristie Store | [kristie-store-production.up.railway.app](https://kristie-store-production.up.railway.app) |
+| Django REST Blog API | [blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
 | React Store Catalog | [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) |
+| PC Checker Extreme | [pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
 | RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
 | DBOps Control Center | [dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
 | Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
 | API Transfer | [api-transfer-production.up.railway.app](https://api-transfer-production.up.railway.app) |
 | EnPowerCommand | [enpowercommand-production.up.railway.app](https://enpowercommand-production.up.railway.app) |
+| Stripe Installer | [stripe-installer-production.up.railway.app/login](https://stripe-installer-production.up.railway.app/login) |
 
 **Contact / admin API:** [frontlinedigital-1-production.up.railway.app/api](https://frontlinedigital-1-production.up.railway.app/api/health)
 
-Kristie Store, Blog API, PC Checker Extreme, and Stripe Installer are listed on the portfolio without live-demo buttons until those Railway services are healthy.
+If a Railway service returns 502, fix env/Postgres/port on that service — the portfolio still links to it as the live demo.
 
 > All hosting is on **Railway**. Legacy Render URLs are blocked in the portfolio config.
 
