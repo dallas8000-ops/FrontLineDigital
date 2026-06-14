@@ -6,7 +6,7 @@ export const portfolioLiveUrls = {
   specwrightWeb: 'https://specwright-web-production.up.railway.app',
   apiTransfer: 'https://api-transfer-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
-  stripeInstaller: 'https://stripe-installer-production.up.railway.app',
+  stripeInstaller: 'https://stripe-installer-production.up.railway.app/login',
   /** Backend for contact form + admin (frontend is on gilliomfrontlinedigital.com). */
   apiBase: 'https://frontlinedigital-1-production.up.railway.app/api',
 } as const

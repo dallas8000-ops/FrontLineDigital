@@ -136,6 +136,9 @@ export const defaultSiteContent = {
   projects: defaultPortfolioProjects.map(withHealthyDemoUrl),
 }
 
+// Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
+const SITE_CONTENT_SCHEMA_VERSION = 3
+
 // Utility to get editable site content from localStorage (or fallback to defaults)
 export const getSiteContent = () => {
   if (typeof globalThis.window !== 'undefined') {
@@ -143,7 +146,10 @@ export const getSiteContent = () => {
     if (stored) {
       try {
         const parsed = JSON.parse(stored)
-        if (Array.isArray(parsed.projects)) {
+        if ((parsed.schemaVersion ?? 0) < SITE_CONTENT_SCHEMA_VERSION) {
+          parsed.schemaVersion = SITE_CONTENT_SCHEMA_VERSION
+          parsed.projects = defaultPortfolioProjects.map(withHealthyDemoUrl)
+        } else if (Array.isArray(parsed.projects)) {
           parsed.projects = migrateProjects(parsed.projects)
         } else {
           parsed.projects = defaultPortfolioProjects.map(withHealthyDemoUrl)
