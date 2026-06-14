@@ -28,7 +28,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.blogApi,
     proves: 'REST APIs, JWT auth, OAuth, and real-time features',
     stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, JWT, Channels, WebSockets, Gunicorn, Railway',
-    desc: 'Production blog and portfolio platform with real-time notifications and full auth stack.',
+    desc: 'Production Django blog (Blog-2) with posts, profiles, comments, JWT REST API, WebSockets, and GitHub OAuth — live demo on its own Railway service.',
     highlights: [
       'WebSocket new-post alerts, GitHub OAuth, JWT-gated REST API, and verified unittest coverage.',
     ],

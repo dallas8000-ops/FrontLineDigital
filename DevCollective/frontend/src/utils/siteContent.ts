@@ -146,7 +146,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 5
+const SITE_CONTENT_SCHEMA_VERSION = 6
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
 export const getSiteContent = () => {

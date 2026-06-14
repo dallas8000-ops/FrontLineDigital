@@ -1,6 +1,7 @@
 /** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
-  kristieStore: 'https://kristie-store-production.up.railway.app',
+  /** Railway service is deployed as kistie-store (typo) — kristie-store hostname has no service. */
+  kristieStore: 'https://kistie-store-production.up.railway.app',
   blogApi: 'https://blog-2-production-72bc.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',
@@ -10,7 +11,7 @@ export const portfolioLiveUrls = {
   apiTransfer: 'https://api-transfer-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
   stripeInstaller: 'https://stripe-installer-production.up.railway.app/login',
-  /** Backend for contact form + admin (frontend is on gilliomfrontlinedigital.com). */
+  /** Contact form + admin API for gilliomfrontlinedigital.com (portfolio backend on Railway). */
   apiBase: 'https://frontlinedigital-1-production.up.railway.app/api',
 } as const
 
@@ -31,7 +32,7 @@ export const legacyDeadHosts = [
 
 /** Superseded Railway hostnames — remap stored URLs to the current service in pickLiveUrl. */
 export const deprecatedRailwayHosts = [
-  'kistie-store-production.up.railway.app',
+  'kristie-store-production.up.railway.app',
   'react-store-catalog-production.up.railway.app',
   'righand-frontend-production.up.railway.app',
 ] as const
