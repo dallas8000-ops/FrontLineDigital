@@ -14,8 +14,9 @@ export type PortfolioProject = {
 export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'Elite Fintech Systems',
+    url: portfolioLiveUrls.eliteFintech,
     proves: 'Multi-tenant fintech billing, FX pricing intelligence, and East Africa regionalization',
-    stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose',
+    stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose, Railway',
     desc: 'East Africa-focused fintech billing platform for Uganda, Kenya, Rwanda, and Tanzania with org-level RBAC, JWT auth, real-time billing events, and daily FX-driven pricing (UGX/KES/RWF/TZS). Mobile-money-first architecture with Stripe as optional fallback for international card flows.',
     highlights: [
       'Daily FX engine converts USD anchors to local VAT-inclusive pricing with persisted market snapshots.',

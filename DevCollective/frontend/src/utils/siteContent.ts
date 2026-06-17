@@ -45,6 +45,12 @@ function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
 
 function stripGithubFields(p: PortfolioProject & { repoUrl?: string }): PortfolioProject {
   const { repoUrl: _repoUrl, ...rest } = p
+  if (/elite\s*fintech/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.eliteFintech, [/elite-fintech-api/i]),
+    }
+  }
   if (/kistie/i.test(rest.title)) {
     return {
       ...rest,
@@ -146,7 +152,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 7
+const SITE_CONTENT_SCHEMA_VERSION = 8
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
 export const getSiteContent = () => {

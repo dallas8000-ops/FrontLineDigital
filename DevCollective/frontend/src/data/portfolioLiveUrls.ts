@@ -1,5 +1,7 @@
 /** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
+  /** Elite Fintech Systems — web service + one-click demo login */
+  eliteFintech: 'https://elite-fintech-web-production.up.railway.app/demo',
   /** Kistie Store — Railway service kistie-store-production */
   kistieStore: 'https://kistie-store-production.up.railway.app',
   blogApi: 'https://blog-2-production-72bc.up.railway.app',

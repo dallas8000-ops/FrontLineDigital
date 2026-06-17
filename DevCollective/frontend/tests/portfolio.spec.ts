@@ -12,6 +12,7 @@ test('home page loads portfolio-first hero and links to services', async ({ page
 })
 
 const portfolioDemoLinks = [
+  ['Elite Fintech Systems', portfolioLiveUrls.eliteFintech],
   ['Kistie Store', portfolioLiveUrls.kistieStore],
   ['Django REST Blog API', portfolioLiveUrls.blogApi],
   ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],
