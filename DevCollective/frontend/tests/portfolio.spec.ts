@@ -4,21 +4,22 @@ import { portfolioLiveUrls } from '../src/data/portfolioLiveUrls'
 test('home page loads portfolio-first hero and links to services', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByRole('heading', { name: /My portfolio is what I deliver/i })).toBeVisible()
-  await expect(page.getByRole('heading', { name: /What I build — proven in production/i })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Production SaaS, fintech, AI automation/i })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Flagship products recruiters can verify fast/i })).toBeVisible()
   await page.getByRole('navigation').getByRole('link', { name: 'Services' }).click()
   await expect(page).toHaveURL(/\/services$/)
   await expect(page.getByRole('heading', { name: /Defined by what is already in production/i })).toBeVisible()
 })
 
 const portfolioDemoLinks = [
+  ['DBOps Control Center', portfolioLiveUrls.dbopsWeb],
+  ['Stripe Installer', portfolioLiveUrls.stripeInstaller],
   ['Elite Fintech Systems', portfolioLiveUrls.eliteFintech],
   ['Kistie Store', portfolioLiveUrls.kistieStore],
+  ['RigHand AI', portfolioLiveUrls.righandFrontend],
   ['Django REST Blog API', portfolioLiveUrls.blogApi],
   ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],
   ['PC Checker Extreme', portfolioLiveUrls.pcCheckerExtreme],
-  ['RigHand AI', portfolioLiveUrls.righandFrontend],
-  ['DBOps Control Center', portfolioLiveUrls.dbopsWeb],
   ['Specwright', portfolioLiveUrls.specwrightWeb],
 ] as const
 

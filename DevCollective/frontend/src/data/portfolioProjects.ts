@@ -7,31 +7,82 @@ export type PortfolioProject = {
   /** One line: what this live app proves you can build for a client */
   proves?: string
   url?: string
+  repoUrl?: string
+  screenshot?: string
   detailPath?: string
   highlights?: string[]
+  flagship?: boolean
 }
 
 export const defaultPortfolioProjects: PortfolioProject[] = [
   {
+    title: 'DBOps Control Center',
+    proves: 'Enterprise DB tooling, RBAC, audit trails, and billing',
+    stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Stripe, Railway',
+    desc: 'Production database operations platform with JWT + RBAC, whitelisted read-only SQL reports, incidents with audit history, scheduled delivery, OIDC SSO, and Stripe billing.',
+    url: portfolioLiveUrls.dbopsWeb,
+    repoUrl: 'https://github.com/dallas8000-ops/DBOps-Control-Center',
+    screenshot: '/images/portfolio/dbops-control-center-features.png',
+    flagship: true,
+    highlights: [
+      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Stripe subscription billing.',
+      'Multi-tenant RBAC, OIDC SSO, and Railway deployment with PostgreSQL.',
+    ],
+  },
+  {
+    title: 'Stripe Installer',
+    proves: 'Developer tooling, encrypted secrets management, and AI-assisted automation',
+    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway',
+    desc: 'Production-grade Stripe setup tool for agencies with encrypted key storage, live WebSocket pipeline events, AI diagnostics, and SDK-ready integration file generation.',
+    url: portfolioLiveUrls.stripeInstaller,
+    repoUrl: 'https://github.com/dallas8000-ops/Stripe-Installer',
+    screenshot: '/images/portfolio/stripe-installer-login.png',
+    flagship: true,
+    highlights: [
+      'AES-256-GCM encrypted vault keeps secrets out of AI prompts, logs, and frontend state.',
+      'Readiness score, webhook path auto-detection, and one-click deploy prep for Railway.',
+    ],
+  },
+  {
     title: 'Elite Fintech Systems',
     url: portfolioLiveUrls.eliteFintech,
+    repoUrl: 'https://github.com/dallas8000-ops/Elite-Fintech-Web',
+    flagship: true,
     proves: 'Multi-tenant fintech billing, FX pricing intelligence, and East Africa regionalization',
     stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose, Railway',
-    desc: 'East Africa-focused fintech billing platform for Uganda, Kenya, Rwanda, and Tanzania with org-level RBAC, JWT auth, real-time billing events, and daily FX-driven pricing (UGX/KES/RWF/TZS). Mobile-money-first architecture with Stripe as optional fallback for international card flows.',
+    desc: 'East Africa-focused fintech billing platform for Uganda, Kenya, Rwanda, and Tanzania with org-level RBAC, JWT auth, real-time billing events, and daily FX-driven pricing. Mobile-money-first architecture with Stripe as optional fallback for international card flows.',
+    screenshot: '/images/portfolio/elite-fintech-systems.png',
     highlights: [
       'Daily FX engine converts USD anchors to local VAT-inclusive pricing with persisted market snapshots.',
-      'Role-based multi-tenant flows (OWNER/ADMIN/MEMBER/VIEWER) with smoke-tested billing paths.',
+      'Role-based multi-tenant flows with smoke-tested billing paths.',
     ],
   },
   {
     title: 'Kistie Store',
     url: portfolioLiveUrls.kistieStore,
+    repoUrl: 'https://github.com/dallas8000-ops/Kistie-Store',
+    screenshot: '/images/portfolio/kistie-store-shop.png',
+    flagship: true,
     proves: 'E-commerce, checkout, and multi-currency storefronts',
     stack: 'Python 3.11, Django 5.2, DRF, React 18, TypeScript, PostgreSQL, GitHub Actions, Railway',
-    desc: 'Capstone e-commerce platform (women\'s apparel, Kampala-based) — production architecture for East Africa and worldwide checkout.',
+    desc: 'Capstone e-commerce platform for a Kampala-based apparel storefront with production architecture for East Africa and worldwide checkout.',
     highlights: [
       '11 user stories with acceptance criteria; full usability testing on production.',
       'Multi-currency checkout, mobile money flow, layered security, and GitHub Actions CI.',
+    ],
+  },
+  {
+    title: 'RigHand AI',
+    proves: 'Mobile-first SaaS, subscriptions, and offline-capable apps',
+    stack: 'React, Django, PostgreSQL, Capacitor, Stripe, Railway',
+    desc: 'Expense and profit tracking for truck drivers with offline-first sync, subscriptions, GPS/OBD trip mileage, and tax-ready exports.',
+    url: portfolioLiveUrls.righandFrontend,
+    repoUrl: 'https://github.com/dallas8000-ops/RigHand',
+    screenshot: '/images/portfolio/righand-ai-dashboard.png',
+    flagship: true,
+    highlights: [
+      'Free/Pro/Fleet tiers with Stripe billing, Capacitor Android app, and Railway deployment.',
+      'Offline-first IndexedDB sync, GPS mileage tracking, and tax-ready CSV/PDF exports.',
     ],
   },
   {
@@ -39,7 +90,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.blogApi,
     proves: 'REST APIs, JWT auth, OAuth, and real-time features',
     stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, JWT, Channels, WebSockets, Gunicorn, Railway',
-    desc: 'Production Django blog (Blog-2) with posts, profiles, comments, JWT REST API, WebSockets, and GitHub OAuth — live demo on its own Railway service.',
+    desc: 'Production Django blog with posts, profiles, comments, JWT REST API, WebSockets, GitHub OAuth, and live Railway deployment.',
     highlights: [
       'WebSocket new-post alerts, GitHub OAuth, JWT-gated REST API, and verified unittest coverage.',
     ],
@@ -50,6 +101,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     stack: 'React 19, TypeScript, Vite 7, Vitest, Framer Motion, Express, PostgreSQL, JWT, Railway',
     desc: 'Full-stack product catalog with admin portal, coupon management, and Vitest + Testing Library suite.',
     url: portfolioLiveUrls.reactStoreCatalog,
+    screenshot: '/images/portfolio/react-store-catalog.png',
     highlights: [
       'Framer Motion UI, JWT admin backend, ARIA-verified interactions, and GitHub Actions CI on every push.',
     ],
@@ -59,7 +111,8 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.pcCheckerExtreme,
     proves: 'Systems diagnostics, monitoring dashboards, and AI-assisted ops tooling',
     stack: 'Python, Django, WMI, winget, OpenAI, Railway',
-    desc: 'Cloud-hosted diagnostic command center — health matrix, live telemetry, scan history, and AI-powered system analysis.',
+    desc: 'Cloud-hosted diagnostic command center with health matrix, live telemetry, scan history, and AI-powered system analysis.',
+    screenshot: '/images/portfolio/pc-checker-extreme.png',
     detailPath: '/projects/pc-checker',
     highlights: [
       'Live CPU/RAM/disk telemetry, scan archive, and subsystem waveform charts in a command-center UI.',
@@ -67,44 +120,24 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: 'RigHand AI',
-    proves: 'Mobile-first SaaS, subscriptions, and offline-capable apps',
-    stack: 'React, Django, PostgreSQL, Capacitor, Stripe, Railway',
-    desc: 'Expense and profit tracking for truck drivers — offline-first, subscriptions, GPS/OBD trip mileage, tax-ready exports.',
-    url: portfolioLiveUrls.righandFrontend,
-    highlights: [
-      'Free/Pro/Fleet tiers with Stripe billing, Capacitor Android app, and Railway deployment.',
-      'Offline-first IndexedDB sync, GPS mileage tracking, and tax-ready CSV/PDF exports.',
-    ],
-  },
-  {
-    title: 'DBOps Control Center',
-    proves: 'Enterprise DB tooling, RBAC, audit trails, and billing',
-    stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Stripe, Railway',
-    desc: 'Production database operations platform — JWT + RBAC, whitelisted read-only SQL reports, incidents with audit history, scheduled delivery, OIDC SSO, and Stripe billing.',
-    url: portfolioLiveUrls.dbopsWeb,
-    highlights: [
-      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Stripe subscription billing.',
-      'Multi-tenant RBAC, OIDC SSO, and Railway deployment with PostgreSQL.',
-    ],
-  },
-  {
     title: 'Specwright',
     proves: 'AST-based API documentation, test scaffolding, and developer tooling',
     stack: 'FastAPI, Python 3.11, React 18, TypeScript, Vite, SQLite, OpenAI, Stripe, Railway',
-    desc: 'The documentation layer for FastAPI teams — automatically. Reads your codebase via AST analysis and keeps OpenAPI specs, pytest scaffolds, and ER diagrams in sync with your routes and models. Includes Specwright Score (0–100), team dashboard, watch mode, PR-aware diffing, and Grounded AI.',
+    desc: 'The documentation layer for FastAPI teams. Reads your codebase via AST analysis and keeps OpenAPI specs, pytest scaffolds, and ER diagrams in sync with routes and models.',
     url: portfolioLiveUrls.specwrightWeb,
+    screenshot: '/images/portfolio/specwright.png',
     highlights: [
-      'Specwright Score dashboard — per-route health, doc/test coverage, spec freshness, and drift alerts across all repos.',
-      'Grounded AI suite (Pro): description fill, migration notes, breaking-change triage, and scoped chat — all AST-locked, no hallucinated routes.',
+      'Specwright Score dashboard tracks route health, doc/test coverage, spec freshness, and drift alerts across repos.',
+      'Grounded AI suite supports migration notes, breaking-change triage, and scoped chat from AST-locked context.',
     ],
   },
   {
     title: 'API Transfer',
     proves: 'API migration tooling, codebase diagnostics, and multi-platform deployment',
     stack: 'Python, Django, DRF, React, TypeScript, PostgreSQL, Stripe, Railway',
-    desc: 'Automated API migration and transfer platform — scans codebases for config drift, provisions cloud environments, and migrates API configs between hosting platforms with zero manual steps.',
+    desc: 'Automated API migration and transfer platform that scans codebases for config drift, provisions cloud environments, and migrates API configs between hosting platforms.',
     url: portfolioLiveUrls.apiTransfer,
+    screenshot: '/images/portfolio/api-transfer-console.png',
     highlights: [
       'Codebase scanner auto-detects framework, secrets, and Stripe webhook paths.',
       'One-click migration between cloud hosts with env var sync and webhook re-registration.',
@@ -114,22 +147,12 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     title: 'EnPowerCommand',
     proves: 'Utility billing SaaS, subscription management, and client dashboards',
     stack: 'Node.js, Express, React, TypeScript, PostgreSQL, Stripe, Railway',
-    desc: 'Energy and utility billing command center — subscription tiers, usage tracking, client-facing dashboards, and automated billing with Stripe Checkout and the Customer Portal.',
+    desc: 'Energy and utility billing command center with subscription tiers, usage tracking, client-facing dashboards, and automated billing with Stripe Checkout and the Customer Portal.',
     url: portfolioLiveUrls.enPowerCommand,
+    repoUrl: 'https://github.com/dallas8000-ops/EnPowerCommand',
     highlights: [
       'Live subscription management with Stripe Checkout, billing portal, and webhook-driven tier sync.',
       'Multi-client dashboard with usage analytics and automated invoice generation.',
-    ],
-  },
-  {
-    title: 'Stripe Installer',
-    proves: 'Developer tooling, encrypted secrets management, and AI-assisted automation',
-    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway',
-    desc: 'Production-grade Stripe setup tool for agencies — encrypted vault stores keys, live pipeline streams events via WebSocket, AI copilot diagnoses and fixes misconfigs, and codegen produces SDK-ready integration files.',
-    url: portfolioLiveUrls.stripeInstaller,
-    highlights: [
-      'AES-256-GCM encrypted vault — secrets never exposed to AI, logs, or the frontend.',
-      'Readiness score (0–100), webhook path auto-detection, and one-click deploy prep for Railway.',
     ],
   },
 ]
