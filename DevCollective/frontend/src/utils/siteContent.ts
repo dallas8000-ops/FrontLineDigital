@@ -98,14 +98,11 @@ function stripGithubFields(p: PortfolioProject): PortfolioProject {
       url: pickLiveUrl(rest.url, portfolioLiveUrls.specwrightWeb, [/specwright-api/i]),
     }
   }
-  if (/api.?transfer/i.test(rest.title)) {
-    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.apiTransfer) }
+  if (/api.?transfer|stripe.?installer|automation.?center|deployment.*stripe/i.test(rest.title)) {
+    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.automationCenter) }
   }
   if (/enpower/i.test(rest.title)) {
     return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.enPowerCommand) }
-  }
-  if (/stripe.?installer/i.test(rest.title)) {
-    return { ...rest, url: pickLiveUrl(rest.url, portfolioLiveUrls.stripeInstaller) }
   }
   if ((rest.url ?? '').includes('github.com')) {
     const { url: _url, ...noUrl } = rest
@@ -128,8 +125,17 @@ function mergeCanonicalProjectFields(project: PortfolioProject): PortfolioProjec
   return stripGithubFields(merged)
 }
 
+/** Retired portfolio cards — merged into Deployment & Stripe Automation Center. */
+const retiredPortfolioTitles = new Set([
+  'stripe installer',
+  'api transfer',
+])
+
 function migrateProjects(projects: Array<PortfolioProject & { repoUrl?: string }>) {
-  const filtered = projects.map(stripGithubFields).map(mergeCanonicalProjectFields)
+  const filtered = projects
+    .filter((p) => !retiredPortfolioTitles.has(p.title.toLowerCase()))
+    .map(stripGithubFields)
+    .map(mergeCanonicalProjectFields)
   const titles = new Set(filtered.map((p) => p.title.toLowerCase()))
   for (const canonical of defaultPortfolioProjects) {
     if (!titles.has(canonical.title.toLowerCase())) {
@@ -152,7 +158,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 9
+const SITE_CONTENT_SCHEMA_VERSION = 11
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
 export const getSiteContent = () => {

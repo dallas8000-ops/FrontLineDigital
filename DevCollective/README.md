@@ -23,9 +23,8 @@ A professional Developer Collective platform combining Services Portfolio, Team 
 | RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
 | DBOps Control Center | [dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
 | Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
-| API Transfer | [api-transfer-production.up.railway.app](https://api-transfer-production.up.railway.app) |
+| Deployment & Stripe Automation Center | [stripe-installer-production.up.railway.app/login](https://stripe-installer-production.up.railway.app/login) (Stripe + API Transfer merged) |
 | EnPowerCommand | [enpowercommand-production.up.railway.app](https://enpowercommand-production.up.railway.app) |
-| Stripe Installer | [stripe-installer-production.up.railway.app/login](https://stripe-installer-production.up.railway.app/login) |
 
 **Contact / admin API:** [frontlinedigital-1-production.up.railway.app/api](https://frontlinedigital-1-production.up.railway.app/api/health)
 

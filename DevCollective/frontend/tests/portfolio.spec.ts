@@ -13,7 +13,7 @@ test('home page loads portfolio-first hero and links to services', async ({ page
 
 const portfolioDemoLinks = [
   ['DBOps Control Center', portfolioLiveUrls.dbopsWeb],
-  ['Stripe Installer', portfolioLiveUrls.stripeInstaller],
+  ['Deployment & Stripe Automation Center', portfolioLiveUrls.automationCenter],
   ['Elite Fintech Systems', portfolioLiveUrls.eliteFintech],
   ['Kistie Store', portfolioLiveUrls.kistieStore],
   ['RigHand AI', portfolioLiveUrls.righandFrontend],

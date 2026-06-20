@@ -30,17 +30,17 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: 'Stripe Installer',
-    proves: 'Developer tooling, encrypted secrets management, and AI-assisted automation',
-    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway',
-    desc: 'Production-grade Stripe setup tool for agencies with encrypted key storage, live WebSocket pipeline events, AI diagnostics, and SDK-ready integration file generation.',
-    url: portfolioLiveUrls.stripeInstaller,
+    title: 'Deployment & Stripe Automation Center',
+    proves: 'Stripe setup, encrypted vault, API migration, and Railway deploy in one platform',
+    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway, Render, Fly',
+    desc: 'One agency platform for Stripe setup and cloud deploy — encrypted per-project vault, live pipeline, Render→Railway migration, GitHub import, deploy pipelines, and AI diagnostics.',
+    url: portfolioLiveUrls.automationCenter,
     repoUrl: 'https://github.com/dallas8000-ops/Stripe-Installer',
     screenshot: '/images/portfolio/stripe-installer-login.png',
     flagship: true,
     highlights: [
-      'AES-256-GCM encrypted vault keeps secrets out of AI prompts, logs, and frontend state.',
-      'Readiness score, webhook path auto-detection, and one-click deploy prep for Railway.',
+      'AES-256-GCM vault keeps secrets out of AI prompts, logs, and frontend state.',
+      'One-click deploy, Render→Railway transfer runs, and webhook readiness in a shared project workspace.',
     ],
   },
   {
@@ -129,18 +129,6 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     highlights: [
       'Specwright Score dashboard tracks route health, doc/test coverage, spec freshness, and drift alerts across repos.',
       'Grounded AI suite supports migration notes, breaking-change triage, and scoped chat from AST-locked context.',
-    ],
-  },
-  {
-    title: 'API Transfer',
-    proves: 'API migration tooling, codebase diagnostics, and multi-platform deployment',
-    stack: 'Python, Django, DRF, React, TypeScript, PostgreSQL, Stripe, Railway',
-    desc: 'Automated API migration and transfer platform that scans codebases for config drift, provisions cloud environments, and migrates API configs between hosting platforms.',
-    url: portfolioLiveUrls.apiTransfer,
-    screenshot: '/images/portfolio/api-transfer-console.png',
-    highlights: [
-      'Codebase scanner auto-detects framework, secrets, and Stripe webhook paths.',
-      'One-click migration between cloud hosts with env var sync and webhook re-registration.',
     ],
   },
   {

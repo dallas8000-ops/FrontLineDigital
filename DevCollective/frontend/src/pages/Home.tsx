@@ -24,8 +24,8 @@ const architectureProjects = [
     layers: ['React + TypeScript', 'FastAPI + SQLAlchemy', 'PostgreSQL + Alembic', 'Stripe + Railway + OIDC'],
   },
   {
-    name: 'Stripe Installer',
-    layers: ['React + TypeScript', 'Django + WebSockets', 'Encrypted vault + Celery', 'Stripe + Railway + GitHub'],
+    name: 'Deployment & Stripe Automation Center',
+    layers: ['React + TypeScript', 'Django + WebSockets', 'Encrypted vault + Celery', 'Stripe + deploy + migration'],
   },
   {
     name: 'Elite Fintech Systems',
