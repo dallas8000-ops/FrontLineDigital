@@ -13,7 +13,9 @@ export default function ScrollToTop() {
         return
       }
     }
-    window.scrollTo({ top: 0, behavior: 'instant' })
+    if (pathname !== '/') {
+      window.scrollTo({ top: 0, left: 0 })
+    }
   }, [pathname, hash])
 
   return null

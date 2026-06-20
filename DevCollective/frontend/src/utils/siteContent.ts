@@ -158,7 +158,15 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 11
+const SITE_CONTENT_SCHEMA_VERSION = 12
+
+function persistSiteContent(parsed: Record<string, unknown>) {
+  try {
+    globalThis.localStorage.setItem('siteContent', JSON.stringify(parsed))
+  } catch {
+    /* quota / private mode — ignore */
+  }
+}
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
 export const getSiteContent = () => {
@@ -167,13 +175,20 @@ export const getSiteContent = () => {
     if (stored) {
       try {
         const parsed = JSON.parse(stored)
+        let dirty = false
         if ((parsed.schemaVersion ?? 0) < SITE_CONTENT_SCHEMA_VERSION) {
           parsed.schemaVersion = SITE_CONTENT_SCHEMA_VERSION
           parsed.projects = defaultPortfolioProjects.map(withHealthyDemoUrl)
+          dirty = true
         } else if (Array.isArray(parsed.projects)) {
-          parsed.projects = migrateProjects(parsed.projects)
+          const migrated = migrateProjects(parsed.projects)
+          if (JSON.stringify(migrated) !== JSON.stringify(parsed.projects)) {
+            parsed.projects = migrated
+            dirty = true
+          }
         } else {
           parsed.projects = defaultPortfolioProjects.map(withHealthyDemoUrl)
+          dirty = true
         }
         if (!parsed.experience) parsed.experience = defaultExperience
         if (!parsed.education) parsed.education = defaultEducation
@@ -189,6 +204,10 @@ export const getSiteContent = () => {
           parsed.skills = defaultSkills
           parsed.services = defaultServices
           parsed.experience = defaultExperience
+          dirty = true
+        }
+        if (dirty) {
+          persistSiteContent(parsed)
         }
         return parsed
       } catch {

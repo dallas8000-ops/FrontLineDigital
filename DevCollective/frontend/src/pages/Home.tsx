@@ -44,7 +44,7 @@ export default function Home() {
     <div className="bg-site-grid">
       <section className="section-inner pt-8 pb-10 md:pt-12 md:pb-14">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="animate-fadeInUp">
+          <div>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
               {business.name}
             </p>

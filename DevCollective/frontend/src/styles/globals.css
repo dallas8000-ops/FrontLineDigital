@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -139,20 +137,24 @@ h3 {
   @apply text-brand-gold font-bold shrink-0;
 }
 
-/* Animations */
+/* Animations — avoid opacity:0 on load (causes visible flicker on every mount) */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(8px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
 
 .animate-fadeInUp {
-  animation: fadeInUp 0.5s ease-out;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeInUp {
+    animation: none;
+  }
 }
 
 /* Inner pages — light content on dark shell */
