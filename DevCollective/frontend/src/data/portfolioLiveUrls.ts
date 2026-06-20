@@ -1,7 +1,7 @@
 /** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
   /** Unified product: Stripe setup + API Transfer deploy (Deployment-Stripe-center) */
-  automationCenter: 'https://stripe-installer-production.up.railway.app/login',
+  automationCenter: 'https://stripe-installer.gilliomfrontlinedigital.com/login',
   /** Elite Fintech Systems — web service + one-click demo login */
   eliteFintech: 'https://elite-fintech-web-production.up.railway.app/demo',
   /** Kistie Store — Railway service kistie-store-production */
@@ -14,9 +14,9 @@ export const portfolioLiveUrls = {
   specwrightWeb: 'https://specwright-web-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
   /** @deprecated merged into automationCenter */
-  stripeInstaller: 'https://stripe-installer-production.up.railway.app/login',
+  stripeInstaller: 'https://stripe-installer.gilliomfrontlinedigital.com/login',
   /** @deprecated merged into automationCenter — do not link from portfolio cards */
-  apiTransfer: 'https://stripe-installer-production.up.railway.app/login',
+  apiTransfer: 'https://stripe-installer.gilliomfrontlinedigital.com/login',
   /** Contact form + admin API for gilliomfrontlinedigital.com (portfolio backend on Railway). */
   apiBase: 'https://frontlinedigital-1-production.up.railway.app/api',
 } as const
@@ -42,6 +42,7 @@ export const deprecatedRailwayHosts = [
   'react-store-catalog-production.up.railway.app',
   'righand-frontend-production.up.railway.app',
   'api-transfer-production.up.railway.app',
+  'stripe-installer-production.up.railway.app',
 ] as const
 
 /** API-only Railway services — not portfolio live-demo targets (use the web service URL). */
