@@ -75,6 +75,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     title: 'SilverFox',
     url: portfolioLiveUrls.silverfox,
     repoUrl: 'https://github.com/dallas8000-ops/SilverFox',
+    screenshot: '/images/portfolio/silverfox-shop.png',
     flagship: true,
     proves: "Men's fashion e-commerce, catalog integrity, and live FX pricing",
     stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, WhiteNoise, Gunicorn, Railway',
