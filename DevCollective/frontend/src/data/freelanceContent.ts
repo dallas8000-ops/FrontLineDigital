@@ -7,10 +7,10 @@ export const business = {
   location: 'Tampa, FL | Remote & On-Site | Open to Relocation',
   heroHeadline: 'Production SaaS, fintech, AI automation, and operations tooling.',
   heroSubhead:
-    'I build and ship real products: DBOps Control Center, Deployment & Stripe Automation Center, Elite Fintech Systems, Kistie Store, and RigHand AI. Each app shows the same pattern recruiters and clients care about: architecture, APIs, databases, payments, QA, and deployment.',
+    'I build and ship real products: DBOps Control Center, Deployment & Stripe Automation Center, Elite Fintech Systems, Kistie Store, SilverFox, and RigHand AI. Each app shows the same pattern recruiters and clients care about: architecture, APIs, databases, payments, QA, and deployment.',
   portfolioSectionTitle: 'Flagship products recruiters can verify fast',
   portfolioSectionLead:
-    'Five flagship products anchor the brand — each with a live Railway demo, stack tags, and product outcomes. Additional projects below show API, QA, diagnostics, and platform breadth. Stripe setup and API migration deploy are one unified product (formerly separate Stripe Installer and API Transfer).',
+    'Six flagship products anchor the brand — each with a live Railway demo, stack tags, and product outcomes. Additional projects below show API, QA, diagnostics, and platform breadth. Stripe setup and API migration deploy are one unified product (formerly separate Stripe Installer and API Transfer).',
   valueProps: [
     {
       title: 'Enterprise SaaS',

@@ -6,6 +6,8 @@ export const portfolioLiveUrls = {
   eliteFintech: 'https://elite-fintech-web-production.up.railway.app/demo',
   /** Kistie Store — Railway service kistie-store-production */
   kistieStore: 'https://kistie-store-production.up.railway.app',
+  /** SilverFox — men's fashion Django storefront (Railway service silverfox-production) */
+  silverfox: 'https://silverfox-production.up.railway.app',
   blogApi: 'https://blog-2-production-72bc.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',

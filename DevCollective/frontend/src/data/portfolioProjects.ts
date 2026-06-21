@@ -72,6 +72,19 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
+    title: 'SilverFox',
+    url: portfolioLiveUrls.silverfox,
+    repoUrl: 'https://github.com/dallas8000-ops/SilverFox',
+    flagship: true,
+    proves: "Men's fashion e-commerce, catalog integrity, and live FX pricing",
+    stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, WhiteNoise, Gunicorn, Railway',
+    desc: "Premium men's fashion boutique — 128-product catalog with one unique image per SKU, live EUR/USD/UGX/KES exchange rates, staff dashboard, and Kistie-style Django SSR storefront.",
+    highlights: [
+      '128 products across 8 categories with catalog integrity sync and per-product image mapping.',
+      'Multi-currency shop, cart/checkout flow, staff dashboard, and Railway production deploy.',
+    ],
+  },
+  {
     title: 'RigHand AI',
     proves: 'Mobile-first SaaS, subscriptions, and offline-capable apps',
     stack: 'React, Django, PostgreSQL, Capacitor, Stripe, Railway',

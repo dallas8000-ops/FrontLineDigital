@@ -57,6 +57,12 @@ function stripGithubFields(p: PortfolioProject): PortfolioProject {
       url: pickLiveUrl(rest.url, portfolioLiveUrls.kistieStore),
     }
   }
+  if (/silverfox/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.silverfox),
+    }
+  }
   if (/blog/i.test(rest.title)) {
     return {
       ...rest,
@@ -158,7 +164,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 13
+const SITE_CONTENT_SCHEMA_VERSION = 14
 
 function persistSiteContent(parsed: Record<string, unknown>) {
   try {

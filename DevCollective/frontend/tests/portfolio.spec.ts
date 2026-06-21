@@ -16,6 +16,7 @@ const portfolioDemoLinks = [
   ['Deployment & Stripe Automation Center', portfolioLiveUrls.automationCenter],
   ['Elite Fintech Systems', portfolioLiveUrls.eliteFintech],
   ['Kistie Store', portfolioLiveUrls.kistieStore],
+  ['SilverFox', portfolioLiveUrls.silverfox],
   ['RigHand AI', portfolioLiveUrls.righandFrontend],
   ['Django REST Blog API', portfolioLiveUrls.blogApi],
   ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],

@@ -37,7 +37,7 @@ export default function Home() {
   usePageTitle('Gilliom Frontline Digital | Software Engineer Portfolio')
   const content = getSiteContent()
   const projects = content.projects ?? []
-  const flagshipProjects = projects.filter((project) => project.flagship).slice(0, 5)
+  const flagshipProjects = projects.filter((project) => project.flagship).slice(0, 6)
   const supportingProjects = projects.filter((project) => !project.flagship)
 
   return (
