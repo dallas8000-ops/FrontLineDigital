@@ -46,7 +46,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'Elite Fintech Systems',
     url: portfolioLiveUrls.eliteFintech,
-    repoUrl: 'https://github.com/dallas8000-ops/Elite-Fintech-Web',
+    repoUrl: 'https://github.com/dallas8000-ops/Elite-Fintech-Systems',
     flagship: true,
     proves: 'Multi-tenant fintech billing, FX pricing intelligence, and East Africa regionalization',
     stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose, Railway',

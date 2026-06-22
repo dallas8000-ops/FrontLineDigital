@@ -51,6 +51,7 @@ export const deprecatedRailwayHosts = [
 export const apiOnlyRailwayHosts = [
   'dbops-api-production-5047.up.railway.app',
   'specwright-api-production.up.railway.app',
+  'elite-fintech-api-production.up.railway.app',
 ] as const
 
 /** Public marketing site — custom domain with Railway fallback. */
