@@ -34,7 +34,7 @@ const architectureProjects = [
 ]
 
 export default function Home() {
-  usePageTitle('Gilliom Frontline Digital | Software Engineer Portfolio')
+  usePageTitle('Gilliom Frontline Digital | Internal Tools & Ops Dashboards')
   const content = getSiteContent()
   const projects = content.projects ?? []
   const flagshipProjects = projects.filter((project) => project.flagship).slice(0, 6)
@@ -54,15 +54,12 @@ export default function Home() {
             <p className="mb-4 text-lg font-medium text-brand-gold">{defaultProfile.profileTitle}</p>
             <p className="mb-6 max-w-2xl text-lg leading-relaxed text-slate-200">{business.heroSubhead}</p>
             <div className="mb-8 flex flex-wrap gap-4">
-              <a href="#portfolio" className="btn btn-primary">
-                View flagship products
-              </a>
-              <a href="#architecture" className="btn btn-outline">
-                See architecture
-              </a>
-              <Link to="/profile" className="btn btn-ghost">
-                Resume / CV
+              <Link to="/contact" className="btn btn-primary">
+                Start a project
               </Link>
+              <a href="#portfolio" className="btn btn-outline">
+                See live demos
+              </a>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {business.credentials.map((item) => (

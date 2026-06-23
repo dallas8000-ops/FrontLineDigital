@@ -12,7 +12,9 @@ import Profile from './pages/Profile'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import PCChecker from './pages/PCChecker'
+import LiveDemoRedirect from './components/LiveDemoRedirect'
 import NotFound from './pages/NotFound'
+import { portfolioLiveUrls } from './data/portfolioLiveUrls'
 import AdminPanel from './pages/AdminPanel'
 import AdminLogin from './pages/AdminLogin'
 import './styles/globals.css'
@@ -50,6 +52,15 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects/pc-checker" element={<PCChecker />} />
+              <Route
+                path="/deployment-stripe-automation-center"
+                element={
+                  <LiveDemoRedirect
+                    url={portfolioLiveUrls.automationCenter}
+                    label="Deployment & Stripe Automation Center"
+                  />
+                }
+              />
               <Route path="/admin" element={<ProtectedAdmin />} />
               <Route path="/admin-login" element={<AdminLogin />} />
               <Route path="*" element={<NotFound />} />

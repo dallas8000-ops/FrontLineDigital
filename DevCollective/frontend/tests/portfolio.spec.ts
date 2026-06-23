@@ -4,8 +4,8 @@ import { portfolioLiveUrls } from '../src/data/portfolioLiveUrls'
 test('home page loads portfolio-first hero and links to services', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByRole('heading', { name: /Production SaaS, fintech, AI automation/i })).toBeVisible()
-  await expect(page.getByRole('heading', { name: /Flagship products recruiters can verify fast/i })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Internal tools and operations dashboards/i })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Products you can try right now/i })).toBeVisible()
   await page.getByRole('navigation').getByRole('link', { name: 'Services' }).click()
   await expect(page).toHaveURL(/\/services$/)
   await expect(page.getByRole('heading', { name: /Defined by what is already in production/i })).toBeVisible()

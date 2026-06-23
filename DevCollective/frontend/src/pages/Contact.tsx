@@ -84,8 +84,8 @@ export default function Contact() {
           <p className="text-brand-gold text-xs font-bold uppercase tracking-[0.2em] mb-2">Contact</p>
           <h1 className="mb-4 text-white">Start a conversation</h1>
           <p className="text-brand-muted text-lg leading-relaxed">
-            Free 30-minute consultation for project scope, timeline, and a written estimate. Remote, on-site, and
-            relocation considered.
+            Tell me what your team needs to see or control, and I'll come back with scope, timeline, and a written
+            estimate. Free 30-minute consultation — no obligation.
           </p>
           <p className="text-slate-200 text-sm mt-6">
             <a href={contactInfo.phoneHref} className="hover:text-brand-gold">
@@ -158,11 +158,11 @@ export default function Contact() {
                   className={fieldClass('subject')}
                 >
                   <option value="">Select a subject...</option>
-                  <option value="New website project">New website project</option>
-                  <option value="Full Stack Development">Full stack development</option>
-                  <option value="QA / Test Automation">QA / test automation</option>
-                  <option value="API Development">API development</option>
-                  <option value="Contract / Freelance Work">Contract / freelance work</option>
+                  <option value="Internal tool / ops dashboard">Internal tool / ops dashboard</option>
+                  <option value="Database reporting & access control">Database reporting &amp; access control</option>
+                  <option value="API / backend development">API / backend development</option>
+                  <option value="Payments / billing integration">Payments / billing integration</option>
+                  <option value="Existing product or buildout">Existing product or buildout</option>
                   <option value="Other">Other</option>
                 </select>
                 {touched.subject && errors.subject && (
@@ -181,7 +181,7 @@ export default function Contact() {
                   value={form.message}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Describe your project, timeline, and budget range..."
+                  placeholder="What does your team need to see or control? A sentence or two is plenty to start."
                   className={`${fieldClass('message')} resize-none`}
                 />
                 {touched.message && errors.message && (

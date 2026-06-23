@@ -27,8 +27,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-slate-200 text-sm leading-relaxed max-w-xs">
-              Freelance full-stack software engineering — scope and quality proven by six live applications
-              in the portfolio, built solo from design through deployment.
+              Internal tools and operations dashboards — secure, audited, and production-ready. Scope and quality
+              proven by live, inspectable products, built solo from design through deployment.
             </p>
           </div>
 

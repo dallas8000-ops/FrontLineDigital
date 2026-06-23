@@ -134,7 +134,7 @@ export default function Marketplace() {
         <div className="text-center">
           <h2 className="mb-4">Available for Your Next Project</h2>
           <p className="text-xl mb-8 text-white/90">
-            Independent full-stack developer available for national and international engagements — remote or on-site. Open to relocation.
+            Available for new projects — remote, working with teams that need internal tools, dashboards, and the APIs behind them.
           </p>
           <a href="/profile" className="btn bg-dark-900 hover:bg-dark-800 text-white">
             View My Work

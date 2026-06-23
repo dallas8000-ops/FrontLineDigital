@@ -3,14 +3,14 @@ import { defaultProfile } from './resumeContent'
 export const business = {
   name: 'Gilliom Frontline Digital',
   owner: defaultProfile.profileName,
-  tagline: 'Full-Stack Software Engineering | QA Automation | Production Delivery',
-  location: 'Tampa, FL | Remote & On-Site | Open to Relocation',
-  heroHeadline: 'Production SaaS, fintech, AI automation, and operations tooling.',
+  tagline: 'Internal Tools & Operations Dashboards | Secure, Audited, Production-Ready',
+  location: 'Tampa, FL | Remote — available for new projects',
+  heroHeadline: 'Internal tools and operations dashboards your team can actually trust.',
   heroSubhead:
-    'I build and ship real products: DBOps Control Center, Deployment & Stripe Automation Center, Elite Fintech Systems, Kistie Store, SilverFox, and RigHand AI. Each app shows the same pattern recruiters and clients care about: architecture, APIs, databases, payments, QA, and deployment.',
-  portfolioSectionTitle: 'Flagship products recruiters can verify fast',
+    'I build secure, audited internal tools — role-based access, full audit trails, and reporting your ops team can use without touching raw SQL. Every build below is live, tested, and deployed to production. Try them yourself.',
+  portfolioSectionTitle: 'Products you can try right now',
   portfolioSectionLead:
-    'Six flagship products anchor the brand — each with a live Railway demo, stack tags, and product outcomes. Additional projects below show API, QA, diagnostics, and platform breadth. Stripe setup and API migration deploy are one unified product (formerly separate Stripe Installer and API Transfer).',
+    'Each flagship below is a live, deployable product — open the demo, inspect the stack, read the source on GitHub. They are also proof of how I build for clients: controlled access, audited actions, payments, and production deployment from day one.',
   valueProps: [
     {
       title: 'Enterprise SaaS',
@@ -71,4 +71,3 @@ export const business = {
     'Full-stack developer and SaaS founder building production products from requirements through deployment.',
   ],
 }
-
