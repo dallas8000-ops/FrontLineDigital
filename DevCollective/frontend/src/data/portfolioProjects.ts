@@ -16,6 +16,19 @@ export type PortfolioProject = {
 
 export const defaultPortfolioProjects: PortfolioProject[] = [
   {
+    title: 'EastBridge Ops Intelligence',
+    proves: 'Regulatory intelligence, trade compliance, vendor diligence, and cited AI assistant for EU companies in East Africa',
+    stack: 'Django 5, DRF, React 19, TypeScript, PostgreSQL, Celery, pgvector, OpenAI, Railway',
+    desc: 'Live market-entry and operations platform for European companies in Uganda, Kenya, Tanzania, Rwanda, and the EAC — source-backed regulatory changes, trade procedures, economic indicators, vendor due diligence, and a citation-required assistant.',
+    url: portfolioLiveUrls.eastbridge,
+    repoUrl: 'https://github.com/dallas8000-ops/EastBridge-OPS',
+    flagship: true,
+    highlights: [
+      'Regulatory change engine with official source URLs, impact summaries, and alert subscriptions.',
+      'Grounded assistant answers only from indexed evidence — ingest, embed, and cite trade procedures.',
+    ],
+  },
+  {
     title: 'DBOps Control Center',
     proves: 'Enterprise DB tooling, RBAC, audit trails, and billing',
     stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Stripe, Railway',

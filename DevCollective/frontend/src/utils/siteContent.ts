@@ -45,6 +45,12 @@ function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
 
 function stripGithubFields(p: PortfolioProject): PortfolioProject {
   const { ...rest } = p
+  if (/eastbridge/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.eastbridge),
+    }
+  }
   if (/elite\s*fintech/i.test(rest.title)) {
     return {
       ...rest,
