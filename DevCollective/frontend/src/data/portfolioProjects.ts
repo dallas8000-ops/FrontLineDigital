@@ -29,6 +29,19 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
+    title: 'AgriPay Logistics AI',
+    proves: 'Agri-logistics billing, mobile money flows, and Stripe subscriptions for East Africa',
+    stack: 'Django 5, DRF, React, TypeScript, PostgreSQL, Stripe, Railway',
+    desc: 'Production logistics and payments platform for farmers and buyers — mobile money, Stripe subscription billing, demo onboarding, and Railway-deployed Django API.',
+    url: portfolioLiveUrls.agripayLogistics,
+    repoUrl: 'https://github.com/dallas8000-ops/AgriPay-Logistics-AI',
+    flagship: true,
+    highlights: [
+      'Stripe Checkout and webhooks with farmer profiles, orders, and subscription tiers.',
+      'Live demo route on Railway with health checks and hub-driven deploy automation.',
+    ],
+  },
+  {
     title: 'DBOps Control Center',
     proves: 'Enterprise DB tooling, RBAC, audit trails, and billing',
     stack: 'FastAPI, SQLAlchemy, Alembic, PostgreSQL, React, Vite, JWT, Stripe, Railway',

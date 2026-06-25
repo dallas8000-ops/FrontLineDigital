@@ -2,8 +2,10 @@
 export const portfolioLiveUrls = {
   /** Unified product: Stripe setup + API Transfer deploy (Deployment-Stripe-center) */
   automationCenter: 'https://stripe-installer-production.up.railway.app/login',
-  /** EastBridge Ops Intelligence — compliance, trade, and vendor intelligence for EU→East Africa */
-  eastbridge: 'https://eastbridge-production.up.railway.app',
+  /** EastBridge Ops Intelligence — Railway service EastBridge-OPS in hearty-enjoyment */
+  eastbridge: 'https://eastbridge-ops-production.up.railway.app',
+  /** AgriPay Logistics AI — Django API + demo (separate Railway project) */
+  agripayLogistics: 'https://agripay-api-production.up.railway.app/demo',
   /** Elite Fintech Systems — web service + one-click demo login */
   eliteFintech: 'https://elite-fintech-web-production.up.railway.app/demo',
   /** Kistie Store — Railway service kistie-store-production */
@@ -42,6 +44,7 @@ export const legacyDeadHosts = [
 
 /** Superseded Railway hostnames — remap stored URLs to the current service in pickLiveUrl. */
 export const deprecatedRailwayHosts = [
+  'eastbridge-production.up.railway.app',
   'kristie-store-production.up.railway.app',
   'react-store-catalog-production.up.railway.app',
   'righand-frontend-production.up.railway.app',

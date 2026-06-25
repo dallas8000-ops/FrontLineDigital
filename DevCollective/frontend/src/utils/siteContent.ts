@@ -45,6 +45,12 @@ function isSelfMarketingProject(p: Pick<PortfolioProject, 'title' | 'url'>) {
 
 function stripGithubFields(p: PortfolioProject): PortfolioProject {
   const { ...rest } = p
+  if (/agripay/i.test(rest.title)) {
+    return {
+      ...rest,
+      url: pickLiveUrl(rest.url, portfolioLiveUrls.agripayLogistics, [/agripay-logistics-ai-production/i]),
+    }
+  }
   if (/eastbridge/i.test(rest.title)) {
     return {
       ...rest,
@@ -170,7 +176,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 16
+const SITE_CONTENT_SCHEMA_VERSION = 17
 
 function persistSiteContent(parsed: Record<string, unknown>) {
   try {
