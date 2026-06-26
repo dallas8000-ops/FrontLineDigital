@@ -1,6 +1,6 @@
 /** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
-  /** Unified product: Stripe setup + API Transfer deploy (Deployment-Stripe-center) */
+  /** Unified product: Stripe setup + Railway deploy (Deployment-Stripe-center) */
   automationCenter: 'https://stripe-installer-production.up.railway.app/login',
   /** EastBridge Ops Intelligence — Railway service EastBridge-OPS in hearty-enjoyment */
   eastbridge: 'https://eastbridge-ops-production.up.railway.app',

@@ -20,7 +20,7 @@ const pillars = [
   {
     title: 'AI-assisted review',
     icon: <Brain size={22} />,
-    body: 'Optional OpenAI neural analysis turns raw scan output into prioritized actions and subsystem insights — configurable via API key for operators who want automated triage on top of structured telemetry.',
+    body: 'Optional OpenAI analysis turns scan output into prioritized actions when an API key is configured — not required for core telemetry and diagnostics.',
   },
   {
     title: 'Cloud + local boundary',
@@ -43,7 +43,7 @@ const features = [
   'WMI hardware ID by manufacturer',
   'winget outdated-app detection',
   'Windows Update status',
-  'Optional OpenAI neural review',
+  'Optional OpenAI neural review (API key)',
 ]
 
 export default function PCChecker() {

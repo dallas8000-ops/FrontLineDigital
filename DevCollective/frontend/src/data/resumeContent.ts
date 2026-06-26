@@ -1,9 +1,9 @@
 export const defaultProfile = {
   profileName: 'Barney R. Gilliom',
   profileTitle:
-    'Full-Stack Software Engineer · QA Automation Engineer · Python & API Developer',
+    'Full-Stack Engineer · I ship audited SaaS with live Stripe, RBAC, and Railway deploys',
   about:
-    'Full-Stack Software Engineer and QA Automation Engineer with production experience architecting, building, validating, and deploying six independent real-world applications across e-commerce, REST APIs, system diagnostics, database operations, marketing platforms, and UI component libraries. QA practice includes user stories with formal acceptance criteria, feature verification checklists, usability testing on live deployments, Python unittest and Jest/Vitest suites, and CI/CD validation on every push to main. Proficient in Python, Django, FastAPI, Flask, React, TypeScript, PostgreSQL, JWT auth, Docker, and GitHub Actions. Precision-first discipline from 25 years of zero-defect federal operations — FAA air traffic control, military electronics, and federal QA — applied to modern software engineering.',
+    'Full-Stack Software Engineer and QA Automation Engineer with production experience architecting, building, validating, and deploying thirteen independent real-world applications across e-commerce, REST APIs, system diagnostics, database operations, fintech, and internal tools. QA practice includes user stories with formal acceptance criteria, feature verification checklists, usability testing on live deployments, Python unittest and Jest/Vitest suites, and CI/CD validation on every push to main. Proficient in Python, Django, FastAPI, Flask, React, TypeScript, PostgreSQL, JWT auth, Docker, and GitHub Actions. Precision-first discipline from 25 years of zero-defect federal operations — FAA air traffic control, military electronics, and federal QA — applied to modern software engineering.',
   contactEmail: 'dallas8000@gmail.com',
   phone: '(682) 460-4038',
   location: 'Riverview, FL · U.S. Citizen · Open to Remote & Relocation',
@@ -95,19 +95,19 @@ export const defaultSkills = [
 
 export const defaultServices = [
   {
-    title: 'Full-Stack Software Development',
+    title: 'Internal tools & ops dashboards',
     description:
-      'End-to-end builds with Django, FastAPI, Flask, React, and TypeScript — architecture, APIs, databases, automated tests, and production deployment on Railway.',
+      'RBAC, audit trails, whitelisted SQL reporting, and incident workflows — Django or FastAPI backends with React front ends, deployed on Railway with CI.',
   },
   {
-    title: 'QA Automation & Verification',
+    title: 'Subscription & payment platforms',
     description:
-      'Acceptance criteria per user story, unittest/Jest/Vitest/Playwright coverage, live usability testing, and CI gates before every release.',
+      'Live Stripe checkout, webhooks, and plan limits — documented honestly (live vs. sandbox) — plus JWT auth and multi-tenant billing patterns you can demo today.',
   },
   {
-    title: 'API & Database Platforms',
+    title: 'QA, acceptance criteria & production deploy',
     description:
-      'REST APIs, RBAC, PostgreSQL schema design, whitelisted reporting, and operations dashboards (e.g. DBOps-style incident and audit workflows).',
+      'User stories with acceptance criteria, unittest/Jest/Vitest/Playwright coverage, live usability testing, and GitHub Actions gates before Railway release.',
   },
 ]
 
@@ -118,7 +118,7 @@ export const defaultExperience = [
     location: 'Tampa, FL',
     period: 'Sept 2025 – May 2026',
     highlights: [
-      'Sole developer across six production applications: e-commerce, REST APIs, diagnostics, database ops, and portfolio platforms.',
+      'Sole developer across thirteen production applications: e-commerce, REST APIs, diagnostics, database ops, fintech, and portfolio platforms.',
       'Formal ToR, user stories, acceptance criteria, wireframes, and usability test reports for each capstone and portfolio project.',
       'GitHub Actions on every repo: lint, test, build, and zero-downtime Railway deployment on push to main.',
     ],
@@ -140,7 +140,7 @@ export const defaultExperience = [
     period: '1998 – 2015',
     highlights: [
       'Investigative documentation and chain-of-custody under federal and state compliance.',
-      'TCOLE Master Police Officer Certification.',
+      'TCOLE Master Police Officer (Texas); Washington State law-enforcement equivalency certificate.',
     ],
   },
   {
@@ -150,7 +150,7 @@ export const defaultExperience = [
     period: '1987 – 1999',
     highlights: [
       'Zero-defect operational standards in FAA-certified air traffic control.',
-      'Diagnosed and repaired communication, radar, and navigation systems — foundation for systems thinking in software.',
+      'Electronics maintenance on communication, radar, and navigation systems; U.S. Army service documented on JST.',
     ],
   },
 ]
@@ -183,10 +183,12 @@ export const defaultEducation = [
 ]
 
 export const defaultCertifications = [
-  'AI-900: Microsoft Azure AI Fundamentals',
-  'IT Security (CompTIA)',
+  'TCOLE Master Police Officer (Texas)',
+  'Washington State Law Enforcement Equivalency Certificate',
   'FAA Air Traffic Controller Certification',
   'FAA Helicopter Communication Systems/Repair',
-  'TCOLE Master Police Officer',
+  'U.S. Army — Joint Services Transcript (JST) on file',
+  'AI-900: Microsoft Azure AI Fundamentals',
+  'IT Security (CompTIA)',
   'Immersive Full Stack Software Development (SDGKU)',
 ]

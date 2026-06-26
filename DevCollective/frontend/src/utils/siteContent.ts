@@ -129,18 +129,43 @@ function stripGithubFields(p: PortfolioProject): PortfolioProject {
   return rest
 }
 
+function sanitizePlatformCopy(text: string | undefined): string | undefined {
+  if (!text) return text
+  return text
+    .replace(/\bRender→Railway\b/gi, 'Railway')
+    .replace(/\bRender to Railway\b/gi, 'Railway')
+    .replace(/,\s*Render\b/gi, '')
+    .replace(/\bRender,\s*Fly\b/gi, 'Railway')
+    .replace(/\bRender\b/gi, '')
+    .replace(/\bFly\.io\b/gi, '')
+    .replace(/\bonrender\.com\b/gi, '')
+    .replace(/\bcross-platform migration\b/gi, 'Railway deployment')
+    .replace(/\bcross-platform transfer runs\b/gi, 'Railway deploy runs')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
+function sanitizeProject(project: PortfolioProject): PortfolioProject {
+  return {
+    ...project,
+    stack: sanitizePlatformCopy(project.stack) ?? project.stack,
+    desc: sanitizePlatformCopy(project.desc) ?? project.desc,
+    proves: project.proves ? sanitizePlatformCopy(project.proves) : project.proves,
+    highlights: project.highlights?.map((h) => sanitizePlatformCopy(h) ?? h),
+  }
+}
+
+function hasLegacyHostingCopy(text: string | undefined): boolean {
+  if (!text) return false
+  return /\b(render|onrender|fly\.io|fly\.dev|herokuapp|vercel\.app|netlify\.app)\b/i.test(text)
+}
+
 function mergeCanonicalProjectFields(project: PortfolioProject): PortfolioProject {
   const canonical = defaultPortfolioProjects.find(
     (p) => p.title.toLowerCase() === project.title.toLowerCase()
   )
-  if (!canonical) return project
-  const merged = {
-    ...canonical,
-    ...project,
-    proves: project.proves ?? canonical.proves,
-    highlights: project.highlights?.length ? project.highlights : canonical.highlights,
-  }
-  return stripGithubFields(merged)
+  if (!canonical) return sanitizeProject(stripGithubFields(project))
+  return stripGithubFields({ ...canonical })
 }
 
 /** Retired portfolio cards — merged into Deployment & Stripe Automation Center. */
@@ -175,8 +200,8 @@ export const defaultSiteContent = {
   projects: defaultPortfolioProjects.map(withHealthyDemoUrl),
 }
 
-// Bump when portfolio demo URLs or project list changes — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 17
+// Bump when portfolio copy/URLs change — refreshes stale localStorage.
+const SITE_CONTENT_SCHEMA_VERSION = 21
 
 function persistSiteContent(parsed: Record<string, unknown>) {
   try {
@@ -197,6 +222,11 @@ export const getSiteContent = () => {
         if ((parsed.schemaVersion ?? 0) < SITE_CONTENT_SCHEMA_VERSION) {
           parsed.schemaVersion = SITE_CONTENT_SCHEMA_VERSION
           parsed.projects = defaultPortfolioProjects.map(withHealthyDemoUrl)
+          parsed.about = defaultProfile.about
+          parsed.profileTitle = defaultProfile.profileTitle
+          parsed.experience = defaultExperience
+          parsed.services = defaultServices
+          parsed.certifications = defaultCertifications
           dirty = true
         } else if (Array.isArray(parsed.projects)) {
           const migrated = migrateProjects(parsed.projects)
@@ -212,6 +242,23 @@ export const getSiteContent = () => {
         if (!parsed.education) parsed.education = defaultEducation
         if (!parsed.certifications) parsed.certifications = defaultCertifications
         delete parsed.linkedInUrl
+        if (
+          hasLegacyHostingCopy(parsed.about) ||
+          (typeof parsed.about === 'string' && /\bsix independent\b/i.test(parsed.about))
+        ) {
+          parsed.about = defaultProfile.about
+          dirty = true
+        }
+        if (Array.isArray(parsed.services)) {
+          const sanitizedServices = parsed.services.map((service: { title?: string; description?: string }) => ({
+            ...service,
+            description: sanitizePlatformCopy(service.description) ?? service.description,
+          }))
+          if (JSON.stringify(sanitizedServices) !== JSON.stringify(parsed.services)) {
+            parsed.services = sanitizedServices
+            dirty = true
+          }
+        }
         if (
           parsed.profileTitle?.includes('technician') ||
           parsed.profileTitle?.includes('QA Automation Engineer, Python') ||

@@ -25,20 +25,20 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     flagship: true,
     highlights: [
       'Regulatory change engine with official source URLs, impact summaries, and alert subscriptions.',
-      'Grounded assistant answers only from indexed evidence — ingest, embed, and cite trade procedures.',
+      'Proof-based AI assistant — answers only from cited, indexed evidence (OpenAI when configured).',
     ],
   },
   {
     title: 'AgriPay Logistics AI',
     proves: 'Agri-logistics billing, mobile money flows, and Stripe subscriptions for East Africa',
     stack: 'Django 5, DRF, React, TypeScript, PostgreSQL, Stripe, Railway',
-    desc: 'Production logistics and payments platform for farmers and buyers — mobile money, Stripe subscription billing, demo onboarding, and Railway-deployed Django API.',
+    desc: 'Production logistics and payments for farmers and buyers — live Stripe subscriptions and checkout; MTN MoMo integration verified against the provider sandbox (production-ready on live credentials).',
     url: portfolioLiveUrls.agripayLogistics,
     repoUrl: 'https://github.com/dallas8000-ops/AgriPay-Logistics-AI',
     flagship: true,
     highlights: [
-      'Stripe Checkout and webhooks with farmer profiles, orders, and subscription tiers.',
-      'Live demo route on Railway with health checks and hub-driven deploy automation.',
+      'Live Stripe Checkout and webhooks with farmer profiles, orders, and subscription tiers.',
+      'MTN MoMo sandbox-verified — requestToPay, status polling, and webhooks; AI assistant (OpenAI, configurable).',
     ],
   },
   {
@@ -51,22 +51,22 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     screenshot: '/images/portfolio/dbops-control-center-features.png',
     flagship: true,
     highlights: [
-      'DBA user lifecycle, execution audit trail, scheduled report delivery, and Stripe subscription billing.',
-      'Multi-tenant RBAC, OIDC SSO, and Railway deployment with PostgreSQL.',
+      'Live Stripe-backed plan limits and subscription billing; JWT + RBAC enforced on every route.',
+      'Multi-tenant RBAC, OIDC SSO, optional AI assist (OpenAI), and Railway deployment with PostgreSQL.',
     ],
   },
   {
     title: 'Deployment & Stripe Automation Center',
-    proves: 'Stripe setup, encrypted vault, API migration, and Railway deploy in one platform',
-    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway, Render, Fly',
-    desc: 'One agency platform for Stripe setup and cloud deploy — encrypted per-project vault, live pipeline, Render→Railway migration, GitHub import, deploy pipelines, and AI diagnostics.',
+    proves: 'Stripe setup, encrypted vault, deploy automation, and Railway production hosting',
+    stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway',
+    desc: 'Agency platform for Stripe setup and Railway deploy — encrypted per-project vault, live pipeline, GitHub import, deploy pipelines, and AI diagnostics.',
     url: portfolioLiveUrls.automationCenter,
     repoUrl: 'https://github.com/dallas8000-ops/Stripe-Installer',
     screenshot: '/images/portfolio/stripe-installer-login.png',
     flagship: true,
     highlights: [
       'AES-256-GCM vault keeps secrets out of AI prompts, logs, and frontend state.',
-      'One-click deploy, Render→Railway transfer runs, and webhook readiness in a shared project workspace.',
+      'Live Stripe billing automation — webhooks, encrypted vault, and Railway deploy in one workspace.',
     ],
   },
   {
@@ -76,11 +76,11 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     flagship: true,
     proves: 'Multi-tenant fintech billing, FX pricing intelligence, and East Africa regionalization',
     stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose, Railway',
-    desc: 'East Africa-focused fintech billing platform for Uganda, Kenya, Rwanda, and Tanzania with org-level RBAC, JWT auth, real-time billing events, and daily FX-driven pricing. Mobile-money-first architecture with Stripe as optional fallback for international card flows.',
+    desc: 'East Africa fintech billing for Uganda, Kenya, Rwanda, and Tanzania — org-level RBAC, JWT auth, daily FX-driven pricing, and live Stripe checkout as the international fallback rail. Flutterwave mobile-money integration in progress.',
     screenshot: '/images/portfolio/elite-fintech-systems.png',
     highlights: [
       'Daily FX engine converts USD anchors to local VAT-inclusive pricing with persisted market snapshots.',
-      'Role-based multi-tenant flows with smoke-tested billing paths.',
+      'Live Stripe checkout; mobile-money-first architecture with Flutterwave integration in progress.',
     ],
   },
   {
@@ -113,16 +113,16 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   },
   {
     title: 'RigHand AI',
-    proves: 'Mobile-first SaaS, subscriptions, and offline-capable apps',
+    proves: 'Trucking expense, profit, compliance, and fleet ops for owner-operators',
     stack: 'React, Django, PostgreSQL, Capacitor, Stripe, Railway',
-    desc: 'Expense and profit tracking for truck drivers with offline-first sync, subscriptions, GPS/OBD trip mileage, and tax-ready exports.',
+    desc: 'Expense and profit platform for commercial and private truck operators — offline-first sync, GPS/OBD trip logging, IFTA and Schedule C exports, native Android (Capacitor), and subscription tiers with live Stripe payments.',
     url: portfolioLiveUrls.righandFrontend,
     repoUrl: 'https://github.com/dallas8000-ops/RigHand',
     screenshot: '/images/portfolio/righand-ai-dashboard.png',
     flagship: true,
     highlights: [
-      'Free/Pro/Fleet tiers with Stripe billing, Capacitor Android app, and Railway deployment.',
-      'Offline-first IndexedDB sync, GPS mileage tracking, and tax-ready CSV/PDF exports.',
+      'Offline-first IndexedDB sync, GPS/OBD mileage, and tax-ready CSV/PDF exports.',
+      'Free, Compliance Pro, and Fleet Lite tiers with live Stripe billing and payment-triggered unlock.',
     ],
   },
   {
@@ -151,12 +151,12 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.pcCheckerExtreme,
     proves: 'Systems diagnostics, monitoring dashboards, and AI-assisted ops tooling',
     stack: 'Python, Django, WMI, winget, OpenAI, Railway',
-    desc: 'Cloud-hosted diagnostic command center with health matrix, live telemetry, scan history, and AI-powered system analysis.',
+    desc: 'Cloud-hosted diagnostic command center with health matrix, live telemetry, scan history, and optional OpenAI analysis when an API key is configured.',
     screenshot: '/images/portfolio/pc-checker-extreme.png',
     detailPath: '/projects/pc-checker',
     highlights: [
       'Live CPU/RAM/disk telemetry, scan archive, and subsystem waveform charts in a command-center UI.',
-      'Deep WMI hardware ID, winget update sweep, Windows Update status, and optional OpenAI neural review.',
+      'WMI/winget/Windows Update diagnostics; optional OpenAI analysis for prioritized actions.',
     ],
   },
   {
@@ -167,8 +167,8 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.specwrightWeb,
     screenshot: '/images/portfolio/specwright.png',
     highlights: [
-      'Specwright Score dashboard tracks route health, doc/test coverage, spec freshness, and drift alerts across repos.',
-      'Grounded AI suite supports migration notes, breaking-change triage, and scoped chat from AST-locked context.',
+      'Specwright Score dashboard tracks route health, doc/test coverage, spec freshness, and drift alerts.',
+      'Grounded AI suite (OpenAI, Pro) — migration notes, breaking-change triage, scoped chat from AST context.',
     ],
   },
   {
@@ -179,13 +179,13 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.enPowerCommand,
     repoUrl: 'https://github.com/dallas8000-ops/EnPowerCommand',
     highlights: [
-      'Live subscription management with Stripe Checkout, billing portal, and webhook-driven tier sync.',
-      'Multi-client dashboard with usage analytics and automated invoice generation.',
+      'Live Stripe Checkout, billing portal, and webhook-driven tier sync.',
+      'Optional OpenAI for job-post parsing and outreach drafts; multi-client usage dashboards.',
     ],
   },
 ]
 
-/** Drop legacy Render/dead URLs; keep all Railway live-demo links. */
+/** Drop dead URLs; keep all Railway live-demo links. */
 export function withHealthyDemoUrl(project: PortfolioProject): PortfolioProject {
   if (!project.url || isLiveDemoUrlHealthy(project.url)) {
     return project

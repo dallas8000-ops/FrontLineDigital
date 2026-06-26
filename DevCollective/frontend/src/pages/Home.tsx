@@ -13,9 +13,7 @@ import {
   processSectionTitle,
   processSectionSubtitle,
   pricingNote,
-  clientHourlyRate,
   SOFTWARE_DEV_HOURLY_USD,
-  CLIENT_DISCOUNT_PERCENT,
 } from '../data/landingContent'
 
 const architectureProjects = [
@@ -25,11 +23,11 @@ const architectureProjects = [
   },
   {
     name: 'Deployment & Stripe Automation Center',
-    layers: ['React + TypeScript', 'Django + WebSockets', 'Encrypted vault + Celery', 'Stripe + deploy + migration'],
+    layers: ['React + TypeScript', 'Django + WebSockets', 'Encrypted vault + Celery', 'Stripe + Railway deploy'],
   },
   {
     name: 'Elite Fintech Systems',
-    layers: ['React + TypeScript', 'Django REST + Channels', 'PostgreSQL + FX snapshots', 'Stripe + mobile-money patterns'],
+    layers: ['React + TypeScript', 'Django REST + Channels', 'PostgreSQL + FX snapshots', 'Live Stripe · Flutterwave in progress'],
   },
 ]
 
@@ -213,8 +211,9 @@ export default function Home() {
               Veteran discipline applied to production software
             </h2>
             <p className="mb-6 text-base leading-relaxed text-slate-200">
-              The differentiator is the combination: Army veteran, air traffic control, law enforcement, full-stack
-              engineering, QA automation, and self-funded SaaS product ownership.
+              The differentiator is the combination: U.S. Army veteran (JST-documented service), FAA-certified air
+              traffic control, TCOLE Master Police Officer (Texas) with Washington State equivalency, and
+              full-stack engineering with QA discipline — applied to thirteen live production products.
             </p>
             <ul className="space-y-3">
               {business.founderHighlights.map((item) => (
@@ -240,14 +239,13 @@ export default function Home() {
             Pricing &amp; packages
           </p>
           <h2 id="pricing-heading" className="mb-3 text-2xl font-bold text-white md:text-3xl">
-            Fixed packages when your need matches a standard web build
+            Fixed-scope packages at $40/hr
           </h2>
           <p className="mb-2 text-sm leading-relaxed text-brand-muted md:text-base">{pricingNote}</p>
           <p className="text-sm text-slate-200">
-            List: <span className="text-white/90">${SOFTWARE_DEV_HOURLY_USD}/hr</span> x estimated hours
-            (2-12 week projects) | Your price:{' '}
-            <span className="font-semibold text-brand-gold">${clientHourlyRate}/hr</span> effective after{' '}
-            {CLIENT_DISCOUNT_PERCENT}% discount.
+            Project rate:{' '}
+            <span className="font-semibold text-brand-gold">${SOFTWARE_DEV_HOURLY_USD}/hr</span>
+            {' · '}written estimate before work begins · 2–12 week delivery by package
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
@@ -263,7 +261,6 @@ export default function Home() {
               </span>
               <p className="mb-1 text-xs uppercase tracking-widest text-brand-muted">Package</p>
               <h3 className="mb-3 text-2xl font-bold tracking-wide text-white">{pkg.name}</h3>
-              <p className="mb-1 text-xs text-brand-muted line-through">List {pkg.listPrice}</p>
               <p className="mb-1 text-3xl font-extrabold text-brand-gold md:text-4xl">{pkg.price}</p>
               <p className="mb-1 text-xs text-slate-300">{pkg.hoursLabel}</p>
               <p className="mb-6 text-xs text-brand-muted">{pkg.delivery}</p>
@@ -334,7 +331,7 @@ export default function Home() {
           </h2>
           <p className="mx-auto mb-8 max-w-xl leading-relaxed text-slate-200">
             Tell me which reference app is closest to your goal. I will scope timeline, hours, and a written
-            estimate at $40/hr with your package discount applied.
+            estimate at ${SOFTWARE_DEV_HOURLY_USD}/hr before any build work begins.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="btn btn-primary">

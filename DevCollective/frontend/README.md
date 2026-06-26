@@ -1,21 +1,24 @@
-# Dev Collective Frontend
+# Gilliom Frontline Digital — Frontend
 
-Modern React + TypeScript frontend for the Developer Collective platform.
+React + TypeScript marketing portfolio for Gilliom Frontline Digital. Showcases live production apps, services, resume, and contact.
 
 ## Features
 
-- 🎨 Responsive UI with Tailwind CSS
-- 📱 Mobile-first design
-- ⚡ Fast performance with Vite
-- 🎯 Type-safe React with TypeScript
-- 🔧 Component-based architecture
-- 🎭 Professional color scheme (Teal + Orange)
+- Responsive navy + gold UI (Tailwind CSS)
+- Portfolio grid with Railway live-demo links
+- Services, pricing, and founder sections on Home
+- Resume / CV page with downloadable PDF
+- Contact form (production posts to Railway backend API)
+- PC Checker Extreme case-study page
+- Admin panel for editing site copy (localStorage)
+- Playwright + Jest test coverage
 
 ## Setup
 
 ### Prerequisites
+
 - Node.js 18+
-- npm or yarn
+- npm
 
 ### Installation
 
@@ -29,81 +32,88 @@ npm install
 npm run dev
 ```
 
-App will run on `http://localhost:3000`
+App runs at [http://localhost:3000](http://localhost:3000).
 
-### Production Build
+In development, API requests to `/api` are proxied to `http://localhost:5000` (see `vite.config.ts`).
+
+### Production build
 
 ```bash
 npm run build
+npm run start
 ```
 
-## Testing Procedures and Results
+Production API URL is set in `.env.production`:
 
-Application functionality is validated with Jest (unit/component) and Playwright (end-to-end browser tests).
+```
+VITE_API_URL=https://frontlinedigital-1-production.up.railway.app/api
+```
 
-Run from `DevCollective/frontend`:
+## Pages and routes
+
+| Route | Page |
+| --- | --- |
+| `/` | Home |
+| `/about` | About |
+| `/services` | Services |
+| `/dashboard` | Projects (portfolio grid) |
+| `/profile` | Resume / CV |
+| `/contact` | Contact form |
+| `/projects/pc-checker` | PC Checker Extreme case study |
+| `/deployment-stripe-automation-center` | Redirect to external live demo |
+| `/admin`, `/admin-login` | Content admin (localStorage) |
+| `/marketplace` | Redirects to `/about` |
+
+## Portfolio URLs
+
+Live-demo URLs are centralized in `src/data/portfolioLiveUrls.ts`. All portfolio apps use `*.up.railway.app` hosts.
+
+## Testing
 
 ```bash
-# Unit/component tests
-npm run test -- --runInBand
-
-# End-to-end tests
-npm run test:e2e
-
-# Optional coverage report
+npm run test -- --runInBand   # Jest
+npm run test:e2e              # Playwright
 npm run test:coverage
 ```
 
-### Verified Coverage
+Playwright checks:
 
-- Jest validates hook/component behavior, including:
-  - `usePageTitle` title formatting and update behavior
-  - `ErrorBoundary` normal render, fallback render, and custom fallback behavior
-- Playwright validates critical user flows:
-  - Home page render and navigation to Services
-  - PC Checker detail page content and action states
-  - Contact form client-side validation messages
-  - Unknown route handling (custom 404)
-  - Portfolio live demo links (all seven Railway production URLs)
+- Home page hero and navigation to Services
+- Portfolio live-demo link hrefs (Railway production URLs)
+- PC Checker detail page links
+- Contact form client-side validation
+- Custom 404 page
 
-### Latest Verification Results
-
-- Jest: `3/3` suites passed, `10/10` tests passed
-- Playwright: `12/12` scenarios passed
-- E2E artifact: `test-results/.last-run.json` reports `"status": "passed"` with no failed tests
-
-## Project Structure
+## Project structure
 
 ```
 src/
-├── components/     # Reusable React components
-├── pages/         # Page components for routes
-├── styles/        # Global CSS and Tailwind
-├── utils/         # Helper functions and utilities
-├── App.tsx        # Main app component
-└── main.tsx       # Entry point
+├── components/     # Navigation, Footer, ProjectCard, etc.
+├── pages/          # Route pages
+├── data/           # portfolioProjects, portfolioLiveUrls, resumeContent
+├── utils/          # siteContent, apiClient, colorScheme
+├── styles/         # globals.css
+├── App.tsx
+└── main.tsx
 ```
-
-## Pages
-
-- **Home** - Landing page with hero and features
-- **Services** - Professional services showcase
-- **Dashboard** - Team project management
-- **Marketplace** - Developer marketplace
-- **Profile** - User profile with portfolio
-
-## Colors
-
-- Primary: Teal (`#0ea5e9` - `#075985`)
-- Accent: Orange (`#f97316` - `#ea580c`)
-- Dark: Slate (`#111827` - `#f9fafb`)
 
 ## Technologies
 
-- React 18 - UI library
-- TypeScript - Type safety
-- Tailwind CSS - Utility-first CSS
-- Vite - Build tool
-- React Router - Client-side routing
-- Lucide React - Icon library
-- Zustand - State management (optional)
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router v6
+- Lucide React
+- Axios (API client)
+- Jest + Testing Library + Playwright
+
+## Railway deployment
+
+Configured via `railway.toml`:
+
+- **Build:** `npm install && npm run build`
+- **Start:** `npm run start`
+- **Health check:** `/`
+
+Set the Railway service root directory to `DevCollective/frontend`.

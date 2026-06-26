@@ -5,69 +5,69 @@ export const business = {
   owner: defaultProfile.profileName,
   tagline: 'Internal Tools & Operations Dashboards | Secure, Audited, Production-Ready',
   location: 'Tampa, FL | Remote — available for new projects',
-  heroHeadline: 'Internal tools and operations dashboards your team can actually trust.',
+  heroHeadline: 'Secure internal tools and ops dashboards — live, audited, and payment-ready.',
   heroSubhead:
-    'I build secure, audited internal tools — role-based access, full audit trails, and reporting your ops team can use without touching raw SQL. Every build below is live, tested, and deployed to production. Try them yourself.',
-  portfolioSectionTitle: 'Products you can try right now',
+    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Thirteen products below are live demos you can open today; the stack underneath is the proof.',
+  portfolioSectionTitle: '13 live products you can try right now',
   portfolioSectionLead:
-    'Each flagship below is a live, deployable product — open the demo, inspect the stack, read the source on GitHub. They are also proof of how I build for clients: controlled access, audited actions, payments, and production deployment from day one.',
+    'Each card is a deployed app on Railway — open the demo, read the stack, inspect GitHub where published. Live Stripe webhooks, JWT + RBAC, and honest status (shipped vs. sandbox vs. in progress) match what the repos document.',
   valueProps: [
     {
-      title: 'Enterprise SaaS',
+      title: 'Ops dashboards clients buy',
       description:
-        'Multi-tenant platforms with RBAC, billing, audit trails, reporting, subscriptions, and production deployment.',
+        'Role-based access, audit history, whitelisted SQL reporting, incident workflows, and scheduled delivery — built so ops teams stop living in spreadsheets.',
     },
     {
-      title: 'AI automation',
+      title: 'Payments that are labeled honestly',
       description:
-        'AI-assisted workflows for diagnostics, developer tooling, documentation, and operational decision support.',
+        'Live Stripe checkout and subscription webhooks on production keys. Mobile-money integrations documented as sandbox-verified until live credentials are configured.',
     },
     {
-      title: 'Fintech platforms',
+      title: 'AI where it is configured',
       description:
-        'Regional billing, FX-aware pricing, mobile-money-first flows, Stripe fallback, and payment integration logic.',
+        'OpenAI-backed assistants and parsers in AgriPay, EastBridge, Specwright, PC Checker, and EnPowerCommand — key-gated, optional, and scoped to indexed or AST-locked context.',
     },
     {
-      title: 'Database operations',
+      title: 'Database operations platforms',
       description:
-        'PostgreSQL-backed dashboards, whitelisted SQL reporting, incident workflows, schema migrations, and audit history.',
+        'FastAPI and Django services with PostgreSQL, Alembic migrations, JWT auth, and DBOps-style incident and audit patterns you can demo today.',
     },
     {
-      title: 'API modernization',
+      title: 'Full-stack production pattern',
       description:
-        'Django REST Framework, FastAPI, OpenAPI-minded design, auth, background jobs, WebSockets, and integration hardening.',
+        'React + TypeScript front ends, Django or FastAPI APIs, PostgreSQL, Docker, GitHub Actions CI — repeated across DBOps, Elite Fintech, Deployment & Stripe, and more.',
     },
     {
-      title: 'Cloud deployments',
+      title: 'Railway production hosting',
       description:
-        'Railway, Docker, GitHub Actions, PostgreSQL services, environment management, and production readiness checks.',
+        'All portfolio demos run on Railway (*.up.railway.app). Docker, GitHub Actions, and environment management on every repo I ship.',
     },
   ],
   credentials: [
-    { stat: '15+', label: 'Deployed applications and services' },
-    { stat: 'React + TS', label: 'Frontend production stack' },
-    { stat: 'Django + FastAPI', label: 'Python API platforms' },
-    { stat: 'PostgreSQL', label: 'Relational data systems' },
+    { stat: '13', label: 'Live products — open any demo below' },
+    { stat: 'Live Stripe', label: 'Production billing on portfolio apps' },
+    { stat: 'Django + FastAPI', label: 'Proven in deployed demos' },
+    { stat: 'Railway', label: 'Exclusive hosting for my demos' },
   ],
   metrics: [
-    'React + TypeScript + Django + FastAPI',
-    'PostgreSQL / Docker / CI/CD',
-    'Stripe, Flutterwave, and Pesapal integration patterns',
-    'AI-assisted automation platforms',
-    'Enterprise RBAC and multi-tenant systems',
-    'Railway production deployments with GitHub Actions',
+    '13 live Railway demos — Django, FastAPI, React, TypeScript, PostgreSQL',
+    'Live Stripe payments + webhooks on production keys',
+    'JWT, RBAC, audit trails, and multi-tenant patterns in shipped apps',
+    'GitHub Actions CI on portfolio repositories',
+    'Docker + Railway deploy pipeline',
+    'OpenAI features optional and key-configured where present',
   ],
   engagementTypes: [
-    'Enterprise SaaS builds',
-    'AI automation workflows',
-    'Fintech and billing platforms',
-    'Database operations tooling',
-    'API modernization',
-    'Cloud deployment hardening',
+    'Internal tools and ops dashboards',
+    'Fintech and subscription billing',
+    'Database operations platforms',
+    'E-commerce and logistics SaaS',
+    'API platforms (Django REST + FastAPI)',
+    'Railway production deployment',
   ],
   founderHighlights: [
-    'Army veteran with FAA-certified air traffic control and electronics maintenance experience.',
-    'Former law enforcement officer with investigative documentation and chain-of-custody discipline.',
-    'Full-stack developer and SaaS founder building production products from requirements through deployment.',
+    'U.S. Army veteran — service documented on Joint Services Transcript (JST); FAA-certified air traffic control and electronics maintenance.',
+    'TCOLE Master Police Officer (Texas); Washington State law-enforcement equivalency certificate. Former Military Police, Waco PD, and Dallas PD.',
+    'Solo builder of thirteen deployed products — requirements through Railway production.',
   ],
 }

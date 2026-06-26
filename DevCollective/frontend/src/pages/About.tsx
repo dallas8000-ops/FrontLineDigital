@@ -13,7 +13,7 @@ export default function About() {
       icon: '⚡',
       title: 'Full-Stack Software Engineer',
       years: 'Sept 2025 – May 2026',
-      desc: 'SDGKU technical diploma. Six solo-built production applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
+      desc: 'SDGKU technical diploma. Thirteen solo-built production applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
     },
     {
       icon: '🔒',
@@ -25,13 +25,13 @@ export default function About() {
       icon: '🚔',
       title: 'Law Enforcement',
       years: '1998 – 2015',
-      desc: 'Military Police · Waco PD · Dallas PD. TCOLE Master Police Officer. Precision documentation under compliance.',
+      desc: 'Military Police · Waco PD · Dallas PD. TCOLE Master Police Officer (Texas); Washington State law-enforcement equivalency certificate. Investigative documentation and chain-of-custody under compliance.',
     },
     {
       icon: '🎖️',
       title: 'Air Traffic Control (FAA-Certified)',
       years: '1987 – 1999',
-      desc: 'Zero-defect operational standards and electronics maintenance — the foundation for systems discipline in software.',
+      desc: 'U.S. Army — zero-defect operational standards in FAA-certified air traffic control and electronics maintenance. Military service documented on Joint Services Transcript (JST).',
     },
   ]
 

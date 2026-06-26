@@ -1,299 +1,175 @@
-# Dev Collective - Full Stack Platform
+# Gilliom Frontline Digital
 
-A professional Developer Collective platform combining Services Portfolio, Team Dashboard, and Freelancer Marketplace.
+Marketing portfolio site for **Gilliom Frontline Digital** — internal tools, operations dashboards, and live production demos.
 
 **Built by:** Barney Gilliom  
-**Company:** Frontline Digital  
-**Tagline:** Driven by Code. Built for Success.  
 **Repository:** [https://github.com/dallas8000-ops/FrontLineDigital](https://github.com/dallas8000-ops/FrontLineDigital)
 
-## 🌐 Live Demo
+## Live site
 
-**Your domain (portfolio):** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com)  
-**Railway fallback:** [https://frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app)
+| Site | URL |
+| --- | --- |
+| Custom domain | [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com) |
+| Railway fallback | [https://frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app) |
+| Contact / admin API | [https://frontlinedigital-1-production.up.railway.app/api/health](https://frontlinedigital-1-production.up.railway.app/api/health) |
 
-**Portfolio apps — live demos on Railway:**
+## Portfolio live demos (Railway)
+
+All portfolio apps link to Railway production URLs. Canonical URLs are defined in `frontend/src/data/portfolioLiveUrls.ts`.
 
 | Project | Live URL |
 | --- | --- |
+| EastBridge Ops Intelligence | [eastbridge-ops-production.up.railway.app](https://eastbridge-ops-production.up.railway.app) |
+| AgriPay Logistics AI | [agripay-api-production.up.railway.app/demo](https://agripay-api-production.up.railway.app/demo) |
+| DBOps Control Center | [dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
+| Deployment & Stripe Automation Center | [stripe-installer-production.up.railway.app/login](https://stripe-installer-production.up.railway.app/login) |
+| Elite Fintech Systems | [elite-fintech-web-production.up.railway.app/demo](https://elite-fintech-web-production.up.railway.app/demo) |
 | Kistie Store | [kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) |
 | SilverFox | [silverfox-production.up.railway.app](https://silverfox-production.up.railway.app) |
-| Django REST Blog API (Blog-2) | [blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
+| RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
+| Django REST Blog API | [blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
 | React Store Catalog | [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) |
 | PC Checker Extreme | [pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
-| RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
-| DBOps Control Center | [dbops-web-production.up.railway.app](https://dbops-web-production.up.railway.app) |
 | Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
-| Deployment & Stripe Automation Center | [stripe-installer-production.up.railway.app/login](https://stripe-installer-production.up.railway.app/login) (Stripe + API Transfer merged) |
 | EnPowerCommand | [enpowercommand-production.up.railway.app](https://enpowercommand-production.up.railway.app) |
 
-**Contact / admin API:** [frontlinedigital-1-production.up.railway.app/api](https://frontlinedigital-1-production.up.railway.app/api/health)
+## What the site includes
 
-If a Railway service returns 502, fix env/Postgres/port on that service — the portfolio still links to it as the live demo.
+### Frontend pages
 
-> All hosting is on **Railway**. Legacy Render URLs are blocked in the portfolio config.
+- **Home** — Hero, flagship portfolio grid with live-demo links, pricing, and founder section
+- **About** — Background timeline, education, and competencies
+- **Services** — Service offerings backed by live portfolio products
+- **Projects** (`/dashboard`) — Full portfolio grid with live-demo and GitHub links
+- **Resume** (`/profile`) — CV, skills, experience, and downloadable PDF
+- **Contact** — Contact form (posts to the backend API in production)
+- **PC Checker Extreme** (`/projects/pc-checker`) — Case-study detail page
+- **Admin** (`/admin`) — Password-protected content editor (saves to browser localStorage)
+- **404** — Custom not-found page
 
-## 🚀 Features
+`/marketplace` redirects to `/about`.
 
-### 1. **Services Portfolio**
-- Showcase professional development services
-- Full-stack development, optimization, database architecture
-- Security and QA services
-- Featured project gallery
-- Service pricing and details
+### Backend API
 
-### 2. **Team Dashboard**
-- Project management and tracking
-- Team collaboration tools
-- Project statistics and metrics
-- Task management interface
-- Progress tracking
+The Express backend provides:
 
-### 3. **Freelancer Marketplace**
-- Developer discovery and hiring
-- Advanced search and filtering
-- Developer profiles with ratings and reviews
-- Skills showcasing
-- Experience level filtering
-- Availability tracking
+- `GET /api/health` — Health check
+- `POST /api/contact` — Contact form email delivery (rate-limited)
+- `POST /api/auth/register` — User registration
+- `POST /api/auth/login` — User login
+- `GET /api/auth/me` — Authenticated user profile
 
-### 4. **Developer Profile**
-- Comprehensive profile showcase
-- Technical skills organized by category
-- Professional experience timeline
-- Portfolio project display
-- Contact information
-- Social links (GitHub, LinkedIn)
-
-## 📁 Project Structure
+## Project structure
 
 ```
 DevCollective/
-├── frontend/                 # React + TypeScript app
+├── frontend/                 # React + TypeScript (Vite)
 │   ├── src/
-│   │   ├── components/       # Navigation, Footer, etc.
-│   │   ├── pages/           # Home, Services, Dashboard, Marketplace, Profile
-│   │   ├── styles/          # Global CSS and Tailwind
-│   │   ├── utils/           # Helper functions
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   ├── public/
-│   │   └── images/          # Logo and project images
-│   ├── package.json
-│   ├── vite.config.ts
-│   ├── tsconfig.json
-│   ├── tailwind.config.js
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── data/             # Portfolio, resume, landing content
+│   │   └── utils/
+│   ├── public/images/
+│   ├── railway.toml
 │   └── README.md
-│
-├── backend/                  # Node.js + Express server
+├── backend/                  # Node.js + Express API
 │   ├── src/
-│   │   ├── controllers/      # Business logic
-│   │   ├── routes/          # API endpoints
-│   │   ├── models/          # Database queries
-│   │   ├── middleware/      # Auth, error handling
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── middleware/
 │   │   └── server.ts
-│   ├── package.json
-│   ├── tsconfig.json
-│   ├── .env.example
 │   └── README.md
-│
-├── database/
-│   ├── migrations/
-│   │   └── 001_initial_schema.sql
-│   └── seeds/               # Sample data
-│
-├── package.json             # Monorepo configuration
-└── README.md
+└── database/migrations/      # PostgreSQL schema (auth users)
 ```
 
-## 🛠 Tech Stack
+## Tech stack
 
 ### Frontend
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Vite** - Build tool
-- **React Router v6** - Navigation
-- **Lucide React** - Icons
+
+- React 18, TypeScript, Vite, Tailwind CSS, React Router, Lucide React
 
 ### Backend
-- **Node.js** - Runtime
-- **Express.js** - Web framework
-- **TypeScript** - Type safety
-- **PostgreSQL** - Database
-- **JWT** - Authentication
-- **bcryptjs** - Password hashing
 
-### Design System
-- **Color Scheme**: Teal (Primary) + Orange (Accent)
-- **Typography**: Inter + Fira Code
-- **Responsive**: Mobile-first design
-- **Components**: Custom + Tailwind utilities
+- Node.js, Express, TypeScript, PostgreSQL, JWT, bcryptjs, Nodemailer
 
-## 🎨 Design Highlights
+### Design
 
-- **Professional Teal & Orange** - Bold, modern brand colors
-- **Responsive Grid System** - Adapts to all screen sizes
-- **Elevation Shadows** - Material Design inspired
-- **Custom Animations** - Smooth transitions and effects
-- **Accessibility** - WCAG compliant components
+- Navy + gold brand palette (`brand-navy`, `brand-gold`)
+- Inter font family
+- Mobile-first responsive layout
 
-## 🚀 Getting Started
+## Local development
 
 ### Prerequisites
-- Node.js 18+
-- PostgreSQL 12+
-- npm or yarn
 
-### Installation
+- Node.js 18+
+- PostgreSQL 12+ (backend auth only; contact form works without DB if auth routes are unused)
+
+### Frontend
 
 ```bash
-# Clone repository
-git clone <repo-url>
-cd DevCollective
-
-# Install dependencies
+cd frontend
 npm install
-
-# Setup backend
-cd backend
-cp .env.example .env
-# Update .env with your database credentials
-
-# Setup database
-psql -U postgres -d dev_collective -f ../database/migrations/001_initial_schema.sql
-
-# Start development servers
 npm run dev
 ```
 
-### Frontend Development
-```bash
-npm run frontend
-# Runs on http://localhost:3000
-```
+Runs at [http://localhost:3000](http://localhost:3000). In development, `/api` is proxied to the backend.
 
-### Backend Development
-```bash
-npm run backend
-# Runs on http://localhost:5000
-```
-
-### Production Build
-```bash
-npm run build
-npm start
-```
-
-## ✅ Testing Procedures and Verification Results
-
-The application functionality is verified with both unit/integration tests (Jest + Testing Library) and end-to-end browser tests (Playwright).
-
-### Test Procedures
-
-Run all test commands from `DevCollective/frontend`:
+### Backend
 
 ```bash
-# 1) Unit and component behavior tests
-npm run test -- --runInBand
-
-# 2) End-to-end user-flow tests
-npm run test:e2e
-
-# 3) Optional coverage report
-npm run test:coverage
+cd backend
+npm install
+cp .env.example .env
+# Set GMAIL_USER and GMAIL_APP_PASSWORD for contact form email
+npm run dev
 ```
 
-### What Is Verified
+Runs at [http://localhost:5000](http://localhost:5000).
 
-- **Unit/Component coverage (Jest):**
-  - `usePageTitle` hook title formatting and update behavior
-  - `ErrorBoundary` normal render, fallback UI render, and custom fallback handling
-  - Existing frontend suite coverage across application behavior checks
-- **E2E coverage (Playwright):**
-  - Home page renders and navigates correctly to Services
-  - PC Checker detail page content/link states and disabled hosted-app action
-  - Contact form client-side validation behavior
-  - Unknown routes return the custom 404 page
+## Testing
 
-### Latest Verification Results
+Run from `frontend/`:
 
-Most recent local verification run:
-
-- **Jest:** `3/3` test suites passed, `10/10` tests passed
-- **Playwright:** `12/12` end-to-end scenarios passed
-- **E2E status artifact:** `frontend/test-results/.last-run.json` reports `"status": "passed"` with no failed tests
-
-## 📸 Image Directory
-
-Place your images in:
-- `/frontend/public/images/profile/` - Your headshot
-- `/frontend/public/images/logos/` - Frontline Digital logo (already configured)
-- `/frontend/public/images/portfolio/` - Project screenshots
-- `/frontend/public/images/team/` - Team member photos
-- `/frontend/public/images/backgrounds/` - Hero backgrounds
-
-## 🔐 Authentication
-
-The platform supports:
-- User registration and login
-- JWT token authentication
-- Role-based access control (developer, client, admin)
-- Secure password hashing with bcryptjs
-
-## 📊 Database
-
-PostgreSQL schema includes tables for:
-- Users & authentication
-- Services & offerings
-- Projects & collaboration
-- Marketplace listings
-- Reviews & ratings
-- Transactions
-
-## 🚀 Deployment
-
-### Live on Railway
-
-- **Marketing site:** [https://gilliomfrontlinedigital.com](https://gilliomfrontlinedigital.com) (working deploy: [frontlinedigital-1-production.up.railway.app](https://frontlinedigital-1-production.up.railway.app))
-- **Service root directory:** `DevCollective/frontend` (required — repo root will 502)
-- **Start command:** `npm run start` (serves Vite `dist/` on `$PORT`)
-
-If `gilliomfrontlinedigital.com` returns **502**, the custom domain is attached to a crashed `FrontLineDigital` service. In Railway → **FrontLineDigital-1** → **Settings** → **Networking**, add `gilliomfrontlinedigital.com` and remove it from the broken `FrontLineDigital` service, then redeploy.
-- **React Store Catalog:** [react-store-catalog-production.up.railway.app](https://react-store-catalog-production.up.railway.app) (mirror: [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app))
-- **RigHand AI frontend:** [righand-frontend-production.up.railway.app](https://righand-frontend-production.up.railway.app) (API: [righand-production.up.railway.app](https://righand-production.up.railway.app))
-
-### Frontend (Railway)
 ```bash
-npm run build
-# Railway serves dist/ via npm run start (see frontend/railway.toml)
+npm run test -- --runInBand    # Jest unit/component tests
+npm run test:e2e               # Playwright end-to-end tests
+npm run test:coverage          # Coverage report
 ```
 
-### Backend (Railway)
-```bash
-npm run build
-npm start
-```
+Playwright verifies home navigation, portfolio live-demo hrefs, PC Checker detail page, contact validation, and the 404 page.
 
-## 📝 API Documentation
+## Deployment (Railway)
 
-See [backend/README.md](backend/README.md) for detailed API routes.
+- **Service root directory:** `DevCollective/frontend`
+- **Build:** `npm install && npm run build`
+- **Start:** `npm run start` (serves Vite `dist/` on `$PORT`)
+- **Production API URL:** set `VITE_API_URL=https://frontlinedigital-1-production.up.railway.app/api` (see `frontend/.env.production`)
 
-## 🤝 Contributing
+If `gilliomfrontlinedigital.com` returns **502**, attach the custom domain to the working **FrontLineDigital-1** Railway service, then redeploy.
 
-This is a portfolio project showcasing full-stack development skills.
+### Portfolio app repos (Kistie-Store, Specwright, etc.)
 
-## 📞 Contact
+Each linked app repo should **delete `render.yaml`**, remove Render deploy walkthroughs from its README, and document **Railway** as the live host. Copy-paste sections and env var tables: **[docs/PORTFOLIO_RAILWAY_README.md](docs/PORTFOLIO_RAILWAY_README.md)**.
+
+Do **not** remove Render from **API-Transfer / Stripe-Installer** — those products support multi-provider deploy for clients.
+
+## Images
+
+Place assets under `frontend/public/images/`:
+
+- `logos/` — Site logo
+- `profile/` — Founder and resume photos (`home.jpeg`, `About.png`, `Resume.png`, etc.)
+- `portfolio/` — Project screenshots
+
+See [frontend/public/images/README.md](frontend/public/images/README.md).
+
+## Contact
 
 - **Email:** dallas8000@gmail.com
 - **Phone:** (682) 460-4038
-- **GitHub:** github.com/dallas8000-ops
-- **LinkedIn:** linkedin.com/in/barney-gilliom-959981337
+- **GitHub:** [github.com/dallas8000-ops](https://github.com/dallas8000-ops)
 
-## 📄 License
+## License
 
-MIT License - Built with ❤️ by Barney Gilliom
-
----
-
-**Frontline Digital** - Driven by Code. Built for Success. ⚡
+MIT License
