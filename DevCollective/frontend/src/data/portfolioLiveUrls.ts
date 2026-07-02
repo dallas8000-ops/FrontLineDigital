@@ -1,5 +1,7 @@
 /** Canonical live-demo URLs — all portfolio apps launch on Railway. */
 export const portfolioLiveUrls = {
+  /** AI Software Operations Studio — unified operations, deployment, quality, and billing workspace */
+  operationsStudio: 'https://studio.gilliomfrontlinedigital.com',
   /** Unified product: Stripe setup + Railway deploy (Deployment-Stripe-center) */
   automationCenter: 'https://stripe-installer-production.up.railway.app/login',
   /** EastBridge Ops Intelligence — Railway service EastBridge-OPS in hearty-enjoyment */

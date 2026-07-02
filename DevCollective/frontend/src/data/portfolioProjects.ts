@@ -16,6 +16,19 @@ export type PortfolioProject = {
 
 export const defaultPortfolioProjects: PortfolioProject[] = [
   {
+    title: 'AI Software Operations Studio',
+    proves: 'Unified software operations, encrypted secrets, deployment automation, quality workflows, and live SaaS billing',
+    stack: 'Django 5, DRF, React, TypeScript, PostgreSQL, Redis, Celery, Stripe, Railway',
+    desc: 'Production software-operations workspace combining project migration, encrypted per-project vaults, quality checks, workflow automation, agency collaboration, Railway deployment, and Stripe subscription billing.',
+    url: portfolioLiveUrls.operationsStudio,
+    repoUrl: 'https://github.com/dallas8000-ops/AI-Software-Operations-Studio',
+    flagship: true,
+    highlights: [
+      'Custom-domain Railway deployment with PostgreSQL, Redis, workers, scheduled jobs, health supervision, and migrated project data.',
+      'Restricted live Stripe key, signed webhooks, Checkout, Customer Portal, and webhook-driven subscription state verified end to end.',
+    ],
+  },
+  {
     title: 'EastBridge Ops Intelligence',
     proves: 'Regulatory intelligence, trade compliance, vendor diligence, and cited AI assistant for EU companies in East Africa',
     stack: 'Django 5, DRF, React 19, TypeScript, PostgreSQL, Celery, pgvector, OpenAI, Railway',

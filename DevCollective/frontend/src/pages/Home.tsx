@@ -35,7 +35,8 @@ export default function Home() {
   usePageTitle('Gilliom Frontline Digital | Internal Tools & Ops Dashboards')
   const content = getSiteContent()
   const projects = content.projects ?? []
-  const flagshipProjects = projects.filter((project) => project.flagship).slice(0, 6)
+  const flagshipProjects = projects.filter((project) => project.flagship)
+  const heroProjects = flagshipProjects.slice(0, 6)
   const supportingProjects = projects.filter((project) => !project.flagship)
 
   return (
@@ -74,7 +75,7 @@ export default function Home() {
               <span className="text-xs text-brand-muted">Live demos + GitHub</span>
             </div>
             <div className="space-y-3">
-              {flagshipProjects.map((project) => (
+              {heroProjects.map((project) => (
                 <a
                   key={project.title}
                   href={project.url}
@@ -213,7 +214,7 @@ export default function Home() {
             <p className="mb-6 text-base leading-relaxed text-slate-200">
               The differentiator is the combination: U.S. Army veteran (JST-documented service), FAA-certified air
               traffic control, TCOLE Master Police Officer (Texas) with Washington State equivalency, and
-              full-stack engineering with QA discipline — applied to thirteen live production products.
+              full-stack engineering with QA discipline — applied to fourteen live production products.
             </p>
             <ul className="space-y-3">
               {business.founderHighlights.map((item) => (

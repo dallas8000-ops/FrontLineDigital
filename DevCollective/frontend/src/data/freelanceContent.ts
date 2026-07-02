@@ -7,8 +7,8 @@ export const business = {
   location: 'Tampa, FL | Remote — available for new projects',
   heroHeadline: 'Secure internal tools and ops dashboards — live, audited, and payment-ready.',
   heroSubhead:
-    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Thirteen products below are live demos you can open today; the stack underneath is the proof.',
-  portfolioSectionTitle: '13 live products you can try right now',
+    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Fourteen products below are live demos you can open today; the stack underneath is the proof.',
+  portfolioSectionTitle: '14 live products you can try right now',
   portfolioSectionLead:
     'Each card is a deployed app on Railway — open the demo, read the stack, inspect GitHub where published. Live Stripe webhooks, JWT + RBAC, and honest status (shipped vs. sandbox vs. in progress) match what the repos document.',
   valueProps: [
@@ -44,13 +44,13 @@ export const business = {
     },
   ],
   credentials: [
-    { stat: '13', label: 'Live products — open any demo below' },
+    { stat: '14', label: 'Live products — open any demo below' },
     { stat: 'Live Stripe', label: 'Production billing on portfolio apps' },
     { stat: 'Django + FastAPI', label: 'Proven in deployed demos' },
     { stat: 'Railway', label: 'Exclusive hosting for my demos' },
   ],
   metrics: [
-    '13 live Railway demos — Django, FastAPI, React, TypeScript, PostgreSQL',
+    '14 live Railway demos — Django, FastAPI, React, TypeScript, PostgreSQL',
     'Live Stripe payments + webhooks on production keys',
     'JWT, RBAC, audit trails, and multi-tenant patterns in shipped apps',
     'GitHub Actions CI on portfolio repositories',
@@ -68,6 +68,6 @@ export const business = {
   founderHighlights: [
     'U.S. Army veteran — service documented on Joint Services Transcript (JST); FAA-certified air traffic control and electronics maintenance.',
     'TCOLE Master Police Officer (Texas); Washington State law-enforcement equivalency certificate. Former Military Police, Waco PD, and Dallas PD.',
-    'Solo builder of thirteen deployed products — requirements through Railway production.',
+    'Solo builder of fourteen deployed products — requirements through Railway production.',
   ],
 }
