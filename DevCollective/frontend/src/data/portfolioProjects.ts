@@ -196,6 +196,19 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
       'Optional OpenAI for job-post parsing and outreach drafts; multi-client usage dashboards.',
     ],
   },
+  {
+    title: 'Digital Sales Automation Center',
+    proves: 'Lead pipeline automation, monthly client subscriptions, and Stripe-backed billing flows',
+    stack: 'Node.js, Express, Vanilla JS, Stripe, PostgreSQL/JSON, Railway',
+    desc: 'Sales operations dashboard for prospects, campaigns, inbox workflows, proposals, scheduling, and subscription-ready checkout flows with monthly pricing alignment.',
+    url: portfolioLiveUrls.digitalSalesAutomationCenter,
+    repoUrl: 'https://github.com/dallas8000-ops/Digital-Sales-Automation-Center',
+    flagship: true,
+    highlights: [
+      'Live monthly subscription flow with Stripe checkout and hardened settings controls.',
+      'Bulk data operations for prospects/campaigns/inquiries plus production Railway deployment.',
+    ],
+  },
 ]
 
 /** Drop dead URLs; keep all Railway live-demo links. */

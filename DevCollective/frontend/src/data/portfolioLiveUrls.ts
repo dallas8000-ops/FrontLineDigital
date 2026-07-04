@@ -19,6 +19,7 @@ export const portfolioLiveUrls = {
   reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',
   righandFrontend: 'https://righand-production.up.railway.app',
   dbopsWeb: 'https://dbops-web-production.up.railway.app',
+  digitalSalesAutomationCenter: 'https://digital-sales-automation-center-production.up.railway.app',
   specwrightWeb: 'https://specwright-web-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
   /** @deprecated merged into automationCenter */
