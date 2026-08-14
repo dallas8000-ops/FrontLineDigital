@@ -31,6 +31,7 @@ All portfolio apps link to Railway production URLs. Canonical URLs are defined i
 | PC Checker Extreme | [pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
 | Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
 | EnPowerCommand | [enpowercommand-production.up.railway.app](https://enpowercommand-production.up.railway.app) |
+| AI Memory Engine | [ai-memory-engine-production.up.railway.app](https://ai-memory-engine-production.up.railway.app) |
 
 ## What the site includes
 

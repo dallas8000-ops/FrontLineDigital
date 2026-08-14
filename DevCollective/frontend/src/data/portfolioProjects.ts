@@ -29,6 +29,19 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
+    title: 'AI Memory Engine',
+    proves: 'Persistent semantic memory APIs, vector search, authenticated REST services, and durable Railway storage',
+    stack: 'Python, FastAPI, Deep Lake, sentence-transformers, Uvicorn, MCP, Railway Volumes',
+    desc: 'Production semantic-memory service that stores notes and facts as embeddings, recalls them by meaning, and exposes protected REST and MCP interfaces for long-term AI workflow memory.',
+    url: portfolioLiveUrls.aiMemoryEngine,
+    repoUrl: 'https://github.com/dallas8000-ops/AI-Memory-Engine',
+    flagship: true,
+    highlights: [
+      'Semantic search, duplicate detection, tags, update/delete, JSON backup and restore, and restart persistence tests.',
+      'Railway deployment with a persistent /data volume, API-key protection, health supervision, and dependency compatibility controls.',
+    ],
+  },
+  {
     title: 'EastBridge Ops Intelligence',
     proves: 'Regulatory intelligence, trade compliance, vendor diligence, and cited AI assistant for EU companies in East Africa',
     stack: 'Django 5, DRF, React 19, TypeScript, PostgreSQL, Celery, pgvector, OpenAI, Railway',

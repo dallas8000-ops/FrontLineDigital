@@ -1,9 +1,9 @@
 export const defaultProfile = {
   profileName: 'Barney R. Gilliom',
   profileTitle:
-    'Full-Stack Engineer · I ship audited SaaS with live Stripe, RBAC, and Railway deploys',
+    'Full-Stack Engineer · I ship audited SaaS, semantic-memory APIs, live Stripe, RBAC, and Railway deploys',
   about:
-    'Full-Stack Software Engineer and QA Automation Engineer with production experience architecting, building, validating, and deploying fourteen independent real-world applications across e-commerce, REST APIs, system diagnostics, database operations, fintech, and internal tools. QA practice includes user stories with formal acceptance criteria, feature verification checklists, usability testing on live deployments, Python unittest and Jest/Vitest suites, and CI/CD validation on every push to main. Proficient in Python, Django, FastAPI, Flask, React, TypeScript, PostgreSQL, JWT auth, Docker, and GitHub Actions. Precision-first discipline from 25 years of zero-defect federal operations — FAA air traffic control, military electronics, and federal QA — applied to modern software engineering.',
+    'Full-Stack Software Engineer and QA Automation Engineer with production experience architecting, building, validating, and deploying fifteen independent real-world applications across e-commerce, REST APIs, semantic memory, system diagnostics, database operations, fintech, and internal tools. QA practice includes user stories with formal acceptance criteria, feature verification checklists, usability testing on live deployments, Python unittest and Jest/Vitest suites, and CI/CD validation on every push to main. Proficient in Python, Django, FastAPI, Flask, React, TypeScript, PostgreSQL, vector search, JWT auth, Docker, and GitHub Actions. Precision-first discipline from 25 years of zero-defect federal operations — FAA air traffic control, military electronics, and federal QA — applied to modern software engineering.',
   contactEmail: 'dallas8000@gmail.com',
   phone: '(682) 460-4038',
   location: 'Riverview, FL · U.S. Citizen · Open to Remote & Relocation',
@@ -43,6 +43,8 @@ export const defaultSkills = [
       'RESTful design',
       'JWT & session auth',
       'RBAC',
+      'Semantic search & vector memory',
+      'Model Context Protocol (MCP)',
       'WebSockets (Django Channels)',
       'OpenAPI/Swagger',
     ],
@@ -72,6 +74,7 @@ export const defaultSkills = [
       'Docker',
       'Docker Compose',
       'Railway',
+      'Railway Volumes',
       'Gunicorn',
       'Uvicorn',
       'CSRF protection',
@@ -118,9 +121,10 @@ export const defaultExperience = [
     location: 'Tampa, FL',
     period: 'Sept 2025 – May 2026',
     highlights: [
-      'Sole developer across fourteen production applications: e-commerce, REST APIs, diagnostics, database ops, fintech, and portfolio platforms.',
+      'Sole developer across fifteen production applications: e-commerce, REST APIs, semantic memory, diagnostics, database ops, fintech, and portfolio platforms.',
       'Formal ToR, user stories, acceptance criteria, wireframes, and usability test reports for each capstone and portfolio project.',
       'GitHub Actions on every repo: lint, test, build, and zero-downtime Railway deployment on push to main.',
+      'Built and deployed an authenticated FastAPI semantic-memory service with Deep Lake vector storage, MCP tools, persistent Railway Volume storage, and restart-persistence verification.',
     ],
   },
   {

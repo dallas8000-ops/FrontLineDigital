@@ -2,6 +2,8 @@
 export const portfolioLiveUrls = {
   /** AI Software Operations Studio — unified operations, deployment, quality, and billing workspace */
   operationsStudio: 'https://studio.gilliomfrontlinedigital.com',
+  /** AI Memory Engine — persistent semantic-memory API on Railway */
+  aiMemoryEngine: 'https://ai-memory-engine-production.up.railway.app',
   /** Unified product: Stripe setup + Railway deploy (Deployment-Stripe-center) */
   automationCenter: 'https://stripe-installer-production.up.railway.app/login',
   /** EastBridge Ops Intelligence — Railway service EastBridge-OPS in hearty-enjoyment */
