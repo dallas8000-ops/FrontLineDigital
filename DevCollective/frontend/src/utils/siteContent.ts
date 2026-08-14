@@ -75,12 +75,6 @@ function stripGithubFields(p: PortfolioProject): PortfolioProject {
       url: pickLiveUrl(rest.url, portfolioLiveUrls.silverfox),
     }
   }
-  if (/blog/i.test(rest.title)) {
-    return {
-      ...rest,
-      url: pickLiveUrl(rest.url, portfolioLiveUrls.blogApi),
-    }
-  }
   if (/dbops/i.test(rest.title)) {
     return {
       ...rest,

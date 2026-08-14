@@ -27,7 +27,6 @@ All portfolio apps link to Railway production URLs. Canonical URLs are defined i
 | Kistie Store | [kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) |
 | SilverFox | [silverfox-production.up.railway.app](https://silverfox-production.up.railway.app) |
 | RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
-| Django REST Blog API | [blog-2-production-72bc.up.railway.app](https://blog-2-production-72bc.up.railway.app) |
 | React Store Catalog | [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) |
 | PC Checker Extreme | [pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
 | Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |

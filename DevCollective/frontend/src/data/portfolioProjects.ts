@@ -139,16 +139,6 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: 'Django REST Blog API',
-    url: portfolioLiveUrls.blogApi,
-    proves: 'REST APIs, JWT auth, OAuth, and real-time features',
-    stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, JWT, Channels, WebSockets, Gunicorn, Railway',
-    desc: 'Production Django blog with posts, profiles, comments, JWT REST API, WebSockets, GitHub OAuth, and live Railway deployment.',
-    highlights: [
-      'WebSocket new-post alerts, GitHub OAuth, JWT-gated REST API, and verified unittest coverage.',
-    ],
-  },
-  {
     title: 'React Store Catalog',
     proves: 'Modern React SPAs with admin portals and automated QA',
     stack: 'React 19, TypeScript, Vite 7, Vitest, Framer Motion, Express, PostgreSQL, JWT, Railway',

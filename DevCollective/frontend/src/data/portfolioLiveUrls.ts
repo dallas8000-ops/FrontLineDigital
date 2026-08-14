@@ -14,7 +14,6 @@ export const portfolioLiveUrls = {
   kistieStore: 'https://kistie-store-production.up.railway.app',
   /** SilverFox — men's fashion Django storefront (Railway service silverfox-production) */
   silverfox: 'https://silverfox-production.up.railway.app',
-  blogApi: 'https://blog-2-production-72bc.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',
   righandFrontend: 'https://righand-production.up.railway.app',
@@ -36,7 +35,6 @@ export const legacyDeadHosts = [
   'render.com',
   'gilliomfrontlinedigital.onrender.com',
   'kristie-store.onrender.com',
-  'blog-2-hggg.onrender.com',
   'pc-checker-extreme.onrender.com',
   'righand-frontend.onrender.com',
   'dbops-web.onrender.com',
@@ -62,6 +60,11 @@ export const apiOnlyRailwayHosts = [
   'elite-fintech-api-production.up.railway.app',
 ] as const
 
+/** Currently returning errors (verified 2026-08-14) — hide until the Railway service is redeployed/fixed. */
+export const currentlyDownRailwayHosts = [
+  'react-store-catalog-1-production.up.railway.app',
+] as const
+
 /** Public marketing site — custom domain with Railway fallback. */
 export const marketingSiteUrls = {
   primary: 'https://gilliomfrontlinedigital.com',
@@ -72,5 +75,6 @@ export function isLiveDemoUrlHealthy(url: string | undefined): boolean {
   if (!url) return false
   if (legacyDeadHosts.some((host) => url.includes(host))) return false
   if (apiOnlyRailwayHosts.some((host) => url.includes(host))) return false
+  if (currentlyDownRailwayHosts.some((host) => url.includes(host))) return false
   return true
 }

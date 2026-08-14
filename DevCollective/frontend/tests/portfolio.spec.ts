@@ -19,7 +19,6 @@ const portfolioDemoLinks = [
   ['Kistie Store', portfolioLiveUrls.kistieStore],
   ['SilverFox', portfolioLiveUrls.silverfox],
   ['RigHand AI', portfolioLiveUrls.righandFrontend],
-  ['Django REST Blog API', portfolioLiveUrls.blogApi],
   ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],
   ['PC Checker Extreme', portfolioLiveUrls.pcCheckerExtreme],
   ['Specwright', portfolioLiveUrls.specwrightWeb],

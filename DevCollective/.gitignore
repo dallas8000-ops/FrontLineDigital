@@ -14,3 +14,4 @@ build/
 .turbo/
 .next/
 out/
+frontend/test-results/
