@@ -12,7 +12,7 @@ export default function Marketplace() {
       id: 1,
       name: 'Barney R. Gilliom',
       title: 'Full-Stack Software Engineer · QA Automation · Python & APIs',
-      location: 'Riverview, FL — Open to Remote & Relocation',
+      location: 'Kampala, Uganda · Available remotely worldwide',
       rating: 5,
       reviews: 6,
       skills: ['Python', 'Django', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Jest', 'Vitest', 'Docker'],

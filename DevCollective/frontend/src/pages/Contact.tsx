@@ -92,6 +92,15 @@ export default function Contact() {
               {contactInfo.phone}
             </a>
             {' · '}
+            <a
+              href={contactInfo.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-gold"
+            >
+              WhatsApp (international)
+            </a>
+            {' · '}
             <a href={contactInfo.emailHref} className="hover:text-brand-gold">
               {contactInfo.email}
             </a>

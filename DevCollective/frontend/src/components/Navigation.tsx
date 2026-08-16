@@ -39,6 +39,14 @@ export default function Navigation() {
             <a href={contactInfo.phoneHref} className="block text-white/90 hover:text-brand-gold transition-colors">
               {contactInfo.phone}
             </a>
+            <a
+              href={contactInfo.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-brand-gold transition-colors"
+            >
+              WhatsApp (international)
+            </a>
             <a href={contactInfo.emailHref} className="block hover:text-brand-gold transition-colors">
               {contactInfo.email}
             </a>
@@ -107,6 +115,14 @@ export default function Navigation() {
             <address className="not-italic text-sm text-brand-muted pt-4 border-t border-brand-line">
               <a href={contactInfo.phoneHref} className="block text-white/90 py-1">
                 {contactInfo.phone}
+              </a>
+              <a
+                href={contactInfo.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-1"
+              >
+                WhatsApp (international)
               </a>
               <a href={contactInfo.emailHref} className="block py-1">
                 {contactInfo.email}

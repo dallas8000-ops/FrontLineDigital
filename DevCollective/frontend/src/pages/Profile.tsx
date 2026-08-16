@@ -3,6 +3,7 @@ import { getSiteContent } from '../utils/siteContent'
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../utils/usePageTitle'
+import { contactInfo } from '../data/landingContent'
 
 export default function Profile() {
   const content = getSiteContent()
@@ -34,10 +35,18 @@ export default function Profile() {
 
               <div className="space-y-3 border-t border-brand-line pt-5">
                 <a
-                  href="tel:6824604038"
+                  href={contactInfo.phoneHref}
                   className="flex items-center gap-3 text-slate-200 hover:text-brand-gold text-sm"
                 >
-                  <Phone size={16} /> {content.phone ?? '(682) 460-4038'}
+                  <Phone size={16} /> {contactInfo.phone}
+                </a>
+                <a
+                  href={contactInfo.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-slate-200 hover:text-brand-gold text-sm"
+                >
+                  WhatsApp (international)
                 </a>
                 <a
                   href={`mailto:${content.contactEmail}`}
@@ -46,7 +55,7 @@ export default function Profile() {
                   <Mail size={16} /> {content.contactEmail}
                 </a>
                 <div className="flex items-center gap-3 text-slate-200 text-sm">
-                  <MapPin size={16} /> Riverview, FL
+                  <MapPin size={16} /> {content.location}
                 </div>
               </div>
 

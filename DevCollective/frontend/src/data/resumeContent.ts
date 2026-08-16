@@ -1,12 +1,12 @@
 export const defaultProfile = {
   profileName: 'Barney R. Gilliom',
   profileTitle:
-    'Full-Stack Engineer · I ship audited SaaS, semantic-memory APIs, live Stripe, RBAC, and Railway deploys',
+    'Full-Stack Software Engineer · QA Automation Engineer · Python & API Developer',
   about:
-    'Full-Stack Software Engineer and QA Automation Engineer with production experience architecting, building, validating, and deploying fifteen independent real-world applications across e-commerce, REST APIs, semantic memory, system diagnostics, database operations, fintech, and internal tools. QA practice includes user stories with formal acceptance criteria, feature verification checklists, usability testing on live deployments, Python unittest and Jest/Vitest suites, and CI/CD validation on every push to main. Proficient in Python, Django, FastAPI, Flask, React, TypeScript, PostgreSQL, vector search, JWT auth, Docker, and GitHub Actions. Precision-first discipline from 25 years of zero-defect federal operations — FAA air traffic control, military electronics, and federal QA — applied to modern software engineering.',
+    'Full-stack engineer with a self-directed portfolio of fifteen live applications built and deployed independently across e-commerce, fintech billing, database operations, semantic memory, regulatory intelligence, and deployment automation. Reuses and hardens a production foundation of JWT and RBAC authorization, encrypted secret vaults, Stripe billing, CI/CD, and audit logging across projects. Applies written acceptance criteria, automated test suites, Playwright checks, and CI gates to every release. Brings 25 years of precision-driven federal operations experience in FAA-certified air traffic control, military electronics, law enforcement, and federal QA analysis. Based in Kampala, Uganda and available for remote international roles and projects.',
   contactEmail: 'dallas8000@gmail.com',
-  phone: '(682) 460-4038',
-  location: 'Riverview, FL · U.S. Citizen · Open to Remote & Relocation',
+  phone: '(656) 245-5253',
+  location: 'Kampala, Uganda · U.S. Citizen · Open to remote international roles',
 }
 
 export const defaultSkills = [

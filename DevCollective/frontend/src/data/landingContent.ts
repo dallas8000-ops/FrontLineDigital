@@ -1,9 +1,10 @@
 export const contactInfo = {
-  phone: '(682) 460-4038',
-  phoneHref: 'tel:+16824604038',
+  phone: '(656) 245-5253',
+  phoneHref: 'tel:+16562455253',
+  whatsappHref: 'https://wa.me/16562455253',
   email: 'dallas8000@gmail.com',
   emailHref: 'mailto:dallas8000@gmail.com',
-  location: 'Tampa, FL',
+  location: 'Kampala, Uganda · Available remotely worldwide',
 }
 
 /** Standard entry-level full-stack project rate (USD/hr) — quoted before work begins */

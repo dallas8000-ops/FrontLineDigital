@@ -53,6 +53,14 @@ export default function Footer() {
               <a href={contactInfo.phoneHref} className="block hover:text-brand-gold transition-colors">
                 {contactInfo.phone}
               </a>
+              <a
+                href={contactInfo.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-brand-gold transition-colors"
+              >
+                WhatsApp (international)
+              </a>
               <a href={contactInfo.emailHref} className="block hover:text-brand-gold transition-colors">
                 {contactInfo.email}
               </a>
@@ -64,7 +72,7 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p>Production software · Zero-defect discipline · Tampa, FL</p>
+          <p>Production software · Zero-defect discipline · Kampala, Uganda</p>
         </div>
       </div>
       <div className="brand-line-thin" />
