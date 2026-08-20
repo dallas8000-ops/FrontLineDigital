@@ -195,7 +195,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio copy/URLs change — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 23
+const SITE_CONTENT_SCHEMA_VERSION = 24
 
 function persistSiteContent(parsed: Record<string, unknown>) {
   try {
@@ -220,8 +220,10 @@ export const getSiteContent = () => {
           parsed.profileTitle = defaultProfile.profileTitle
           parsed.phone = defaultProfile.phone
           parsed.location = defaultProfile.location
+          parsed.skills = defaultSkills
           parsed.experience = defaultExperience
           parsed.services = defaultServices
+          parsed.education = defaultEducation
           parsed.certifications = defaultCertifications
           dirty = true
         } else if (Array.isArray(parsed.projects)) {

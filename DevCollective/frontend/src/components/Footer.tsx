@@ -72,7 +72,7 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p>Production software · Zero-defect discipline · Kampala, Uganda</p>
+          <p>Production software · Zero-defect discipline · Wimauma, FL</p>
         </div>
       </div>
       <div className="brand-line-thin" />

@@ -13,7 +13,7 @@ export default function About() {
       icon: '⚡',
       title: 'Full-Stack Software Engineer',
       years: 'Sept 2025 – May 2026',
-      desc: 'SDGKU technical diploma. Fifteen solo-built production applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
+      desc: 'SDGKU technical diploma. Twelve solo-built production applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
     },
     {
       icon: '🔒',

@@ -1,12 +1,11 @@
 export const defaultProfile = {
   profileName: 'Barney R. Gilliom',
-  profileTitle:
-    'Full-Stack Software Engineer · QA Automation Engineer · Python & API Developer',
+  profileTitle: 'Full-Stack Software Engineer',
   about:
-    'Full-stack engineer with a self-directed portfolio of fifteen live applications built and deployed independently across e-commerce, fintech billing, database operations, semantic memory, regulatory intelligence, and deployment automation. Reuses and hardens a production foundation of JWT and RBAC authorization, encrypted secret vaults, Stripe billing, CI/CD, and audit logging across projects. Applies written acceptance criteria, automated test suites, Playwright checks, and CI gates to every release. Brings 25 years of precision-driven federal operations experience in FAA-certified air traffic control, military electronics, law enforcement, and federal QA analysis. Based in Kampala, Uganda and available for remote international roles and projects.',
+    'Full-stack engineer with 1+ year of hands-on development experience and 25 years of precision-driven federal operations experience in FAA-certified air traffic control, military electronics, and federal QA analysis. After completing a Full Stack Software Development diploma, built and independently deployed a portfolio of 12 production applications across e-commerce, fintech billing, database operations, AI-assisted tooling, and deployment automation. Reuses a hardened production foundation of JWT/RBAC authorization, encrypted secret vaults, Stripe billing, CI/CD, and audit logging, with written user stories, acceptance criteria, automated test suites, and CI gates on every release. Seeking remote mid-level full-stack or QA automation roles.',
   contactEmail: 'dallas8000@gmail.com',
   phone: '(656) 245-5253',
-  location: 'Kampala, Uganda · U.S. Citizen · Open to remote international roles',
+  location: 'Wimauma, FL 33598 · U.S. Citizen · Open to remote roles',
 }
 
 export const defaultSkills = [
@@ -17,16 +16,17 @@ export const defaultSkills = [
   {
     category: 'QA & Testing',
     items: [
-      'User stories & acceptance criteria',
-      'Feature verification checklists',
-      'Live usability testing on production',
+      'Acceptance-criteria verification',
+      'Regression testing',
       'Python unittest',
       'Jest',
       'Vitest',
       'Testing Library',
       'Playwright E2E',
-      'API testing',
+      'API/E2E testing',
       'CI pipeline validation',
+      'Bug reporting',
+      'Test case design',
     ],
   },
   {
@@ -38,50 +38,59 @@ export const defaultSkills = [
       'Flask',
       'Node.js',
       'Express.js',
+      'Celery',
+      'Django Channels',
+      'WebSockets',
       'SQLAlchemy',
       'Alembic',
       'RESTful design',
       'JWT & session auth',
       'RBAC',
-      'Semantic search & vector memory',
-      'Model Context Protocol (MCP)',
-      'WebSockets (Django Channels)',
       'OpenAPI/Swagger',
     ],
   },
   {
     category: 'Frontend & UI/UX',
     items: [
-      'React 19',
+      'React 18/19',
       'TypeScript',
       'Vite',
       'Framer Motion',
-      'Tailwind CSS',
       'Bootstrap 5',
-      'CustomTkinter',
+      'Tailwind CSS',
+      'Zustand',
+      'React Router',
+      'HTML5/CSS3',
       'Responsive design',
       'ARIA accessibility',
     ],
   },
   {
     category: 'Databases',
-    items: ['PostgreSQL', 'SQLite', 'Django ORM', 'SQLAlchemy ORM', 'Alembic migrations', 'SQL schema design'],
+    items: ['PostgreSQL', 'SQLite', 'Redis', 'Django ORM', 'SQLAlchemy ORM', 'Alembic migrations', 'Schema design'],
   },
   {
-    category: 'DevOps, CI/CD & Security',
+    category: 'Security',
     items: [
-      'GitHub Actions',
-      'Docker',
-      'Docker Compose',
-      'Railway',
-      'Railway Volumes',
-      'Gunicorn',
-      'Uvicorn',
+      'AES-256-GCM encryption',
+      'Encrypted secret vaults',
       'CSRF protection',
+      'JWT/session auth',
       'bcrypt',
+      'RBAC',
+      'Input validation',
       'Parameterized SQL',
       'SSL/HTTPS enforcement',
+      'SHA-256 integrity hashing',
     ],
+  },
+  {
+    category: 'DevOps / CI-CD',
+    items: ['Git', 'GitHub Actions', 'Docker', 'Docker Compose', 'Railway', 'Render', 'Fly.io', 'Gunicorn', 'Uvicorn', 'Terraform', 'Linux/Ubuntu CLI'],
+  },
+  {
+    category: 'Payments & AI',
+    items: ['Stripe API', 'Stripe Checkout', 'Webhook handling', 'Subscription billing', 'LLM copilot integration', 'MCP server tooling'],
   },
   {
     category: 'Project & Documentation',
@@ -116,15 +125,15 @@ export const defaultServices = [
 
 export const defaultExperience = [
   {
-    role: 'Full-Stack Software Engineer / QA Engineer (Project-Based)',
-    org: 'San Diego Global Knowledge University',
-    location: 'Tampa, FL',
-    period: 'Sept 2025 – May 2026',
+    role: 'Full-Stack Software Developer (Independent / Contract)',
+    org: 'Self-Directed Portfolio',
+    location: 'Remote · Wimauma, FL',
+    period: 'Sept 2025 – Present',
     highlights: [
-      'Sole developer across fifteen production applications: e-commerce, REST APIs, semantic memory, diagnostics, database ops, fintech, and portfolio platforms.',
-      'Formal ToR, user stories, acceptance criteria, wireframes, and usability test reports for each capstone and portfolio project.',
-      'GitHub Actions on every repo: lint, test, build, and zero-downtime Railway deployment on push to main.',
-      'Built and deployed an authenticated FastAPI semantic-memory service with Deep Lake vector storage, MCP tools, persistent Railway Volume storage, and restart-persistence verification.',
+      'Built and deployed 12 production applications across e-commerce, fintech, agri-logistics, regulatory compliance, and AI tooling on a shared, hardened foundation for auth, RBAC, billing, and CI/CD.',
+      'Full SDLC ownership as sole developer: terms of reference, user stories with acceptance criteria, wireframes, usability reports, implementation, and deployment.',
+      'Applied Python unittest and Jest/Vitest/Playwright suites to API endpoints, auth logic, UI components, and E2E flows; used GitHub Actions to gate lint, test, build, and deployment on each push to main.',
+      'Delivered e-commerce, database operations, market-entry intelligence, offline-first mobile, and AI-assisted systems for East African and EU use cases.',
     ],
   },
   {
@@ -163,8 +172,8 @@ export const defaultEducation = [
   {
     title: 'Full Stack Software Development — Technical Diploma',
     org: 'San Diego Global Knowledge University · Tampa, FL',
-    period: 'Completed May 2026',
-    note: 'Python · React · TypeScript · Node.js · PostgreSQL · GitHub Actions · Agile/Scrum',
+    period: 'Diploma conferred May 2026',
+    note: 'Coursework completed 2025–2026. Python · React · TypeScript · Node.js · PostgreSQL · GitHub Actions · Agile/Scrum',
   },
   {
     title: 'Information Technology — Technical Diploma',
@@ -187,12 +196,10 @@ export const defaultEducation = [
 ]
 
 export const defaultCertifications = [
-  'TCOLE Master Police Officer (Texas)',
-  'Washington State Law Enforcement Equivalency Certificate',
-  'FAA Air Traffic Controller Certification',
-  'FAA Helicopter Communication Systems/Repair',
-  'U.S. Army — Joint Services Transcript (JST) on file',
   'AI-900: Microsoft Azure AI Fundamentals',
   'IT Security (CompTIA)',
+  'FAA Air Traffic Controller Certification',
+  'FAA Helicopter Communication Systems/Repair',
+  'TCOLE Master Police Officer',
   'Immersive Full Stack Software Development (SDGKU)',
 ]

@@ -36,8 +36,7 @@ export default function Home() {
   const content = getSiteContent()
   const projects = content.projects ?? []
   const flagshipProjects = projects.filter((project) => project.flagship)
-  const heroProjects = flagshipProjects.slice(0, 6)
-  const supportingProjects = projects.filter((project) => !project.flagship)
+  const featuredProjects = flagshipProjects.slice(0, 3)
 
   return (
     <div className="bg-site-grid">
@@ -75,7 +74,7 @@ export default function Home() {
               <span className="text-xs text-brand-muted">Live demos + GitHub</span>
             </div>
             <div className="space-y-3">
-              {heroProjects.map((project) => (
+              {featuredProjects.map((project) => (
                 <a
                   key={project.title}
                   href={project.url}
@@ -102,16 +101,19 @@ export default function Home() {
       >
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Portfolio</p>
         <h2 id="portfolio-heading" className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          {business.portfolioSectionTitle}
+          Selected flagship projects
         </h2>
         <p className="mb-10 max-w-3xl text-base leading-relaxed text-slate-200 md:text-lg">
           {business.portfolioSectionLead}
         </p>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {flagshipProjects.map((project) => (
+          {featuredProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
+        <Link to="/dashboard" className="btn btn-outline mt-8">
+          View all projects <ArrowRight size={16} />
+        </Link>
       </section>
 
       <section className="border-y border-brand-line bg-brand-card/40" aria-labelledby="capability-heading">
@@ -181,20 +183,6 @@ export default function Home() {
         </div>
       </section>
 
-      {supportingProjects.length > 0 && (
-        <section className="section-inner py-14" aria-labelledby="supporting-heading">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Additional systems</p>
-          <h2 id="supporting-heading" className="mb-8 text-2xl font-bold text-white">
-            More production work behind the flagship set
-          </h2>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {supportingProjects.map((project) => (
-              <ProjectCard key={project.title} project={project} compact />
-            ))}
-          </div>
-        </section>
-      )}
-
       <section className="section-inner py-14 border-t border-brand-line" aria-labelledby="founder-heading">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div className="card-dark p-4 border-brand-gold/20">
@@ -214,7 +202,7 @@ export default function Home() {
             <p className="mb-6 text-base leading-relaxed text-slate-200">
               The differentiator is the combination: U.S. Army veteran (JST-documented service), FAA-certified air
               traffic control, TCOLE Master Police Officer (Texas) with Washington State equivalency, and
-              full-stack engineering with QA discipline — applied to fifteen live production products.
+              full-stack engineering with QA discipline — applied to twelve production applications.
             </p>
             <ul className="space-y-3">
               {business.founderHighlights.map((item) => (

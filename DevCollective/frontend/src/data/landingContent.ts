@@ -4,7 +4,7 @@ export const contactInfo = {
   whatsappHref: 'https://wa.me/16562455253',
   email: 'dallas8000@gmail.com',
   emailHref: 'mailto:dallas8000@gmail.com',
-  location: 'Kampala, Uganda · Available remotely worldwide',
+  location: 'Wimauma, FL · Available remotely worldwide',
 }
 
 /** Standard entry-level full-stack project rate (USD/hr) — quoted before work begins */

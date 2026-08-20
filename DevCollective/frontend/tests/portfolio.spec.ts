@@ -1,14 +1,20 @@
 import { test, expect } from '@playwright/test'
 import { portfolioLiveUrls } from '../src/data/portfolioLiveUrls'
 
-test('home page loads portfolio-first hero and links to services', async ({ page }) => {
+test('home previews three flagship projects and links to the complete catalog', async ({ page }) => {
   await page.goto('/')
 
   await expect(page.getByRole('heading', { name: /Internal tools and operations dashboards/i })).toBeVisible()
-  await expect(page.getByRole('heading', { name: /Products you can try right now/i })).toBeVisible()
-  await page.getByRole('navigation').getByRole('link', { name: 'Services' }).click()
-  await expect(page).toHaveURL(/\/services$/)
-  await expect(page.getByRole('heading', { name: /Defined by what is already in production/i })).toBeVisible()
+  await expect(page.locator('#portfolio article')).toHaveCount(3)
+  await expect(page.getByRole('link', { name: /View all projects/i })).toHaveAttribute('href', '/dashboard')
+})
+
+test('services presents service offerings without duplicating the project catalog', async ({ page }) => {
+  await page.goto('/services')
+
+  await expect(page.getByRole('heading', { name: /Services built around production experience/i })).toBeVisible()
+  await expect(page.getByRole('article')).toHaveCount(0)
+  await expect(page.getByRole('link', { name: /View all projects/i })).toHaveAttribute('href', '/dashboard')
 })
 
 const portfolioDemoLinks = [
@@ -26,7 +32,7 @@ const portfolioDemoLinks = [
 
 for (const [title, href] of portfolioDemoLinks) {
   test(`${title} live demo points at Railway production URL`, async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/dashboard')
 
     const demo = page
       .getByRole('article')

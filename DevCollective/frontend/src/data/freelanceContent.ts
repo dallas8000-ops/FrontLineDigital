@@ -4,11 +4,11 @@ export const business = {
   name: 'Gilliom Frontline Digital',
   owner: defaultProfile.profileName,
   tagline: 'Internal Tools & Operations Dashboards | Secure, Audited, Production-Ready',
-  location: 'Kampala, Uganda | Remote — available for international projects',
+  location: 'Wimauma, FL | Remote — available for international roles',
   heroHeadline: 'Secure internal tools and ops dashboards — live, audited, and payment-ready.',
   heroSubhead:
-    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Fifteen products below are live demos you can open today; the stack underneath is the proof.',
-  portfolioSectionTitle: '15 live products you can try right now',
+    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Twelve production applications are live demos you can open today; the stack underneath is the proof.',
+  portfolioSectionTitle: '12 production applications you can try right now',
   portfolioSectionLead:
     'Each card is a deployed app on Railway — open the demo, read the stack, inspect GitHub where published. Live Stripe webhooks, JWT + RBAC, and honest status (shipped vs. sandbox vs. in progress) match what the repos document.',
   valueProps: [
@@ -44,13 +44,13 @@ export const business = {
     },
   ],
   credentials: [
-    { stat: '15', label: 'Live products — open any demo below' },
+    { stat: '12', label: 'Production applications — open any demo below' },
     { stat: 'Live Stripe', label: 'Production billing on portfolio apps' },
     { stat: 'Django + FastAPI', label: 'Proven in deployed demos' },
     { stat: 'Railway', label: 'Exclusive hosting for my demos' },
   ],
   metrics: [
-    '15 live Railway demos — Django, FastAPI, React, TypeScript, PostgreSQL',
+    '12 production applications — Django, FastAPI, React, TypeScript, PostgreSQL',
     'Live Stripe payments + webhooks on production keys',
     'JWT, RBAC, audit trails, and multi-tenant patterns in shipped apps',
     'GitHub Actions CI on portfolio repositories',
@@ -68,6 +68,6 @@ export const business = {
   founderHighlights: [
     'U.S. Army veteran — service documented on Joint Services Transcript (JST); FAA-certified air traffic control and electronics maintenance.',
     'TCOLE Master Police Officer (Texas); Washington State law-enforcement equivalency certificate. Former Military Police, Waco PD, and Dallas PD.',
-    'Solo builder of fifteen deployed products — requirements through Railway production.',
+    'Solo builder of twelve production applications — requirements through Railway production.',
   ],
 }
