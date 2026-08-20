@@ -4,7 +4,7 @@ import { portfolioLiveUrls } from '../src/data/portfolioLiveUrls'
 test('home previews three flagship projects and links to the complete catalog', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByRole('heading', { name: /Internal tools and operations dashboards/i })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Secure internal tools and ops dashboards/i })).toBeVisible()
   await expect(page.locator('#portfolio article')).toHaveCount(3)
   await expect(page.getByRole('link', { name: /View all projects/i })).toHaveAttribute('href', '/dashboard')
 })
