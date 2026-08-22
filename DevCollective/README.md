@@ -37,13 +37,17 @@ All portfolio apps link to Railway production URLs. Canonical URLs are defined i
 
 ### Frontend pages
 
-- **Home** — Hero, flagship portfolio grid with live-demo links, pricing, and founder section
-- **About** — Background timeline, education, and competencies
+- **Home** — Hero, flagship portfolio grid with live-demo links, **Solutions section** (12 product tiles with SEO descriptions), pricing, and founder section
+- **About** — Background timeline, education, and competencies (client-service positioning)
 - **Services** — Service offerings backed by live portfolio products
-- **Projects** (`/dashboard`) — Full portfolio grid with live-demo and GitHub links
+- **Projects** (`/dashboard`) — Full portfolio grid with live-demo, GitHub, and **View Case Study** buttons
 - **Resume** (`/profile`) — CV, skills, experience, and downloadable PDF
 - **Contact** — Contact form (posts to the backend API in production)
-- **PC Checker Extreme** (`/projects/pc-checker`) — Case-study detail page
+- **PC Checker Extreme** (`/projects/pc-checker`) — Detail page
+- **Case Studies** — Dedicated pages for three flagship products:
+  - `/case-studies/eastbridge` — EastBridge Ops Intelligence
+  - `/case-studies/agripay` — AgriPay Logistics AI
+  - `/case-studies/dbops` — DBOps Control Center
 - **Admin** (`/admin`) — Password-protected content editor (saves to browser localStorage)
 - **404** — Custom not-found page
 
@@ -67,7 +71,10 @@ DevCollective/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── data/             # Portfolio, resume, landing content
+│   │   │   └── CaseStudyPage.tsx   # Reusable case study layout
+│   │   ├── data/             # Portfolio, resume, landing, SEO, case study content
+│   │   │   ├── caseStudies.ts      # Problem/solution/impact content for case study pages
+│   │   │   └── seoContent.ts      # Canonical titles & descriptions for 12 portfolio products
 │   │   └── utils/
 │   ├── public/images/
 │   ├── railway.toml
