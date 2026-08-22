@@ -74,13 +74,21 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
+        {project.detailPath && (
+          <Link
+            to={project.detailPath}
+            className="btn btn-primary btn-sm mb-3 flex w-full items-center justify-center gap-2"
+          >
+            View Case Study
+          </Link>
+        )}
         <div className="mt-auto flex flex-col gap-2 sm:flex-row">
           {project.url && (
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary btn-sm flex flex-1 items-center justify-center gap-2"
+              className="btn btn-outline btn-sm flex flex-1 items-center justify-center gap-2"
             >
               <ExternalLink size={14} /> Live demo
             </a>
@@ -94,11 +102,6 @@ export default function ProjectCard({
             >
               <Github size={14} /> GitHub
             </a>
-          )}
-          {project.detailPath && (
-            <Link to={project.detailPath} className="btn btn-outline btn-sm flex-1 text-center">
-              Case study
-            </Link>
           )}
         </div>
       </div>

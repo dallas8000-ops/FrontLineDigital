@@ -48,6 +48,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     desc: 'Live market-entry and operations platform for European companies in Uganda, Kenya, Tanzania, Rwanda, and the EAC — source-backed regulatory changes, trade procedures, economic indicators, vendor due diligence, and a citation-required assistant.',
     url: portfolioLiveUrls.eastbridge,
     repoUrl: 'https://github.com/dallas8000-ops/EastBridge-OPS',
+    detailPath: '/case-studies/eastbridge',
     flagship: true,
     highlights: [
       'Regulatory change engine with official source URLs, impact summaries, and alert subscriptions.',
@@ -61,6 +62,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     desc: 'Production logistics and payments for farmers and buyers — live Stripe subscriptions and checkout; MTN MoMo integration verified against the provider sandbox (production-ready on live credentials).',
     url: portfolioLiveUrls.agripayLogistics,
     repoUrl: 'https://github.com/dallas8000-ops/AgriPay-Logistics-AI',
+    detailPath: '/case-studies/agripay',
     flagship: true,
     highlights: [
       'Live Stripe Checkout and webhooks with farmer profiles, orders, and subscription tiers.',
@@ -75,6 +77,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.dbopsWeb,
     repoUrl: 'https://github.com/dallas8000-ops/DBOps-Control-Center',
     screenshot: '/images/portfolio/dbops-control-center-features.png',
+    detailPath: '/case-studies/dbops',
     flagship: true,
     highlights: [
       'Live Stripe-backed plan limits and subscription billing; JWT + RBAC enforced on every route.',

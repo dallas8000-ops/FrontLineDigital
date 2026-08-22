@@ -12,6 +12,7 @@ import Profile from './pages/Profile'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import PCChecker from './pages/PCChecker'
+import CaseStudyPage from './pages/CaseStudyPage'
 import LiveDemoRedirect from './components/LiveDemoRedirect'
 import NotFound from './pages/NotFound'
 import { portfolioLiveUrls } from './data/portfolioLiveUrls'
@@ -52,6 +53,9 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects/pc-checker" element={<PCChecker />} />
+              <Route path="/case-studies/eastbridge" element={<CaseStudyPage slug="eastbridge" />} />
+              <Route path="/case-studies/agripay" element={<CaseStudyPage slug="agripay" />} />
+              <Route path="/case-studies/dbops" element={<CaseStudyPage slug="dbops" />} />
               <Route
                 path="/deployment-stripe-automation-center"
                 element={
