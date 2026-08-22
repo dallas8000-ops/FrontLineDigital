@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -19,7 +19,6 @@ import { portfolioLiveUrls } from './data/portfolioLiveUrls'
 import AdminPanel from './pages/AdminPanel'
 import AdminLogin from './pages/AdminLogin'
 import './styles/globals.css'
-import { useEffect } from 'react'
 import { applyColorScheme } from './utils/colorScheme'
 
 

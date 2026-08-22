@@ -5,7 +5,7 @@ import { usePageTitle } from '../utils/usePageTitle'
 import { getCaseStudy } from '../data/caseStudies'
 
 type Props = {
-  slug: string
+  readonly slug: string
 }
 
 export default function CaseStudyPage({ slug }: Props) {

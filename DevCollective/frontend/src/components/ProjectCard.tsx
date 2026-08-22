@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github as GithubIcon } from 'lucide-react'
 import type { PortfolioProject } from '../data/portfolioProjects'
 
 type ProjectCardProps = {
-  project: PortfolioProject
-  /** Show the one-line "what this proves for clients" line */
-  showProves?: boolean
-  highlightCount?: number
-  compact?: boolean
+  readonly project: PortfolioProject
+  readonly showProves?: boolean
+  readonly highlightCount?: number
+  readonly compact?: boolean
 }
 
 export default function ProjectCard({
@@ -100,7 +99,7 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               className="btn btn-outline btn-sm flex flex-1 items-center justify-center gap-2"
             >
-              <Github size={14} /> GitHub
+              <GithubIcon size={14} /> GitHub
             </a>
           )}
         </div>
