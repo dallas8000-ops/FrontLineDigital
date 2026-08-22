@@ -9,6 +9,7 @@ export type CaseStudy = {
   slug: string
   title: string
   subtitle: string
+  metaDescription: string
   liveUrl?: string
   problem: string
   solutionIntro: string
@@ -22,6 +23,8 @@ export const caseStudies: CaseStudy[] = [
     slug: 'eastbridge',
     title: 'EastBridge Ops Intelligence',
     subtitle: 'Navigating the EU-Africa Regulatory Gap',
+    metaDescription:
+      'How I engineered a regulatory compliance and trade intelligence platform for EU companies entering Uganda, Kenya, and Rwanda — built on Django 5, React 19, and pgvector.',
     liveUrl: portfolioLiveUrls.eastbridge,
     problem:
       'European companies expanding into the East African Community (EAC) face a "transparency tax." Regulatory intelligence is often fragmented, siloed in government offices, or buried in non-digitized documents. This uncertainty creates significant compliance risks and delays market entry for months.',
@@ -49,6 +52,8 @@ export const caseStudies: CaseStudy[] = [
     slug: 'agripay',
     title: 'AgriPay Logistics AI',
     subtitle: 'Modernizing Agricultural Supply Chains',
+    metaDescription:
+      'How I built AgriPay to digitize farm-gate payments in East Africa — MTN MoMo, Airtel Money, live Stripe billing, and real-time logistics tracking for Ugandan and Kenyan agriculture.',
     liveUrl: portfolioLiveUrls.agripayLogistics,
     problem:
       'The "Last Mile" of agricultural logistics in East Africa is often a financial black hole. Smallholder farmers and buyers rely on manual ledger books and cash-heavy transactions, leading to payment delays, lost records, and a lack of transparency that prevents farmers from accessing credit.',
@@ -76,6 +81,8 @@ export const caseStudies: CaseStudy[] = [
     slug: 'dbops',
     title: 'DBOps Control Center',
     subtitle: 'Hardening Enterprise Database Infrastructure',
+    metaDescription:
+      'How I engineered DBOps Control Center to replace fragmented local database tools with a single secure portal — granular RBAC, tamper-proof audit trails, and AES-256-GCM encrypted secrets on FastAPI and React.',
     liveUrl: portfolioLiveUrls.dbopsWeb,
     problem:
       'Modern development teams often struggle with "Database Sprawl," where sensitive production data is accessed through fragmented tools and insecure local connections. This lack of centralized governance leads to unauthorized access risks, accidentally dropped tables, and zero visibility into who changed what in the production environment.',

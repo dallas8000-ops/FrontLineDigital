@@ -11,7 +11,10 @@ type Props = {
 export default function CaseStudyPage({ slug }: Props) {
   const cs = getCaseStudy(slug)
 
-  usePageTitle(cs ? `Case Study: ${cs.title}` : 'Case Study Not Found')
+  usePageTitle(
+    cs ? `Case Study: ${cs.title}` : 'Case Study Not Found',
+    cs?.metaDescription
+  )
 
   if (!cs) {
     return (
@@ -104,7 +107,7 @@ export default function CaseStudyPage({ slug }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="card-dark border-brand-gold/30 p-8 text-center">
+        <section className="card-dark border-brand-gold/30 p-6 sm:p-8 md:p-10 text-center">
           <h3 className="mb-3 text-xl font-bold text-white">
             Need something like {cs.title.split(' ')[0]}?
           </h3>
