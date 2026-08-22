@@ -6,6 +6,7 @@ import { getSiteContent } from '../utils/siteContent'
 import { business } from '../data/freelanceContent'
 import { defaultProfile } from '../data/resumeContent'
 import ProjectCard from '../components/ProjectCard'
+import { portfolioSeoEntries } from '../data/seoContent'
 import {
   packages,
   addOns,
@@ -114,6 +115,45 @@ export default function Home() {
         <Link to="/dashboard" className="btn btn-outline mt-8">
           View all projects <ArrowRight size={16} />
         </Link>
+      </section>
+
+      <section className="border-y border-brand-line bg-brand-card/40" aria-labelledby="solutions-heading">
+        <div className="section-inner py-14 md:py-20">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Solutions</p>
+          <h2 id="solutions-heading" className="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Operations software for real business workflows
+          </h2>
+          <p className="mb-10 max-w-3xl text-base leading-relaxed text-slate-200 md:text-lg">
+            Explore the systems behind the portfolio: compliance intelligence, logistics, billing, diagnostics,
+            developer tooling, and sales operations.
+          </p>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {portfolioSeoEntries.map((entry) => {
+              const content = (
+                <>
+                  <h3 className="mb-3 text-lg font-bold text-white">{entry.title}</h3>
+                  <p className="text-sm leading-relaxed text-brand-muted">{entry.description}</p>
+                </>
+              )
+
+              return entry.url?.startsWith('/') ? (
+                <Link key={entry.name} to={entry.url} className="card-dark p-5 transition hover:border-brand-gold/60">
+                  {content}
+                </Link>
+              ) : (
+                <a
+                  key={entry.name}
+                  href={entry.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-dark p-5 transition hover:border-brand-gold/60"
+                >
+                  {content}
+                </a>
+              )
+            })}
+          </div>
+        </div>
       </section>
 
       <section className="border-y border-brand-line bg-brand-card/40" aria-labelledby="capability-heading">
