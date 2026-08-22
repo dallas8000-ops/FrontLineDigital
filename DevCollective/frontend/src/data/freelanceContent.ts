@@ -4,7 +4,7 @@ export const business = {
   name: 'Gilliom Frontline Digital',
   owner: defaultProfile.profileName,
   tagline: 'Internal Tools & Operations Dashboards | Secure, Audited, Production-Ready',
-  location: 'Wimauma, FL | Remote — available for international roles',
+  location: 'Wimauma, FL | Serving clients remotely worldwide',
   heroHeadline: 'Secure internal tools and ops dashboards — live, audited, and payment-ready.',
   heroSubhead:
     'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Twelve production applications are live demos you can open today; the stack underneath is the proof.',
