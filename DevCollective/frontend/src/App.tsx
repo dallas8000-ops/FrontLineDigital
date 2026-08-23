@@ -55,6 +55,7 @@ function App() {
               <Route path="/case-studies/eastbridge" element={<CaseStudyPage slug="eastbridge" />} />
               <Route path="/case-studies/agripay" element={<CaseStudyPage slug="agripay" />} />
               <Route path="/case-studies/dbops" element={<CaseStudyPage slug="dbops" />} />
+              <Route path="/case-studies/righand" element={<CaseStudyPage slug="righand" />} />
               <Route
                 path="/deployment-stripe-automation-center"
                 element={

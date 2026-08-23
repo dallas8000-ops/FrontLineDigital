@@ -148,6 +148,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     url: portfolioLiveUrls.righandFrontend,
     repoUrl: 'https://github.com/dallas8000-ops/RigHand',
     screenshot: '/images/portfolio/righand-ai-dashboard.png',
+    detailPath: '/case-studies/righand',
     flagship: true,
     highlights: [
       'Offline-first IndexedDB sync, GPS/OBD mileage, and tax-ready CSV/PDF exports.',

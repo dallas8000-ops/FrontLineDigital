@@ -71,6 +71,14 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-white text-2xl font-bold mb-4">Who I am</h2>
+            <p className="text-brand-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+              High-Resilience Software
+            </p>
+            <p className="text-slate-200 leading-relaxed mb-6">
+              I build software that keeps working when the network fails: offline-first tools, native GPS and
+              OBD-II integrations, and practical systems for logistics bottlenecks in emerging markets like the
+              EAC.
+            </p>
             <p className="text-slate-200 leading-relaxed mb-6">{content.about}</p>
             <p className="text-brand-muted text-sm mb-6">{business.location}</p>
             <div className="flex flex-wrap gap-3">

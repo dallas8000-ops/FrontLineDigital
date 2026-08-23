@@ -1,4 +1,5 @@
 import { portfolioSeoEntries } from '../data/seoContent'
+import { caseStudies } from '../data/caseStudies'
 
 describe('portfolio SEO content', () => {
   it('contains the supplied title and description for every promoted app', () => {
@@ -76,5 +77,14 @@ describe('portfolio SEO content', () => {
           'Operations hub for sales prospects, automated proposals, and subscription-driven checkout flows.',
       },
     ])
+  })
+
+  it('includes RigHand as the fourth formal case study in the portfolio narrative', () => {
+    expect(caseStudies.map((study) => study.slug)).toEqual(['eastbridge', 'agripay', 'dbops', 'righand'])
+    expect(caseStudies[3]).toMatchObject({
+      slug: 'righand',
+      title: 'RigHand AI',
+      subtitle: 'High-Resilience Software for Fleet Safety & Compliance',
+    })
   })
 })

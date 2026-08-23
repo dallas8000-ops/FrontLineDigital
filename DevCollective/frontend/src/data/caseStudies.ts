@@ -106,6 +106,39 @@ export const caseStudies: CaseStudy[] = [
       'DBOps replaces the "Wild West" of local database tools with a single, audited, and secure portal. It gives CTOs and security leads the confidence that their data infrastructure is protected, while providing engineers with a fast and intuitive interface for their daily operations.',
     stack: ['FastAPI', 'SQLAlchemy', 'Alembic', 'PostgreSQL', 'React', 'Vite', 'JWT', 'Stripe', 'Railway'],
   },
+  {
+    slug: 'righand',
+    title: 'RigHand AI',
+    subtitle: 'High-Resilience Software for Fleet Safety & Compliance',
+    metaDescription:
+      'How I built RigHand AI for Uganda transit operations — offline-first HOS tracking, GPS and OBD-II logging, and compliance workflows designed for regional logistics bottlenecks in the EAC.',
+    liveUrl: portfolioLiveUrls.righandFrontend,
+    problem:
+      'Uganda transit operations face a compounding crisis: driver fatigue on the Gulu Highway, broken-down trucks creating secondary collisions, and tightening URA/NTSA compliance requirements that demand digital proof of load control and rest periods. In low-connectivity border corridors like Malaba and Busia, critical fleet data cannot depend on constant internet access.',
+    solutionIntro:
+      'RigHand AI is designed as high-resilience software for emerging logistics environments. It works offline, uses native device data where available, and focuses on the specific bottlenecks that matter most to operators: Hours of Service compliance, mechanical reliability, and cross-border documentation.',
+    features: [
+      {
+        title: 'HOS Countdown Lite',
+        body: 'Tracks rest cycles and remaining drive time to reduce fatigue-driven crashes and support more defensible compliance practices.',
+      },
+      {
+        title: 'UG Jurisdiction Pack',
+        body: 'Helps operators align with regional and national rule sets, including load-control and customs documentation workflows relevant to Uganda and the EAC.',
+      },
+      {
+        title: 'Maintenance Prompts',
+        body: 'Flags recurring vehicle issues before breakdowns escalate into secondary incidents on high-risk routes.',
+      },
+      {
+        title: 'Offline-First Mobile Records',
+        body: 'Lets drivers capture trip, expense, and load data even in low-connectivity border and highway conditions, then sync when connectivity returns.',
+      },
+    ],
+    impact:
+      'RigHand AI is not just an expense tracker; it is a safety and compliance infrastructure layer. For fleet operators in Uganda and the broader EAC, it turns fragmented recordkeeping into a practical operating system for fatigue control, equipment reliability, and regulatory proof.',
+    stack: ['Capacitor', 'React', 'TypeScript', 'IndexedDB', 'GPS', 'OBD-II', 'PostgreSQL', 'Stripe', 'Railway'],
+  },
 ]
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
