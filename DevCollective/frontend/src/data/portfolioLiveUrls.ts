@@ -57,12 +57,12 @@ export const deprecatedRailwayHosts = [
 
 /** API-only Railway services — not portfolio live-demo targets (use the web service URL). */
 export const apiOnlyRailwayHosts = [
-  'dbops-api-production-5047.up.railway.app',
+  'dbops-api-production.up.railway.app',
   'specwright-api-production.up.railway.app',
   'elite-fintech-api-production.up.railway.app',
 ] as const
 
-/** Currently returning errors (verified 2026-08-14) — hide until the Railway service is redeployed/fixed. */
+/** Currently returning errors (verified 2026-08-27) — hide until the Railway service is redeployed/fixed. */
 export const currentlyDownRailwayHosts = [
   'react-store-catalog-1-production.up.railway.app',
 ] as const
