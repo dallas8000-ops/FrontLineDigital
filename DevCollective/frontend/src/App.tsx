@@ -52,10 +52,21 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects/pc-checker" element={<PCChecker />} />
+              <Route path="/case-studies/ai-software-operations-studio" element={<CaseStudyPage slug="ai-software-operations-studio" />} />
+              <Route path="/case-studies/ai-memory-engine" element={<CaseStudyPage slug="ai-memory-engine" />} />
+              <Route path="/case-studies/deployment-stripe-automation-center" element={<CaseStudyPage slug="deployment-stripe-automation-center" />} />
+              <Route path="/case-studies/elite-fintech" element={<CaseStudyPage slug="elite-fintech" />} />
               <Route path="/case-studies/eastbridge" element={<CaseStudyPage slug="eastbridge" />} />
               <Route path="/case-studies/agripay" element={<CaseStudyPage slug="agripay" />} />
               <Route path="/case-studies/dbops" element={<CaseStudyPage slug="dbops" />} />
               <Route path="/case-studies/righand" element={<CaseStudyPage slug="righand" />} />
+              <Route path="/case-studies/kistie-store" element={<CaseStudyPage slug="kistie-store" />} />
+              <Route path="/case-studies/silverfox" element={<CaseStudyPage slug="silverfox" />} />
+              <Route path="/case-studies/react-store-catalog" element={<CaseStudyPage slug="react-store-catalog" />} />
+              <Route path="/case-studies/pc-checker-extreme" element={<CaseStudyPage slug="pc-checker-extreme" />} />
+              <Route path="/case-studies/specwright" element={<CaseStudyPage slug="specwright" />} />
+              <Route path="/case-studies/enpowercommand" element={<CaseStudyPage slug="enpowercommand" />} />
+              <Route path="/case-studies/digital-sales-automation-center" element={<CaseStudyPage slug="digital-sales-automation-center" />} />
               <Route
                 path="/deployment-stripe-automation-center"
                 element={
