@@ -55,9 +55,7 @@ export default function Home() {
             <p className="mb-6 max-w-2xl text-lg leading-relaxed text-slate-200">{business.heroSubhead}</p>
             <div className="mb-8 flex flex-wrap gap-4">
               <a
-                href={contactInfo.youtubeVideoHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/about#latest-video"
                 className="inline-flex items-center justify-center rounded-full border border-brand-gold/60 bg-brand-gold px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-brand-navy transition hover:bg-brand-gold/90"
               >
                 Latest video

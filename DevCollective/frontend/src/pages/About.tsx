@@ -108,16 +108,14 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section-inner py-12 max-w-4xl">
+      <section id="latest-video" className="section-inner scroll-mt-24 py-12 max-w-4xl">
         <h2 className="text-white text-2xl font-bold text-center mb-3">Introduction</h2>
         <p className="text-brand-muted text-center text-sm mb-8">
           A quick overview of who I am and what I build.
         </p>
         <div className="mb-6 flex justify-center">
           <a
-            href={contactInfo.youtubeVideoHref}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#latest-video"
             className="inline-flex items-center justify-center rounded-full border border-brand-gold/60 bg-brand-gold px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-brand-navy transition hover:bg-brand-gold/90"
           >
             Latest video

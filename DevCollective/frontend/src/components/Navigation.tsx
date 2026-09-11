@@ -52,11 +52,9 @@ export default function Navigation() {
             </a>
             <div className="mt-2 flex items-center justify-end gap-3 text-[11px] md:text-xs font-medium">
               <a
-                href={contactInfo.youtubeVideoHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/about#latest-video"
                 className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
-                aria-label="Open Barney Gilliom latest YouTube video"
+                aria-label="Open Barney Gilliom latest video"
               >
                 Latest video
               </a>
@@ -158,11 +156,9 @@ export default function Navigation() {
               </a>
               <div className="mt-3 flex flex-wrap gap-2">
                 <a
-                  href={contactInfo.youtubeVideoHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/about#latest-video"
                   className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-xs text-brand-gold"
-                  aria-label="Open Barney Gilliom latest YouTube video"
+                  aria-label="Open Barney Gilliom latest video"
                 >
                   Latest video
                 </a>
