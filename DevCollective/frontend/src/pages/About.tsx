@@ -126,6 +126,12 @@ export default function About() {
             controls
             playsInline
             preload="metadata"
+            muted={false}
+            defaultMuted={false}
+            onPlay={(event) => {
+              event.currentTarget.muted = false
+              event.currentTarget.volume = 1
+            }}
             className="aspect-video w-full rounded-lg object-cover"
             poster="https://img.youtube.com/vi/-bRasozopuw/maxresdefault.jpg"
           >
