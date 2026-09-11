@@ -5,6 +5,11 @@ export const contactInfo = {
   email: 'dallas8000@gmail.com',
   emailHref: 'mailto:dallas8000@gmail.com',
   location: 'Wimauma, FL · Available remotely worldwide',
+  youtubeHandle: '@MrDallas8000',
+  youtubeHref: 'https://www.youtube.com/@MrDallas8000',
+  youtubeVideoHref: '/videos/twelve-live-apps-proof.mp4',
+  threadsHandle: '@barneygilliom',
+  threadsHref: 'https://www.threads.com/@barneygilliom',
 }
 
 /** Standard entry-level full-stack project rate (USD/hr) — quoted before work begins */

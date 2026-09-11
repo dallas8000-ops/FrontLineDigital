@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../utils/usePageTitle'
 import { getSiteContent } from '../utils/siteContent'
 import { business } from '../data/freelanceContent'
+import { contactInfo } from '../data/landingContent'
 
 export default function About() {
   usePageTitle('About')
@@ -112,16 +113,26 @@ export default function About() {
         <p className="text-brand-muted text-center text-sm mb-8">
           A quick overview of who I am and what I build.
         </p>
+        <div className="mb-6 flex justify-center">
+          <a
+            href={contactInfo.youtubeVideoHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-brand-gold/60 bg-brand-gold px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-brand-navy transition hover:bg-brand-gold/90"
+          >
+            Latest video
+          </a>
+        </div>
         <div className="card-dark p-2 overflow-hidden">
           <video
             controls
-            preload="metadata"
             playsInline
-            className="w-full rounded-lg"
-            style={{ maxHeight: '480px' }}
+            preload="metadata"
+            className="aspect-video w-full rounded-lg object-cover"
+            poster="https://img.youtube.com/vi/-bRasozopuw/maxresdefault.jpg"
           >
-            <source src="/images/profile/Ray.mp4" type="video/mp4" />
-            <track kind="captions" />
+            <source src={contactInfo.youtubeVideoHref} type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
         </div>
       </section>

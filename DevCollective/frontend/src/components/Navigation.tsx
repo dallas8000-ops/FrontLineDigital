@@ -50,7 +50,36 @@ export default function Navigation() {
             <a href={contactInfo.emailHref} className="block hover:text-brand-gold transition-colors">
               {contactInfo.email}
             </a>
-            <span className="block">{contactInfo.location}</span>
+            <div className="mt-2 flex items-center justify-end gap-3 text-[11px] md:text-xs font-medium">
+              <a
+                href={contactInfo.youtubeVideoHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                aria-label="Open Barney Gilliom latest YouTube video"
+              >
+                Latest video
+              </a>
+              <a
+                href={contactInfo.youtubeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                aria-label={`Open Barney Gilliom YouTube profile ${contactInfo.youtubeHandle}`}
+              >
+                {contactInfo.youtubeHandle}
+              </a>
+              <a
+                href={contactInfo.threadsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-colors"
+                aria-label={`Open Barney Gilliom Threads profile ${contactInfo.threadsHandle}`}
+              >
+                {contactInfo.threadsHandle}
+              </a>
+            </div>
+            <span className="block mt-1">{contactInfo.location}</span>
           </address>
         </div>
       </div>
@@ -127,6 +156,35 @@ export default function Navigation() {
               <a href={contactInfo.emailHref} className="block py-1">
                 {contactInfo.email}
               </a>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <a
+                  href={contactInfo.youtubeVideoHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-xs text-brand-gold"
+                  aria-label="Open Barney Gilliom latest YouTube video"
+                >
+                  Latest video
+                </a>
+                <a
+                  href={contactInfo.youtubeHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-xs text-brand-gold"
+                  aria-label={`Open Barney Gilliom YouTube profile ${contactInfo.youtubeHandle}`}
+                >
+                  {contactInfo.youtubeHandle}
+                </a>
+                <a
+                  href={contactInfo.threadsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full border border-brand-gold/60 bg-brand-gold/10 px-2.5 py-1 text-xs text-brand-gold"
+                  aria-label={`Open Barney Gilliom Threads profile ${contactInfo.threadsHandle}`}
+                >
+                  {contactInfo.threadsHandle}
+                </a>
+              </div>
               <span className="block py-1">{contactInfo.location}</span>
             </address>
             <Link to="/contact" className="btn btn-primary w-full mt-4" onClick={() => setIsOpen(false)}>
