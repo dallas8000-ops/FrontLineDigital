@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
 import { getSiteContent } from '../utils/siteContent'
 import { business } from '../data/freelanceContent'
-import { defaultProfile } from '../data/resumeContent'
+import { defaultProfile, resumeProjectTitles } from '../data/resumeContent'
 import ProjectCard from '../components/ProjectCard'
 import { portfolioSeoEntries } from '../data/seoContent'
 import {
@@ -15,7 +15,6 @@ import {
   processSectionSubtitle,
   pricingNote,
   SOFTWARE_DEV_HOURLY_USD,
-  contactInfo,
 } from '../data/landingContent'
 
 const architectureProjects = [
@@ -37,8 +36,9 @@ export default function Home() {
   usePageTitle('Gilliom Frontline Digital | Internal Tools & Ops Dashboards')
   const content = getSiteContent()
   const projects = content.projects ?? []
-  const flagshipProjects = projects.filter((project) => project.flagship)
-  const featuredProjects = flagshipProjects.slice(0, 3)
+  const featuredProjects = resumeProjectTitles
+    .map((title) => projects.find((project) => project.title === title))
+    .filter((project): project is NonNullable<typeof project> => Boolean(project))
 
   return (
     <div className="bg-site-grid">

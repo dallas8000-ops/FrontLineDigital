@@ -25,7 +25,6 @@ const portfolioDemoLinks = [
   ['Kistie Store', portfolioLiveUrls.kistieStore],
   ['SilverFox', portfolioLiveUrls.silverfox],
   ['RigHand AI', portfolioLiveUrls.righandFrontend],
-  ['React Store Catalog', portfolioLiveUrls.reactStoreCatalog],
   ['PC Checker Extreme', portfolioLiveUrls.pcCheckerExtreme],
   ['Specwright', portfolioLiveUrls.specwrightWeb],
 ] as const
@@ -42,6 +41,17 @@ for (const [title, href] of portfolioDemoLinks) {
     await expect(demo).toHaveAttribute('href', href)
   })
 }
+
+test('known-down React Store Catalog is not advertised as a live demo', async ({ page }) => {
+  await page.goto('/dashboard')
+
+  const project = page
+    .getByRole('article')
+    .filter({ has: page.getByRole('heading', { name: 'React Store Catalog' }) })
+
+  await expect(project).toBeVisible()
+  await expect(project.getByRole('link', { name: /Live demo/i })).toHaveCount(0)
+})
 
 test('pc checker extreme detail page exposes live demo and contact actions', async ({ page }) => {
   await page.goto('/projects/pc-checker')

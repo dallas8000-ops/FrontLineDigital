@@ -4,9 +4,13 @@ import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../utils/usePageTitle'
 import { contactInfo } from '../data/landingContent'
+import { resumeProjectTitles } from '../data/resumeContent'
 
 export default function Profile() {
   const content = getSiteContent()
+  const resumeProjects = content.projects?.filter((project) =>
+    resumeProjectTitles.includes(project.title as (typeof resumeProjectTitles)[number])
+  ) ?? []
   usePageTitle(`Profile & CV — ${content.profileName}`)
 
   return (
@@ -16,6 +20,9 @@ export default function Profile() {
           <h1 className="mb-2 text-white">{content.profileName}</h1>
           <p className="text-brand-gold text-lg font-medium">{content.profileTitle}</p>
           <p className="text-brand-muted text-sm mt-2">{content.location}</p>
+          <p className="text-slate-200 text-sm mt-2">
+            {content.workAuthorization} · {content.remoteAvailability}
+          </p>
         </div>
       </section>
 
@@ -128,7 +135,7 @@ export default function Profile() {
                 Technical Projects — Live Production
               </h3>
               <div className="space-y-6">
-                {content.projects?.map((project) => (
+                {resumeProjects.map((project) => (
                   <div key={project.title} className="border-b border-brand-line/60 last:border-0 pb-6 last:pb-0">
                     <h4 className="font-bold text-white text-lg">{project.title}</h4>
                     <p className="text-brand-gold text-xs font-mono mt-1 mb-2">{project.stack}</p>

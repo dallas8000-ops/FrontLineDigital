@@ -2,11 +2,19 @@ export const defaultProfile = {
   profileName: 'Barney R. Gilliom',
   profileTitle: 'Full-Stack Software Engineer',
   about:
-    'I focus on High-Resilience Software: tools that work offline, leverage native hardware like GPS and OBD-II, and solve specific logistical bottlenecks in emerging markets such as the East African Community (EAC). Full-stack engineer and independent software consultant with 1+ year of hands-on development experience and 25 years of precision-driven federal operations experience in FAA-certified air traffic control, military electronics, and federal QA analysis. After completing a Full Stack Software Development diploma, built and independently deployed a portfolio of 12 production applications across e-commerce, fintech billing, database operations, AI-assisted tooling, logistics, and deployment automation. Reuses a hardened production foundation of JWT/RBAC authorization, encrypted secret vaults, Stripe billing, CI/CD, and audit logging, with written user stories, acceptance criteria, automated test suites, and CI gates on every release. Gilliom Frontline Digital helps organizations turn operational requirements into secure, production-ready software.',
+    'Full-stack software engineer building production systems with Python, TypeScript, React, Django, FastAPI, and PostgreSQL. Independently delivers secure operations platforms from requirements through Railway deployment, including JWT/RBAC authorization, encrypted secrets, Stripe billing, audit trails, offline workflows, automated tests, and CI gates. Current flagship work demonstrates SaaS operations automation, governed database access, and jurisdiction-aware fleet compliance. Brings 25 years of precision-driven federal operations, military electronics, and QA experience to software that must remain dependable under real operating conditions.',
   contactEmail: 'dallas8000@gmail.com',
   phone: '(656) 245-5253',
   location: 'Wimauma, FL 33598 · Serving clients remotely worldwide',
+  workAuthorization: 'U.S. citizen',
+  remoteAvailability: 'Available for U.S. remote work',
 }
+
+export const resumeProjectTitles = [
+  'AI Software Operations Studio',
+  'DBOps Control Center',
+  'RigHand AI',
+] as const
 
 export const defaultSkills = [
   {
@@ -130,7 +138,7 @@ export const defaultExperience = [
     location: 'Remote · Wimauma, FL',
     period: 'Sept 2025 – Present',
     highlights: [
-      'Built and deployed 12 production applications across e-commerce, fintech, agri-logistics, regulatory compliance, and AI tooling on a shared, hardened foundation for auth, RBAC, billing, and CI/CD.',
+      'Built and deployed production applications across SaaS operations, database governance, fintech, logistics, regulatory compliance, and AI tooling on a hardened foundation for auth, RBAC, billing, and CI/CD.',
       'Full SDLC ownership as sole developer: terms of reference, user stories with acceptance criteria, wireframes, usability reports, implementation, and deployment.',
       'Applied Python unittest and Jest/Vitest/Playwright suites to API endpoints, auth logic, UI components, and E2E flows; used GitHub Actions to gate lint, test, build, and deployment on each push to main.',
       'Delivered e-commerce, database operations, market-entry intelligence, offline-first mobile, and AI-assisted systems for East African and EU use cases.',

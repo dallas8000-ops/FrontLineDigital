@@ -1,3 +1,87 @@
+/* ATS-readable source for the downloadable resume PDF. */
+.resume-print-document {
+  margin: 0 auto;
+  max-width: 8.5in;
+  background: #fff;
+  color: #172033;
+  padding: 0.55in 0.65in;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-print-document h1,
+.resume-print-document h2,
+.resume-print-document h3,
+.resume-print-document p {
+  color: inherit;
+}
+
+.resume-print-document h1 {
+  margin: 0;
+  font-size: 24pt;
+}
+
+.resume-print-document h2 {
+  margin: 16px 0 6px;
+  border-bottom: 1px solid #526079;
+  font-size: 13pt;
+  text-transform: uppercase;
+}
+
+.resume-print-document h3 {
+  margin: 8px 0 2px;
+  font-size: 11pt;
+}
+
+.resume-print-document p,
+.resume-print-document ul {
+  margin: 3px 0;
+}
+
+.resume-print-document ul {
+  padding-left: 18px;
+}
+
+.resume-print-header {
+  text-align: center;
+}
+
+.resume-print-title,
+.resume-print-meta {
+  font-weight: 700;
+}
+
+.resume-print-skills p {
+  break-inside: avoid;
+}
+
+.resume-print-entry {
+  break-inside: avoid;
+}
+
+@media print {
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  body:has(.resume-print-document) > #root > div > header,
+  body:has(.resume-print-document) > #root > div > footer,
+  body:has(.resume-print-document) .back-to-top {
+    display: none !important;
+  }
+
+  body:has(.resume-print-document),
+  body:has(.resume-print-document) main {
+    background: #fff !important;
+  }
+
+  .resume-print-document {
+    max-width: none;
+    padding: 0.45in 0.55in;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

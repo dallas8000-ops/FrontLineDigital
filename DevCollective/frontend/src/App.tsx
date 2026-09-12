@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
+import ResumePrint from './pages/ResumePrint'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import PCChecker from './pages/PCChecker'
@@ -50,6 +51,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/marketplace" element={<Navigate to="/about" replace />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/resume-print" element={<ResumePrint />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects/pc-checker" element={<PCChecker />} />
               <Route path="/case-studies/ai-software-operations-studio" element={<CaseStudyPage slug="ai-software-operations-studio" />} />

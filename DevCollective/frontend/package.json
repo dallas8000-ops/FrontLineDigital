@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port 3000",
     "build": "vite build",
+    "resume:pdf": "node scripts/generate-resume-pdf.mjs",
     "start": "serve -s dist -l ${PORT:-4173}",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

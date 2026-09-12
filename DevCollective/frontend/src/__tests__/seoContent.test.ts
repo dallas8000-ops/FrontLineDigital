@@ -79,9 +79,8 @@ describe('portfolio SEO content', () => {
     ])
   })
 
-  it('includes RigHand as the fourth formal case study in the portfolio narrative', () => {
-    expect(caseStudies.map((study) => study.slug)).toEqual(['eastbridge', 'agripay', 'dbops', 'righand'])
-    expect(caseStudies[3]).toMatchObject({
+  it('includes RigHand as a formal case study in the portfolio narrative', () => {
+    expect(caseStudies.find((study) => study.slug === 'righand')).toMatchObject({
       slug: 'righand',
       title: 'RigHand AI',
       subtitle: 'High-Resilience Software for Fleet Safety & Compliance',

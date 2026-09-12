@@ -7,8 +7,8 @@ export const business = {
   location: 'Wimauma, FL | Serving clients remotely worldwide',
   heroHeadline: 'Secure internal tools and ops dashboards — live, audited, and payment-ready.',
   heroSubhead:
-    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Twelve production applications are live demos you can open today; the stack underneath is the proof.',
-  portfolioSectionTitle: '12 production applications you can try right now',
+    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Start with three representative systems, then inspect the broader production portfolio.',
+  portfolioSectionTitle: 'Production applications you can try right now',
   portfolioSectionLead:
     'Each card is a deployed app on Railway — open the demo, read the stack, inspect GitHub where published. Live Stripe webhooks, JWT + RBAC, and honest status (shipped vs. sandbox vs. in progress) match what the repos document.',
   valueProps: [
@@ -44,7 +44,7 @@ export const business = {
     },
   ],
   credentials: [
-    { stat: '12', label: 'Production applications — open any demo below' },
+    { stat: '3', label: 'Flagship systems — focused proof below' },
     { stat: 'Live Stripe', label: 'Production billing on portfolio apps' },
     { stat: 'Django + FastAPI', label: 'Proven in deployed demos' },
     { stat: 'Railway', label: 'Exclusive hosting for my demos' },
@@ -68,6 +68,6 @@ export const business = {
   founderHighlights: [
     'U.S. Army veteran — service documented on Joint Services Transcript (JST); FAA-certified air traffic control and electronics maintenance.',
     'TCOLE Master Police Officer (Texas); Washington State law-enforcement equivalency certificate. Former Military Police, Waco PD, and Dallas PD.',
-    'Solo builder of twelve production applications — requirements through Railway production.',
+    'Solo builder of production applications — requirements through Railway production.',
   ],
 }
