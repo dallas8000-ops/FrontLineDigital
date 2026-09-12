@@ -13,6 +13,12 @@ describe('initial document HTML', () => {
     expect(html).not.toContain('<div id="root"></div>')
   })
 
+  it('publishes structured identity data for the resume owner', () => {
+    expect(html).toContain('"@type": "Person"')
+    expect(html).toContain('https://gilliomfrontlinedigital.com/profile')
+    expect(html).toContain('Barney_Gilliom_Resume_v3.pdf')
+  })
+
   it('does not publish a brittle total application count', () => {
     expect(html).not.toMatch(/\b(?:12|13) live (?:products|applications)\b/i)
   })
