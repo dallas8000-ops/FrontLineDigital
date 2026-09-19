@@ -60,9 +60,9 @@ export const caseStudies: CaseStudy[] = [
     impact:
       'Studio transforms fragmented operations into a unified control plane. Agencies can scan repos, wire billing, and push deploys without secrets leaving the server. Version 2.0 adds account-wide Operations Center for readiness, release, organization, and GitHub connectivity reporting.',
     stack: ['Django 5', 'DRF', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Celery', 'Stripe', 'Railway'],
-    offerType: 'license',
-    pricingNote: 'Deployed as a licensed operations platform for agencies and SaaS teams — tell me your team size and I\'ll send pricing.',
-    ctaLabel: 'Request licensing details',
+    offerType: 'subscription',
+    pricingNote: 'Team $149/mo, Agency $399/mo, or custom enterprise pricing.',
+    ctaLabel: 'See plans & pricing',
   },
   {
     slug: 'ai-memory-engine',
@@ -96,9 +96,9 @@ export const caseStudies: CaseStudy[] = [
     impact:
       'AI Memory Engine gives AI assistants persistent, attributable memory. Teams can share knowledge across Claude, Cursor, and ChatGPT through a single store. The append-only design ensures history survives edits and deletes while writes remain O(1) for performance.',
     stack: ['Python', 'FastAPI', 'Deep Lake', 'sentence-transformers', 'Uvicorn', 'MCP', 'Railway Volumes'],
-    offerType: 'license',
-    pricingNote: 'Deployed as a licensed service for teams that need persistent AI memory — tell me your use case and I\'ll send pricing.',
-    ctaLabel: 'Request licensing details',
+    offerType: 'subscription',
+    pricingNote: 'Free tier, then $49/mo or $199/mo for team-scale usage.',
+    ctaLabel: 'See plans & pricing',
   },
   {
     slug: 'deployment-stripe-automation-center',
@@ -133,7 +133,7 @@ export const caseStudies: CaseStudy[] = [
       'The platform replaces fragmented deployment and Stripe setup with a unified, secure control plane. Agencies can scan repos, wire billing, and push deploys without secrets leaving the server. The encrypted vault ensures production credentials never touch local machines or logs.',
     stack: ['Python', 'Django', 'React', 'TypeScript', 'AES-256-GCM vault', 'WebSockets', 'Celery', 'Railway'],
     offerType: 'license',
-    pricingNote: 'Deployed as a licensed platform for agencies managing client deployments and billing — tell me your team size and I\'ll send pricing.',
+    pricingNote: 'License tiers from $6,000–$15,000, plus $500–$1,200/mo support — built for agencies running multiple client deployments.',
     ctaLabel: 'Request licensing details',
   },
   {
@@ -198,7 +198,7 @@ export const caseStudies: CaseStudy[] = [
       'EastBridge transforms weeks of manual legal and operational research into a searchable, actionable dashboard. By providing "ground-truth" data, it allows EU trade directors to make expansion decisions with the same level of confidence they have in their home markets.',
     stack: ['Django 5', 'DRF', 'React 19', 'TypeScript', 'PostgreSQL', 'pgvector', 'OpenAI', 'Railway'],
     offerType: 'license',
-    pricingNote: 'Deployed as a licensed platform for trade and compliance teams — tell me your team size and use case and I\'ll send pricing.',
+    pricingNote: 'License tiers from $12,000–$30,000/yr per organization, plus onboarding for jurisdiction coverage.',
     ctaLabel: 'Request licensing details',
   },
   {
