@@ -108,16 +108,33 @@ export default function CaseStudyPage({ slug }: Props) {
 
         {/* CTA */}
         <section className="card-dark border-brand-gold/30 p-6 sm:p-8 md:p-10 text-center">
-          <h3 className="mb-3 text-xl font-bold text-white">
-            Need something like {cs.title.split(' ')[0]}?
-          </h3>
-          <p className="mb-6 mx-auto max-w-xl text-sm leading-relaxed text-slate-200">
-            Tell me which part of this system is closest to your goal. I'll scope the hours and deliver a
-            written estimate at $40/hr before any work begins.
-          </p>
-          <Link to="/contact" className="btn btn-primary">
-            Book a free consultation
-          </Link>
+          {cs.offerType === 'license' || cs.offerType === 'subscription' ? (
+            <>
+              <h3 className="mb-3 text-xl font-bold text-white">
+                Interested in {cs.title.split(' ')[0]}?
+              </h3>
+              <p className="mb-6 mx-auto max-w-xl text-sm leading-relaxed text-slate-200">
+                {cs.pricingNote ??
+                  "This is a licensable product, not a custom build — tell me your team size and use case and I'll send pricing."}
+              </p>
+              <Link to="/contact" className="btn btn-primary">
+                {cs.ctaLabel ?? 'Request licensing details'}
+              </Link>
+            </>
+          ) : (
+            <>
+              <h3 className="mb-3 text-xl font-bold text-white">
+                Need something like {cs.title.split(' ')[0]}?
+              </h3>
+              <p className="mb-6 mx-auto max-w-xl text-sm leading-relaxed text-slate-200">
+                Tell me which part of this system is closest to your goal. I'll scope the hours and deliver a
+                written estimate at $40/hr before any work begins.
+              </p>
+              <Link to="/contact" className="btn btn-primary">
+                Book a free consultation
+              </Link>
+            </>
+          )}
         </section>
       </div>
     </div>
