@@ -50,7 +50,7 @@ export const business = {
     { stat: 'Railway', label: 'Exclusive hosting for my demos' },
   ],
   metrics: [
-    '12 production applications — Django, FastAPI, React, TypeScript, PostgreSQL',
+    '15 production applications — Django, FastAPI, React, TypeScript, PostgreSQL',
     'Live Stripe payments + webhooks on production keys',
     'JWT, RBAC, audit trails, and multi-tenant patterns in shipped apps',
     'GitHub Actions CI on portfolio repositories',
