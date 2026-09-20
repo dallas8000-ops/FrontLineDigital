@@ -92,7 +92,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     stack: 'Python, Django, React, TypeScript, AES-256-GCM vault, WebSockets, Celery, Railway',
     desc: 'Agency platform for Stripe setup and Railway deploy — encrypted per-project vault, live pipeline, GitHub import, deploy pipelines, and AI diagnostics.',
     url: portfolioLiveUrls.automationCenter,
-    repoUrl: 'https://github.com/dallas8000-ops/Stripe-Installer',
+    repoUrl: 'https://github.com/dallas8000-ops/Deployment-Stripe-center',
     screenshot: '/images/portfolio/stripe-installer-login.png',
     detailPath: '/case-studies/deployment-stripe-automation-center',
     flagship: true,
@@ -104,7 +104,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
   {
     title: 'Elite Fintech Systems',
     url: portfolioLiveUrls.eliteFintech,
-    repoUrl: 'https://github.com/dallas8000-ops/Elite-Fintech-Systems',
+    repoUrl: 'https://github.com/dallas8000-ops/Elite-Fintech-Web',
     flagship: true,
     proves: 'Multi-tenant fintech billing, FX pricing intelligence, and East Africa regionalization',
     stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose, Railway',
