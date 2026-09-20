@@ -63,8 +63,6 @@ function App() {
               <Route path="/case-studies/dbops" element={<CaseStudyPage slug="dbops" />} />
               <Route path="/case-studies/righand" element={<CaseStudyPage slug="righand" />} />
               <Route path="/case-studies/kistie-store" element={<CaseStudyPage slug="kistie-store" />} />
-              <Route path="/case-studies/silverfox" element={<CaseStudyPage slug="silverfox" />} />
-              <Route path="/case-studies/react-store-catalog" element={<CaseStudyPage slug="react-store-catalog" />} />
               <Route path="/case-studies/pc-checker-extreme" element={<CaseStudyPage slug="pc-checker-extreme" />} />
               <Route path="/case-studies/specwright" element={<CaseStudyPage slug="specwright" />} />
               <Route path="/case-studies/enpowercommand" element={<CaseStudyPage slug="enpowercommand" />} />

@@ -22,4 +22,11 @@ describe('initial document HTML', () => {
   it('does not publish a brittle total application count', () => {
     expect(html).not.toMatch(/\b(?:12|13) live (?:products|applications)\b/i)
   })
+
+  it('does not advertise retired storefronts in JSON-LD', () => {
+    expect(html).not.toContain('SilverFox')
+    expect(html).not.toContain('React Store Catalog')
+    expect(html).not.toContain('silverfox-production')
+    expect(html).not.toContain('react-store-catalog')
+  })
 })

@@ -132,21 +132,6 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: 'SilverFox',
-    url: portfolioLiveUrls.silverfox,
-    repoUrl: 'https://github.com/dallas8000-ops/SilverFox',
-    screenshot: '/images/portfolio/silverfox-shop.png',
-    flagship: true,
-    proves: "Men's fashion e-commerce, catalog integrity, and live FX pricing",
-    stack: 'Python 3.11, Django 5.2, DRF, PostgreSQL, WhiteNoise, Gunicorn, Railway',
-    desc: "Premium men's fashion boutique — 128-product catalog with one unique image per SKU, live EUR/USD/UGX/KES exchange rates, staff dashboard, and Kistie-style Django SSR storefront.",
-    detailPath: '/case-studies/silverfox',
-    highlights: [
-      '128 products across 8 categories with catalog integrity sync and per-product image mapping.',
-      'Multi-currency shop, cart/checkout flow, staff dashboard, and Railway production deploy.',
-    ],
-  },
-  {
     title: 'RigHand AI',
     proves: 'Trucking expense, profit, compliance, and fleet ops for owner-operators',
     stack: 'React, Django, PostgreSQL, Capacitor, Stripe, Railway',
@@ -159,18 +144,6 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     highlights: [
       'Offline-first IndexedDB sync, GPS/OBD mileage, and tax-ready CSV/PDF exports.',
       'Free, Compliance Pro, and Fleet Lite tiers with live Stripe billing and payment-triggered unlock.',
-    ],
-  },
-  {
-    title: 'React Store Catalog',
-    proves: 'Modern React SPAs with admin portals and automated QA',
-    stack: 'React 19, TypeScript, Vite 7, Vitest, Framer Motion, Express, PostgreSQL, JWT, Railway',
-    desc: 'Full-stack product catalog with admin portal, coupon management, and Vitest + Testing Library suite.',
-    url: portfolioLiveUrls.reactStoreCatalog,
-    screenshot: '/images/portfolio/react-store-catalog.png',
-    detailPath: '/case-studies/react-store-catalog',
-    highlights: [
-      'Framer Motion UI, JWT admin backend, ARIA-verified interactions, and GitHub Actions CI on every push.',
     ],
   },
   {

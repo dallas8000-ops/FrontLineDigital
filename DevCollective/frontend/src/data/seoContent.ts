@@ -71,13 +71,6 @@ export const portfolioSeoEntries: PortfolioSeoEntry[] = [
     url: portfolioLiveUrls.kistieStore,
   },
   {
-    name: 'SilverFox',
-    title: 'SilverFox | Premium Apparel Catalog & Inventory Management',
-    description:
-      'High-end boutique management system with multi-currency exchange and staff inventory dashboards.',
-    url: portfolioLiveUrls.silverfox,
-  },
-  {
     name: 'EnPowerCommand',
     title: 'EnPowerCommand | Utility Billing & Usage Dashboard',
     description:

@@ -69,12 +69,6 @@ function stripGithubFields(p: PortfolioProject): PortfolioProject {
       url: pickLiveUrl(rest.url, portfolioLiveUrls.kistieStore),
     }
   }
-  if (/silverfox/i.test(rest.title)) {
-    return {
-      ...rest,
-      url: pickLiveUrl(rest.url, portfolioLiveUrls.silverfox),
-    }
-  }
   if (/dbops/i.test(rest.title)) {
     return {
       ...rest,
@@ -85,15 +79,6 @@ function stripGithubFields(p: PortfolioProject): PortfolioProject {
     return {
       ...rest,
       url: pickLiveUrl(rest.url, portfolioLiveUrls.righandFrontend, [/righand(?!-frontend)/i]),
-    }
-  }
-  if (/react store catalog/i.test(rest.title)) {
-    return {
-      ...rest,
-      url: pickLiveUrl(rest.url, portfolioLiveUrls.reactStoreCatalog, [
-        /react-store-catalog-production/i,
-        /onrender/i,
-      ]),
     }
   }
   if (/pc checker/i.test(rest.title)) {
@@ -162,10 +147,12 @@ function mergeCanonicalProjectFields(project: PortfolioProject): PortfolioProjec
   return stripGithubFields({ ...canonical })
 }
 
-/** Retired portfolio cards — merged into Deployment & Stripe Automation Center. */
+/** Retired portfolio cards — merged or removed from the public catalog. */
 const retiredPortfolioTitles = new Set([
   'stripe installer',
   'api transfer',
+  'silverfox',
+  'react store catalog',
 ])
 
 function migrateProjects(projects: Array<PortfolioProject & { repoUrl?: string }>) {
@@ -195,7 +182,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio copy/URLs change — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 24
+const SITE_CONTENT_SCHEMA_VERSION = 25
 
 function persistSiteContent(parsed: Record<string, unknown>) {
   try {

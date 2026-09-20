@@ -25,9 +25,7 @@ All portfolio apps link to Railway production URLs. Canonical URLs are defined i
 | Deployment & Stripe Automation Center | [stripe-installer-production.up.railway.app/login](https://stripe-installer-production.up.railway.app/login) |
 | Elite Fintech Systems | [elite-fintech-web-production.up.railway.app/demo](https://elite-fintech-web-production.up.railway.app/demo) |
 | Kistie Store | [kistie-store-production.up.railway.app](https://kistie-store-production.up.railway.app) |
-| SilverFox | [silverfox-production.up.railway.app](https://silverfox-production.up.railway.app) |
 | RigHand AI | [righand-production.up.railway.app](https://righand-production.up.railway.app) |
-| React Store Catalog | [react-store-catalog-1-production.up.railway.app](https://react-store-catalog-1-production.up.railway.app) |
 | PC Checker Extreme | [pc-checker-extreme-production.up.railway.app](https://pc-checker-extreme-production.up.railway.app) |
 | Specwright | [specwright-web-production.up.railway.app](https://specwright-web-production.up.railway.app) |
 | EnPowerCommand | [enpowercommand-production.up.railway.app](https://enpowercommand-production.up.railway.app) |
@@ -37,7 +35,7 @@ All portfolio apps link to Railway production URLs. Canonical URLs are defined i
 
 ### Frontend pages
 
-- **Home** — Hero, flagship portfolio grid with live-demo links, **Solutions section** (12 product tiles with SEO descriptions), pricing, and founder section
+- **Home** — Hero, flagship portfolio grid with live-demo links, **Solutions section** (11 product tiles with SEO descriptions), pricing, and founder section
 - **About** — Background timeline, education, and competencies (client-service positioning)
 - **Services** — Service offerings backed by live portfolio products
 - **Projects** (`/dashboard`) — Full portfolio grid with live-demo, GitHub, and **View Case Study** buttons
@@ -74,7 +72,7 @@ DevCollective/
 │   │   │   └── CaseStudyPage.tsx   # Reusable case study layout
 │   │   ├── data/             # Portfolio, resume, landing, SEO, case study content
 │   │   │   ├── caseStudies.ts      # Problem/solution/impact content for case study pages
-│   │   │   └── seoContent.ts      # Canonical titles & descriptions for 12 portfolio products
+│   │   │   └── seoContent.ts      # Canonical titles & descriptions for 11 portfolio products
 │   │   └── utils/
 │   ├── public/images/
 │   ├── railway.toml

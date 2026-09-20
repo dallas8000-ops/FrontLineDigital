@@ -23,7 +23,6 @@ const portfolioDemoLinks = [
   ['Deployment & Stripe Automation Center', portfolioLiveUrls.automationCenter],
   ['Elite Fintech Systems', portfolioLiveUrls.eliteFintech],
   ['Kistie Store', portfolioLiveUrls.kistieStore],
-  ['SilverFox', portfolioLiveUrls.silverfox],
   ['RigHand AI', portfolioLiveUrls.righandFrontend],
   ['PC Checker Extreme', portfolioLiveUrls.pcCheckerExtreme],
   ['Specwright', portfolioLiveUrls.specwrightWeb],
@@ -42,15 +41,11 @@ for (const [title, href] of portfolioDemoLinks) {
   })
 }
 
-test('known-down React Store Catalog is not advertised as a live demo', async ({ page }) => {
+test('retired storefronts are not listed in the public catalog', async ({ page }) => {
   await page.goto('/dashboard')
 
-  const project = page
-    .getByRole('article')
-    .filter({ has: page.getByRole('heading', { name: 'React Store Catalog' }) })
-
-  await expect(project).toBeVisible()
-  await expect(project.getByRole('link', { name: /Live demo/i })).toHaveCount(0)
+  await expect(page.getByRole('heading', { name: 'SilverFox' })).toHaveCount(0)
+  await expect(page.getByRole('heading', { name: 'React Store Catalog' })).toHaveCount(0)
 })
 
 test('pc checker extreme detail page exposes live demo and contact actions', async ({ page }) => {

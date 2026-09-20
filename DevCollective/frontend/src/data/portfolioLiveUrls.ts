@@ -14,10 +14,7 @@ export const portfolioLiveUrls = {
   eliteFintech: 'https://elite-fintech-web-production.up.railway.app/demo',
   /** Kistie Store — Railway service kistie-store-production */
   kistieStore: 'https://kistie-store-production.up.railway.app',
-  /** SilverFox — men's fashion Django storefront (Railway service silverfox-production) */
-  silverfox: 'https://silverfox-production.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
-  reactStoreCatalog: 'https://react-store-catalog-1-production.up.railway.app',
   righandFrontend: 'https://righand-production.up.railway.app',
   dbopsWeb: 'https://dbops-web-production.up.railway.app',
   digitalSalesAutomationCenter: 'https://digital-sales-automation-center-production.up.railway.app',
@@ -62,10 +59,8 @@ export const apiOnlyRailwayHosts = [
   'elite-fintech-api-production.up.railway.app',
 ] as const
 
-/** Currently returning errors (verified 2026-08-27) — hide until the Railway service is redeployed/fixed. */
-export const currentlyDownRailwayHosts = [
-  'react-store-catalog-1-production.up.railway.app',
-] as const
+/** Currently returning errors — hide until the Railway service is redeployed/fixed. */
+export const currentlyDownRailwayHosts = [] as const
 
 /** Public marketing site — custom domain with Railway fallback. */
 export const marketingSiteUrls = {

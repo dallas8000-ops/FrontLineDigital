@@ -7,7 +7,6 @@ Canonical live URLs (also in `frontend/src/data/portfolioLiveUrls.ts`):
 | Repo | Live URL |
 | --- | --- |
 | Kistie-Store | https://kistie-store-production.up.railway.app |
-| SilverFox | https://silverfox-production.up.railway.app |
 | Specwright (web) | https://specwright-web-production.up.railway.app |
 | Specwright (API) | https://specwright-api-production.up.railway.app |
 | EnPowerCommand | https://enpowercommand-production.up.railway.app |
@@ -101,17 +100,6 @@ Optional: `PESAPAL_INITIATE_URL`, AI keys, `WHATSAPP_STORE_NUMBER`, etc. (unchan
 
 `GET https://kistie-store-production.up.railway.app/health/?format=json` → `{"status":"ok","service":"kistie-store"}`
 ```
-
----
-
-## SilverFox
-
-Same Django monorepo pattern as Kistie-Store (adjust manage.py path / WSGI module if different).
-
-- **Live:** https://silverfox-production.up.railway.app
-- **Delete:** `render.yaml`
-- **Build/start:** mirror Kistie — `collectstatic`, `migrate`, any project-specific seed commands
-- **Env:** `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`, `SITE_URL` → `silverfox-production.up.railway.app`
 
 ---
 

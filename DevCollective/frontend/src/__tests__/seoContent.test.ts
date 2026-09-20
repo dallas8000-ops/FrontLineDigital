@@ -59,12 +59,6 @@ describe('portfolio SEO content', () => {
           'Modern retail storefront optimized for East African shoppers with multi-currency support and mobile money readiness.',
       },
       {
-        name: 'SilverFox',
-        title: 'SilverFox | Premium Apparel Catalog & Inventory Management',
-        description:
-          'High-end boutique management system with multi-currency exchange and staff inventory dashboards.',
-      },
-      {
         name: 'EnPowerCommand',
         title: 'EnPowerCommand | Utility Billing & Usage Dashboard',
         description:
