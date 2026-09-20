@@ -19,7 +19,7 @@ export const resumeProjectTitles = [
 export const defaultSkills = [
   {
     category: 'Languages',
-    items: ['Python', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'PowerShell', 'Bash'],
+    items: ['Python', 'JavaScript (ES6+)', 'TypeScript', 'Java', 'SQL', 'PowerShell', 'Bash'],
   },
   {
     category: 'QA & Testing',
@@ -72,6 +72,10 @@ export const defaultSkills = [
       'Responsive design',
       'ARIA accessibility',
     ],
+  },
+  {
+    category: 'Mobile',
+    items: ['Android (Java)', 'Android (Kotlin, Jetpack Compose)', 'Capacitor (hybrid/offline-first)'],
   },
   {
     category: 'Databases',
@@ -142,6 +146,7 @@ export const defaultExperience = [
       'Full SDLC ownership as sole developer: terms of reference, user stories with acceptance criteria, wireframes, usability reports, implementation, and deployment.',
       'Applied Python unittest and Jest/Vitest/Playwright suites to API endpoints, auth logic, UI components, and E2E flows; used GitHub Actions to gate lint, test, build, and deployment on each push to main.',
       'Delivered e-commerce, database operations, market-entry intelligence, offline-first mobile, and AI-assisted systems for East African and EU use cases.',
+      'Built native Android applications in Java and Kotlin/Jetpack Compose alongside Capacitor-based hybrid apps for offline-first mobile products.',
     ],
   },
   {
