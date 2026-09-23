@@ -51,22 +51,21 @@ export default function Home() {
             <h1 className="mb-3 text-4xl font-bold leading-tight text-white md:text-5xl">
               {business.heroHeadline}
             </h1>
-            <p className="mb-4 text-lg font-medium text-brand-gold">{defaultProfile.profileTitle}</p>
             <p className="mb-6 max-w-2xl text-lg leading-relaxed text-slate-200">{business.heroSubhead}</p>
-            <div className="mb-8 flex flex-wrap gap-4">
-              <a
-                href="/about#latest-video"
-                className="inline-flex items-center justify-center rounded-full border border-brand-gold/60 bg-brand-gold px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-brand-navy transition hover:bg-brand-gold/90"
-              >
-                Latest video
-              </a>
-              <Link to="/contact" className="btn btn-primary">
-                Start a project
+            <div className="mb-3 flex flex-wrap gap-4">
+              <Link to="/contact?topic=pilot" className="btn btn-primary">
+                Request a pilot
               </Link>
-              <a href="#portfolio" className="btn btn-outline">
-                See live demos
+              <a href="#pilot" className="btn btn-outline">
+                How the pilot works
               </a>
             </div>
+            <p className="mb-8 text-sm text-brand-muted">
+              {business.pilotOffer.priceLabel} · fixed scope · two weeks ·{' '}
+              <a href="/about#latest-video" className="text-brand-gold hover:text-white">
+                watch the video
+              </a>
+            </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {business.credentials.map((item) => (
                 <div key={item.label} className="border-l border-brand-gold/50 pl-3">
@@ -99,6 +98,64 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-brand-line bg-brand-card/40" aria-labelledby="verticals-heading">
+        <div className="section-inner py-14 md:py-16">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">What I automate</p>
+          <h2 id="verticals-heading" className="mb-8 text-3xl font-bold text-white md:text-4xl">
+            Three places manual work costs the most
+          </h2>
+          <div className="grid gap-5 md:grid-cols-3">
+            {business.verticals.map((v) => (
+              <article key={v.title} className="card-dark flex flex-col p-6">
+                <h3 className="mb-3 text-xl font-bold text-white">{v.title}</h3>
+                <p className="mb-5 flex-grow text-sm leading-relaxed text-slate-200">{v.description}</p>
+                <p className="mb-4 text-xs uppercase tracking-wide text-brand-muted">
+                  Working system:{' '}
+                  <Link to={v.href} className="font-semibold text-brand-gold hover:text-white">
+                    {v.proof}
+                  </Link>
+                </p>
+                <Link
+                  to={`/contact?topic=${encodeURIComponent(v.topic)}`}
+                  className="btn btn-outline w-full justify-center text-center"
+                >
+                  Request a {v.title.toLowerCase()} pilot
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pilot" className="section-inner scroll-mt-24 py-14 md:py-20" aria-labelledby="pilot-heading">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
+              {business.pilotOffer.eyebrow}
+            </p>
+            <h2 id="pilot-heading" className="mb-3 text-3xl font-bold text-white md:text-4xl">
+              {business.pilotOffer.title}
+            </h2>
+            <p className="mb-5 text-3xl font-extrabold text-brand-gold">{business.pilotOffer.priceLabel}</p>
+            <p className="mb-8 text-base leading-relaxed text-slate-200">{business.pilotOffer.summary}</p>
+            <Link to="/contact?topic=pilot" className="btn btn-primary">
+              Request a pilot
+            </Link>
+          </div>
+          <ol className="grid gap-4 sm:grid-cols-2">
+            {business.pilotOffer.steps.map((step, i) => (
+              <li key={step.title} className="process-card">
+                <span className="card-watermark text-[4rem]" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="relative z-10 mb-2 text-lg font-bold text-white">{step.title}</h3>
+                <p className="relative z-10 text-sm leading-relaxed text-brand-muted">{step.description}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -167,7 +224,7 @@ export default function Home() {
         <div className="section-inner py-14">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Architecture scope</p>
           <h2 id="capability-heading" className="mb-8 text-2xl font-bold text-white">
-            The work has moved beyond a basic developer portfolio
+            Built the way operations teams need it
           </h2>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {business.valueProps.map((item) => (
@@ -186,8 +243,8 @@ export default function Home() {
           Product diagrams for the core SaaS systems
         </h2>
         <p className="mb-10 max-w-3xl text-sm leading-relaxed text-brand-muted md:text-base">
-          Recruiters can quickly see the same production pattern repeated across the strongest apps: frontend,
-          API layer, relational data, and external integrations.
+          For your technical reviewer: every core system follows the same production pattern: frontend, API
+          layer, relational data, and external integrations.
         </p>
         <div className="grid gap-6 lg:grid-cols-3">
           {architectureProjects.map((project) => (
@@ -363,15 +420,15 @@ export default function Home() {
       <section className="section-inner pb-20">
         <div className="card-dark border-brand-gold/30 p-10 text-center md:p-12">
           <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
-            Have a project like one in the portfolio?
+            Have one workflow you would like off spreadsheets?
           </h2>
           <p className="mx-auto mb-8 max-w-xl leading-relaxed text-slate-200">
-            Tell me which reference app is closest to your goal. I will scope timeline, hours, and a written
-            estimate at ${SOFTWARE_DEV_HOURLY_USD}/hr before any build work begins.
+            Tell me what it is and how your team handles it today. I will come back with a fixed scope and price
+            for a two-week pilot. Larger builds are quoted at ${SOFTWARE_DEV_HOURLY_USD}/hr with a written estimate.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="btn btn-primary">
-              Book consultation
+            <Link to="/contact?topic=pilot" className="btn btn-primary">
+              Request a pilot
             </Link>
             <a href="#portfolio" className="btn btn-outline">
               Back to portfolio

@@ -1,8 +1,17 @@
 import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
 import { contactInfo } from '../data/landingContent'
 import { business } from '../data/freelanceContent'
+import {
+  PILOT_SUBJECTS,
+  COMPANY_SIZES,
+  CURRENT_PROCESS,
+  subjectFromTopic,
+  composeMessage,
+} from '../utils/contactForm'
+import { deliverContact } from '../utils/contactDelivery'
 
 type FormFields = { name: string; email: string; subject: string; message: string }
 type FormErrors = Partial<FormFields>
@@ -26,10 +35,20 @@ function validate(form: FormFields): FormErrors {
 
 export default function Contact() {
   usePageTitle('Contact')
-  const [form, setForm] = useState<FormFields>({ name: '', email: '', subject: '', message: '' })
+  const [searchParams] = useSearchParams()
+  const [form, setForm] = useState<FormFields>(() => ({
+    name: '',
+    email: '',
+    subject: subjectFromTopic(searchParams.get('topic')),
+    message: '',
+  }))
+  const [company, setCompany] = useState('')
+  const [companySize, setCompanySize] = useState('')
+  const [currentProcess, setCurrentProcess] = useState('')
   const [errors, setErrors] = useState<FormErrors>({})
   const [touched, setTouched] = useState<Partial<Record<keyof FormFields, boolean>>>({})
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [delivery, setDelivery] = useState<'sent' | 'mailto'>('sent')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const updated = { ...form, [e.target.name]: e.target.value }
@@ -52,19 +71,18 @@ export default function Contact() {
     if (Object.keys(errs).length > 0) return
     setStatus('sending')
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (res.ok) {
-        setStatus('success')
-        setForm({ name: '', email: '', subject: '', message: '' })
-        setTouched({})
-        setErrors({})
-      } else {
-        setStatus('error')
-      }
+      const result = await deliverContact(
+        { ...form, message: composeMessage(form.message, company, companySize, currentProcess) },
+        contactInfo.email,
+      )
+      setDelivery(result)
+      setStatus('success')
+      setForm({ name: '', email: '', subject: '', message: '' })
+      setCompany('')
+      setCompanySize('')
+      setCurrentProcess('')
+      setTouched({})
+      setErrors({})
     } catch {
       setStatus('error')
     }
@@ -76,6 +94,9 @@ export default function Contact() {
         ? 'border-red-500 focus:ring-red-500/50'
         : 'border-brand-line focus:ring-brand-gold/50'
     }`
+
+  const optionalFieldClass =
+    'w-full border rounded-lg px-4 py-3 bg-brand-navy text-white placeholder-brand-muted focus:outline-none focus:ring-2 focus:border-transparent border-brand-line focus:ring-brand-gold/50'
 
   return (
     <div className="bg-site-grid min-h-full">
@@ -113,8 +134,24 @@ export default function Contact() {
           {status === 'success' ? (
             <div className="text-center py-12">
               <CheckCircle size={56} className="text-brand-gold mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-2">Message sent</h3>
-              <p className="text-brand-muted mb-6">Thanks — I will respond as soon as possible.</p>
+              {delivery === 'sent' ? (
+                <>
+                  <h3 className="text-2xl font-bold text-white mb-2">Message sent</h3>
+                  <p className="text-brand-muted mb-6">Thanks. I will respond as soon as possible.</p>
+                </>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-bold text-white mb-2">One more step</h3>
+                  <p className="text-brand-muted mb-6">
+                    Your email app should have opened with your message ready. Press send there. If nothing opened,
+                    email me at{' '}
+                    <a href={contactInfo.emailHref} className="text-brand-gold hover:text-white">
+                      {contactInfo.email}
+                    </a>{' '}
+                    or use WhatsApp above.
+                  </p>
+                </>
+              )}
               <button type="button" onClick={() => setStatus('idle')} className="btn btn-primary">
                 Send another
               </button>
@@ -154,6 +191,61 @@ export default function Contact() {
                 </div>
               </div>
 
+              <div className="grid sm:grid-cols-3 gap-6">
+                <div className="sm:col-span-1">
+                  <label htmlFor="company" className="block text-sm font-semibold text-slate-200 mb-2">
+                    Company
+                  </label>
+                  <input
+                    id="company"
+                    type="text"
+                    name="company"
+                    maxLength={120}
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className={optionalFieldClass}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="companySize" className="block text-sm font-semibold text-slate-200 mb-2">
+                    Company size
+                  </label>
+                  <select
+                    id="companySize"
+                    name="companySize"
+                    value={companySize}
+                    onChange={(e) => setCompanySize(e.target.value)}
+                    className={optionalFieldClass}
+                  >
+                    <option value="">Select...</option>
+                    {COMPANY_SIZES.map((s) => (
+                      <option key={s} value={s}>
+                        {s} people
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="currentProcess" className="block text-sm font-semibold text-slate-200 mb-2">
+                    Handled today with
+                  </label>
+                  <select
+                    id="currentProcess"
+                    name="currentProcess"
+                    value={currentProcess}
+                    onChange={(e) => setCurrentProcess(e.target.value)}
+                    className={optionalFieldClass}
+                  >
+                    <option value="">Select...</option>
+                    {CURRENT_PROCESS.map((p) => (
+                      <option key={p} value={p}>
+                        {p}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
               <div>
                 <label htmlFor="subject" className="block text-sm font-semibold text-slate-200 mb-2">
                   Subject *
@@ -167,6 +259,11 @@ export default function Contact() {
                   className={fieldClass('subject')}
                 >
                   <option value="">Select a subject...</option>
+                  {PILOT_SUBJECTS.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
                   <option value="Internal tool / ops dashboard">Internal tool / ops dashboard</option>
                   <option value="Database reporting & access control">Database reporting &amp; access control</option>
                   <option value="API / backend development">API / backend development</option>

@@ -5,9 +5,45 @@ export const business = {
   owner: defaultProfile.profileName,
   tagline: 'Internal Tools & Operations Dashboards | Secure, Audited, Production-Ready',
   location: 'Wimauma, FL | Serving clients remotely worldwide',
-  heroHeadline: 'Secure internal tools and ops dashboards — live, audited, and payment-ready.',
+  heroHeadline: 'Automate the work that slows your operation down.',
   heroSubhead:
-    'I build multi-tenant SaaS with RBAC, audit trails, live Stripe billing, and PostgreSQL-backed reporting — then deploy it on Railway with CI and tests. Start with three representative systems, then inspect the broader production portfolio.',
+    'Fleet operations, logistics and back-office workflows still run on spreadsheets, WhatsApp and paper. I replace one of those workflows with working software in a fixed-price, two-week pilot, built on systems that are already live.',
+  pilotOffer: {
+    eyebrow: 'Start small',
+    title: 'Fixed-price automation pilot',
+    priceLabel: 'From $750',
+    summary:
+      'Pick one workflow that costs your team time or money. I scope it, build it on an existing working system, and hand it to your team in two weeks. If it does not show you something your current process misses, you walk away.',
+    steps: [
+      { title: '15-minute call', description: 'We pick one workflow and agree what success looks like.' },
+      { title: 'Fixed scope and price', description: 'Written scope before any work starts. No hourly surprises.' },
+      { title: 'Two-week pilot', description: 'Your team uses it on real data, not a slide deck.' },
+      { title: 'Keep, extend or walk away', description: 'Implementation and monthly support only if the pilot earns it.' },
+    ],
+  },
+  verticals: [
+    {
+      title: 'Fleet & logistics',
+      description: 'Trip sheets, fuel accountability, maintenance follow-up, driver records and dispatch in one place.',
+      proof: 'RigHand AI',
+      href: '/case-studies/righand',
+      topic: 'Fleet operations pilot',
+    },
+    {
+      title: 'Agribusiness & payments',
+      description: 'Supplier deliveries matched to payments and reconciliation, with a record finance can verify.',
+      proof: 'AgriPay Logistics AI',
+      href: '/case-studies/agripay',
+      topic: 'Payments & reconciliation pilot',
+    },
+    {
+      title: 'Business automation',
+      description: 'Replace a spreadsheet or manual process with an internal dashboard, API integration or AI workflow.',
+      proof: 'AI Software Operations Studio',
+      href: '/case-studies/ai-software-operations-studio',
+      topic: 'Business automation pilot',
+    },
+  ],
   portfolioSectionTitle: 'Production applications you can try right now',
   portfolioSectionLead:
     'Each card is a deployed app on Railway — open the demo, read the stack, inspect GitHub where published. Live Stripe webhooks, JWT + RBAC, and honest status (shipped vs. sandbox vs. in progress) match what the repos document.',
