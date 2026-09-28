@@ -5,7 +5,7 @@ export const portfolioLiveUrls = {
   /** AI Memory Engine — persistent semantic-memory API on Railway */
   aiMemoryEngine: 'https://ai-memory-engine-production.up.railway.app',
   /** Unified product: Stripe setup + Railway deploy (Deployment-Stripe-center) */
-  automationCenter: 'https://stripe-installer-production.up.railway.app/login',
+  automationCenter: 'https://stripe-installer.gilliomfrontlinedigital.com/login',
   /** EastBridge Ops Intelligence — Railway service EastBridge-OPS in hearty-enjoyment */
   eastbridge: 'https://eastbridge-ops-production.up.railway.app',
   /** AgriPay Logistics AI — Django API + demo (separate Railway project) */
@@ -21,9 +21,9 @@ export const portfolioLiveUrls = {
   specwrightWeb: 'https://specwright-web-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
   /** @deprecated merged into automationCenter */
-  stripeInstaller: 'https://stripe-installer-production.up.railway.app/login',
+  stripeInstaller: 'https://stripe-installer.gilliomfrontlinedigital.com/login',
   /** @deprecated merged into automationCenter — do not link from portfolio cards */
-  apiTransfer: 'https://stripe-installer-production.up.railway.app/login',
+  apiTransfer: 'https://stripe-installer.gilliomfrontlinedigital.com/login',
   /** Contact form + admin API for gilliomfrontlinedigital.com (portfolio backend on Railway). */
   apiBase: 'https://frontlinedigital-1-production.up.railway.app/api',
 } as const
