@@ -16,7 +16,7 @@ export const portfolioLiveUrls = {
   kistieStore: 'https://kistie-store-production.up.railway.app',
   pcCheckerExtreme: 'https://pc-checker-extreme-production.up.railway.app',
   righandFrontend: 'https://righand-production.up.railway.app',
-  dbopsWeb: 'https://dbops-web-production.up.railway.app',
+  dbopsWeb: 'https://dbops.gilliomfrontlinedigital.com',
   digitalSalesAutomationCenter: 'https://digital-sales-automation-center-production.up.railway.app',
   specwrightWeb: 'https://specwright-web-production.up.railway.app',
   enPowerCommand: 'https://enpowercommand-production.up.railway.app',
