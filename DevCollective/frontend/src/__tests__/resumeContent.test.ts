@@ -4,10 +4,11 @@ import { business } from '../data/freelanceContent'
 describe('default resume content', () => {
   it('reflects the current ATS-optimized resume', () => {
     expect(defaultProfile.profileTitle).toBe('Full-Stack Software Engineer')
-    expect(defaultProfile.location).toBe('Wimauma, FL 33598 · Serving clients remotely worldwide')
+    expect(defaultProfile.location).toBe('Home of record: Wimauma, Florida 33598')
     expect(defaultProfile.phone).toBe('(656) 245-5253')
     expect(defaultProfile.workAuthorization).toBe('U.S. citizen')
-    expect(defaultProfile.remoteAvailability).toContain('U.S. remote')
+    expect(defaultProfile.remoteAvailability).toBe('Open to remote roles worldwide')
+    expect(defaultProfile.remoteAvailability).not.toMatch(/U\.S\. remote/)
     expect(defaultProfile.about).toMatch(/Python.*TypeScript.*React.*Django.*FastAPI.*PostgreSQL/i)
     expect(defaultProfile.about).not.toMatch(/\b(?:12|13) production applications\b/i)
     expect(defaultProfile.about).not.toContain('Seeking remote mid-level full-stack or QA automation roles.')

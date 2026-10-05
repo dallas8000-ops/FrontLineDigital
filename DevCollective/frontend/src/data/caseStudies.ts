@@ -25,11 +25,28 @@ export type CaseStudy = {
   pricingNote?: string
   /** CTA button label when offerType is 'license' or 'subscription'. */
   ctaLabel?: string
+  /** Product demo video shown beside the case-study header. */
+  demoVideo?: CaseStudyVideo
+}
+
+export type CaseStudyVideo = {
+  /** Self-hosted, web-compressed MP4 under /public/videos (faststart, H.264/AAC). */
+  src: string
+  /** Frame exported from the source video, under /public/images/video-posters. */
+  posterSrc: string
+  title: string
+  orientation: 'landscape' | 'portrait'
 }
 
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'ai-software-operations-studio',
+    demoVideo: {
+      src: '/videos/ai-software-operations-studio.mp4',
+      posterSrc: '/images/video-posters/ai-software-operations-studio.jpg',
+      title: 'AI Software Operations Studio walkthrough',
+      orientation: 'portrait',
+    },
     title: 'AI Software Operations Studio',
     subtitle: 'Unified Operations Workspace for SaaS Teams',
     metaDescription:
@@ -333,6 +350,12 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'pc-checker-extreme',
+    demoVideo: {
+      src: '/videos/pc-checker-extreme.mp4',
+      posterSrc: '/images/video-posters/pc-checker-extreme.jpg',
+      title: 'PC Checker Extreme: live diagnostics, not snapshots',
+      orientation: 'portrait',
+    },
     title: 'PC Checker Extreme',
     subtitle: 'AI-Powered Windows System Diagnostics',
     metaDescription:

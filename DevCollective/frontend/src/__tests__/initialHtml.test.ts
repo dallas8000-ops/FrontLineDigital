@@ -7,6 +7,7 @@ describe('initial document HTML', () => {
   it('contains useful portfolio and resume content before JavaScript runs', () => {
     expect(html).toContain('Gilliom Frontline Digital')
     expect(html).toContain('Wimauma, Florida')
+    expect(html).toContain('Available remotely worldwide')
     expect(html).toContain('/profile')
     expect(html).toContain('/case-studies/dbops')
     expect(html).toContain('/case-studies/righand')
@@ -21,6 +22,17 @@ describe('initial document HTML', () => {
 
   it('does not publish a brittle total application count', () => {
     expect(html).not.toMatch(/\b(?:12|13) live (?:products|applications)\b/i)
+  })
+
+  it('uses a raster 1200x630 social preview image (Facebook/WhatsApp/X reject SVG og:image)', () => {
+    const ogImage = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1]
+    const twImage = html.match(/<meta name="twitter:image" content="([^"]+)"/)?.[1]
+    expect(ogImage).toMatch(/\.(jpe?g|png)$/)
+    expect(twImage).toBe(ogImage)
+    expect(html).toContain('<meta property="og:image:width" content="1200" />')
+    expect(html).toContain('<meta property="og:image:height" content="630" />')
+    const localPath = new URL(ogImage!).pathname
+    expect(fs.existsSync(path.resolve(process.cwd(), 'public', `.${localPath}`))).toBe(true)
   })
 
   it('does not advertise retired storefronts in JSON-LD', () => {
