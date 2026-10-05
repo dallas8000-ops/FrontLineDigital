@@ -7,6 +7,7 @@ describe('initial document HTML', () => {
   it('contains useful portfolio and resume content before JavaScript runs', () => {
     expect(html).toContain('Gilliom Frontline Digital')
     expect(html).toContain('Wimauma, Florida')
+    expect(html).toContain('Available remotely worldwide')
     expect(html).toContain('/profile')
     expect(html).toContain('/case-studies/dbops')
     expect(html).toContain('/case-studies/righand')
