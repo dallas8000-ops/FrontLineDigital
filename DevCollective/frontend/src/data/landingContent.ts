@@ -7,8 +7,9 @@ export const contactInfo = {
   location: 'Wimauma, FL · Available remotely worldwide',
   youtubeHandle: '@MrDallas8000',
   youtubeHref: 'https://www.youtube.com/@MrDallas8000',
-  youtubeVideoHref:
-    'https://media.githubusercontent.com/media/dallas8000-ops/FrontLineDigital/main/DevCollective/frontend/public/videos/twelve-live-apps-proof.mp4',
+  /** Homepage demo video (YouTube: "Twelve Live Apps · One Engineer · Proof, Not Promises") */
+  youtubeVideoId: '-bRasozopuw',
+  youtubeVideoTitle: 'Twelve Live Apps, One Engineer: Proof, Not Promises',
   threadsHandle: '@barneygilliom',
   threadsHref: 'https://www.threads.com/@barneygilliom',
 }

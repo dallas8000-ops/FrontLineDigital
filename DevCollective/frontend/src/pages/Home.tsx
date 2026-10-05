@@ -6,6 +6,7 @@ import { getSiteContent } from '../utils/siteContent'
 import { business } from '../data/freelanceContent'
 import { defaultProfile, resumeProjectTitles } from '../data/resumeContent'
 import ProjectCard from '../components/ProjectCard'
+import YouTubeFacade from '../components/YouTubeFacade'
 import { portfolioSeoEntries } from '../data/seoContent'
 import {
   packages,
@@ -15,6 +16,7 @@ import {
   processSectionSubtitle,
   pricingNote,
   SOFTWARE_DEV_HOURLY_USD,
+  contactInfo,
 } from '../data/landingContent'
 
 const architectureProjects = [
@@ -61,10 +63,7 @@ export default function Home() {
               </a>
             </div>
             <p className="mb-8 text-sm text-brand-muted">
-              {business.pilotOffer.priceLabel} · fixed scope · two weeks ·{' '}
-              <a href="/about#latest-video" className="text-brand-gold hover:text-white">
-                watch the video
-              </a>
+              {business.pilotOffer.priceLabel} · fixed scope · two weeks
             </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {business.credentials.map((item) => (
@@ -76,6 +75,9 @@ export default function Home() {
             </div>
           </div>
           <div className="card-dark border-brand-gold/20 p-4">
+            <div id="demo-video" className="mb-5 scroll-mt-24">
+              <YouTubeFacade videoId={contactInfo.youtubeVideoId} title={contactInfo.youtubeVideoTitle} />
+            </div>
             <div className="mb-4 flex items-center justify-between">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Best work in 10 seconds</p>
               <span className="text-xs text-brand-muted">Live demos + GitHub</span>

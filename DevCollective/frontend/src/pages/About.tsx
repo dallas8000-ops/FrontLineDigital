@@ -4,6 +4,7 @@ import { usePageTitle } from '../utils/usePageTitle'
 import { getSiteContent } from '../utils/siteContent'
 import { business } from '../data/freelanceContent'
 import { contactInfo } from '../data/landingContent'
+import YouTubeFacade from '../components/YouTubeFacade'
 
 export default function About() {
   usePageTitle('About')
@@ -113,31 +114,8 @@ export default function About() {
         <p className="text-brand-muted text-center text-sm mb-8">
           A quick overview of who I am and what I build.
         </p>
-        <div className="mb-6 flex justify-center">
-          <a
-            href="#latest-video"
-            className="inline-flex items-center justify-center rounded-full border border-brand-gold/60 bg-brand-gold px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-brand-navy transition hover:bg-brand-gold/90"
-          >
-            Latest video
-          </a>
-        </div>
         <div className="card-dark p-2 overflow-hidden">
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            muted={false}
-            defaultMuted={false}
-            onPlay={(event) => {
-              event.currentTarget.muted = false
-              event.currentTarget.volume = 1
-            }}
-            className="aspect-video w-full rounded-lg object-cover"
-            poster="https://img.youtube.com/vi/-bRasozopuw/maxresdefault.jpg"
-          >
-            <source src={contactInfo.youtubeVideoHref} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <YouTubeFacade videoId={contactInfo.youtubeVideoId} title={contactInfo.youtubeVideoTitle} />
         </div>
       </section>
 
