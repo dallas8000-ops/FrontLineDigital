@@ -27,48 +27,77 @@ export default function CaseStudyPage({ slug }: Props) {
     )
   }
 
+  const video = cs.demoVideo
+
   return (
     <div className="bg-site-grid min-h-full">
       {/* Header */}
       <section className="border-b border-brand-line bg-brand-card/80 py-16 md:py-20">
-        <div className="section-inner max-w-4xl">
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center gap-2 text-brand-gold hover:text-white mb-8 text-sm font-semibold uppercase tracking-wide"
-          >
-            <ArrowLeft size={16} /> Back to Projects
-          </Link>
-
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Case Study</p>
-          <h1 className="mb-3 text-white">{cs.title}</h1>
-          <p className="mb-6 text-xl font-semibold text-slate-200">{cs.subtitle}</p>
-
-          <div className="mb-8 flex flex-wrap gap-2">
-            {cs.stack.map((tag) => (
-              <span
-                key={tag}
-                className="rounded border border-brand-line bg-brand-navy px-3 py-1 text-xs font-medium text-brand-gold"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            {cs.liveUrl && (
-              <a
-                href={cs.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary inline-flex items-center gap-2"
-              >
-                <ExternalLink size={16} /> Live demo
-              </a>
-            )}
-            <Link to="/contact" className="btn btn-outline inline-flex items-center gap-2">
-              Discuss this project
+        <div
+          className={
+            video
+              ? 'section-inner max-w-6xl grid gap-10 md:grid-cols-[1fr_300px] md:items-center'
+              : 'section-inner max-w-4xl'
+          }
+        >
+          <div>
+            <Link
+              to="/dashboard"
+              className="inline-flex items-center gap-2 text-brand-gold hover:text-white mb-8 text-sm font-semibold uppercase tracking-wide"
+            >
+              <ArrowLeft size={16} /> Back to Projects
             </Link>
+
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Case Study</p>
+            <h1 className="mb-3 text-white">{cs.title}</h1>
+            <p className="mb-6 text-xl font-semibold text-slate-200">{cs.subtitle}</p>
+
+            <div className="mb-8 flex flex-wrap gap-2">
+              {cs.stack.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded border border-brand-line bg-brand-navy px-3 py-1 text-xs font-medium text-brand-gold"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              {cs.liveUrl && (
+                <a
+                  href={cs.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary inline-flex items-center gap-2"
+                >
+                  <ExternalLink size={16} /> Live demo
+                </a>
+              )}
+              <Link to="/contact" className="btn btn-outline inline-flex items-center gap-2">
+                Discuss this project
+              </Link>
+            </div>
           </div>
+
+          {video && (
+            <div id="demo-video" className="scroll-mt-24">
+              <video
+                className={
+                  video.orientation === 'portrait'
+                    ? 'mx-auto aspect-[9/16] w-full max-w-[340px] rounded-lg bg-black object-cover'
+                    : 'aspect-video w-full rounded-lg bg-black object-cover'
+                }
+                src={video.src}
+                poster={video.posterSrc}
+                title={video.title}
+                aria-label={video.title}
+                controls
+                playsInline
+                preload="none"
+              />
+            </div>
+          )}
         </div>
       </section>
 
