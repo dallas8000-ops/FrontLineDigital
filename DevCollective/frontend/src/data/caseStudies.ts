@@ -78,7 +78,7 @@ export const caseStudies: CaseStudy[] = [
       'Studio transforms fragmented operations into a unified control plane. Agencies can scan repos, wire billing, and push deploys without secrets leaving the server. Version 2.0 adds account-wide Operations Center for readiness, release, organization, and GitHub connectivity reporting.',
     stack: ['Django 5', 'DRF', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Celery', 'Stripe', 'Railway'],
     offerType: 'subscription',
-    pricingNote: 'Team $149/mo, Agency $399/mo, or custom enterprise pricing.',
+    pricingNote: 'Starter $9/mo, Pro $79/mo, or custom enterprise pricing.',
     ctaLabel: 'See plans & pricing',
   },
   {
