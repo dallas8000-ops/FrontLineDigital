@@ -24,9 +24,9 @@ export default function Navigation() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <Link to="/" className="flex items-start gap-4 group">
             <img
-              src="/images/logos/frontline-digital-logo.svg"
+              src="/images/logos/frontline-digital-logo-wide.png"
               alt={business.name}
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-14 md:h-16 w-auto object-contain"
             />
             <div className="pt-1">
               <p className="text-white/90 text-[10px] md:text-xs font-semibold uppercase tracking-[0.15em] leading-snug max-w-[240px]">
