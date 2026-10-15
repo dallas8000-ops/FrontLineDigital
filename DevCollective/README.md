@@ -172,7 +172,7 @@ See [frontend/public/images/README.md](frontend/public/images/README.md).
 ## Contact
 
 - **Email:** barney@gilliomfrontlinedigital.com
-- **Phone:** (682) 460-4038
+- **Phone:** (656) 245-5253
 - **GitHub:** [github.com/dallas8000-ops](https://github.com/dallas8000-ops)
 
 ## License
