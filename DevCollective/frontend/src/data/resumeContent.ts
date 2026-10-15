@@ -3,7 +3,7 @@ export const defaultProfile = {
   profileTitle: 'Full-Stack Software Engineer',
   about:
     'Full-stack software engineer building production systems with Python, TypeScript, React, Django, FastAPI, and PostgreSQL. Independently delivers secure operations platforms from requirements through Railway deployment, including JWT/RBAC authorization, encrypted secrets, Stripe billing, audit trails, offline workflows, automated tests, and CI gates. Current flagship work demonstrates SaaS operations automation, governed database access, and jurisdiction-aware fleet compliance. Brings 25 years of precision-driven federal operations, military electronics, and QA experience to software that must remain dependable under real operating conditions.',
-  contactEmail: 'dallas8000@gmail.com',
+  contactEmail: 'barney@gilliomfrontlinedigital.com',
   phone: '(656) 245-5253',
   location: 'Home of record: Wimauma, Florida 33598',
   workAuthorization: 'U.S. citizen',
