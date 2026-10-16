@@ -10,6 +10,7 @@ import YouTubeFacade from '../components/YouTubeFacade'
 import { portfolioSeoEntries } from '../data/seoContent'
 import { faqItems, faqJsonLd, pilotHowToJsonLd, toJsonLd } from '../data/faqContent'
 import QuickLeadForm from '../components/QuickLeadForm'
+import AskBarneyAiButton from '../components/AskBarneyAiButton'
 import {
   packages,
   addOns,
@@ -64,8 +65,11 @@ export default function Home() {
                 How the pilot works
               </a>
             </div>
-            <p className="mb-8 text-sm text-brand-muted">
+            <p className="mb-4 text-sm text-brand-muted">
               {business.pilotOffer.priceLabel} · fixed scope · two weeks
+            </p>
+            <p className="mb-8 text-sm">
+              <AskBarneyAiButton className="inline-flex items-center gap-2 font-semibold text-brand-gold hover:text-white" />
             </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {business.credentials.map((item) => (
@@ -433,6 +437,12 @@ export default function Home() {
               <p className="text-sm leading-relaxed text-slate-200">{item.answer}</p>
             </article>
           ))}
+        </div>
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <p className="text-sm text-slate-200">
+            Question not listed? The site assistant can answer questions about any project, stack or price.
+          </p>
+          <AskBarneyAiButton className="btn btn-outline" label="Ask Barney AI" />
         </div>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(faqJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(pilotHowToJsonLd) }} />
