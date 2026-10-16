@@ -26,6 +26,11 @@ describe('initial document HTML', () => {
     expect(html).toContain('"worksFor": { "@id": "https://gilliomfrontlinedigital.com/#organization" }')
   })
 
+  it('loads Cloudflare Web Analytics for the site token', () => {
+    expect(html).toContain('https://static.cloudflareinsights.com/beacon.min.js')
+    expect(html).toContain('"token": "b14788b49e744552bf32023637070268"')
+  })
+
   it('does not publish a brittle total application count', () => {
     expect(html).not.toMatch(/\b(?:12|13) live (?:products|applications)\b/i)
   })
