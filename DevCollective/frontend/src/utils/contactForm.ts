@@ -31,3 +31,19 @@ export function buildMailto(to: string, subject: string, name: string, email: st
   const fullBody = `From: ${name} <${email}>\n\n${body}`
   return `mailto:${to}?subject=${encodeURIComponent(`[Website] ${subject}`)}&body=${encodeURIComponent(fullBody)}`
 }
+
+export type LeadFields = { name: string; email: string; workflow: string }
+export type LeadErrors = Partial<LeadFields>
+
+/** Validation for the three-field pilot request on the home page. */
+export function validateLead(form: LeadFields): LeadErrors {
+  const errors: LeadErrors = {}
+  if (!form.name.trim()) errors.name = 'Name is required.'
+  if (!form.email.trim()) {
+    errors.email = 'Email is required.'
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    errors.email = 'Enter a valid email address.'
+  }
+  if (form.workflow.trim().length < 10) errors.workflow = 'Describe the workflow in a sentence or two.'
+  return errors
+}

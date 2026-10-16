@@ -19,9 +19,12 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | null>(null)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [token, setToken] = useState<string | null>(() => localStorage.getItem('access_token'))
+  // No browser storage during the build-time prerender (Node), so guard the initial reads.
+  const [token, setToken] = useState<string | null>(() =>
+    typeof window === 'undefined' ? null : localStorage.getItem('access_token'),
+  )
   const [user, setUser] = useState<User | null>(() => {
-    const stored = localStorage.getItem('auth_user')
+    const stored = typeof window === 'undefined' ? null : localStorage.getItem('auth_user')
     return stored ? (JSON.parse(stored) as User) : null
   })
 

@@ -33,12 +33,13 @@ function ProtectedAdmin() {
   return <AdminPanel />;
 }
 
-function App() {
+/** Router-agnostic app shell: BrowserRouter in the browser, StaticRouter for the build-time prerender. */
+export function AppShell() {
   useEffect(() => {
     applyColorScheme()
   }, [])
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-brand-navy">
         <Navigation />
@@ -85,6 +86,14 @@ function App() {
         <Footer />
         <BackToTop />
       </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <AppShell />
     </Router>
   )
 }
