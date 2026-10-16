@@ -9,6 +9,7 @@ const footerLinks = [
   { label: 'Projects', path: '/dashboard' },
   { label: 'Resume', path: '/profile' },
   { label: 'Pricing', path: '/#pricing' },
+  { label: 'FAQ', path: '/#faq' },
   { label: 'Contact', path: '/contact' },
 ]
 
@@ -65,6 +66,29 @@ export default function Footer() {
                 {contactInfo.email}
               </a>
             </address>
+            <h3 className="text-brand-gold text-xs font-bold uppercase tracking-widest mt-6 mb-3">Follow</h3>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              <li>
+                <a
+                  href={contactInfo.youtubeHref}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="text-brand-muted hover:text-brand-gold transition-colors"
+                >
+                  YouTube {contactInfo.youtubeHandle}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contactInfo.threadsHref}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="text-brand-muted hover:text-brand-gold transition-colors"
+                >
+                  Threads {contactInfo.threadsHandle}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

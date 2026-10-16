@@ -20,6 +20,12 @@ describe('initial document HTML', () => {
     expect(html).toContain('Barney_Gilliom_Resume_v3.pdf')
   })
 
+  it('publishes the business entity with contact details and social profiles', () => {
+    expect(html).toContain('"@type": "ProfessionalService"')
+    expect(html).toContain('"telephone": "+1-656-245-5253"')
+    expect(html).toContain('"worksFor": { "@id": "https://gilliomfrontlinedigital.com/#organization" }')
+  })
+
   it('does not publish a brittle total application count', () => {
     expect(html).not.toMatch(/\b(?:12|13) live (?:products|applications)\b/i)
   })

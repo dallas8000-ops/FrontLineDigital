@@ -8,6 +8,8 @@ import { defaultProfile, resumeProjectTitles } from '../data/resumeContent'
 import ProjectCard from '../components/ProjectCard'
 import YouTubeFacade from '../components/YouTubeFacade'
 import { portfolioSeoEntries } from '../data/seoContent'
+import { faqItems, faqJsonLd, pilotHowToJsonLd, toJsonLd } from '../data/faqContent'
+import QuickLeadForm from '../components/QuickLeadForm'
 import {
   packages,
   addOns,
@@ -419,23 +421,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-inner pb-20">
-        <div className="card-dark border-brand-gold/30 p-10 text-center md:p-12">
-          <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
-            Have one workflow you would like off spreadsheets?
-          </h2>
-          <p className="mx-auto mb-8 max-w-xl leading-relaxed text-slate-200">
-            Tell me what it is and how your team handles it today. I will come back with a fixed scope and price
-            for a two-week pilot. Larger builds are quoted at ${SOFTWARE_DEV_HOURLY_USD}/hr with a written estimate.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact?topic=pilot" className="btn btn-primary">
-              Request a pilot
-            </Link>
-            <a href="#portfolio" className="btn btn-outline">
-              Back to portfolio
-            </a>
+      <section id="faq" className="section-inner scroll-mt-24 py-14 md:py-20" aria-labelledby="faq-heading">
+        <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">FAQ</p>
+        <h2 id="faq-heading" className="mb-8 text-3xl font-bold text-white md:text-4xl">
+          Frequently asked questions
+        </h2>
+        <div className="grid gap-5 md:grid-cols-2">
+          {faqItems.map((item) => (
+            <article key={item.question} className="card-dark p-5">
+              <h3 className="mb-2 text-lg font-bold text-white">{item.question}</h3>
+              <p className="text-sm leading-relaxed text-slate-200">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(faqJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(pilotHowToJsonLd) }} />
+      </section>
+
+      <section id="request-pilot" className="section-inner scroll-mt-24 pb-20" aria-labelledby="request-pilot-heading">
+        <div className="card-dark grid gap-10 border-brand-gold/30 p-8 md:p-12 lg:grid-cols-2 lg:items-center">
+          <div className="text-center lg:text-left">
+            <h2 id="request-pilot-heading" className="mb-4 text-2xl font-bold text-white md:text-3xl">
+              Have one workflow you would like off spreadsheets?
+            </h2>
+            <p className="mb-8 max-w-xl leading-relaxed text-slate-200">
+              Tell me what it is and how your team handles it today. I will come back with a fixed scope and price
+              for a two-week pilot. Larger builds are quoted at ${SOFTWARE_DEV_HOURLY_USD}/hr with a written estimate.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <a href={contactInfo.phoneHref} className="btn btn-outline">
+                Call {contactInfo.phone}
+              </a>
+              <a href="#portfolio" className="btn btn-outline">
+                Back to portfolio
+              </a>
+            </div>
           </div>
+          <QuickLeadForm />
         </div>
       </section>
     </div>
