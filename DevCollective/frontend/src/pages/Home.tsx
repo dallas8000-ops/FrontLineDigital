@@ -156,9 +156,7 @@ export default function Home() {
           <ol className="grid gap-4 sm:grid-cols-2">
             {business.pilotOffer.steps.map((step, i) => (
               <li key={step.title} className="process-card">
-                <span className="card-watermark text-[4rem]" aria-hidden="true">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+                <span className="card-watermark text-[4rem]" aria-hidden="true" data-watermark={String(i + 1).padStart(2, '0')} />
                 <h3 className="relative z-10 mb-2 text-lg font-bold text-white">{step.title}</h3>
                 <p className="relative z-10 text-sm leading-relaxed text-brand-muted">{step.description}</p>
               </li>
@@ -299,7 +297,11 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div className="card-dark p-4 border-brand-gold/20">
             <img
-              src="/images/profile/home.jpeg"
+              src="/images/profile/home.webp"
+              width={1538}
+              height={1216}
+              loading="lazy"
+              decoding="async"
               alt={defaultProfile.profileName}
               className="max-h-80 w-full rounded-lg object-cover"
             />
@@ -357,9 +359,7 @@ export default function Home() {
                   Most Popular
                 </span>
               )}
-              <span className="card-watermark" aria-hidden="true">
-                {pkg.id}
-              </span>
+              <span className="card-watermark" aria-hidden="true" data-watermark={pkg.id} />
               <p className="mb-1 text-xs uppercase tracking-widest text-brand-muted">Package</p>
               <h3 className="mb-3 text-2xl font-bold tracking-wide text-white">{pkg.name}</h3>
               <p className="mb-1 text-3xl font-extrabold text-brand-gold md:text-4xl">{pkg.price}</p>
@@ -412,9 +412,7 @@ export default function Home() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step) => (
             <article key={step.id} className="process-card">
-              <span className="card-watermark text-[4rem]" aria-hidden="true">
-                {step.id}
-              </span>
+              <span className="card-watermark text-[4rem]" aria-hidden="true" data-watermark={step.id} />
               <h3 className="relative z-10 mb-2 text-lg font-bold text-white">{step.title}</h3>
               <p className="relative z-10 flex-grow text-sm leading-relaxed text-brand-muted">
                 {step.description}

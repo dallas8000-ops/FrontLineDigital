@@ -22,7 +22,11 @@ export default function Footer() {
           <div>
             <Link to="/">
               <img
-                src="/images/logos/frontline-digital-logo-wide.png"
+                src="/images/logos/frontline-digital-logo-wide.webp"
+                width={751}
+                height={241}
+                loading="lazy"
+                decoding="async"
                 alt={business.name}
                 className="h-14 w-auto object-contain mb-4"
               />

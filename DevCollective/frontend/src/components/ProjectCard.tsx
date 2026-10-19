@@ -24,7 +24,7 @@ export default function ProjectCard({
       {!compact && (
         <div className="relative aspect-[16/9] overflow-hidden border-b border-brand-line bg-brand-navy">
           {project.screenshot ? (
-            <img src={project.screenshot} alt={`${project.title} screenshot`} className="h-full w-full object-cover" />
+            <img src={project.screenshot} alt={`${project.title} screenshot`} loading="lazy" decoding="async" className="h-full w-full object-cover" />
           ) : (
             <div className="flex h-full flex-col justify-between p-4">
               <div className="flex items-center gap-2">

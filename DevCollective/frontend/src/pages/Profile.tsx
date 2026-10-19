@@ -32,7 +32,9 @@ export default function Profile() {
             <div className="card-dark p-6 sticky top-24">
               <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden border-4 border-brand-gold/50">
                 <img
-                  src="/images/profile/Resume.png"
+                  src="/images/profile/Resume.webp"
+                  width={1080}
+                  height={992}
                   alt={content.profileName}
                   className="w-full h-full object-cover object-top"
                 />

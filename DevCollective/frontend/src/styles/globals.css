@@ -210,6 +210,10 @@ h3 {
 .card-watermark {
   @apply absolute top-2 right-3 text-[5rem] md:text-[6rem] font-black leading-none text-white/[0.04] select-none pointer-events-none;
 }
+/* Drawn from data-watermark so the faint decorative number isn't DOM text (keeps contrast audits clean). */
+.card-watermark::before {
+  content: attr(data-watermark);
+}
 
 /* Section container */
 .section {

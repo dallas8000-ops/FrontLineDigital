@@ -54,7 +54,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+        sans: ['Inter Variable', 'Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'gold-glow': '0 0 0 1px rgba(255, 180, 0, 0.35), 0 8px 32px rgba(0, 0, 0, 0.4)',
