@@ -116,7 +116,7 @@ fs.writeFileSync(
     '',
     `> ${home.description}`,
     '',
-    'Run by Barney R. Gilliom, Wimauma, Florida, working remotely worldwide. Contact: barney@gilliomfrontlinedigital.com, +1 656-245-5253.',
+    'Run by Barney R. Gilliom, based in Kampala, Uganda (U.S. citizen), working remotely worldwide. Contact: barney@gilliomfrontlinedigital.com, +1 656-245-5253.',
     '',
     '## Pages',
     '',

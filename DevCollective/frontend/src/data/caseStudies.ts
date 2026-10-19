@@ -147,7 +147,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     impact:
-      'The platform replaces fragmented deployment and Stripe setup with a unified, secure control plane. Agencies can scan repos, wire billing, and push deploys without secrets leaving the server. The encrypted vault ensures production credentials never touch local machines or logs.',
+      'The platform replaces fragmented deployment and Stripe setup with a unified, secure control plane. Agencies can scan repos, wire billing, and push deploys without secrets leaving the server. Secrets are stored in an encrypted server-side vault rather than on developer machines.',
     stack: ['Python', 'Django', 'React', 'TypeScript', 'AES-256-GCM vault', 'WebSockets', 'Celery', 'Railway'],
     offerType: 'license',
     pricingNote: 'License tiers from $6,000–$15,000, plus $500–$1,200/mo support — built for agencies running multiple client deployments.',
@@ -232,7 +232,7 @@ export const caseStudies: CaseStudy[] = [
     features: [
       {
         title: 'Mobile Money Integration',
-        body: 'Native support for MTN MoMo and Airtel Money, ensuring farmers are paid instantly upon delivery.',
+        body: 'MTN MoMo and Airtel Money integrations (requestToPay, Airtel collect, status polling, webhooks) tested against the provider sandboxes; built so farmers can be paid on delivery once live credentials are enabled.',
       },
       {
         title: 'Logistics Tracking',
@@ -244,7 +244,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     impact:
-      'By moving from paper to AgriPay, logistics managers gain 100% visibility into their cash flow and inventory. For farmers, it means faster payments and a verifiable financial record. It is a bridge that connects traditional agriculture to the modern digital economy.',
+      'AgriPay is designed to give logistics managers one view of cash flow and inventory instead of paper records, and to give farmers faster payments and a verifiable financial record. These are intended benefits; it has not yet run with live customers. It is a bridge that connects traditional agriculture to the modern digital economy.',
     stack: ['Django 5', 'DRF', 'React', 'TypeScript', 'PostgreSQL', 'Stripe', 'MTN MoMo', 'Railway'],
   },
   {
@@ -252,12 +252,12 @@ export const caseStudies: CaseStudy[] = [
     title: 'DBOps Control Center',
     subtitle: 'Hardening Enterprise Database Infrastructure',
     metaDescription:
-      'How I engineered DBOps Control Center to replace fragmented local database tools with a single secure portal — granular RBAC, tamper-proof audit trails, and AES-256-GCM encrypted secrets on FastAPI and React.',
+      'How I engineered DBOps Control Center to replace fragmented local database tools with a single secure portal — granular RBAC, audit trails, and AES-256-GCM encrypted secrets on FastAPI and React.',
     liveUrl: portfolioLiveUrls.dbopsWeb,
     problem:
       'Modern development teams often struggle with "Database Sprawl," where sensitive production data is accessed through fragmented tools and insecure local connections. This lack of centralized governance leads to unauthorized access risks, accidentally dropped tables, and zero visibility into who changed what in the production environment.',
     solutionIntro:
-      'I engineered DBOps Control Center to be the definitive security and operations layer for enterprise databases. It centralizes control while enabling developer speed, built with a secure-by-default architecture (FastAPI, React, and Vite).',
+      'I built DBOps Control Center as a single security and operations layer for team databases. It centralizes control while enabling developer speed, built with a secure-by-default architecture (FastAPI, React, and Vite).',
     features: [
       {
         title: 'Granular RBAC',
@@ -265,11 +265,11 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: 'Audit Trails',
-        body: 'Every query and configuration change is logged in a tamper-proof audit trail for compliance and forensic review.',
+        body: 'Queries and configuration changes are recorded in an audit trail for compliance and review.',
       },
       {
         title: 'Encrypted Secrets',
-        body: 'Sensitive credentials never touch local machines, managed instead through a production-grade AES-256-GCM vault.',
+        body: 'Sensitive credentials are kept server-side in an AES-256-GCM encrypted vault instead of on local machines.',
       },
     ],
     impact:
@@ -364,7 +364,7 @@ export const caseStudies: CaseStudy[] = [
     problem:
       'Windows users lack a unified diagnostics command center that combines hardware information, software inventory, update status, and AI-powered analysis. Existing tools are fragmented, require multiple utilities, or lack intelligent prioritization of issues.',
     solutionIntro:
-      'PC Checker Extreme scans hardware by manufacturer (WMI), checks system health, finds outdated applications via winget, and generates an interactive AI review with prioritized suggestions. It provides a command-center UI with health matrix, live telemetry, scan history, and optional OpenAI analysis.',
+      'PC Checker Extreme scans hardware by manufacturer (WMI), checks system health, finds outdated applications via winget, and generates an interactive AI review with prioritized suggestions. It provides a command-center UI with health matrix, telemetry, scan history, and optional OpenAI analysis. The hosted demo shows the interface and reports; full hardware scans require running it locally on Windows.',
     features: [
       {
         title: 'Hardware & System Scanning',

@@ -5,7 +5,7 @@ export const defaultProfile = {
     'Full-stack software engineer building production systems with Python, TypeScript, React, Django, FastAPI, and PostgreSQL. Independently delivers secure operations platforms from requirements through Railway deployment, including JWT/RBAC authorization, encrypted secrets, Stripe billing, audit trails, offline workflows, automated tests, and CI gates. Current flagship work demonstrates SaaS operations automation, governed database access, and jurisdiction-aware fleet compliance. Brings 25 years of precision-driven federal operations, military electronics, and QA experience to software that must remain dependable under real operating conditions.',
   contactEmail: 'barney@gilliomfrontlinedigital.com',
   phone: '(656) 245-5253',
-  location: 'Home of record: Wimauma, Florida 33598',
+  location: 'Kampala, Uganda · U.S. home of record: Wimauma, Florida',
   workAuthorization: 'U.S. citizen',
   remoteAvailability: 'Open to remote roles worldwide',
 }
@@ -137,9 +137,9 @@ export const defaultServices = [
 
 export const defaultExperience = [
   {
-    role: 'Full-Stack Software Developer (Independent / Contract)',
+    role: 'Full-Stack Software Developer (Independent Portfolio Work)',
     org: 'Self-Directed Portfolio',
-    location: 'Remote · Wimauma, FL',
+    location: 'Remote · Kampala, Uganda',
     period: 'Sept 2025 – Present',
     highlights: [
       'Built and deployed production applications across SaaS operations, database governance, fintech, logistics, regulatory compliance, and AI tooling on a hardened foundation for auth, RBAC, billing, and CI/CD.',
@@ -155,7 +155,7 @@ export const defaultExperience = [
     location: 'Kuwait',
     period: '2018',
     highlights: [
-      'QA on high-security threat-detection systems at 99.9% accuracy in mission-critical federal environments.',
+      'QA on high-security threat-detection systems in mission-critical federal environments.',
       'Diagnostics, calibration, validation protocols, and formal technical documentation per regulatory standards.',
     ],
   },

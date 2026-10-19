@@ -3,8 +3,8 @@ import { defaultProfile } from './resumeContent'
 export const business = {
   name: 'Gilliom Frontline Digital',
   owner: defaultProfile.profileName,
-  tagline: 'Internal Tools & Operations Dashboards | Secure, Audited, Production-Ready',
-  location: 'Wimauma, FL | Serving clients remotely worldwide',
+  tagline: 'Internal Tools & Operations Dashboards | Auth, Audit Logs, Tests & CI',
+  location: 'Kampala, Uganda (U.S. citizen) | Serving clients remotely worldwide',
   heroHeadline: 'Automate the work that slows your operation down.',
   heroSubhead:
     'Fleet operations, logistics and back-office workflows still run on spreadsheets, WhatsApp and paper. I replace one of those workflows with working software in a fixed-price, two-week pilot, built on systems that are already live.',
@@ -86,7 +86,7 @@ export const business = {
     { stat: 'Railway', label: 'Exclusive hosting for my demos' },
   ],
   metrics: [
-    '13 production applications — Django, FastAPI, React, TypeScript, PostgreSQL',
+    '13 deployed applications — Django, FastAPI, React, TypeScript, PostgreSQL',
     'Live Stripe payments + webhooks on production keys',
     'JWT, RBAC, audit trails, and multi-tenant patterns in shipped apps',
     'GitHub Actions CI on portfolio repositories',

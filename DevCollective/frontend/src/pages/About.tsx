@@ -13,15 +13,15 @@ export default function About() {
   const timeline = [
     {
       icon: '⚡',
-      title: 'Full-Stack Software Engineer',
-      years: 'Sept 2025 – May 2026',
-      desc: 'SDGKU technical diploma. Twelve solo-built production applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
+      title: 'Full-Stack Developer — Independent Portfolio Work',
+      years: 'Sept 2025 – Present',
+      desc: 'SDGKU technical diploma (completed May 2026). 13 solo-built, deployed applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
     },
     {
       icon: '🔒',
       title: 'Federal QA Contractor',
       years: '2018',
-      desc: 'Triple Canopy — QA on high-security threat-detection systems at 99.9% accuracy. Formal technical documentation.',
+      desc: 'Triple Canopy — QA on high-security threat-detection systems. Formal technical documentation.',
     },
     {
       icon: '🚔',

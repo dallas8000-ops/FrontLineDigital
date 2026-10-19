@@ -32,7 +32,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-slate-200 text-sm leading-relaxed max-w-xs">
-              Internal tools and operations dashboards — secure, audited, and production-ready. Scope and quality
+              Internal tools and operations dashboards — built with authentication, audit logs, automated tests, and CI. Scope and quality
               proven by live, inspectable products, built solo from design through deployment.
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p>Production software · Zero-defect discipline · Wimauma, FL</p>
+          <p>Deployed software · QA discipline · Kampala, Uganda</p>
         </div>
       </div>
       <div className="brand-line-thin" />

@@ -4,7 +4,7 @@ export const contactInfo = {
   whatsappHref: 'https://wa.me/16562455253',
   email: 'barney@gilliomfrontlinedigital.com',
   emailHref: 'mailto:barney@gilliomfrontlinedigital.com',
-  location: 'Wimauma, FL · Available remotely worldwide',
+  location: 'Based in Kampala, Uganda · U.S. citizen · Available remotely worldwide',
   youtubeHandle: '@MrDallas8000',
   youtubeHref: 'https://www.youtube.com/@MrDallas8000',
   /** Homepage demo video (YouTube: "Twelve Live Apps · One Engineer · Proof, Not Promises") */
