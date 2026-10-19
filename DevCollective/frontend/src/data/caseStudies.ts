@@ -232,7 +232,7 @@ export const caseStudies: CaseStudy[] = [
     features: [
       {
         title: 'Mobile Money Integration',
-        body: 'MTN MoMo integration (requestToPay, status polling, webhooks) tested against the provider sandbox; designed so farmers can be paid on delivery once live credentials are enabled.',
+        body: 'MTN MoMo and Airtel Money integrations (requestToPay, Airtel collect, status polling, webhooks) tested against the provider sandboxes; built so farmers can be paid on delivery once live credentials are enabled.',
       },
       {
         title: 'Logistics Tracking',

@@ -61,7 +61,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     title: 'AgriPay Logistics AI',
     proves: 'Agri-logistics billing, mobile money flows, and Stripe subscriptions for East Africa',
     stack: 'Django 5, DRF, React, TypeScript, PostgreSQL, Stripe, Railway',
-    desc: 'Logistics and payments for farmers and buyers — Stripe subscriptions and checkout; MTN MoMo integration tested against the provider sandbox only (no live mobile-money transactions yet). The public demo simulates provider responses.',
+    desc: 'Logistics and payments for farmers and buyers — Stripe subscriptions and checkout; MTN MoMo and Airtel Money integrations tested against the provider sandboxes (no live mobile-money transactions yet); runs in a clearly labeled simulated mode when provider credentials are not set.',
     url: portfolioLiveUrls.agripayLogistics,
     repoUrl: 'https://github.com/dallas8000-ops/AgriPay-Logistics-AI',
     detailPath: '/case-studies/agripay',
