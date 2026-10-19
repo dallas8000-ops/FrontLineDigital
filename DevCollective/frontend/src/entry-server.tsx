@@ -4,6 +4,8 @@ import { StaticRouter } from 'react-router-dom/server'
 import { AppShell } from './App'
 import { AuthProvider } from './context/AuthContext'
 
+export { routeMeta, formatTitle, canonicalFor, SITE_ORIGIN } from './data/routeMeta'
+
 /** Renders one route to HTML at build time (see scripts/prerender.mjs). */
 export function render(url: string): string {
   return renderToString(

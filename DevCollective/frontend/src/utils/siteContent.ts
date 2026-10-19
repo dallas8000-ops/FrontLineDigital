@@ -182,7 +182,7 @@ export const defaultSiteContent = {
 }
 
 // Bump when portfolio copy/URLs change — refreshes stale localStorage.
-const SITE_CONTENT_SCHEMA_VERSION = 25
+const SITE_CONTENT_SCHEMA_VERSION = 26
 
 function persistSiteContent(parsed: Record<string, unknown>) {
   try {

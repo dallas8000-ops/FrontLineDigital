@@ -78,7 +78,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     desc: 'Production database operations platform with JWT + RBAC, whitelisted read-only SQL reports, incidents with audit history, scheduled delivery, OIDC SSO, and Stripe billing.',
     url: portfolioLiveUrls.dbopsWeb,
     repoUrl: 'https://github.com/dallas8000-ops/DBOps-Control-Center',
-    screenshot: '/images/portfolio/dbops-control-center-features.png',
+    screenshot: '/images/portfolio/dbops-control-center-features.webp',
     detailPath: '/case-studies/dbops',
     flagship: true,
     highlights: [
@@ -93,7 +93,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     desc: 'Agency platform for Stripe setup and Railway deploy — encrypted per-project vault, live pipeline, GitHub import, deploy pipelines, and AI diagnostics.',
     url: portfolioLiveUrls.automationCenter,
     repoUrl: 'https://github.com/dallas8000-ops/Deployment-Stripe-center',
-    screenshot: '/images/portfolio/stripe-installer-login.png',
+    screenshot: '/images/portfolio/stripe-installer-login.webp',
     detailPath: '/case-studies/deployment-stripe-automation-center',
     flagship: true,
     highlights: [
@@ -109,7 +109,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     proves: 'Multi-tenant fintech billing, FX pricing intelligence, and East Africa regionalization',
     stack: 'Django 5, DRF, React 19, TypeScript, Tailwind, PostgreSQL, JWT, Django Channels, Docker Compose, Railway',
     desc: 'East Africa fintech billing for Uganda, Kenya, Rwanda, and Tanzania — org-level RBAC, JWT auth, daily FX-driven pricing, and live Stripe checkout as the international fallback rail. Flutterwave mobile-money integration in progress.',
-    screenshot: '/images/portfolio/elite-fintech-systems.png',
+    screenshot: '/images/portfolio/elite-fintech-systems.webp',
     detailPath: '/case-studies/elite-fintech',
     highlights: [
       'Daily FX engine converts USD anchors to local VAT-inclusive pricing with persisted market snapshots.',
@@ -120,7 +120,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     title: 'Kistie Store',
     url: portfolioLiveUrls.kistieStore,
     repoUrl: 'https://github.com/dallas8000-ops/Kistie-Store',
-    screenshot: '/images/portfolio/kistie-store-shop.png',
+    screenshot: '/images/portfolio/kistie-store-shop.webp',
     flagship: true,
     proves: 'E-commerce, checkout, and multi-currency storefronts',
     stack: 'Python 3.11, Django 5.2, DRF, React 18, TypeScript, PostgreSQL, GitHub Actions, Railway',
@@ -138,7 +138,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     desc: 'Expense and profit platform for commercial and private truck operators — offline-first sync, GPS/OBD trip logging, IFTA and Schedule C exports, native Android (Capacitor), and subscription tiers with live Stripe payments.',
     url: portfolioLiveUrls.righandFrontend,
     repoUrl: 'https://github.com/dallas8000-ops/RigHand',
-    screenshot: '/images/portfolio/righand-ai-dashboard.png',
+    screenshot: '/images/portfolio/righand-ai-dashboard.webp',
     detailPath: '/case-studies/righand',
     flagship: true,
     highlights: [
@@ -152,7 +152,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     proves: 'Systems diagnostics, monitoring dashboards, and AI-assisted ops tooling',
     stack: 'Python, Django, WMI, winget, OpenAI, Railway',
     desc: 'Cloud-hosted diagnostic command center with health matrix, live telemetry, scan history, and optional OpenAI analysis when an API key is configured.',
-    screenshot: '/images/portfolio/pc-checker-extreme.png',
+    screenshot: '/images/portfolio/pc-checker-extreme.webp',
     detailPath: '/case-studies/pc-checker-extreme',
     highlights: [
       'Live CPU/RAM/disk telemetry, scan archive, and subsystem waveform charts in a command-center UI.',
@@ -165,7 +165,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     stack: 'FastAPI, Python 3.11, React 18, TypeScript, Vite, SQLite, OpenAI, Stripe, Railway',
     desc: 'The documentation layer for FastAPI teams. Reads your codebase via AST analysis and keeps OpenAPI specs, pytest scaffolds, and ER diagrams in sync with routes and models.',
     url: portfolioLiveUrls.specwrightWeb,
-    screenshot: '/images/portfolio/specwright.png',
+    screenshot: '/images/portfolio/specwright.webp',
     detailPath: '/case-studies/specwright',
     highlights: [
       'Specwright Score dashboard tracks route health, doc/test coverage, spec freshness, and drift alerts.',

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
 import { getCaseStudy } from '../data/caseStudies'
+import { caseStudyJsonLd } from '../data/caseStudySchema'
+import { toJsonLd } from '../data/faqContent'
+import { caseStudyTitle } from '../data/routeMeta'
 
 type Props = {
   readonly slug: string
@@ -12,7 +15,7 @@ export default function CaseStudyPage({ slug }: Props) {
   const cs = getCaseStudy(slug)
 
   usePageTitle(
-    cs ? `Case Study: ${cs.title}` : 'Case Study Not Found',
+    cs ? caseStudyTitle(cs.title) : 'Case Study Not Found',
     cs?.metaDescription
   )
 
@@ -166,6 +169,7 @@ export default function CaseStudyPage({ slug }: Props) {
           )}
         </section>
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(caseStudyJsonLd(cs)) }} />
     </div>
   )
 }

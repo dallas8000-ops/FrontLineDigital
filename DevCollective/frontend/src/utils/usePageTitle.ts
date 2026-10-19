@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-
-const SITE_ORIGIN = 'https://gilliomfrontlinedigital.com'
+import { SITE_ORIGIN, formatTitle, getRouteMeta } from '../data/routeMeta'
 
 function setMeta(attribute: 'name' | 'property', key: string, content: string) {
   let tag = document.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`)
@@ -14,12 +13,14 @@ function setMeta(attribute: 'name' | 'property', key: string, content: string) {
 
 export function usePageTitle(title: string, description?: string) {
   useEffect(() => {
-    const base = 'Frontline Digital'
-    const pageTitle = title ? `${title} | ${base}` : base
+    const pageTitle = formatTitle(title)
     const pathname = window.location.pathname === '/'
       ? '/'
       : window.location.pathname.replace(/\/+$/, '')
     const canonicalUrl = `${SITE_ORIGIN}${pathname}`
+    // Same description the build-time prerender wrote for this route, so pages without one
+    // don't keep the home page's description after client-side navigation.
+    const pageDescription = description ?? getRouteMeta(pathname)?.description
 
     document.title = pageTitle
 
@@ -36,10 +37,10 @@ export function usePageTitle(title: string, description?: string) {
     setMeta('name', 'twitter:title', pageTitle)
     setMeta('name', 'twitter:url', canonicalUrl)
 
-    if (description) {
-      setMeta('name', 'description', description)
-      setMeta('property', 'og:description', description)
-      setMeta('name', 'twitter:description', description)
+    if (pageDescription) {
+      setMeta('name', 'description', pageDescription)
+      setMeta('property', 'og:description', pageDescription)
+      setMeta('name', 'twitter:description', pageDescription)
     }
   }, [title, description])
 }

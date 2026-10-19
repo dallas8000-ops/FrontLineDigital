@@ -66,7 +66,9 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="card-dark p-3">
             <img
-              src="/images/profile/About.png"
+              src="/images/profile/About.webp"
+              width={960}
+              height={1096}
               alt={content.profileName}
               className="w-full rounded-lg object-cover"
             />
