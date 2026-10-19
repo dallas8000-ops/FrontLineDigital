@@ -8,7 +8,7 @@ describe('print resume', () => {
 
     expect(screen.getByRole('heading', { name: 'Barney R. Gilliom' })).toBeInTheDocument()
     expect(screen.getByText(/\(656\) 245-5253/)).toBeInTheDocument()
-    expect(screen.getByText(/Home of record: Wimauma, Florida 33598/)).toBeInTheDocument()
+    expect(screen.getByText(/Kampala, Uganda · U.S. home of record: Wimauma, Florida/)).toBeInTheDocument()
     expect(screen.getByText(/Open to remote roles worldwide/)).toBeInTheDocument()
     expect(screen.getByText(/U\.S\. citizen/)).toBeInTheDocument()
     expect(screen.getByText('AI Software Operations Studio')).toBeInTheDocument()

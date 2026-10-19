@@ -60,9 +60,9 @@ describe('portfolio SEO content', () => {
       },
       {
         name: 'EnPowerCommand',
-        title: 'EnPowerCommand | Utility Billing & Usage Dashboard',
+        title: 'EnPowerCommand | Freelance Lead & Outreach Command Center',
         description:
-          'Enterprise command center for utility usage tracking, subscription tiers, and automated Stripe billing.',
+          'Lead tracking, job-posting import with optional AI parsing, outreach drafts, activity log, and CSV export.',
       },
       {
         name: 'Digital Sales Automation Center',

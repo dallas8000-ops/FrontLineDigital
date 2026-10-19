@@ -316,7 +316,7 @@ export default function Home() {
             <p className="mb-6 text-base leading-relaxed text-slate-200">
               The differentiator is the combination: U.S. Army veteran (JST-documented service), FAA-certified air
               traffic control, TCOLE Master Police Officer (Texas) with Washington State equivalency, and
-              full-stack engineering with QA discipline — applied to twelve production applications.
+              full-stack engineering with QA discipline — applied to 13 deployed applications.
             </p>
             <ul className="space-y-3">
               {business.founderHighlights.map((item) => (

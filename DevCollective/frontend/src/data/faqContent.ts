@@ -37,7 +37,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'Do you work with clients outside Florida?',
-    answer: `Yes. My home of record is Wimauma, Florida, and I work remotely with clients worldwide. Call ${contactInfo.phone}, message on WhatsApp, or email ${contactInfo.email}.`,
+    answer: `Yes. I am a U.S. citizen based in Kampala, Uganda, and I work remotely with clients worldwide. Call ${contactInfo.phone}, message on WhatsApp, or email ${contactInfo.email}.`,
   },
   {
     question: 'Can I see working software before I hire you?',
