@@ -20,6 +20,11 @@ describe('FAQ and HowTo structured data', () => {
     expect(text).toContain('barney@gilliomfrontlinedigital.com')
   })
 
+  it('names the mobile money account holder next to the number', () => {
+    const pay = faqItems.find((item) => item.question === 'How do I pay?')
+    expect(pay?.answer).toContain('MTN Mobile Money to 0784 023 270, registered to Jackie Nalumansi')
+  })
+
   it('builds HowTo steps from the pilot offer', () => {
     expect(pilotHowToJsonLd.step.map((s) => s.name)).toEqual(business.pilotOffer.steps.map((s) => s.title))
   })
