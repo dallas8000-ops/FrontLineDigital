@@ -37,7 +37,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'How do I pay?',
-    answer: `Fixed-price work is paid upfront once the written scope is agreed. International clients pay by card through Stripe. Clients in Uganda can pay by ${contactInfo.mobileMoney.network} to ${contactInfo.mobileMoney.number}, registered to ${contactInfo.mobileMoney.registeredName} for Gilliom Frontline Digital; Airtel Money users can send to it too. Send the transaction ID by WhatsApp or email and work starts once it is confirmed.`,
+    answer: `Fixed-price work is paid upfront once the written scope is agreed. International clients pay by card through Stripe. Clients in Uganda can pay by ${contactInfo.mobileMoney.network} to ${contactInfo.mobileMoney.number}; Airtel Money users can send to it too. Before you confirm, check the name shown is ${contactInfo.mobileMoney.registeredName}: that is the legitimate account for Gilliom Frontline Digital payments. If any other name appears, stop and contact me before sending. Send the transaction ID by WhatsApp or email and work starts once it is confirmed.`,
   },
   {
     question: 'Do you work with clients outside Florida?',

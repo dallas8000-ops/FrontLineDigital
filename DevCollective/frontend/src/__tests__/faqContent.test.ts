@@ -22,7 +22,9 @@ describe('FAQ and HowTo structured data', () => {
 
   it('names the mobile money account holder next to the number', () => {
     const pay = faqItems.find((item) => item.question === 'How do I pay?')
-    expect(pay?.answer).toContain('MTN Mobile Money to 0784 023 270, registered to Jackie Nalumansi')
+    expect(pay?.answer).toContain('MTN Mobile Money to 0784 023 270')
+    expect(pay?.answer).toContain('check the name shown is Jackie Nalumansi: that is the legitimate account')
+    expect(pay?.answer).toContain('If any other name appears, stop')
   })
 
   it('builds HowTo steps from the pilot offer', () => {
