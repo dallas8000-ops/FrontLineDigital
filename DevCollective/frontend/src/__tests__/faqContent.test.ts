@@ -20,11 +20,21 @@ describe('FAQ and HowTo structured data', () => {
     expect(text).toContain('barney@gilliomfrontlinedigital.com')
   })
 
-  it('names the mobile money account holder next to the number', () => {
+  it('does not publish mobile money account details', () => {
+    const everything = JSON.stringify(faqItems) + JSON.stringify(faqJsonLd)
+    expect(everything).not.toMatch(/0?784\s?023\s?270/)
+    expect(everything).not.toMatch(/Nalumansi/i)
     const pay = faqItems.find((item) => item.question === 'How do I pay?')
-    expect(pay?.answer).toContain('MTN Mobile Money to 0784 023 270')
-    expect(pay?.answer).toContain('check the name shown is Jackie Nalumansi: that is the legitimate account')
-    expect(pay?.answer).toContain('If any other name appears, stop')
+    expect(pay?.answer).toContain('Payment details are sent with your written scope, never before.')
+  })
+
+  it('explains how the pilot leads into the fixed-scope packages', () => {
+    const after = faqItems.find((item) => item.question === 'What happens after the pilot?')
+    expect(after?.answer).toContain('fixed-scope package, estimated at $40/hr (typically $2,000 to $12,000)')
+  })
+
+  it('does not ask about Florida', () => {
+    expect(faqItems.some((item) => /florida/i.test(item.question))).toBe(false)
   })
 
   it('builds HowTo steps from the pilot offer', () => {

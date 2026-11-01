@@ -130,7 +130,7 @@ export default function Home() {
                   to={`/contact?topic=${encodeURIComponent(v.topic)}`}
                   className="btn btn-outline w-full justify-center text-center"
                 >
-                  Request a {v.title.toLowerCase()} pilot
+                  Request {/^[aeiou]/i.test(v.title) ? 'an' : 'a'} {v.title.toLowerCase()} pilot
                 </Link>
               </article>
             ))}

@@ -4,12 +4,6 @@ export const contactInfo = {
   whatsappHref: 'https://wa.me/16562455253',
   email: 'barney@gilliomfrontlinedigital.com',
   emailHref: 'mailto:barney@gilliomfrontlinedigital.com',
-  /** Uganda clients pay here; the line is registered to Jackie Nalumansi, so always show the name. */
-  mobileMoney: {
-    network: 'MTN Mobile Money',
-    number: '0784 023 270',
-    registeredName: 'Jackie Nalumansi',
-  },
   location: 'Based in Kampala, Uganda · U.S. citizen · Available remotely worldwide',
   youtubeHandle: '@MrDallas8000',
   youtubeHref: 'https://www.youtube.com/@MrDallas8000',
