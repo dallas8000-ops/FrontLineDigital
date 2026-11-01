@@ -137,7 +137,7 @@ export default function Contact() {
               {delivery === 'sent' ? (
                 <>
                   <h3 className="text-2xl font-bold text-white mb-2">Message sent</h3>
-                  <p className="text-brand-muted mb-6">Thanks. I will respond as soon as possible.</p>
+                  <p className="text-brand-muted mb-6">Thanks. I will reply within 1 day.</p>
                 </>
               ) : (
                 <>

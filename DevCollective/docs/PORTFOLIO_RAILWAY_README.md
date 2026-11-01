@@ -42,7 +42,7 @@ Canonical live URLs (also in `frontend/src/data/portfolioLiveUrls.ts`):
 | Spelling note about kristie vs kistie | Delete — URL now uses **kistie** |
 | All “on Render” / “Render gives” hosting sentences | “on Railway” / Railway equivalents |
 | Links to `[render.yaml](render.yaml)` | Remove or point to `railway.toml` |
-| Portfolio link `jnalumansi.onrender.com` | `https://gilliomfrontlinedigital.com` |
+| Old Render portfolio link | `https://gilliomfrontlinedigital.com` |
 
 ### Delete
 

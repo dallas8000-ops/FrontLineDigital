@@ -35,7 +35,7 @@ export default function QuickLeadForm() {
       <div className="py-6 text-center" role="status">
         <CheckCircle size={40} className="mx-auto mb-3 text-brand-gold" />
         <p className="font-semibold text-white">
-          {status === 'sent' ? 'Thanks. I will reply with a scope and price.' : 'Your email app should have opened. Press send there.'}
+          {status === 'sent' ? 'Thanks. I will reply within 1 day with a written scope and price.' : 'Your email app should have opened. Press send there.'}
         </p>
       </div>
     )

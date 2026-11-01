@@ -5,6 +5,9 @@ export type FaqItem = { question: string; answer: string }
 
 const starter = packages[0]
 const premium = packages[packages.length - 1]
+/** Overall package span, e.g. "$2,000" to "$12,000", taken from the package price ranges. */
+const lowestPackagePrice = starter.price.split('–')[0]
+const highestPackagePrice = premium.price.split('–').pop() ?? premium.price
 
 /** Visible on the home page and published as FAQPage JSON-LD — keep both in sync by editing only this list. */
 export const faqItems: FaqItem[] = [
@@ -19,7 +22,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'What happens after the pilot?',
     answer:
-      'You decide whether to keep it, extend it or walk away. Implementation and monthly support are offered only if the pilot earns it.',
+      `You decide whether to keep it, extend it or walk away. If you keep it, the full build is quoted as a fixed-scope package, estimated at $${SOFTWARE_DEV_HOURLY_USD}/hr (typically ${lowestPackagePrice} to ${highestPackagePrice}). Monthly support is offered only if the pilot earns it.`,
   },
   {
     question: 'What does a larger project cost?',
@@ -37,10 +40,10 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'How do I pay?',
-    answer: `Fixed-price work is paid upfront once the written scope is agreed. International clients pay by card through Stripe. Clients in Uganda can pay by ${contactInfo.mobileMoney.network} to ${contactInfo.mobileMoney.number}; Airtel Money users can send to it too. Before you confirm, check the name shown is ${contactInfo.mobileMoney.registeredName}: that is the legitimate account for Gilliom Frontline Digital payments. If any other name appears, stop and contact me before sending. Send the transaction ID by WhatsApp or email and work starts once it is confirmed.`,
+    answer: `Fixed-price work is paid upfront once the written scope is agreed. International clients pay by card through Stripe, and clients in Uganda can pay by mobile money. Payment details are sent with your written scope, never before. If anyone asks you to pay before you have a written scope from me, contact me at ${contactInfo.email} before sending anything.`,
   },
   {
-    question: 'Do you work with clients outside Florida?',
+    question: 'Do you work with clients outside Uganda?',
     answer: `Yes. I am a U.S. citizen based in Kampala, Uganda, and I work remotely with clients worldwide. Call ${contactInfo.phone}, message on WhatsApp, or email ${contactInfo.email}.`,
   },
   {
