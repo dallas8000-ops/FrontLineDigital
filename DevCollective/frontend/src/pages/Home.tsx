@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { usePageTitle } from '../utils/usePageTitle'
@@ -7,35 +7,18 @@ import { business } from '../data/freelanceContent'
 import { defaultProfile, resumeProjectTitles } from '../data/resumeContent'
 import ProjectCard from '../components/ProjectCard'
 import YouTubeFacade from '../components/YouTubeFacade'
-import { portfolioSeoEntries } from '../data/seoContent'
 import { faqItems, faqJsonLd, pilotHowToJsonLd, toJsonLd } from '../data/faqContent'
 import QuickLeadForm from '../components/QuickLeadForm'
 import AskBarneyAiButton from '../components/AskBarneyAiButton'
 import {
   packages,
   addOns,
-  processSteps,
-  processSectionTitle,
-  processSectionSubtitle,
   pricingNote,
   SOFTWARE_DEV_HOURLY_USD,
   contactInfo,
 } from '../data/landingContent'
 
-const architectureProjects = [
-  {
-    name: 'DBOps Control Center',
-    layers: ['React + TypeScript', 'FastAPI + SQLAlchemy', 'PostgreSQL + Alembic', 'Stripe + Railway + OIDC'],
-  },
-  {
-    name: 'Deployment & Stripe Automation Center',
-    layers: ['React + TypeScript', 'Django + WebSockets', 'Encrypted vault + Celery', 'Stripe + Railway deploy'],
-  },
-  {
-    name: 'Elite Fintech Systems',
-    layers: ['React + TypeScript', 'Django REST + Channels', 'PostgreSQL + FX snapshots', 'Live Stripe · Flutterwave in progress'],
-  },
-]
+export const HOME_FAQ_COUNT = 4
 
 export default function Home() {
   usePageTitle('Gilliom Frontline Digital | Internal Tools & Ops Dashboards')
@@ -44,6 +27,8 @@ export default function Home() {
   const featuredProjects = resumeProjectTitles
     .map((title) => projects.find((project) => project.title === title))
     .filter((project): project is NonNullable<typeof project> => Boolean(project))
+  const [showAllFaq, setShowAllFaq] = useState(false)
+  const visibleFaq = showAllFaq ? faqItems : faqItems.slice(0, HOME_FAQ_COUNT)
 
   return (
     <div className="bg-site-grid">
@@ -182,114 +167,13 @@ export default function Home() {
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
-        <Link to="/dashboard" className="btn btn-outline mt-8">
-          View all projects <ArrowRight size={16} />
-        </Link>
-      </section>
-
-      <section className="border-y border-brand-line bg-brand-card/40" aria-labelledby="solutions-heading">
-        <div className="section-inner py-14 md:py-20">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Solutions</p>
-          <h2 id="solutions-heading" className="mb-4 text-3xl font-bold text-white md:text-4xl">
-            Operations software for real business workflows
-          </h2>
-          <p className="mb-10 max-w-3xl text-base leading-relaxed text-slate-200 md:text-lg">
-            Explore the systems behind the portfolio: compliance intelligence, logistics, billing, diagnostics,
-            developer tooling, and sales operations.
-          </p>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {portfolioSeoEntries.map((entry) => {
-              const content = (
-                <>
-                  <h3 className="mb-3 text-lg font-bold text-white">{entry.title}</h3>
-                  <p className="text-sm leading-relaxed text-brand-muted">{entry.description}</p>
-                </>
-              )
-
-              return entry.url?.startsWith('/') ? (
-                <Link key={entry.name} to={entry.url} className="card-dark p-5 transition hover:border-brand-gold/60">
-                  {content}
-                </Link>
-              ) : (
-                <a
-                  key={entry.name}
-                  href={entry.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-dark p-5 transition hover:border-brand-gold/60"
-                >
-                  {content}
-                </a>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-brand-line bg-brand-card/40" aria-labelledby="capability-heading">
-        <div className="section-inner py-14">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Architecture scope</p>
-          <h2 id="capability-heading" className="mb-8 text-2xl font-bold text-white">
-            Built the way operations teams need it
-          </h2>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {business.valueProps.map((item) => (
-              <article key={item.title} className="card-dark p-5">
-                <h3 className="mb-3 text-lg font-bold text-white">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-200">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="architecture" className="section-inner py-14 md:py-20" aria-labelledby="architecture-heading">
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Technical architecture</p>
-        <h2 id="architecture-heading" className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Product diagrams for the core SaaS systems
-        </h2>
-        <p className="mb-10 max-w-3xl text-sm leading-relaxed text-brand-muted md:text-base">
-          For your technical reviewer: every core system follows the same production pattern: frontend, API
-          layer, relational data, and external integrations.
-        </p>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {architectureProjects.map((project) => (
-            <div key={project.name} className="card-dark p-6">
-              <h3 className="mb-5 text-xl font-bold text-white">{project.name}</h3>
-              <div className="space-y-3">
-                {project.layers.map((layer, index) => (
-                  <React.Fragment key={layer}>
-                    <div className="border border-brand-line bg-brand-navy p-3 text-center text-sm font-semibold text-slate-100">
-                      {layer}
-                    </div>
-                    {index < project.layers.length - 1 && (
-                      <div className="text-center text-lg font-bold text-brand-gold" aria-hidden="true">
-                        |
-                      </div>
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-inner border-y border-brand-line/80 py-10" aria-labelledby="metrics-heading">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div>
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Metrics</p>
-            <h2 id="metrics-heading" className="text-2xl font-bold text-white">
-              Measurable scope, not just adjectives
-            </h2>
-          </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {business.metrics.map((metric) => (
-              <li key={metric} className="border-l border-brand-gold/60 bg-brand-card/60 px-4 py-3 text-sm text-slate-200">
-                {metric}
-              </li>
-            ))}
-          </ul>
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <Link to="/dashboard" className="btn btn-outline">
+            View all projects <ArrowRight size={16} />
+          </Link>
+          <a href="/services#solutions" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-gold hover:text-white">
+            Browse all solutions <ArrowRight size={16} />
+          </a>
         </div>
       </section>
 
@@ -400,42 +284,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-inner py-14 md:py-20" aria-labelledby="process-heading">
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Process</p>
-        <div className="brand-line-thin mb-6 w-16" />
-        <h2 id="process-heading" className="mb-3 text-3xl font-bold text-white md:text-4xl">
-          {processSectionTitle}
-        </h2>
-        <p className="mb-10 max-w-2xl text-sm leading-relaxed text-brand-muted md:mb-14 md:text-base">
-          {processSectionSubtitle}
-        </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {processSteps.map((step) => (
-            <article key={step.id} className="process-card">
-              <span className="card-watermark text-[4rem]" aria-hidden="true" data-watermark={step.id} />
-              <h3 className="relative z-10 mb-2 text-lg font-bold text-white">{step.title}</h3>
-              <p className="relative z-10 flex-grow text-sm leading-relaxed text-brand-muted">
-                {step.description}
-              </p>
-              <div className="relative z-10 mt-6 h-0.5 w-full bg-brand-gold" />
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="faq" className="section-inner scroll-mt-24 py-14 md:py-20" aria-labelledby="faq-heading">
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">FAQ</p>
         <h2 id="faq-heading" className="mb-8 text-3xl font-bold text-white md:text-4xl">
           Frequently asked questions
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
-          {faqItems.map((item) => (
+          {visibleFaq.map((item) => (
             <article key={item.question} className="card-dark p-5">
               <h3 className="mb-2 text-lg font-bold text-white">{item.question}</h3>
               <p className="text-sm leading-relaxed text-slate-200">{item.answer}</p>
             </article>
           ))}
         </div>
+        {faqItems.length > HOME_FAQ_COUNT && (
+          <button
+            type="button"
+            className="btn btn-outline mt-6"
+            aria-expanded={showAllFaq}
+            onClick={() => setShowAllFaq((v) => !v)}
+          >
+            {showAllFaq ? 'Show fewer questions' : `See all ${faqItems.length} questions`}
+          </button>
+        )}
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <p className="text-sm text-slate-200">
             Question not listed? The site assistant can answer questions about any project, stack or price.

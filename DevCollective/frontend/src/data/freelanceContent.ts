@@ -80,7 +80,7 @@ export const business = {
     },
   ],
   credentials: [
-    { stat: '3', label: 'Flagship systems — focused proof below' },
+    { stat: '13', label: 'Deployed applications' },
     { stat: 'Live Stripe', label: 'Production billing on portfolio apps' },
     { stat: 'Django + FastAPI', label: 'Proven in deployed demos' },
     { stat: 'Railway', label: 'Exclusive hosting for my demos' },

@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../utils/usePageTitle'
 import { getSiteContent } from '../utils/siteContent'
+import TechnicalProof from '../components/TechnicalProof'
 
 export default function Services() {
   usePageTitle('Services')
@@ -55,6 +56,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <TechnicalProof />
     </div>
   )
 }
