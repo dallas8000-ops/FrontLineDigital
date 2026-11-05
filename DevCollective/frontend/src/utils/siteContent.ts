@@ -181,6 +181,9 @@ export const defaultSiteContent = {
   projects: defaultPortfolioProjects.map(withHealthyDemoUrl),
 }
 
+/** Shape of the editable site content (defaults merged with any stored overrides). */
+export type SiteContent = typeof defaultSiteContent
+
 // Bump when portfolio copy/URLs change — refreshes stale localStorage.
 const SITE_CONTENT_SCHEMA_VERSION = 26
 
@@ -193,7 +196,7 @@ function persistSiteContent(parsed: Record<string, unknown>) {
 }
 
 // Utility to get editable site content from localStorage (or fallback to defaults)
-export const getSiteContent = () => {
+export const getSiteContent = (): SiteContent => {
   if (typeof globalThis.window !== 'undefined') {
     const stored = globalThis.localStorage.getItem('siteContent')
     if (stored) {
@@ -259,7 +262,7 @@ export const getSiteContent = () => {
         if (dirty) {
           persistSiteContent(parsed)
         }
-        return parsed
+        return parsed as SiteContent
       } catch {
         globalThis.localStorage.removeItem('siteContent')
       }

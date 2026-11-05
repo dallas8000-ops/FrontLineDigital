@@ -7,7 +7,9 @@ export function applyColorScheme() {
       try {
         const parsed = JSON.parse(stored);
         scheme = parsed.colorScheme || 'blue';
-      } catch {}
+      } catch {
+        // Stored value is not valid JSON: keep the default scheme.
+      }
     }
     document.body.dataset.colorScheme = scheme;
   }
