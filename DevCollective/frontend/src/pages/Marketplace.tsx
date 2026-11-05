@@ -91,7 +91,6 @@ export default function Marketplace() {
               {/* Rating */}
               <div className="flex items-center gap-2 mb-4 pb-4 border-b border-dark-200">
                 <div className="flex gap-1">
-                  {/* eslint-disable react/no-array-index-key */}
                   {new Array(5).fill(null).map((_, i) => (
                     <Star
                       key={i}
@@ -99,7 +98,6 @@ export default function Marketplace() {
                       className={i < Math.floor(dev.rating) ? 'fill-accent-500 text-accent-500' : 'text-dark-300'}
                     />
                   ))}
-                  {/* eslint-enable react/no-array-index-key */}
                 </div>
                 <span className="font-bold">{dev.rating}</span>
                 <span className="text-dark-600 text-sm">({dev.reviews} reviews)</span>

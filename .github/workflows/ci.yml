@@ -28,6 +28,12 @@ jobs:
       - name: Install
         run: npm ci --no-audit --no-fund
 
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Type-check (tsc)
+        run: npm run typecheck
+
       - name: Unit tests (Jest)
         run: npx jest --ci
 
