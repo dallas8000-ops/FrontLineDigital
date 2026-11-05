@@ -144,7 +144,7 @@ export const defaultPortfolioProjects: PortfolioProject[] = [
     flagship: true,
     highlights: [
       'Offline-first IndexedDB sync, GPS/OBD mileage, and tax-ready CSV/PDF exports.',
-      'Free, Compliance Pro, and Fleet Lite tiers with live Stripe billing and payment-triggered unlock.',
+      '30-day free trial, then Compliance Pro or Fleet Lite with live Stripe billing and payment-triggered unlock.',
     ],
   },
   {

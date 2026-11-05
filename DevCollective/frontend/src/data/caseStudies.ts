@@ -312,7 +312,7 @@ export const caseStudies: CaseStudy[] = [
       'RigHand AI is not just an expense tracker; it is a safety and compliance infrastructure layer. For fleet operators in Uganda and the broader EAC, it turns fragmented recordkeeping into a practical operating system for fatigue control, equipment reliability, and regulatory proof.',
     stack: ['Capacitor', 'React', 'TypeScript', 'IndexedDB', 'GPS', 'OBD-II', 'PostgreSQL', 'Stripe', 'Railway'],
     offerType: 'subscription',
-    pricingNote: 'Free tier, Compliance Pro $34.99/mo, Fleet Lite $89/mo.',
+    pricingNote: '30-day free trial, then Compliance Pro $34.99/mo or Fleet Lite $89/mo.',
     ctaLabel: 'See plans & pricing',
   },
   {
