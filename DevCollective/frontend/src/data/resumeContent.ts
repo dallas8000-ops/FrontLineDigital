@@ -210,7 +210,7 @@ export const defaultEducation = [
 
 export const defaultCertifications = [
   'AI-900: Microsoft Azure AI Fundamentals',
-  'IT Security (CompTIA)',
+  'IT Security & Administration — Certificate of Completion (MyComputerCareer)',
   'FAA Air Traffic Controller Certification',
   'FAA Helicopter Communication Systems/Repair',
   'TCOLE Master Police Officer',
