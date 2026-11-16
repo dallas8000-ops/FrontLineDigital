@@ -137,8 +137,8 @@ export const defaultServices = [
 
 export const defaultExperience = [
   {
-    role: 'Founder & Full-Stack Engineer',
-    org: 'Gilliom Frontline Digital',
+    role: 'Full-Stack Software Developer (Independent Portfolio Work)',
+    org: 'Self-Directed Portfolio',
     location: 'Remote · Kampala, Uganda',
     period: 'Sept 2025 – Present',
     highlights: [
@@ -150,10 +150,10 @@ export const defaultExperience = [
     ],
   },
   {
-    role: 'Quality Assurance Specialist',
+    role: 'Quality Assurance Analyst',
     org: 'Triple Canopy (Federal Contractor)',
     location: 'Kuwait',
-    period: 'Apr 2018 – Nov 2018',
+    period: '2018',
     highlights: [
       'QA on high-security threat-detection systems in mission-critical federal environments.',
       'Diagnostics, calibration, validation protocols, and formal technical documentation per regulatory standards.',
@@ -214,4 +214,5 @@ export const defaultCertifications = [
   'FAA Air Traffic Controller Certification',
   'FAA Helicopter Communication Systems/Repair',
   'TCOLE Master Police Officer',
+  'Immersive Full Stack Software Development (SDGKU)',
 ]

@@ -13,8 +13,7 @@ describe('default resume content', () => {
     expect(defaultProfile.about).not.toMatch(/\b(?:12|13) production applications\b/i)
     expect(defaultProfile.about).not.toContain('Seeking remote mid-level full-stack or QA automation roles.')
     expect(defaultExperience[0]).toMatchObject({
-      role: 'Founder & Full-Stack Engineer',
-      org: 'Gilliom Frontline Digital',
+      role: 'Full-Stack Software Developer (Independent Portfolio Work)',
       period: 'Sept 2025 – Present',
     })
     expect(defaultSkills.find((group) => group.category === 'Payments & AI')?.items).toContain('Stripe API')

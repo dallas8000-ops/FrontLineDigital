@@ -13,14 +13,14 @@ export default function About() {
   const timeline = [
     {
       icon: '⚡',
-      title: 'Founder & Full-Stack Engineer — Gilliom Frontline Digital',
+      title: 'Full-Stack Developer — Independent Portfolio Work',
       years: 'Sept 2025 – Present',
       desc: 'SDGKU technical diploma (completed May 2026). 13 solo-built, deployed applications — Django, FastAPI, React, TypeScript, PostgreSQL, automated tests, and CI/CD on Railway.',
     },
     {
       icon: '🔒',
-      title: 'Quality Assurance Specialist (Federal Contractor)',
-      years: 'Apr – Nov 2018',
+      title: 'Federal QA Contractor',
+      years: '2018',
       desc: 'Triple Canopy — QA on high-security threat-detection systems. Formal technical documentation.',
     },
     {
